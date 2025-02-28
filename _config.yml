@@ -11,7 +11,7 @@ defaults:
     values:
       layout: "default"
 
-logo: "/assets/images/huawei-cloud-logo.jpg"
+logo: "https://res-static.hc-cdn.cn/cloudbu-site/intl/en-us/yunying/new-header/logo.png"
 favicon_ico: "/assets/images/huawei-logo.png"
 
 aux_links:
