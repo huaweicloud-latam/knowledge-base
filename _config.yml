@@ -12,6 +12,7 @@ defaults:
       layout: "default"
 
 logo: "/assets/images/huawei-cloud-logo.jpg"
+favicon_ico: "/assets/images/huawei-logo.png"
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
