@@ -1,5 +1,5 @@
 ---
-title: Management & Governance
+title: IAM
 ---
 
-# Management & Governance
+# IAM
