@@ -6,12 +6,6 @@ grand_parent: Management & Governance
 ---
 # User Federation with Keycloak (SAML 2.0)
 
-![](/huaweicloud-knowledge-base/assets/images/huawei-logo.png)
-
-
-TODO
-
-
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-SAML/media/image1.png)
 
 **IAM**
