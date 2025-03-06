@@ -7,3 +7,5 @@ grand_parent: Management & Governance
 # User Federation with Keycloak (SAML 2.0)
 
 TODO
+
+<img src="/assets/images/huawei-logo.png">
