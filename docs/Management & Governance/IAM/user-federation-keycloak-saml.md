@@ -8,4 +8,4 @@ grand_parent: Management & Governance
 
 TODO
 
-![](assets/images/huawei-logo.png)
+![](/assets/images/huawei-logo.png)
