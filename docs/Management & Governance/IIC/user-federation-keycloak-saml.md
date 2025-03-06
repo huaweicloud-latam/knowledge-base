@@ -8,12 +8,6 @@ grand_parent: Management & Governance
 
 # User Federation with Keycloak (SAML 2.0)
 
-**IIC**
-
-Configuring User Federation with Keycloak (SAML 2.0)
-
-V1.0 – Outubro 2024
-
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
 | V1.0 – 2024-10-25 | Diogo Hatz d50037923           | Versão Inicial       |
