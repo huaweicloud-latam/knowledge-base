@@ -9,5 +9,5 @@ parent: Huawei Cloud Stack
 
 HUAWEI CLOUD Stack Online (HCS Online) offers a series of resource isolation solutions for computing, storage, networks, and cloud services.
 
-[Product Page](https://www.huaweicloud.com/intl/en-us/solution/HCSOnline/) &middot;
+[Product Page](https://www.huaweicloud.com/intl/en-us/solution/HCSOnline/)
 
