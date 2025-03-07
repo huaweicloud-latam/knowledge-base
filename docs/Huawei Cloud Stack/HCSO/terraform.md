@@ -8,10 +8,6 @@ grand_parent: Huawei Cloud Stack
 
 # Terraform Startup
 
-**HCSO**
-
-Configuring Terraform on HCSO v1.0 pt-br
-
 V1.0 – Novembro 2024
 
 | **Version**       | **Author**                     | **Description**      |
