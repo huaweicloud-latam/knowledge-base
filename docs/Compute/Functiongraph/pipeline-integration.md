@@ -1,5 +1,5 @@
 ---
-title: Custom Container Image Function
+title: Pipeline Integration
 layout: default
 parent: Functiongraph
 grand_parent: Compute
