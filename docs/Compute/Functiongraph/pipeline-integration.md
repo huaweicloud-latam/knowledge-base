@@ -216,8 +216,10 @@ Faça login em uma máquina qualquer rodando o sistema operacional Linux e
 digite o seguinte comando, substituindo os campos “AK” e “SK” pela chave
 AK/SK gerada no item 5.1.1 deste documento.
 
+```shell
 printf "AK" | openssl dgst -binary -sha256 -hmac "SK" | od -An -vtx1 |
 sed 's/\[ \\n\]//g' | sed 'N;s/\\n//'
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image33.png)
 
@@ -233,9 +235,11 @@ la-south-2, ao passo em que o “Image repository address” é
 swr.la-south-2.myhuaweicloud.com. Segue um exemplo do comando de
 autenticação:
 
+```shell
 docker login -u la-south-2@RVHVMX\*\*\*\*\*\* -p
 cab4ceab4a1545\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
 swr.la-south-2.myhuaweicloud.com
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image34.png)
 
@@ -259,21 +263,29 @@ a lista abaixo:
     SWR. Similar a uma renomeação, o mesmo nome e tag podem ser
     mantidos.
 
+```shell
 docker tag\[Image name 1:tag 1\] \[Image repository
 address\]/\[Organization name\]/\[Image name 2:tag 2\]
+```
 
 Exemplo:
 
+```shell
 docker tag novo:1.0 swr.la-south-2.myhuaweicloud.com/adada/serase
+```
 
 Agora bata realizar o upload da imagem com o seguinte comando:
 
+```shell
 docker push \[Image repository address\]/\[Organization name\]/\[Image
 name 2:tag 2\]
+```
 
 Exemplo:
 
+```shell
 docker push swr.la-south-2.myhuaweicloud.com/adada/serase
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image35.png)
 
