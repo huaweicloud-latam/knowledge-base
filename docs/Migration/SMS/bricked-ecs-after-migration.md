@@ -10,8 +10,6 @@ grand_parent: Migration
 
 V1.0 – Julho 2024
 
-# Registro de Mudanças
-
 | **Versão**        | **Autor**                | **Descrição**        |
 | ----------------- | ------------------------ | -------------------- |
 | V1.0 – 2024-07-30 | Diogo Hatz 50037923      | Versão Inicial       |
