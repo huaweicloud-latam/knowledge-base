@@ -8,10 +8,6 @@ grand_parent: Management & Governance
 
 # User Federation with Keycloak (SAML 2.0)
 
-**IAM**
-
-Configuring User Federation with Keycloak (SAML 2.0)
-
 V1.2 – Outubro 2024
 
 | **Version**       | **Author**                     | **Description**          |
