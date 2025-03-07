@@ -66,12 +66,10 @@ vi /etc/selinux/config
 
 ```shell
 systemctl reboot
-```
 
 wget
 <https://ap-southeast-2-cloud-reset-pwd.obs.ap-southeast-2.myhuaweicloud.com/linux/64/reset_pwd_agent/CloudResetPwdAgent.zip>
 
-```shell
 unzip CloudResetPwdAgent.zip
 
 cd CloudResetPwdAgent/CloudResetPwdAgent.Linux
