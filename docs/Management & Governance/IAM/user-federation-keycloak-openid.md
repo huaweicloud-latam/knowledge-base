@@ -167,53 +167,32 @@ previamente criado na Huawei Cloud. No entanto, é obrigatório que o
 grupo “admin” seja criado previamente na Huawei Cloud com as devidas
 políticas de controle de acesso.
 
-\[
-
-{
-
-"remote": \[
-
-{
-
-"type": "username"
-
-},
-
-{
-
-"type": "Group"
-
-}
-
-\],
-
-"local": \[
-
-{
-
-"user": {
-
-"name": "{0}"
-
-}
-
-},
-
-{
-
-"group": {
-
-"name": "{1}"
-
-}
-
-}
-
-\]
-
-}
-
-\]
+```json
+[
+    {
+        "remote": [
+            {
+                    "type": "username"
+            },
+            {
+                    "type": "Group"
+            }
+        ],
+        "local": [
+            {
+                    "user": {
+                            "name": "{0}"
+                    }
+            },
+            {
+                    "group": {
+                            "name": "{1}"
+                    }
+            }
+        ]
+    }
+]
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image22.png)
 
