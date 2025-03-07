@@ -22,7 +22,7 @@ criação de imagem do OracleOS 7.9 utilizando o serviço de IMS.
 
 # Criação imagem OracleOS
     
-Faça o download da imagem ISO do Ubuntu Server (exemplo - <https://yum.oracle.com/oracle-linux-isos.html>) e faça o upload no OBS.
+Faça o download da imagem ISO do OracleOS (exemplo - <https://yum.oracle.com/oracle-linux-isos.html>) e faça o upload no OBS.
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-7.9-Image/media/image3.png)
 
