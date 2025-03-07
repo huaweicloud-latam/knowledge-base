@@ -52,6 +52,11 @@ parâmetro ”-O” corresponde ao formato em que a imagem será exportada
 ao disco que será exportado e “/mnt/vdb/test.qcow2” corresponde à imagem
 que será gerada pela ferramenta.
 
+Exemplo:
+```shell
+sudo qemu-img convert -f raw -O qcow2 /dev/vda /mnt/vdb/test.qcow2
+```
+
 Após a geração da imagem, será necessário exportar essa imagem para um
 bucket no OBS, o serviço de object storage da HWC. Para isso, uma das
 opções é a utilização da ferramenta obsutil, que permite o upload de
