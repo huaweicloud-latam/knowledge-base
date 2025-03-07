@@ -6,9 +6,9 @@ grand_parent: Management & Governance
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-V1.0 – Outubro 2024
-
 # User Federation with Keycloak (SAML 2.0)
+
+V1.0 – Outubro 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
