@@ -103,13 +103,12 @@ Após ter configurado os campos de terraform e provedor, crie algum
 recurso para realizar a validação do funcionamento da ferramenta. Abaixo
 segue um trecho de código de exemplo para criar uma VPC:
 
+```terraform
 resource "huaweicloud\_vpc" "vpc-hcso" {
-
-name = "vpc-hcso"
-
-cidr = "10.0.0.0/8"
-
+    name = "vpc-hcso"
+    cidr = "10.0.0.0/8"
 }
+```
 
 **Nota:** Segue o registry oficial do provedor Terraform da Huawei
 Cloud, compatível tanto com a nuvem pública Huawei Cloud quanto com
