@@ -52,13 +52,17 @@ Faça o download da imagem ISO do OracleOS (exemplo - <https://yum.oracle.com/or
 
 Adicione o drivers do KVM no arquivo: “/etc/dracut.conf”:
 
+```shell
 vi /etc/dracut.conf
 
 virtio\_blk virtio\_scsi virtio\_net virtio\_pci virtio\_ring virtio
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-7.9-Image/media/image11.png)
 
+```shell
 dracut -f /boot/initramfs-2.6.32-573.8.1.el6.x86\_64.img
+```
 
 Substituia “initramfs-2.6.32-573.8.1.el6.x86\_64.img” pelo initramfs
 utilizado pelo kernel atual. Para verificar o arquivo initramfs por
@@ -66,28 +70,37 @@ kernel, verifique no arquivo /boot/grub2/grub.cfg.
 
 Para verificar se os drivers foram instalados, digite o seguinte comando
 
+```shell
 lsinitrd /boot/initramfs-\`uname -r\`.img | grep virtio
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-7.9-Image/media/image12.png)
 
 ## Edite a interface de rede eth0
 
+```shell
 vi /etc/sysconfig/network-scripts/ifcfg-eth0
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-7.9-Image/media/image13.png)
 
 ## Instalar e configurar o cloud-init
 
+```shell
 yum update -y
 
 yum install cloud-init -y
+```
 
 ## Instale o plugin de troca de senha da HWC
 
+```shell
 vi /etc/selinux/config
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-7.9-Image/media/image14.png)
 
+```shell
 systemctl reboot
 
 wget
@@ -110,6 +123,7 @@ chmod 600 /CloudrResetPwdAgent/lib/\*
 systemctl start cloudResetPwdAgent
 
 systemctl enable cloudResetPwdAgent
+```
 
 ## (opcional) Troque o kernel default do Grub para o kernel que será utilizado
 
@@ -117,7 +131,9 @@ systemctl enable cloudResetPwdAgent
 
 ## (opcional) Caso algum dos kernels apresente erros para a inicialização, digite o seguinte comando
 
+```shell
 dracut --regenerate-all –force
+```
 
 ## Para a instância e criar a imagem:
 
