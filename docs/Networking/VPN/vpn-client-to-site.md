@@ -8,10 +8,6 @@ grand_parent: Networking
 
 # VPN Client to Site Startup
 
-**VPN**
-
-Client-to-Site VPN
-
 V1.0 – Setembro 2024
 
 | **Version**       | **Author**                     | **Description**      |
