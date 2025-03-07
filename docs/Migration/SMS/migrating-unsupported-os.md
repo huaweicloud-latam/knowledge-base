@@ -8,11 +8,7 @@ grand_parent: Migration
 
 # Migrating Unsupported OSs
 
-**SMS – Migração de SOs Não Suportados**
-
 V1.0 – Maio 2024
-
-# Registro de Mudanças
 
 | **Versão**        | **Autor**                | **Descrição**        |
 | ----------------- | ------------------------ | -------------------- |
