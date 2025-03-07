@@ -8,10 +8,6 @@ grand_parent: Management & Governance
 
 # Automate Resources Lifecycle
 
-**COC**
-
-Automate Resources Lifecycle
-
 V1.0 – Setembro 2024
 
 | **Version**       | **Author**                     | **Description**      |
