@@ -68,37 +68,25 @@ armazenado. Feito isso, edite o arquivo e insira ambos trechos de código
 abaixo relativos ao provedor do registry Terraform, substituindo os
 parâmetros em destaque:
 
+```terraform
 terraform {
-
-required\_providers {
-
-huaweicloud = {
-
-source = "huaweicloud/huaweicloud"
-
-version = "\>= 1.36.0"
-
-}
-
-}
-
-}
+    required\_providers {
+        huaweicloud = {
+            source = "huaweicloud/huaweicloud"
+            version = "\>= 1.36.0"
+        }
+    }
+} 
 
 provider "huaweicloud" {
-
-region = "{região}"
-
-access\_key = "{AK}"
-
-secret\_key = "{SK}"
-
-cloud = "{dominio}"
-
-auth\_url="https://iam-pub.{regiao}.{dominio}"
-
-insecure = true
-
+    region = "{região}"
+    access\_key = "{AK}"
+    secret\_key = "{SK}"
+    cloud = "{dominio}"
+    auth\_url="https://iam-pub.{regiao}.{dominio}"
+    insecure = true
 }
+```
 
   - região: região do HCSO em que os recursos serão criados;
 
