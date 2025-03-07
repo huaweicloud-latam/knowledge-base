@@ -8,10 +8,6 @@ grand_parent: Management & Governance
 
 # User Federation with Keycloak (OpenID)
 
-**IAM**
-
-Configuring User Federation with Keycloak (OpenID)
-
 V1.0 – Outubro 2024
 
 | **Version**       | **Author**                     | **Description**      |
