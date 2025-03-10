@@ -2,7 +2,7 @@
 
 TODO
 
-## How can you contribute?
+## How you can contribute
 
 TODO
 
