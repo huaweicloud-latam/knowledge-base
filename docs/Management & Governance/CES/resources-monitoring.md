@@ -114,9 +114,9 @@ no momento de criação do servidor e, posteriormente, digite o seguinte
 comando, caso a região em que o servidor se encontre seja
 **LA-Santiago**:
 
-**cd /usr/local && curl -k -O
-https://uniagent-la-south-2.obs.la-south-2.myhuaweicloud.com/script/agent\_install.sh
-&& bash agent\_install.sh**
+```shell
+cd /usr/local && curl -k -O https://uniagent-la-south-2.obs.la-south-2.myhuaweicloud.com/script/agent_install.sh && bash agent_install.sh
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image10.png)
 
@@ -368,5 +368,3 @@ botão **Export Data**.
 
   - Instalação do agente do CES em lote:
     <https://support.huaweicloud.com/intl/en-us/usermanual-ces/ces_01_0033.html>
-
-##
