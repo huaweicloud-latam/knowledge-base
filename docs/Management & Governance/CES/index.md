@@ -9,5 +9,5 @@ parent: Management & Governance
 
 Cloud Eye monitors cloud services and resources to keep you informed of any issues in real time.
 
-[Product Page](huaweicloud.com/intl/en-us/product/ces.html) &middot;
+[Product Page](https://www.huaweicloud.com/intl/en-us/product/ces.html) &middot;
 [Help Center Page](https://support.huaweicloud.com/intl/en-us/ces/)
