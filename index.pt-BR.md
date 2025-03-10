@@ -1,6 +1,7 @@
 ---
 layout: home
 lang: pt-BR
+permalink: /
 ---
 
 <!-- markdownlint-disable-next-line no-inline-html -->
