@@ -209,7 +209,7 @@ da ferramenta de migração de banco de dados Data Replication Service
 
 ## **Syncronization Task**
 
-A
+Navegue até a subseção "Data Synchronization Management" e clique em "Create Synchronization Task" para criar uma task do DRS. Preencha os campos da task conforme demonstrado abaixo:
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image29.png)
 
