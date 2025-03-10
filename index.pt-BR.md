@@ -25,7 +25,7 @@ base de conhecimento.
 - [Comparação de serviços de nuvem pública][cloud-compare] - veja como os serviços da 
   Huawei Cloud são denominados em outros provedores de nuvem
 
-For developers:
+Para desenvolvedores:
 
 - [Huawei Cloud API Explorer][api-explorer]
 - [Terraform HuaweiCloud Provider][terraform-provider]
