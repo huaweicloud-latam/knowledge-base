@@ -49,37 +49,42 @@ as modificações necessárias, siga o passo-a-passo abaixo:
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image4.png)
 
-2.  Delete o arquivo **rm -rf /etc/default/grub.d/50\***
+Delete o arquivo 
 
-3.  > Após a deleção dos arquivos, execute o comando **update-grub2**
-    > para atualizar as configurações do grub.
+```shell
+rm -rf /etc/default/grub.d/50*
+```
 
-4.  Modifique o repositório do Yum para apontar para o repositório da
-    Huawei:
-    
-    4.1 **sed -i 's/azure.archive.ubuntu.com/repo.huaweicloud.com/g'
-    /etc/apt/sources.list**
-    
-    4.2 **apt autoclean && apt update**
+Após a deleção dos arquivos, execute o seguinte comando para atualizar as configurações do grub.
 
-5.  Instale o kernel público do Ubuntu: **apt install
-    linux-image-generic**
+```shell
+update-grub2
+```
 
-6.  > Após a instalação ser concluída, reinicie a ECS e selecione o
-    > kernel genérico na tela do grub. **Obs:** É possível modificar o
-    > parâmetro GRUB\_DEFAULT para apontar para o kernel genérico ao
-    > invés de manualmente selecionar o kernel genérico ao bootar a
-    > ECS.
+Modifique o repositório do Yum para apontar para o repositório da Huawei:
+
+```shell
+sed -i 's/azure.archive.ubuntu.com/repo.huaweicloud.com/g' /etc/apt/sources.list
+apt autoclean && apt update
+```
+
+Instale o kernel público do Ubuntu: 
+
+```shell
+apt install linux-image-generic
+```
+
+Após a instalação ser concluída, reinicie a ECS e selecione o kernel genérico na tela do grub. **Obs:** É possível modificar o parâmetro **GRUB_DEFAULT** para apontar para o kernel genérico ao invés de manualmente selecionar o kernel genérico ao bootar a ECS.
 
 # Configurações Opcionais
 
-Além das configurações realizadas acima, também é recomendado que o
-agente da Azure, que é instalado por padrão em VMs da Azure, seja
-desinstalado, uma vez que o agente reporta logs para o console da VNC
-constantemente, o que pode afetar a performance do VNC:
+Além das configurações realizadas acima, também é recomendado que o agente da Azure, que é instalado por padrão em VMs da Azure, seja desinstalado, uma vez que o agente reporta logs para o console da VNC constantemente, o que pode afetar a performance do VNC:
 
-7.  > Digite o seguinte comando para desinstalar o agente da Azure:
-    > **sudo apt -y remove walinuxagent**
+Digite o seguinte comando para desinstalar o agente da Azure: 
+
+```shell
+sudo apt -y remove walinuxagent
+```
 
 # Referências
 
