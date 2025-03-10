@@ -16,5 +16,8 @@ favicon_ico: "/assets/images/huawei-logo.png"
 
 color_scheme: huawei
 
+plugins:
+  - jekyll-polyglot
+
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
