@@ -1,6 +1,6 @@
 ---
 title: Image Management Service (IMS)
-parent: Compute
+parent: Computação
 lang: pt-BR
 permalink: /docs/Compute/IMS
 ---
