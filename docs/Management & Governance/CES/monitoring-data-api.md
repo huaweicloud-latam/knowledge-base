@@ -104,36 +104,28 @@ possível ver quais parâmetros colocar nos campos abaixo:
 
   - **period:** Possíveis valores: 1, 300, 1200, 3600, 14400 ou 86400:
 
-<!-- end list -->
-
-  - **1:** Não é feita agregação, os dados são mostrados em formato
+    - **1:** Não é feita agregação, os dados são mostrados em formato
     bruto;
 
-  - **300:** A agregação dos dados é feita a cada 5 minutos;
+    - **300:** A agregação dos dados é feita a cada 5 minutos;
 
-  - **1200:** A agregação dos dados é feita a cada 20 minutos;
+    - **1200:** A agregação dos dados é feita a cada 20 minutos;
 
-  - **3600:** A agregação dos dados é feita a cada 60 minutos;
+    - **3600:** A agregação dos dados é feita a cada 60 minutos;
 
-  - **14400:** A agregação dos dados é feita a cada 4 horas;
+    - **14400:** A agregação dos dados é feita a cada 4 horas;
 
-  - **86400:** A agregação dos dados é feita a cada 24 horas.
-
-<!-- end list -->
+    - **86400:** A agregação dos dados é feita a cada 24 horas.
 
   - **filter:** Possíveis valores: max, min, average, sum ou variance.
 
-<!-- end list -->
+    - **Max:** Retorna os valores máximos dos dados;
 
-  - **Max:** Retorna os valores máximos dos dados;
+    - **Min:** Retorna os valores mínimos dos dados;
 
-  - **Min:** Retorna os valores mínimos dos dados;
+    - **Average:** Retorna uma média dos dados;
 
-  - **Average:** Retorna uma média dos dados;
-
-  - **Variance:** Retorna a variância dos dados.
-
-<!-- end list -->
+    - **Variance:** Retorna a variância dos dados.
 
   - **from:** O período de início da busca. Este parâmetro de tempo
     adota a unidade **UNIX** de tempo em **milissegundos**. Um conversor
