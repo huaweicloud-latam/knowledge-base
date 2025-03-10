@@ -7,5 +7,5 @@ gem "just-the-docs", "0.10.1" # pinned to the current release
 # gem "just-the-docs"        # always download the latest release
 
 group :jekyll_plugins do
-   gem "jekyll-polyglot", "~> 1.8.1"
+   gem "jekyll-polyglot", "~> 1.9.0"
 end
