@@ -2,6 +2,7 @@
 title: Home
 layout: home
 nav_order: 1
+permalink: /
 ---
 
 <!-- markdownlint-disable-next-line no-inline-html -->
