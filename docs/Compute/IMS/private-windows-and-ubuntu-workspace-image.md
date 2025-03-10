@@ -24,15 +24,15 @@ utilizadas no serviço de Workspace da Huawei Cloud.
 
 # Criação imagem Windows 10
     
-    1.  Faço o download da imagem ISO do Windows 10 no site da Microsoft.
+1.  Faço o download da imagem ISO do Windows 10 no site da Microsoft.
     
-    2.  Faça o download dos pacotes conforme apresentado no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0507.html>) e adicione em um bucket para facilitar a transferência para a máquina no momento da instalação. 
+2.  Faça o download dos pacotes conforme apresentado no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0507.html>) e adicione em um bucket para facilitar a transferência para a máquina no momento da instalação. 
     
-    3.  Depois de baixar a imagem ISO do Windows 10 e todos os pacotes realize o procedimento do link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0508.html>) para adicionar drivers no arquivo ISO. 
+3.  Depois de baixar a imagem ISO do Windows 10 e todos os pacotes realize o procedimento do link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0508.html>) para adicionar drivers no arquivo ISO. 
     
-    4.  Inicie a instalação e configure o driver conforme o demonstrado no link (<https://support.huaweicloud.com/intl/en-us/usermanual-ims/en-us_topic_0146474784.html>).
+4.  Inicie a instalação e configure o driver conforme o demonstrado no link (<https://support.huaweicloud.com/intl/en-us/usermanual-ims/en-us_topic_0146474784.html>).
     
-    5.  Acesse o CD abra a pasta vmtools que foi adicionada na ISO e instale o vmtools.
+5.  Acesse o CD abra a pasta vmtools que foi adicionada na ISO e instale o vmtools.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image3.png)
 
@@ -44,7 +44,7 @@ utilizadas no serviço de Workspace da Huawei Cloud.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image7.png)
 
-Ative o usuário Administrator clicando com botão direto do mouse no botão iniciar, acessando opção “Computer Management”, acesse a opção “Local User...”, depois “User”, clique com botão direito no usuário Administrator, propriedades e depois desmarque a opção de desabilitar o usuário. Repita o procedimento para acessar o usuário e configure uma senha para o usuário. Faço logoff com usuário atual e o login com o usuário Administrator.
+### Ative o usuário Administrator clicando com botão direto do mouse no botão iniciar, acessando opção “Computer Management”, acesse a opção “Local User...”, depois “User”, clique com botão direito no usuário Administrator, propriedades e depois desmarque a opção de desabilitar o usuário. Repita o procedimento para acessar o usuário e configure uma senha para o usuário. Faço logoff com usuário atual e o login com o usuário Administrator.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image8.png)
 
@@ -52,7 +52,7 @@ Ative o usuário Administrator clicando com botão direto do mouse no botão ini
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image10.png)
 
-Efetue os ajuste indicados no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) **até o item 56**.
+### Efetue os ajuste indicados no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) **até o item 56**.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image11.png)
 
@@ -78,17 +78,17 @@ Efetue a instalação dos softwares indicados no link (<https://support.huaweicl
 
 ### Quando inicializar o acesso do Administrator estará indisponível, login com usuário criado na instalação e set uma nova senha para o Administrator, faça o login com Administrator para o procedimento ser finalizado.
 
-Com todos os ajustes da instância realizados, agora utilizamos a ECS para criação da imagem, basta parar a ECS e na opção more selecionar “Manage Image” e depois Create Image.
+### Com todos os ajustes da instância realizados, agora utilizamos a ECS para criação da imagem, basta parar a ECS e na opção more selecionar “Manage Image” e depois Create Image.
 
 ### ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image15.png)
 
-## Com a imagem criada e aparecendo no serviço de IMS já está disponível para ser utilizada no serviço do Workspace.
+### Com a imagem criada e aparecendo no serviço de IMS já está disponível para ser utilizada no serviço do Workspace.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image16.png)
 
 # Criação imagem Ubuntu
     
-Faça o download da imagem ISO do Ubuntu Desktop (são suportados no momento do documento as versões 18.04.5-desktop-amd64 ou ubuntu-20.04.5.0-desktop-amd64 - <https://mu.releases.ubuntu.com/20.04.5/> - <https://old-releases.ubuntu.com/releases/18.04.5/>) e faça o upload no OBS.
+### Faça o download da imagem ISO do Ubuntu Desktop (são suportados no momento do documento as versões 18.04.5-desktop-amd64 ou ubuntu-20.04.5.0-desktop-amd64 - <https://mu.releases.ubuntu.com/20.04.5/> - <https://old-releases.ubuntu.com/releases/18.04.5/>) e faça o upload no OBS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image17.png)
 
@@ -170,7 +170,7 @@ apt install cloud-init -y
 nano /etc/cloud/cloud.cfg
 ```
 
-Altere o parâmetro disable\_root para false, adicione as linhas no final
+### Altere o parâmetro disable\_root para false, adicione as linhas no final
 do arquivo, ajuste os módulos config comentando a linha “locale”, na
 lista de módulos de inicialização coloque o ssh como primeiro item :
 
@@ -193,7 +193,7 @@ network:
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image31.png)
 
-##  Verifique o cloud-init, caso apresente algum erro tente reiniciar a instância e execute o comando novamente:
+###  Verifique o cloud-init, caso apresente algum erro tente reiniciar a instância e execute o comando novamente:
 
 ```shell
 sudo cloud-init init --local
@@ -203,7 +203,7 @@ sudo cloud-init init --local
 
 ##  Instalar KVM
 
-Adicione o drivers do virtio no arquivo: “/etc/initramfs-tools/modules”:
+### Adicione o drivers do virtio no arquivo: “/etc/initramfs-tools/modules”:
 
 ```shell
 nano /etc/initramfs-tools/modules
