@@ -1,6 +1,6 @@
 ---
 title: Elastic Cloud Server (ECS)
-parent: Compute
+parent: Computação
 lang: pt-BR
 permalink: /docs/Compute/ECS
 ---
