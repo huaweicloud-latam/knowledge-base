@@ -1,7 +1,7 @@
 ---
 title: Creating a Private OracleOS 9.4 Image
 layout: default
-parent: Elastic Cloud Server (ECS)
+parent: Image Management Service (IMS)
 grand_parent: Compute
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
