@@ -1,6 +1,7 @@
 ---
 title: Elastic Cloud Server (ECS)
 parent: Compute
+permalink: /docs/Compute/ECS
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Compute/ECS.png" width="80" height="80" alt="Elastic Cloud Server (ECS)">
