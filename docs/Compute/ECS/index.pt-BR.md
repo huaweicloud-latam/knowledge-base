@@ -12,5 +12,5 @@ permalink: /docs/Compute/ECS
 Servidores em nuvem virtuais que fornecem recursos de computação confiáveis e dimensionáveis para suas aplicações.
 
 [Página do Produto](https://www.huaweicloud.com/intl/pt-br/product/ecs.html) &middot;
-[Página do Centro de Ajuda](https://support.huaweicloud.com/intl/pt-br/ecs/index.html)
+[Central de Ajuda](https://support.huaweicloud.com/intl/pt-br/ecs/index.html)
 
