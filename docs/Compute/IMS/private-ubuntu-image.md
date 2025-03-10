@@ -21,9 +21,9 @@ V1.0 – Novembro 2023
 Este documento objetiva apresentar os procedimentos necessários para
 criação de imagem do Ubuntu 20.04 com UEFI utilizando o serviço de IMS.
 
-1.  # Criação imagem Ubuntu
+# Criação imagem Ubuntu
     
-    1.  ## Faça o download da imagem ISO do Ubuntu Server (exemplo - <https://releases.ubuntu.com/focal/>) e faça o upload no OBS.
+## Faça o download da imagem ISO do Ubuntu Server (exemplo - <https://releases.ubuntu.com/focal/>) e faça o upload no OBS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image3.png)
 
