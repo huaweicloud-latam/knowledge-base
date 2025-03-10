@@ -1,6 +1,6 @@
 ---
 title: Functiongraph
-parent: Compute
+parent: Computação
 lang: pt-BR
 permalink: /docs/Compute/Functiongraph
 ---
