@@ -215,4 +215,3 @@ estruturar a requisição, o endpoint do request, a autenticação, etc.
   - Cloud Eye API:
     <https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0002.html>
 
-##
