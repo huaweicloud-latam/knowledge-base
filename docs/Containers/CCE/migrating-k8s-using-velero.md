@@ -21,9 +21,9 @@ implementar uma aplicação com ngix e wordpress no cluster, depois das
 aplicações serem testadas, realizar backup e restore do ambiente
 utilizando velero.
 
-1.  # Criação cluster
+# Criação cluster
     
-    1.  ## Para iniciar acessamos o serviço do CCE e criamos o cluster conforme apresentado nas imagens abaixo (para esses teste o cluster de origem foi criado na região de Santiago e o cluster de destino na região de São Paulo):
+Para iniciar acessamos o serviço do CCE e criamos o cluster conforme apresentado nas imagens abaixo (para esses teste o cluster de origem foi criado na região de Santiago e o cluster de destino na região de São Paulo):
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-K8S-Using-Velero/media/image3.png)
 
@@ -127,9 +127,10 @@ velero backup describe backup20231129
 
 # Restore backup do Velero
 
-```shel
+```shell
 velero backup get
 velero restore create --from-backup=backup20231129
 velero restore describe backup20231129-2376345178
 ```
+
 
