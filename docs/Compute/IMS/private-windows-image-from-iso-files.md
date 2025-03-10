@@ -1,12 +1,12 @@
 ---
-title: Private Windows Image from ISO Files
+title: Creating a Private Windows Image
 layout: default
 parent: Image Management Service (IMS)
 grand_parent: Compute
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Private Windows Image from ISO Files
+# Creating a Private Windows Image
 
 V1.0 – January 2024
 
