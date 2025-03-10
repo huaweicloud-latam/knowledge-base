@@ -2,6 +2,7 @@
 title: Home
 layout: home
 nav_order: 1
+lang: pt-BR
 ---
 
 <!-- markdownlint-disable-next-line no-inline-html -->
