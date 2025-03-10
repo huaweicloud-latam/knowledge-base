@@ -1,6 +1,7 @@
 ---
 title: Functiongraph
 parent: Compute
+permalink: /docs/Compute/Functiongraph
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Compute/FunctionGraph.png" width="80" height="80" alt="Functiongraph">
