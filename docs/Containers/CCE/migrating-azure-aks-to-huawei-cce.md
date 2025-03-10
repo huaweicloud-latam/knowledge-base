@@ -273,22 +273,23 @@ CIDR 192.168.0.0/16 será utilizada.
 
 > ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image35.png)
 
-6.  wget
-    <https://github.com/vmware-tanzu/velero/releases/download/v1.9.1/velero-v1.9.1-linux-amd64.tar.gz>
-    
-    tar -xvf velero-v1.7.0-linux-amd64.tar.gz
-    
-    cd velero-v1.9.1-linux-amd64/ && sudo chmod +x velero && sudo mv
-    velero /usr/local/bin
+6. Execute os seguintes comandos:
 
-7.  Crie o arquivo de acesso **credentials-velero** para o armazenamento
+```shell
+wget https://github.com/vmware-tanzu/velero/releases/download/v1.9.1/velero-v1.9.1-linux-amd64.tar.gz
+tar -xvf velero-v1.7.0-linux-amd64.tar.gz
+cd velero-v1.9.1-linux-amd64/ && sudo chmod +x velero && sudo mv velero /usr/local/bin
+```
+
+9.  Crie o arquivo de acesso **credentials-velero** para o armazenamento
     de objetos de backup.
     
-    vim credentials-velero
-    
-    tar -xvf velero-v1.7.0-linux-amd64.tar.gz
+```shell
+vim credentials-velero
+tar -xvf velero-v1.7.0-linux-amd64.tar.gz
+```
 
-8.  Configure as variáveis para o arquivo credentials-velero.
+10.  Configure as variáveis para o arquivo credentials-velero.
     Especifique todos os dados especificados abaixo:
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image36.png)
@@ -307,8 +308,10 @@ CIDR 192.168.0.0/16 será utilizada.
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image38.png)
 
 11. Verifique a instalação do Velero com o kubectl.
-    
-    kubectl get pod -n velero
+
+```shell
+kubectl get pod -n velero
+```
 
 > ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image39.png)
 
