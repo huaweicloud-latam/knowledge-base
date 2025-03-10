@@ -1,12 +1,12 @@
 ---
-title: Creating a Private Ubuntu Image Booted as UEFI
+title: Creating a Private Ubuntu Image
 layout: default
 parent: Image Management Service (IMS)
 grand_parent: Compute
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Creating a Private Ubuntu Image Booted as UEFI
+# Creating a Private Ubuntu Image
 
 V1.0 – Novembro 2023
 
