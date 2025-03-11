@@ -11,6 +11,6 @@ permalink: /docs/Containers/CCE
 
 Um serviço de Kubernetes totalmente hospedado que permite criar, executar e escalar aplicações conteinerizadas.
 
-[Product Page](https://www.huaweicloud.com/intl/pt-br/product/cce.html) &middot;
-[Help Center Page](https://support.huaweicloud.com/intl/pt-br/qs-cce/cce_qs_0001.html)
+[Página do Produto](https://www.huaweicloud.com/intl/pt-br/product/cce.html) &middot;
+[Central de Ajuda](https://support.huaweicloud.com/intl/pt-br/qs-cce/cce_qs_0001.html)
 
