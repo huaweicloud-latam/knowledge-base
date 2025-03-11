@@ -1,6 +1,7 @@
 ---
 title: Server Migration Service (SMS)
 parent: Migration
+permalink: /docs/Migration/SMS
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Migration/SMS.png" width="80" height="80" alt="Server Migration Service (SMS)">
