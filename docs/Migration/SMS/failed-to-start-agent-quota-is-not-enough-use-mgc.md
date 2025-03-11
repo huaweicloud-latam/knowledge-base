@@ -1,12 +1,13 @@
 ---
-title: Failed to start agent，error：Current quota is not enough, please use MgC.
+title: Failed to start agent，error：Current quota is not enough, please use MgC
 layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migration
+permalink: /docs/Migration/SMS/Failed to start agent，error：Current quota is not enough, please use MgC
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Failed to start agent，error：Current quota is not enough, please use MgC.
+# Failed to start agent，error：Current quota is not enough, please use MgC
 
 Reason：
 
@@ -25,7 +26,6 @@ C:\\SMS-Agent-Py2\\config.
 
 Then open the file as shown in the picture：g-property.cfg
 
- 
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/media/image2.png)
 
@@ -35,11 +35,9 @@ before:![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/m
 
 after:![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/media/image4.png)
 
- 
 
 Finally, restart the agent.
 
- 
 
 2、The operating system is Linux.
 
