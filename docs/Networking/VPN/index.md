@@ -1,6 +1,7 @@
 ---
 title: Virtual Private Network (VPN)
 parent: Networking
+permalink: /docs/Networking/VPN
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Networking/VPN.png" width="80" height="80" alt="Virtual Private Network (VPN)">
