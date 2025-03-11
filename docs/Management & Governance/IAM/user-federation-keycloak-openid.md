@@ -3,12 +3,13 @@ title: User Federation with Keycloak (OpenID)
 layout: default
 parent: Identity and Access Management (IAM)
 grand_parent: Management & Governance
+permalink: /docs/Management & Governance/IAM/User Federation with Keycloak OpenID
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # User Federation with Keycloak (OpenID)
 
-V1.0 – Outubro 2024
+V1.0 – October 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
