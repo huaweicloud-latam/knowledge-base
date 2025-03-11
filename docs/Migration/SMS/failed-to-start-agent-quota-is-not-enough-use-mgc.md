@@ -7,7 +7,7 @@ permalink: /docs/Migration/SMS/Failed to start agent，error：Current quota is 
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Failed to start agent，error：Current quota is not enough, please use MgC
+# Failed to start agent, error: Current quota is not enough, please use MgC
 
 V1.0 – May 2024
 
