@@ -2,7 +2,7 @@
 title: Federação de Usuários com Keycloak (SAML 2.0)
 layout: default
 parent: IAM Identity Center (IIC)
-grand_parent: Management & Governance
+grand_parent: Gerenciamento e Governança
 lang: pt-BR
 permalink: /docs/Management & Governance/IIC/User Federation with Keycloak SAML 20
 ---
