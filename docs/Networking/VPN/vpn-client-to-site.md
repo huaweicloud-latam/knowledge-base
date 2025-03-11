@@ -3,6 +3,7 @@ title: VPN Client to Site Startup
 layout: default
 parent: Virtual Private Network (VPN)
 grand_parent: Networking
+permalink: /docs/Redes/VPN/VPN Client to Site Startup
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
