@@ -1,6 +1,6 @@
 ---
 title: Identity and Access Management (IAM)
-parent: Management & Governance
+parent: Gerenciamento e Governança
 lang: pt-BR
 permalink: /docs/Management & Governance
 ---
