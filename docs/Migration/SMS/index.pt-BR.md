@@ -1,6 +1,6 @@
 ---
 title: Server Migration Service (SMS)
-parent: Migration
+parent: Migração
 lang: pt-BR
 permalink: /docs/Migration/SMS
 ---
