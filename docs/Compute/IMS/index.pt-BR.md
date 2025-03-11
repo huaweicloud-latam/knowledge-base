@@ -9,7 +9,7 @@ permalink: /docs/Compute/IMS
 
 # Image Management Service (IMS)
 
-Crie e gerencie servidores e discos em nuvem com facilidade.
+Crie e gerencie imagens de disco e servidores em nuvem facilmente.
 
 [Página do Produto](https://www.huaweicloud.com/intl/pt-br/product/ims.html) &middot;
 [Central de Ajuda](https://support.huaweicloud.com/intl/pt-br/ims/index.html)
