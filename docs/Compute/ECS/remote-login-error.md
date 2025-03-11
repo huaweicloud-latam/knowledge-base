@@ -3,14 +3,15 @@ title: Remote Login Bricked Error
 layout: default
 parent: Elastic Cloud Server (ECS)
 grand_parent: Compute
+permalink: /docs/Compute/ECS/Remote Login Bricked Error
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # Remote Login Bricked Error
 
-V1.0 – Março 2024
+V1.0 – March 2024
 
-| **Versão**        | **Autor**                | **Descrição**                        |
+| **Version**       | **Author**              | **Description**                    |
 | ----------------- | ------------------------ | ------------------------------------ |
 | V1.0 – 2024-03-13 | Yangqiang 1153592        | Versão Inicial em Chinês             |
 | V1.0 – 2024-03-13 | Gaowei 1074902           | Tradução do Documento para Inglês    |
