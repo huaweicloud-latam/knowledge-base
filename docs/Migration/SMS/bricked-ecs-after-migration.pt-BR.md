@@ -3,7 +3,7 @@ title: ECS Travada Após Migração
 layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migração
-lang: pt-br
+lang: pt-BR
 permalink: /docs/Migration/SMS/Bricked ECS After Migration Troubleshooting
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
