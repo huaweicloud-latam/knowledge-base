@@ -10,6 +10,13 @@ permalink: /docs/Migration/SMS/Failed to start agent，error：Current quota is 
 
 # Falha ao iniciar o agente, erro: Current quota is not enough, please use MgC
 
+V1.0 – Maio 2024
+
+| **Versão**        | **Autor**             | **Descrição**        |
+| ----------------- | --------------------- | -------------------- |
+| V1.0 – 2024-05-21 | Diogo Hatz 50037923   | Tradução do Documento|
+| V1.0 – 2024-05-22 | Wisley Paulo 00830850 | Revisão do Documento |
+
 Motivo:
 
 > Esta mensagem é exibida porque o número de servidores de origem
