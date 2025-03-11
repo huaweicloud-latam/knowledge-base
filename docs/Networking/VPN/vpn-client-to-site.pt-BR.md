@@ -12,7 +12,7 @@ lang: pt-BR
 
 V1.0 – Setembro 2024
 
-| **Version**       | **Author**                     | **Description**      |
+| **Versão**        | **Autor**                      | **Descrição**        |
 | ----------------- | ------------------------------ | -------------------- |
 | V1.0 – 2024-09-10 | Diogo Hatz d50037923           | Versão Inicial       |
 | V1.0 – 2024-09-10 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
