@@ -1,7 +1,7 @@
 ---
-title: Databases
+title: Bancos de Dados
 lang: pt-BR
 permalink: /docs/Databases
 ---
 
-# Databases
+# Bancos de Dados
