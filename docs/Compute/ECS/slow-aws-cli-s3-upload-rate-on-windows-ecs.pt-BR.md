@@ -10,6 +10,13 @@ permalink: /docs/Compute/ECS/Slow AWS CLI S3 Upload Rate on Windows ECSs
 
 # Velocidade de Upload Baixa no AWS CLI S3 em ECSs Windows
 
+V1.0 – Agosto 2024
+
+| **Versão**        | **Autor**             | **Descrição**        |
+| ----------------- | --------------------- | -------------------- |
+| V1.0 – 2024-08-09 | Diogo Hatz 50037923   | Tradução do Documento|
+| V1.0 – 2024-08-10 | Wisley Paulo 00830850 | Revisão do Documento |
+
 # Sintoma
 
 A velocidade de upload do S3 AWS CLI ficará travada em 9 MiB/s, independentemente
