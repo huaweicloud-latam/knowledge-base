@@ -3,14 +3,15 @@ title: Migrating Servers with Huge Disks
 layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migration
+permalink: /docs/Migration/SMS/Migrating Servers with Huge Disks
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # Migrating Servers with Huge Disks
 
-V1.0 – Maio 2024
+V1.0 – May 2024
 
-| **Versão**        | **Autor**                | **Descrição**        |
+| **Version**       | **Author**               | **Description**      |
 | ----------------- | ------------------------ | -------------------- |
 | V1.0 – 2024-05-07 | Diogo Hatz 50037923      | Versão Inicial       |
 | V1.0 – 2024-05-07 | Wisley da Silva 00830850 | Revisão do Documento |
