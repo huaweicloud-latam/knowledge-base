@@ -3,12 +3,13 @@ title: OBS-triggered Functions
 layout: default
 parent: Functiongraph
 grand_parent: Compute
+permalink: /docs/Compute/Functiongraph/OBS-triggered Functions
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # OBS-triggered Functions
 
-V1.0 – Julho 2024
+V1.0 – July 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
