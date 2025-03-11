@@ -1,6 +1,7 @@
 ---
 title: Database and Application Migration (UGO)
 parent: Databases
+permalink: /docs/Databases/UGO
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Databases/UGO.png" width="80" height="80" alt="Database and Application Migration (UGO)">
