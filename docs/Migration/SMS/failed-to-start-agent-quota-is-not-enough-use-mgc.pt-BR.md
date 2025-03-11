@@ -25,7 +25,7 @@ Motivo:
 
 Solução:
 
-1、O sistema operacional é o Windows.
+1. O sistema operacional é o Windows.
 
 Você pode ir para o seguinte diretório: C:\\SMS-Agent-Py3\\config   ou
 C:\\SMS-Agent-Py2\\config.
@@ -44,7 +44,7 @@ depois:![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/m
 
 Finalmente, reinicie o agente.
 
-2、O sistema operacional é Linux.
+2. O sistema operacional é Linux.
 
 Você pode abrir o arquivo :SMS-Agent/agent/config/g-property.cfg
 
@@ -54,4 +54,4 @@ Então altere 'start\_type = MANUAL' para 'start\_type = MGC' no arquivo.
 
 
 
-Finalmente, reinicie o agente.
+Por último, reinicie o agente.
