@@ -3,14 +3,15 @@ title: Migrating Unsupported OSs
 layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migration
+permalink: /docs/Migration/SMS/Migrating Unsupported OSs
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # Migrating Unsupported OSs
 
-V1.0 – Maio 2024
+V1.0 – May 2024
 
-| **Versão**        | **Autor**                | **Descrição**        |
+| **Version**       | **Author**              | **Description**    |
 | ----------------- | ------------------------ | -------------------- |
 | V1.0 – 2024-05-17 | Diogo Hatz 50037923      | Versão Inicial       |
 | V1.0 – 2024-05-17 | Wisley da Silva 00830850 | Revisão do Documento |
