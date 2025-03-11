@@ -11,4 +11,4 @@ permalink: /docs/Management & Governance/IIC
 
 IAM Identity Center ajuda você a gerenciar centralmente identidades e seu acesso em todas as contas. Você pode criar identidades para toda a sua empresa de uma só vez e dar a elas acesso de logon único (SSO) com permissões gerenciadas.
 
-[Help Center Page](https://support.huaweicloud.com/intl/pt-br/identitycenter/index.html)
+[Central de Ajuda](https://support.huaweicloud.com/intl/pt-br/identitycenter/index.html)
