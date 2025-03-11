@@ -1,5 +1,5 @@
 ---
-title: Terraform Startup
+title: Iniciando com Terraform
 layout: default
 parent: Huawei Cloud Stack Online (HCSO)
 grand_parent: Huawei Cloud Stack
@@ -8,7 +8,7 @@ permalink: /docs/Huawei Cloud Stack/HCSO/Terraform Startup
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Terraform Startup
+# Iniciando com Terraform
 
 V1.0 – Novembro 2024
 
