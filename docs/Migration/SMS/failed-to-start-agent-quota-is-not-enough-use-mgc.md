@@ -24,7 +24,7 @@ Reason：
 
 Solution：
 
-1、The operating system is Windows.
+1. The operating system is Windows.
 
 You can go to the following directory:C:\\SMS-Agent-Py3\\config   or  
 C:\\SMS-Agent-Py2\\config.
@@ -46,7 +46,7 @@ after:![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/me
 Finally, restart the agent.
 
 
-2、The operating system is Linux.
+2. The operating system is Linux.
 
 You can open the file :SMS-Agent/agent/config/g-property.cfg
 
