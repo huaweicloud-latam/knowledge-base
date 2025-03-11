@@ -1,5 +1,5 @@
 ---
-title: Falha ao iniciar o agente, erro: Current quota is not enough, please use MgC
+title: Falha ao iniciar o agente, erro：Current quota is not enough, please use MgC
 layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migração
@@ -8,7 +8,7 @@ permalink: /docs/Migration/SMS/Failed to start agent，error：Current quota is 
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Falha ao iniciar o agente, erro: Current quota is not enough, please use MgC
+# Falha ao iniciar o agente, erro：Current quota is not enough, please use MgC
 
 Motivo:
 
