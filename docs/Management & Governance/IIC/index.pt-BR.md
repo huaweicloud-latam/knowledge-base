@@ -1,6 +1,6 @@
 ---
 title: IAM Identity Center (IIC)
-parent: Management & Governance
+parent: Gerenciamento e Governança
 lang: pt-BR
 permalink: /docs/Management & Governance/IIC
 ---
