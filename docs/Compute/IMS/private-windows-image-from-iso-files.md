@@ -3,6 +3,7 @@ title: Creating a Private Windows Image
 layout: default
 parent: Image Management Service (IMS)
 grand_parent: Compute
+permalink: /docs/Compute/IMS/Creating a Private Windows Image
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -10,7 +11,7 @@ grand_parent: Compute
 
 V1.0 – January 2024
 
-| **Versão**        | **Autor**             | **Descrição**        |
+| **Version**       | **Author**            | **Description**      |
 | ----------------- | --------------------- | -------------------- |
 | V1.0 – 2024-01-02 | Diogo Hatz 50037923   | Versão Inicial       |
 | V1.0 – 2024-01-02 | Wisley Paulo 00830850 | Revisão do Documento |
