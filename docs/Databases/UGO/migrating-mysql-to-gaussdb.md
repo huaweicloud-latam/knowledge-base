@@ -3,14 +3,15 @@ title: Migrating MySQL to GaussDB
 layout: default
 parent: Database and Application Migration (UGO)
 grand_parent: Databases
+permalink: /docs/Databases/UGO/Migrating MySQL to GaussDB
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # Migrating MySQL to GaussDB
 
-V1.0 – Abril 2024
+V1.0 – April 2024
 
-| **Versão**        | **Autor**                | **Descrição**        |
+| **Version**       | **Author**               | **Description**      |
 | ----------------- | ------------------------ | -------------------- |
 | V1.0 – 2024-04-23 | Diogo Hatz 50037923      | Versão Inicial       |
 | V1.0 – 2024-04-24 | Wisley da Silva 00830850 | Revisão do Documento |
