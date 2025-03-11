@@ -2,7 +2,7 @@
 title: Funções Ativadas pelo OBS
 layout: default
 parent: Functiongraph
-grand_parent: Compute
+grand_parent: Computação
 lang: pt-BR
 permalink: /docs/Compute/Functiongraph/OBS-triggered Functions
 ---
