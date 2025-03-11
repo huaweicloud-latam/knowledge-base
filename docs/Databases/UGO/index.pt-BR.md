@@ -11,6 +11,6 @@ permalink: /docs/Databases/UGO
 
 Database and Application Migration UGO (UGO) avalia o seu banco de dados, migra objetos e converte automaticamente a sintaxe. UGO é uma ferramenta simples e com bom custo-benefício para migrar bancos de dados.
 
-[Product Page](https://www.huaweicloud.com/intl/pt-br/product/ugo.html) &middot;
-[Help Center Page](https://support.huaweicloud.com/intl/pt-br/ugo/index.html)
+[Página do Produto](https://www.huaweicloud.com/intl/pt-br/product/ugo.html) &middot;
+[Central de Ajuda](https://support.huaweicloud.com/intl/pt-br/ugo/index.html)
 
