@@ -9,7 +9,7 @@ permalink: /docs/Compute/ECS
 
 # Elastic Cloud Server (ECS)
 
-Servidores em nuvem virtuais que fornecem recursos de computação confiáveis e dimensionáveis para suas aplicações.
+Fornece recursos computacionais seguros, escaláveis e sob demanda, possibilitando que você implemente aplicações e cargas de trabalho de forma flexível.
 
 [Página do Produto](https://www.huaweicloud.com/intl/pt-br/product/ecs.html) &middot;
 [Central de Ajuda](https://support.huaweicloud.com/intl/pt-br/ecs/index.html)
