@@ -3,7 +3,7 @@ title: Descoberta de Recursos
 layout: default
 parent: Migration Center (MgC)
 grand_parent: Migração
-lang: pt-br
+lang: pt-BR
 permalink: /docs/Migration/MgC/Resources Discovery
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
