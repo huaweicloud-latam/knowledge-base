@@ -3,14 +3,15 @@ title: Bricked ECS After Migration Troubleshooting
 layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migration
+permalink: /docs/Migration/SMS/Bricked ECS After Migration Troubleshooting
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # Bricked ECS After Migration Troubleshooting
 
-V1.0 – Julho 2024
+V1.0 – July 2024
 
-| **Versão**        | **Autor**                | **Descrição**        |
+| **Version**       | **Author**              | **Description**    |
 | ----------------- | ------------------------ | -------------------- |
 | V1.0 – 2024-07-30 | Diogo Hatz 50037923      | Versão Inicial       |
 | V1.0 – 2024-07-30 | Wisley da Silva 00830850 | Revisão do Documento |
