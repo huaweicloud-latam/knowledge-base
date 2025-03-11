@@ -3,14 +3,15 @@ title: Creating and Managing Alarms
 layout: default
 parent: Cloud Eye Service (CES)
 grand_parent: Management & Governance
+permalink: /docs/Management & Governance/CES/Creating and Managing Alarms
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # Creating and Managing Alarms
 
-V1.1 – dezembro 2023
+V1.1 – December 2023
 
-| **Versão**        | **Autor**                | **Descrição**        |
+| **Version**       | **Author**               | **Description**      |
 | ----------------- | ------------------------ | -------------------- |
 | V1.0 – 2023-12-20 | Diogo Hatz 50037923      | Versão Inicial       |
 | V1.0 – 2023-12-21 | Wisley da Silva 00830850 | Revisão do Documento |
