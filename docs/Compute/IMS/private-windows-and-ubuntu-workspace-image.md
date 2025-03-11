@@ -3,12 +3,13 @@ title: Creating a Private Windows 10 and Ubuntu Workspace Image
 layout: default
 parent: Image Management Service (IMS)
 grand_parent: Compute
+permalink: /docs/Compute/IMS/Creating a Private Windows 10 and Ubuntu Workspace Image
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # Creating a Private Windows 10 and Ubuntu Workspace Image
 
-V1.0 – Novembro 2023
+V1.0 – November 2023
 
 | **Version**       | **Author**                     | **Description** |
 | ----------------- | ------------------------------ | --------------- |
