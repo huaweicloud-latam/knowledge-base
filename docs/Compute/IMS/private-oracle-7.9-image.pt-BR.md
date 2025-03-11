@@ -12,7 +12,7 @@ permalink: /docs/Compute/IMS/Creating a Private OracleOS 7.9 Image
 
 V1.0 – Junho 2024
 
-| **Version**       | **Author**                     | **Description**      |
+| **Versão**        | **Autor**                      | **Descrição**        |
 | ----------------- | ------------------------------ | -------------------- |
 | V1.0 – 2024-06-06 | Diogo Hatz d50037923           | Versão Inicial       |
 | V1.0 – 2024-06-06 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
