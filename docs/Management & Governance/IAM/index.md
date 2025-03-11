@@ -1,7 +1,7 @@
 ---
 title: Identity and Access Management (IAM)
 parent: Management & Governance
-permalink: /docs/Management & Governance
+permalink: /docs/Management & Governance/IAM
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/product-banner-icon/ManagementGovernance/IAM.png" width="80" height="80" alt="Identity and Access Management (IAM)">
