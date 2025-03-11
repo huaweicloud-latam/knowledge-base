@@ -2,7 +2,7 @@
 title: ECS Travada Após Migração
 layout: default
 parent: Server Migration Service (SMS)
-grand_parent: Migration
+grand_parent: Migração
 lang: pt-br
 permalink: /docs/Migration/SMS/Bricked ECS After Migration Troubleshooting
 ---
