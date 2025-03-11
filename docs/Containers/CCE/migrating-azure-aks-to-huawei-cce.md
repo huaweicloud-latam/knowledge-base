@@ -3,6 +3,7 @@ title: Migrating Azure AKS to Huawei CCE
 layout: default
 parent: Cloud Container Engine (CCE)
 grand_parent: Containers
+permalink: /docs/Containers/CCE/Migrating Azure AKS to Huawei CCE
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -10,7 +11,7 @@ grand_parent: Containers
 
 V1.0 – January 2024
 
-| **Versão**        | **Autor**             | **Descrição**         |
+| **Version**       | **Author**            | **Description**       |
 | ----------------- | --------------------- | --------------------- |
 | V1.0 – 2024-01-16 | Diogo Hatz 50037923   | Tradução do documento |
 | V1.0 – 2024-01-16 | Wisley Paulo 00830850 | Revisão do documento  |
