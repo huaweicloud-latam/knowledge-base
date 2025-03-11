@@ -4,7 +4,7 @@ layout: default
 parent: Image Management Service (IMS)
 grand_parent: Computação
 lang: pt-BR
-permalink: /docs/Compute/IMS/Creating a Private OracleOS 7.9 Image
+permalink: /docs/Compute/IMS/Creating a Private OracleOS 79 Image
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
