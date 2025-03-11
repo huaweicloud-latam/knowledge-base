@@ -1,5 +1,5 @@
 ---
-title: Falha ao iniciar o agente, erro: Current quota is not enough, please use MgC
+title: Falha ao iniciar o agente, erro：Current quota is not enough, please use MgC
 layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migração
