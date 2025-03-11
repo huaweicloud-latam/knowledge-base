@@ -11,5 +11,5 @@ permalink: /docs/Management & Governance/COC
 
 Fornece uma plataforma de O&M segura, eficiente e alimentada por IA, permitindo que você gerencie perfeitamente todos os seus recursos de nuvem em um só lugar.
 
-[Product Page](https://www.huaweicloud.com/intl/pt-br/product/coc.html) &middot;
-[Help Center Page](https://support.huaweicloud.com/intl/pt-br/coc/index.html)
+[Página do Produto](https://www.huaweicloud.com/intl/pt-br/product/coc.html) &middot;
+[Central de Ajuda](https://support.huaweicloud.com/intl/pt-br/coc/index.html)
