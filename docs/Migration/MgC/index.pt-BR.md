@@ -1,6 +1,6 @@
 ---
 title: Migration Center (MgC)
-parent: Migration
+parent: Migração
 lang: pt-BR
 permalink: /docs/Migration/MgC
 ---
