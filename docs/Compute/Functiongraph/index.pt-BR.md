@@ -9,7 +9,7 @@ permalink: /docs/Compute/Functiongraph
 
 # Functiongraph
 
-Execute seu código e aproveite a alta disponibilidade e a escalabilidade sem precisar provisionar ou gerenciar servidores. Basta carregar seu código e definir as condições de execução.
+FunctionGraph permite que você execute seu código sem provisionar nem gerenciar servidores e garantindo alta disponibilidade e escalabilidade. Basta carregar seu código e definir as condições de execução: o FunctionGraph cuidará do resto.
 
 [Página do Produto](https://www.huaweicloud.com/intl/pt-br/product/functiongraph.html) &middot;
 [Central de Ajuda](https://support.huaweicloud.com/intl/pt-br/functiongraph/index.html)
