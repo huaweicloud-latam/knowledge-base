@@ -1,4 +1,11 @@
-{% for lang in site.languages %}
-  {% capture lang_href %}{{ site.url }}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}{% if page.permalink_lang[lang] != '/' %}{{page.permalink_lang[lang]}}{% endif %}{% endcapture %}
-  <a href="{{ lang_href }}">{{ lang }}</a>
-{% endfor %}
+<nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    {% for lang in site.languages %}
+    {% capture lang_href %}{{ site.url }}{% if lang != site.default_lang %}{{ lang }}/{% endif %}{{ page.permalink }}{%
+    endcapture %}
+    <li class="aux-nav-list-item">
+      <a href="{{ lang_href }}" class="site-button">{{ lang }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
