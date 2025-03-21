@@ -25,4 +25,6 @@ exclude_from_localization: ["javascript", "images", "css", "public", "sitemap"]
 parallel_localization: true
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  English: https://hatz-d.github.io/huaweicloud-knowledge-base/
+  Portuguese: https://hatz-d.github.io/huaweicloud-knowledge-base/pt-BR/
+  Contribute: https://github.com/Hatz-D/huaweicloud-knowledge-base
