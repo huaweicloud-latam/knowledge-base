@@ -39,7 +39,6 @@ crie uma instância Linux com a imagem pública Linux desejada. Vale
 ressaltar que para acessar a instância de ferramentas exteriores à
 console, um EIP deve ser vinculado com a ECS.
 
-{{ page.path }}
 {% include image.html post=page.path file="services-menu-ecs.jpg" %}
 
 ![ECS no menu de serviços](/huaweicloud-knowledge-base/assets/images/ecs/installing-gui-on-public-linux-images/services-menu-ecs.jpg)
