@@ -4,9 +4,8 @@ layout: default
 parent: Elastic Cloud Server (ECS)
 grand_parent: Computação
 lang: pt-BR
-permalink: /docs/Compute/ECS/Installing GUI on Public Linux Images
+permalink: /docs/compute/ecs/installing-gui-on-public-linux-images
 ---
-<img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # Instalando GUI em Imagens Públicas Linux
 
@@ -15,9 +14,12 @@ V1.0 – Janeiro 2024
 | **Versão**        | **Autor**             | **Descrição**        |
 | ----------------- | --------------------- | -------------------- |
 | V1.0 – 2024-01-05 | Diogo Hatz 50037923   | Versão Inicial       |
-| V1.0 – 2024-01-05 | Wisley Paulo 00830850 | Revisão do Documento |
+|                   | Wisley Paulo 00830850 | Revisão do Documento |
 
-# Introdução
+1. Índice
+{:toc}
+
+## Introdução
 
 O Image Management Service (IMS) é um serviço disponibilizado na Huawei
 Cloud que permite a administração de imagens. Imagens são nada mais que
@@ -30,47 +32,47 @@ Linux disponibilizadas no IMS. Vale ressaltar que para disfrutar da
 interface gráfica, a instância deve ser acessada através de ferramentas
 exteriores à console da Huawei Cloud, como o Remote Desktop do Windows.
 
-# ECS
+## ECS
 
 Acesse o console da Huawei Cloud, navegue até a seção relativa à ECS e
 crie uma instância Linux com a imagem pública Linux desejada. Vale
 ressaltar que para acessar a instância de ferramentas exteriores à
 console, um EIP deve ser vinculado com a ECS.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image3.png)
+![ECS no menu de serviços](./assets/installing-gui-on-public-linux-images/services-menu-ecs.jpg)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image4.png)
+![Criar um novo ECS](./assets/installing-gui-on-public-linux-images/buy-ecs.jpg)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image5.png)
+![Configurações de novo ECS](./assets/installing-gui-on-public-linux-images/new-ecs-details.jpg)
 
 Garanta que o acesso às portas 22 e 3389 do security group em que a
 instância está atrelada estão abertas.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image6.png)
+![Menu Security Groups](./assets/installing-gui-on-public-linux-images/security-groups-menu.jpg)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image7.png)
+![Security group default](./assets/installing-gui-on-public-linux-images/default-security-group.jpg)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image8.png)
+![Regras no security group para acesso remoto](./assets/installing-gui-on-public-linux-images/security-group-rules-remote-access.jpg)
 
-# Configurando a ECS
+## Configurando a ECS
 
 Acesse a ECS através da console da Huawei Cloud clicando em “Remote
 Login” e faça login com o usuário “root” e senha configurada na criação
 da ECS.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image9.png)
+![Remote login no ECS](./assets/installing-gui-on-public-linux-images/ecs-remote-login.jpg)
 
 Atualize os pacotes da ECS digitando o seguinte comando:
 
 ```shell
-sudo apt-get update && sudo apt-get dist-upgrade -y
+apt update && apt upgrade -y
 ```
 
 Instale o pacote XRDP, que permite que instâncias Linux sejam acessadas
 através do Remote Desktop do Windows.
 
 ```shell
-sudo apt-get install xrdp -y
+apt install xrdp -y
 ```
 
 O gerenciador de interfaces GDM3 é utilizado por padrão em instâncias
@@ -79,27 +81,27 @@ instalados, como o SLiM ou LightDM. Caso seja perguntado, altere o SLiM
 ou LightDM para o gerenciador padrão.
 
 ```shell
-sudo apt-get install lightdm -y
+apt install lightdm -y
 ```
 
 Instale a interface visual desejada. Neste passo-a-passo, a interface
 visual instalada será a Ubuntu Desktop.
 
 ```shell
-sudo apt install ubuntu-desktop
+apt install ubuntu-desktop
 ```
 
 Reinicie o serviço XRDP para permitir acesso remoto do Remote Desktop.
 
 ```shell
-sudo service xrdp restart
+service xrdp restart
 ```
 
 Habilite o serviço XRDP para habilitar o serviço XRDP para iniciar na
 inicialização do sistema.
 
 ```shell
-sudo systemctl enable xrdp
+systemctl enable xrdp
 ```
 
 Inicie o gerenciador de interfaces instalado.
@@ -111,11 +113,11 @@ systemctl start lightdm.service
 Faça login na instância através do Remote Desktop. Em “Session”,
 selecione “Xorg”.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image10.png)
+![Remote Desktop no Windows](./assets/installing-gui-on-public-linux-images/windows-remote-desktop-connection.jpg)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image11.png)
+![Interface de login do xrdp](./assets/installing-gui-on-public-linux-images/xrdp-login.jpg)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-GUI-on-Public-Linux-Images/media/image12.png)
+![Remote Desktop com Linux GUI](./assets/installing-gui-on-public-linux-images/remote-desktop-linux.jpg)
 
 **Importante: Vale ressaltar que a interface gráfica instalada no Linux
 não funciona bem com o Remote Login da console da Huawei Cloud. É

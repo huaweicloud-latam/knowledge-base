@@ -4,9 +4,8 @@ layout: default
 parent: Elastic Cloud Server (ECS)
 grand_parent: Computação
 lang: pt-BR
-permalink: /docs/Compute/ECS/Installing SQL Server on Ubuntu
+permalink: /docs/compute/ecs/install-sql-server-ubuntu
 ---
-<img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
 # Instalando SQL Server no Ubuntu
 
@@ -17,7 +16,7 @@ V1.0 – Janeiro 2024
 | V1.0 – 2024-01-05 | Diogo Hatz 50037923   | Versão Inicial       |
 | V1.0 – 2024-01-05 | Wisley Paulo 00830850 | Revisão do Documento |
 
-# Introdução
+## Introdução
 
 O SQL Server é uma ferramenta de banco de dados relacional desenvolvido
 pela Microsoft. Neste documento encontra-se o passo-a-passo de como
@@ -26,7 +25,7 @@ do Ubuntu. Para este tutorial, foi utilizado o Ubuntu 20.04 e SQL Server
 2019, no entanto, demais versionamentos serão disponibilizados também
 abaixo.
 
-# Criação da ECS
+## Criação da ECS
 
 Navegue até a seção relativa à ECS no console da Huawei Cloud.
 
@@ -51,7 +50,7 @@ senha configurada no momento de criação da instância.
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image7.png)
 
-# Instalação do SQL Server
+## Instalação do SQL Server
 
 Importe as chaves GPG do repositório público da Microsoft através do
 seguinte comando:
@@ -125,14 +124,14 @@ systemctl status mssql-server --no-pager
 O serviço do SQL Server estar rodando é denotado pelo status “active
 (running)”.
 
-# Conectar no SQL Server
+## Conectar no SQL Server
 
 Para conectar ao SQL Server, outras ferramentas precisam ser instaladas.
 Para instâncias Windows, é possível se conectar utilizando o SQL
 Management Studio. Para instâncias Linux, através da ferramenta SQLcmd
 Utility.
 
-## Linux
+### Linux
 
 Importe as chaves GPG do repositório público da Microsoft:
 
@@ -157,7 +156,7 @@ curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /et
 ```
 
   - Ubuntu 18.04
-    
+
 ```shell
 curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
 ```
@@ -207,7 +206,7 @@ sqlcmd -S localhost -U sa -P '<SuaSenha>' -C
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image17.png)
 
-## Windows
+### Windows
 
 Faça download da ferramenta SQL Management Studio e faça a instalação:
 
@@ -220,5 +219,3 @@ a instalação do SQL Server é “sa”. Clique em “Connect” quando os dado
 de login forem inseridos.
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image18.png)
-
-

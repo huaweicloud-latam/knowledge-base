@@ -4,7 +4,7 @@ layout: default
 parent: Elastic Cloud Server (ECS)
 grand_parent: Computação
 lang: pt-BR
-permalink: /docs/Compute/ECS/Remote Login Bricked Error
+permalink: /docs/compute/ecs/Remote Login Bricked Error
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -44,14 +44,14 @@ pode causar problemas de conflitos com o software do VNC. Para realizar
 as modificações necessárias, siga o passo-a-passo abaixo:
 
 1.  Conecte à instância via SSH e modifique os seguintes parâmetros:
-    
+
     1.1 Comente a linha GRUB\_TIMEOUT\_STYLE=hidden
-    
+
     1.2 Modifique o GRUB\_TIMEOUT para 10: GRUB\_TIMEOUT=10
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image4.png)
 
-Delete o arquivo 
+Delete o arquivo
 
 ```shell
 rm -rf /etc/default/grub.d/50*
@@ -70,7 +70,7 @@ sed -i 's/azure.archive.ubuntu.com/repo.huaweicloud.com/g' /etc/apt/sources.list
 apt autoclean && apt update
 ```
 
-Instale o kernel público do Ubuntu: 
+Instale o kernel público do Ubuntu:
 
 ```shell
 apt install linux-image-generic
@@ -82,7 +82,7 @@ Após a instalação ser concluída, reinicie a ECS e selecione o kernel genéri
 
 Além das configurações realizadas acima, também é recomendado que o agente da Azure, que é instalado por padrão em VMs da Azure, seja desinstalado, uma vez que o agente reporta logs para o console da VNC constantemente, o que pode afetar a performance do VNC:
 
-Digite o seguinte comando para desinstalar o agente da Azure: 
+Digite o seguinte comando para desinstalar o agente da Azure:
 
 ```shell
 sudo apt -y remove walinuxagent
@@ -91,5 +91,3 @@ sudo apt -y remove walinuxagent
 # Referências
 
   - <https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disable-provisioning>.
-
-

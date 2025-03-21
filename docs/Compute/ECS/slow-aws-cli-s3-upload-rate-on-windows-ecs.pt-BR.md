@@ -4,7 +4,7 @@ layout: default
 parent: Elastic Cloud Server (ECS)
 grand_parent: Computação
 lang: pt-BR
-permalink: /docs/Compute/ECS/Slow AWS CLI S3 Upload Rate on Windows ECSs
+permalink: /docs/compute/ecs/Slow AWS CLI S3 Upload Rate on Windows ECSs
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
