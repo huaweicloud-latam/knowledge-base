@@ -1,0 +1,4 @@
+{% for lang in site.languages %}
+  {% capture lang_href %}{{ site.url }}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}{% if page.permalink_lang[lang] != '/' %}{{page.permalink_lang[lang]}}{% endif %}{% endcapture %}
+  <a href="{{ lang_href }}">{{ lang }}</a>
+{% endfor %}
