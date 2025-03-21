@@ -1,13 +1,13 @@
 ---
-title: Functiongraph
+title: FunctionGraph
 parent: Computação
 lang: pt
 permalink: /docs/compute/functiongraph
 ---
 
-<img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Compute/FunctionGraph.png" width="80" height="80" alt="Functiongraph">
+<img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Compute/FunctionGraph.png" width="80" height="80" alt="FunctionGraph">
 
-# Functiongraph
+# FunctionGraph
 
 FunctionGraph permite que você execute seu código sem provisionar nem gerenciar servidores e garantindo alta disponibilidade e escalabilidade. Basta carregar seu código e definir as condições de execução: o FunctionGraph cuidará do resto.
 
