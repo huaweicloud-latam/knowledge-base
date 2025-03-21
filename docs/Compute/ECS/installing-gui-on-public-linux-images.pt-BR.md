@@ -39,20 +39,20 @@ crie uma instância Linux com a imagem pública Linux desejada. Vale
 ressaltar que para acessar a instância de ferramentas exteriores à
 console, um EIP deve ser vinculado com a ECS.
 
-![ECS no menu de serviços](./assets/installing-gui-on-public-linux-images/services-menu-ecs.jpg)
+![ECS no menu de serviços](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/services-menu-ecs.jpg)
 
-![Criar um novo ECS](./assets/installing-gui-on-public-linux-images/buy-ecs.jpg)
+![Criar um novo ECS](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/buy-ecs.jpg)
 
-![Configurações de novo ECS](./assets/installing-gui-on-public-linux-images/new-ecs-details.jpg)
+![Configurações de novo ECS](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/new-ecs-details.jpg)
 
 Garanta que o acesso às portas 22 e 3389 do security group em que a
 instância está atrelada estão abertas.
 
-![Menu Security Groups](./assets/installing-gui-on-public-linux-images/security-groups-menu.jpg)
+![Menu Security Groups](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/security-groups-menu.jpg)
 
-![Security group default](./assets/installing-gui-on-public-linux-images/default-security-group.jpg)
+![Security group default](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/default-security-group.jpg)
 
-![Regras no security group para acesso remoto](./assets/installing-gui-on-public-linux-images/security-group-rules-remote-access.jpg)
+![Regras no security group para acesso remoto](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/security-group-rules-remote-access.jpg)
 
 ## Configurando a ECS
 
@@ -60,7 +60,7 @@ Acesse a ECS através da console da Huawei Cloud clicando em “Remote
 Login” e faça login com o usuário “root” e senha configurada na criação
 da ECS.
 
-![Remote login no ECS](./assets/installing-gui-on-public-linux-images/ecs-remote-login.jpg)
+![Remote login no ECS](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/ecs-remote-login.jpg)
 
 Atualize os pacotes da ECS digitando o seguinte comando:
 
@@ -113,11 +113,11 @@ systemctl start lightdm.service
 Faça login na instância através do Remote Desktop. Em “Session”,
 selecione “Xorg”.
 
-![Remote Desktop no Windows](./assets/installing-gui-on-public-linux-images/windows-remote-desktop-connection.jpg)
+![Remote Desktop no Windows](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/windows-remote-desktop-connection.jpg)
 
-![Interface de login do xrdp](./assets/installing-gui-on-public-linux-images/xrdp-login.jpg)
+![Interface de login do xrdp](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/xrdp-login.jpg)
 
-![Remote Desktop com Linux GUI](./assets/installing-gui-on-public-linux-images/remote-desktop-linux.jpg)
+![Remote Desktop com Linux GUI](/huaweicloud-knowledge-base/assets/ecs/installing-gui-on-public-linux-images/remote-desktop-linux.jpg)
 
 **Importante: Vale ressaltar que a interface gráfica instalada no Linux
 não funciona bem com o Remote Login da console da Huawei Cloud. É
