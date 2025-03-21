@@ -4,7 +4,7 @@ layout: default
 parent: Image Management Service (IMS)
 grand_parent: Computação
 lang: pt-BR
-permalink: /docs/Compute/IMS/Creating a Private Ubuntu Image
+permalink: /docs/compute/ims/Creating a Private Ubuntu Image
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -24,7 +24,7 @@ Este documento objetiva apresentar os procedimentos necessários para
 criação de imagem do Ubuntu 20.04 com UEFI utilizando o serviço de IMS.
 
 # Criação imagem Ubuntu
-    
+
 ## Faça o download da imagem ISO do Ubuntu Server (exemplo - <https://releases.ubuntu.com/focal/>) e faça o upload no OBS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image3.png)
@@ -43,7 +43,7 @@ reportado ao time de produto que informou e a alteração será feita em
 dezembro de 2023. Nesse momento pode selecionar a opção 16.04 que o
 sistema irá funcionar normalmente.
 
-## Crie uma ECS usando a imagem criada com o importe da imagem ISO. 
+## Crie uma ECS usando a imagem criada com o importe da imagem ISO.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image7.png)
 
@@ -123,7 +123,7 @@ arquivo:
 
 ```shell
 - name: root
-   lock_passwd: False 
+   lock_passwd: False
 
 ssh_pwauth: true
 ```

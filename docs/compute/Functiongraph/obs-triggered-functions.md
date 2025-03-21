@@ -1,9 +1,9 @@
 ---
 title: OBS-triggered Functions
 layout: default
-parent: Functiongraph
+parent: FunctionGraph
 grand_parent: Compute
-permalink: /docs/Compute/Functiongraph/OBS-triggered Functions
+permalink: /docs/compute/functiongraph/OBS-triggered Functions
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

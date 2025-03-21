@@ -1,15 +1,16 @@
 ---
-title: Pipeline Integration
+title: Integração com Pipelines
 layout: default
-parent: Functiongraph
-grand_parent: Compute
-permalink: /docs/Compute/Functiongraph/Pipeline Integration
+parent: FunctionGraph
+grand_parent: Computação
+lang: pt-BR
+permalink: /docs/compute/functiongraph/Pipeline Integration
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Pipeline Integration
+# Integração com Pipelines
 
-V1.0 – July 2024
+V1.0 – Julho 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |

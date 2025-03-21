@@ -3,7 +3,7 @@ title: Creating a Private Windows Image
 layout: default
 parent: Image Management Service (IMS)
 grand_parent: Compute
-permalink: /docs/Compute/IMS/Creating a Private Windows Image
+permalink: /docs/compute/ims/Creating a Private Windows Image
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -86,7 +86,7 @@ Aguarde até que a barra de progresso chegue ao fim.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image12.png)
 
-# Upload da ISO 
+# Upload da ISO
 
 Para realizar o upload da ISO da instância a ser criada, o serviço de
 storage OBS será utilizado. Acesse o console da Huawei Cloud e vá até a
@@ -537,7 +537,7 @@ Opcionalmente, adicione também as seguintes configurações:
   - real\_time\_clock\_utc=true
 
   - \[openstack\]
-    
+
     add\_metadata\_private\_ip\_route=False
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image92.png)

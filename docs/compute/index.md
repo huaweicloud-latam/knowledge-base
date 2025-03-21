@@ -1,6 +1,6 @@
 ---
 title: Compute
-permalink: /docs/Compute/
+permalink: /docs/compute/
 ---
 
 # Compute

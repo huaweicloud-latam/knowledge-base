@@ -4,7 +4,7 @@ layout: default
 parent: Image Management Service (IMS)
 grand_parent: Computação
 lang: pt-BR
-permalink: /docs/Compute/IMS/Migrating Multiple Disks
+permalink: /docs/compute/ims/Migrating Multiple Disks
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

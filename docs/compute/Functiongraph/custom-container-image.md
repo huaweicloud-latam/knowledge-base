@@ -1,18 +1,17 @@
 ---
-title: Funções Baseadas em Imagens Customizadas de Containers
+title: Custom Container Image Function
 layout: default
-parent: Functiongraph
-grand_parent: Computação
-lang: pt-BR
-permalink: /docs/Compute/Functiongraph/Custom Container Image Function
+parent: FunctionGraph
+grand_parent: Compute
+permalink: /docs/compute/functiongraph/Custom Container Image Function
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Funções Baseadas em Imagens Customizadas de Containers
+# Custom Container Image Function
 
-V1.0 – Julho 2024
+V1.0 – July 2024
 
-| **Versão**        | **Autor**                      | **Descrição**        |
+| **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
 | V1.0 – 2024-07-11 | Diogo Hatz d50037923           | Versão Inicial       |
 | V1.0 – 2024-07-11 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
@@ -40,17 +39,17 @@ seguintes critérios precisam ser cumpridos:
 
 3.  É necessário que as seguintes variáveis de ambiente existam dentro
     do container:
-    
+
     1.  **HOME**: Path onde o código-fonte da função se encontrará;
-    
+
     2.  **GROUP\_ID**: GID do grupo do usuário que irá executar o
         container;
-    
+
     3.  **GROU\_NAME**: Nome do grupo do usuário que irá executar o
         container;
-    
+
     4.  **USER\_ID**: UID do usuário que irá executar o container;
-    
+
     5.  **USER\_NAME**: Nome do usuário que irá executar o container.
 
 # SWR

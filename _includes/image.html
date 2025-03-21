@@ -1,3 +1,2 @@
 {% assign media = site.url | append: "assets/images/" | append:  include.post | replace: ".md","" | replace: ".pt-BR","" | replace: "docs/",""  %}
-{{ include.post }}
 <img src="{{ media }}/{{ include.file }}">

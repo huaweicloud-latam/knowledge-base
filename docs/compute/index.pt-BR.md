@@ -1,7 +1,7 @@
 ---
 title: Computação
 lang: pt-BR
-permalink: /docs/Compute/
+permalink: /docs/compute/
 ---
 
 # Computação

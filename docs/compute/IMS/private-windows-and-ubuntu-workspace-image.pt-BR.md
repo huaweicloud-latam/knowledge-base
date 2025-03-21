@@ -1,17 +1,18 @@
 ---
-title: Creating a Private Windows 10 and Ubuntu Workspace Image
+title: Criando uma Imagem Privada do Workspace para Windows 10 e Ubuntu
 layout: default
 parent: Image Management Service (IMS)
-grand_parent: Compute
-permalink: /docs/Compute/IMS/Creating a Private Windows 10 and Ubuntu Workspace Image
+grand_parent: Computação
+lang: pt-BR
+permalink: /docs/compute/ims/Creating a Private Windows 10 and Ubuntu Workspace Image
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Creating a Private Windows 10 and Ubuntu Workspace Image
+# Criando uma Imagem Privada do Workspace para Windows 10 e Ubuntu
 
-V1.0 – November 2023
+V1.0 – Novembro 2023
 
-| **Version**       | **Author**                     | **Description** |
+| **Versão**        | **Autor**                      | **Descrição**   |
 | ----------------- | ------------------------------ | --------------- |
 | V1.0 – 2023-11-09 | Wisley da Silva Paulo 00830850 | Initial version |
 |                   |                                |                 |
@@ -24,15 +25,15 @@ a implementação criação de imagens privadas no serviço IMS para serem
 utilizadas no serviço de Workspace da Huawei Cloud.
 
 # Criação imagem Windows 10
-    
+
 1.  Faço o download da imagem ISO do Windows 10 no site da Microsoft.
-    
-2.  Faça o download dos pacotes conforme apresentado no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0507.html>) e adicione em um bucket para facilitar a transferência para a máquina no momento da instalação. 
-    
-3.  Depois de baixar a imagem ISO do Windows 10 e todos os pacotes realize o procedimento do link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0508.html>) para adicionar drivers no arquivo ISO. 
-    
+
+2.  Faça o download dos pacotes conforme apresentado no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0507.html>) e adicione em um bucket para facilitar a transferência para a máquina no momento da instalação.
+
+3.  Depois de baixar a imagem ISO do Windows 10 e todos os pacotes realize o procedimento do link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0508.html>) para adicionar drivers no arquivo ISO.
+
 4.  Inicie a instalação e configure o driver conforme o demonstrado no link (<https://support.huaweicloud.com/intl/en-us/usermanual-ims/en-us_topic_0146474784.html>).
-    
+
 5.  Acesse o CD abra a pasta vmtools que foi adicionada na ISO e instale o vmtools.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image3.png)
@@ -88,7 +89,7 @@ Efetue a instalação dos softwares indicados no link (<https://support.huaweicl
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image16.png)
 
 # Criação imagem Ubuntu
-    
+
 ### Faça o download da imagem ISO do Ubuntu Desktop (são suportados no momento do documento as versões 18.04.5-desktop-amd64 ou ubuntu-20.04.5.0-desktop-amd64 - <https://mu.releases.ubuntu.com/20.04.5/> - <https://old-releases.ubuntu.com/releases/18.04.5/>) e faça o upload no OBS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image17.png)
@@ -101,7 +102,7 @@ Efetue a instalação dos softwares indicados no link (<https://support.huaweicl
 
 ## ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image20.png)
 
-## Crie uma ECS usando a imagem criada com o importe da imagem ISO. 
+## Crie uma ECS usando a imagem criada com o importe da imagem ISO.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image21.png)
 

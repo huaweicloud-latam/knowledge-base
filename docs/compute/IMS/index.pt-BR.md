@@ -2,7 +2,7 @@
 title: Image Management Service (IMS)
 parent: Computação
 lang: pt-BR
-permalink: /docs/Compute/IMS
+permalink: /docs/compute/ims
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Compute/IMS.png" width="80" height="80" alt="Image Management Service (IMS)">

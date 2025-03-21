@@ -4,7 +4,7 @@ layout: default
 parent: Image Management Service (IMS)
 grand_parent: Computação
 lang: pt-BR
-permalink: /docs/Compute/IMS/Creating a Private OracleOS 79 Image
+permalink: /docs/compute/ims/Creating a Private OracleOS 79 Image
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -23,7 +23,7 @@ Este documento objetiva apresentar os procedimentos necessários para
 criação de imagem do OracleOS 7.9 utilizando o serviço de IMS.
 
 # Criação imagem OracleOS
-    
+
 Faça o download da imagem ISO do OracleOS (exemplo - <https://yum.oracle.com/oracle-linux-isos.html>) e faça o upload no OBS.
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-7.9-Image/media/image3.png)
@@ -36,7 +36,7 @@ Faça o download da imagem ISO do OracleOS (exemplo - <https://yum.oracle.com/or
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-7.9-Image/media/image6.png)
 
-## Crie uma ECS usando a imagem criada com o importe da imagem ISO. 
+## Crie uma ECS usando a imagem criada com o importe da imagem ISO.
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-7.9-Image/media/image7.png)
 
