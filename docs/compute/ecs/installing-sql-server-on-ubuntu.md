@@ -8,4 +8,4 @@ permalink: /docs/compute/ecs/install-sql-server-ubuntu
 
 # Installing SQL Server on Ubuntu
 
-Right now, only [Portuguese version](/pt-BR/docs/compute/ecs/install-sql-server-ubuntu) is available
+Right now, only [Portuguese version](/pt/docs/compute/ecs/install-sql-server-ubuntu) is available

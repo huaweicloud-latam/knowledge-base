@@ -8,4 +8,4 @@ permalink: /docs/compute/ecs/install-gui-on-public-linux-images
 
 # Installing GUI on Public Linux Images
 
-Right now, only [Portuguese version](/pt-BR/docs/compute/ecs/install-gui-on-public-linux-images) is available
+Right now, only [Portuguese version](/pt/docs/compute/ecs/install-gui-on-public-linux-images) is available

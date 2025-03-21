@@ -19,12 +19,12 @@ color_scheme: huawei
 plugins:
   - jekyll-polyglot
 
-languages: ["en", "pt-BR"]
+languages: ["en", "pt"]
 default_lang: "en"
 exclude_from_localization: ["javascript", "images", "css", "public", "sitemap"]
 parallel_localization: true
 
 aux_links:
   English: https://hatz-d.github.io/huaweicloud-knowledge-base/
-  Portuguese: https://hatz-d.github.io/huaweicloud-knowledge-base/pt-BR/
+  Portuguese: https://hatz-d.github.io/huaweicloud-knowledge-base/pt/
   Contribute: https://github.com/Hatz-D/huaweicloud-knowledge-base
