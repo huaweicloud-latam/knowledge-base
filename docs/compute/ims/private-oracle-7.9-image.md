@@ -56,7 +56,7 @@ Adicione o drivers do KVM no arquivo: “/etc/dracut.conf”:
 ```shell
 vi /etc/dracut.conf
 
-virtio\_blk virtio\_scsi virtio\_net virtio\_pci virtio\_ring virtio
+virtio_blk virtio_scsi virtio_net virtio_pci virtio_ring virtio
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-7.9-Image/media/image11.png)
