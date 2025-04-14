@@ -94,7 +94,14 @@ function disableHeadStyleSheets() {
 
 function initSearch() {
   var request = new XMLHttpRequest();
-  request.open('GET', '{{ "assets/js/search-data.json" | relative_url }}', true);
+  var path = window.location.pathname
+  var langPrefix = path.split('/')[2];
+  var endpoint = '';
+  
+  if (langPrefix === 'pt') {endpoint = '/huaweicloud-knowledge-base/pt/assets/js/search-data.json';}
+  else {endpoint = '/huaweicloud-knowledge-base/assets/js/search-data.json';}
+  
+  request.open('GET', endpoint, true);
 
   request.onload = function(){
     if (request.status >= 200 && request.status < 400) {
