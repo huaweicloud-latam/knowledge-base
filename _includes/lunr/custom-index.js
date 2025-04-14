@@ -1,6 +1,5 @@
-{%- capture newline %}
-{% endcapture -%}
-"lang": {{ include.page.lang | markdownify | replace:newline,' ' | strip_html | normalize_whitespace | strip | jsonify }},
+const content_to_merge = [docs[i].content, docs[i].lang];
+docs[i].content = content_to_merge.join(' ');
 
 var currentLang = '{{ site.lang }}';
 if (docs[i].lang != currentLang) {continue;}
