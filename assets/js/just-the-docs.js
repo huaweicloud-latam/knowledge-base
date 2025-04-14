@@ -93,14 +93,11 @@ function disableHeadStyleSheets() {
 // Site search
 
 function initSearch() {
-  var request = new XMLHttpRequest();
   var path = window.location.pathname
   var langPrefix = path.split('/')[2];
-  var endpoint = '';
-  
-  if (langPrefix === 'pt') {endpoint = '/huaweicloud-knowledge-base/pt/assets/js/search-data.json';}
-  else {endpoint = '/huaweicloud-knowledge-base/assets/js/search-data.json';}
-  
+  var endpoint = '/huaweicloud-knowledge-base${langPrefix === 'pt' ? '/pt' : ''}/assets/js/search-data.json';
+
+  var request = new XMLHttpRequest();
   request.open('GET', endpoint, true);
 
   request.onload = function(){
