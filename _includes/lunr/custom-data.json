@@ -1,3 +1,0 @@
-{%- capture newline %}
-{% endcapture -%}
-"lang": {{ page.lang | markdownify | replace:newline,' ' | strip_html | normalize_whitespace | strip | jsonify }},
