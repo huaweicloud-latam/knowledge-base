@@ -96,8 +96,6 @@ function initSearch() {
   var path = window.location.pathname
   var langPrefix = path.split('/')[2];
   var endpoint = langPrefix === 'pt' ? '/huaweicloud-knowledge-base/pt/assets/js/search-data.json' : '/huaweicloud-knowledge-base/assets/js/search-data.json';
-  
-  request.open('GET', endpoint, true);
 
   var request = new XMLHttpRequest();
   request.open('GET', endpoint, true);
