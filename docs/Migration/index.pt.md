@@ -1,7 +1,7 @@
 ---
 title: Migração
 lang: pt
-permalink: /docs/Migration
+permalink: /docs/migration
 ---
 
 # Migração

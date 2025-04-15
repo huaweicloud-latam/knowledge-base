@@ -2,7 +2,7 @@
 title: Server Migration Service (SMS)
 parent: Migração
 lang: pt
-permalink: /docs/Migration/SMS
+permalink: /docs/migration/sms
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Migration/SMS.png" width="80" height="80" alt="Server Migration Service (SMS)">

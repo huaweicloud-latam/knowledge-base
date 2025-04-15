@@ -4,7 +4,7 @@ layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migração
 lang: pt
-permalink: /docs/Migration/SMS/Migrating Unsupported OSs
+permalink: /docs/migration/sms/migrating-unsupported-os
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

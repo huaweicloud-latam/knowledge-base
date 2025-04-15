@@ -4,7 +4,7 @@ layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migração
 lang: pt
-permalink: /docs/Migration/SMS/Failed to start agent，error：Current quota is not enough, please use MgC
+permalink: /docs/migration/sms/failed-to-start-agent-error-quota-is-not-enough
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

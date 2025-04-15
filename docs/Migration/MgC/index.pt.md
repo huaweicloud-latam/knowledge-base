@@ -2,7 +2,7 @@
 title: Migration Center (MgC)
 parent: Migração
 lang: pt
-permalink: /docs/Migration/MgC
+permalink: /docs/migration/mgc
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Migration/MGC.png" width="80" height="80" alt="Migration Center (MgC)">

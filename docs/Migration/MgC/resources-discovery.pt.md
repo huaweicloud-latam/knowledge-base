@@ -4,7 +4,7 @@ layout: default
 parent: Migration Center (MgC)
 grand_parent: Migração
 lang: pt
-permalink: /docs/Migration/MgC/Resources Discovery
+permalink: /docs/migration/mgc/resources-discovery
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

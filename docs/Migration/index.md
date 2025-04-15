@@ -1,6 +1,6 @@
 ---
 title: Migration
-permalink: /docs/Migration
+permalink: /docs/migration
 ---
 
 # Migration

@@ -13,9 +13,9 @@ V1.0 – November 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
-| V1.0 – 2024-11-21 | Diogo Hatz d50037923           | Versão Inicial       |
-| V1.0 – 2024-11-21 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
-| V1.0 – 2024-11-21 | Gustavo Scovini 00918380       | Revisão do Documento |
+| V1.0 – 2024-11-21 | Diogo Hatz d50037923           | Initial Version      |
+| V1.0 – 2024-11-21 | Wisley da Silva Paulo 00830850 | Document Review      |
+| V1.0 – 2024-11-21 | Gustavo Scovini 00918380       | Document Review      |
 
 # Objective
 

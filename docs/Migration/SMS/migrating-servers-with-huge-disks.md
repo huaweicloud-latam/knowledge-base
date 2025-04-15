@@ -3,7 +3,7 @@ title: Migrating Servers with Huge Disks
 layout: default
 parent: Server Migration Service (SMS)
 grand_parent: Migration
-permalink: /docs/Migration/SMS/Migrating Servers with Huge Disks
+permalink: /docs/migration/sms/migrating-servers-with-huge-disks
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
