@@ -1,7 +1,7 @@
 ---
 title: Gerenciamento e Governança
 lang: pt
-permalink: /docs/Management & Governance
+permalink: /docs/management-and-governance
 ---
 
 # Gerenciamento e Governança

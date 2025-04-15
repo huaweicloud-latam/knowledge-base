@@ -1,7 +1,7 @@
 ---
 title: IAM Identity Center (IIC)
 parent: Management & Governance
-permalink: /docs/Management & Governance/IIC
+permalink: /docs/management-and-governance/iic
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/product-banner-icon/ManagementGovernance/IAM.png" width="80" height="80" alt="Identity and Access Management (IAM)">

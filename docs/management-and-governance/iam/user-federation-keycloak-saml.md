@@ -3,7 +3,7 @@ title: User Federation with Keycloak (SAML 2.0)
 layout: default
 parent: Identity and Access Management (IAM)
 grand_parent: Management & Governance
-permalink: /docs/Management & Governance/IAM/User Federation with Keycloak SAML 20
+permalink: /docs/management-and-governance/iam/user-federation-with-keycloak-saml-2
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

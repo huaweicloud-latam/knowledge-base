@@ -3,7 +3,7 @@ title: Automate Resources Lifecycle
 layout: default
 parent: Cloud Operations Center (COC)
 grand_parent: Management & Governance
-permalink: /docs/Management & Governance/COC/Automate Resources Lifecycle
+permalink: /docs/management-and-governance/coc/automate-resources-lifecycle
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

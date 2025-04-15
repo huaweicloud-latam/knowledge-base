@@ -2,7 +2,7 @@
 title: Cloud Operations Center (COC)
 parent: Gerenciamento e Governança
 lang: pt
-permalink: /docs/Management & Governance/COC
+permalink: /docs/management-and-governance/coc
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/ManagementGovernance/COC.png" width="80" height="80" alt="Cloud Operations Center (COC)">

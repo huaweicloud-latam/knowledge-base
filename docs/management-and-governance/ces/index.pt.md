@@ -2,7 +2,7 @@
 title: Cloud Eye Service (CES)
 parent: Gerenciamento e Governança
 lang: pt
-permalink: /docs/Management & Governance/CES
+permalink: /docs/management-and-governance/ces
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/ManagementGovernance/CES.png" width="80" height="80" alt="Cloud Eye Service (CES)">

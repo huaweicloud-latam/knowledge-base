@@ -1,17 +1,18 @@
 ---
-title: Monitoring Data Through API Calling
+title: Dados de Monitoramento Através de Chamadas de API
 layout: default
 parent: Cloud Eye Service (CES)
-grand_parent: Management & Governance
-permalink: /docs/Management & Governance/CES/Monitoring Data Through API Calling
+grand_parent: Gerenciamento e Governança
+lang: pt
+permalink: /docs/management-and-governance/ces/monitoring-data-through-api-calling
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Monitoring Data Through API Calling
+# Dados de Monitoramento Através de Chamadas de API
 
-V1.0 – March 2024
+V1.0 – Março 2024
 
-| **Version**       | **Author**               | **Description**      |
+| **Versão**        | **Autor**                | **Descrição**        |
 | ----------------- | ------------------------ | -------------------- |
 | V1.0 – 2024-03-08 | Diogo Hatz 50037923      | Versão Inicial       |
 | V1.0 – 2024-03-08 | Wisley da Silva 00830850 | Revisão do Documento |
@@ -215,4 +216,3 @@ estruturar a requisição, o endpoint do request, a autenticação, etc.
 
   - Cloud Eye API:
     <https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0002.html>
-

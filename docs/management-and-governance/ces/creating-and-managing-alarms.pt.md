@@ -1,17 +1,18 @@
 ---
-title: Creating and Managing Alarms
+title: Criando e Gerenciando Alarmes
 layout: default
 parent: Cloud Eye Service (CES)
-grand_parent: Management & Governance
-permalink: /docs/Management & Governance/CES/Creating and Managing Alarms
+grand_parent: Gerenciamento e Governança
+lang: pt
+permalink: /docs/management-and-governance/ces/creating-and-managing-alarms
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
-# Creating and Managing Alarms
+# Criando e Gerenciando Alarmes
 
-V1.1 – December 2023
+V1.1 – Dezembro 2023
 
-| **Version**       | **Author**               | **Description**      |
+| **Versão**        | **Autor**                | **Descrição**        |
 | ----------------- | ------------------------ | -------------------- |
 | V1.0 – 2023-12-20 | Diogo Hatz 50037923      | Versão Inicial       |
 | V1.0 – 2023-12-21 | Wisley da Silva 00830850 | Revisão do Documento |
@@ -478,4 +479,3 @@ acima.
 
   - Instalação do agente do CES em lote:
     <https://support.huaweicloud.com/intl/en-us/usermanual-ces/ces_01_0033.html>
-
