@@ -39,7 +39,7 @@ used in the Huawei Cloud Workspace service.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image4.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-w indows-10-and-ubuntu-workspace-images/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image5.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image6.png)
 
@@ -180,12 +180,12 @@ initialization module list place ssh as the first item:
 ```shell
 datasource_list: [ OpenStack ]
 datasource:
-OpenStack:
-metadata_urls: ['http://169.254.169.254']
-max_wait: 120
-timeout: 5
+  OpenStack:
+    metadata_urls: ['http://169.254.169.254']
+    max_wait: 120
+    timeout: 5
 network:
-config: disabled
+  config: disabled
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image29.png)
@@ -197,7 +197,7 @@ config: disabled
 ### Check cloud-init, if any error occurs try restarting the instance and run the command again:
 
 ```shell
-sudo cloud-init init --location
+sudo cloud-init init --local
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image32.png)

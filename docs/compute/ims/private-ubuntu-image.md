@@ -118,7 +118,7 @@ file:
 
 ```shell
 - name: root
-lock_passwd: False
+   lock_passwd: False
 
 ssh_pwauth: true
 ```
@@ -132,15 +132,15 @@ ssh_pwauth: true
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image15.png)
 
 ```shell
-datasource_list: [OpenStack]
+datasource_list: [ OpenStack ]
 datasource:
- OpenStack:
- metadata_urls: ['http://169.254.169.254']
-max_wait: 120
-timeout: 5
-apply_network_config: false
+  OpenStack:
+    metadata_urls: ['http://169.254.169.254']
+    max_wait: 120
+    timeout: 5
+    apply_network_config: false
 network:
-config: disabled
+  config: disabled
 ```
 
 ## Check cloud-init, if any error occurs try restarting the instance and run the command again:

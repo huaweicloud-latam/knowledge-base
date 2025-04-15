@@ -238,9 +238,7 @@ swr.la-south-2.myhuaweicloud.com. Segue um exemplo do comando de
 autenticação:
 
 ```shell
-docker login -u la-south-2@RVHVMX\*\*\*\*\*\* -p
-cab4ceab4a1545\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
-swr.la-south-2.myhuaweicloud.com
+docker login -u la-south-2@RVHVMX\*\*\*\*\*\* -p cab4ceab4a1545\*\*\*\*\*\*\*\*\*\*\*\*\*\*\* swr.la-south-2.myhuaweicloud.com
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image34.png)
@@ -266,8 +264,7 @@ a lista abaixo:
     mantidos.
 
 ```shell
-docker tag\[Image name 1:tag 1\] \[Image repository
-address\]/\[Organization name\]/\[Image name 2:tag 2\]
+docker tag {Image name 1:tag 1} {Image repository address} {Organization name} {Image name 2:tag 2}
 ```
 
 Exemplo:
@@ -279,8 +276,7 @@ docker tag novo:1.0 swr.la-south-2.myhuaweicloud.com/adada/serase
 Agora bata realizar o upload da imagem com o seguinte comando:
 
 ```shell
-docker push \[Image repository address\]/\[Organization name\]/\[Image
-name 2:tag 2\]
+docker push {Image repository address} {Organization name} {Image name 2:tag 2}
 ```
 
 Exemplo:

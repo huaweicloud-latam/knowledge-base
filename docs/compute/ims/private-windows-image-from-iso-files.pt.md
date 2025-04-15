@@ -517,29 +517,25 @@ através do bloco de notas.
 
 Adicione as seguintes configurações ao final do arquivo:
 
-  - netbios\_host\_name\_compatibility=false
-
-  - metadata\_services=cloudbaseinit.metadata.services.httpservice.HttpService
-
-  - plugins=cloudbaseinit.plugins.common.localscripts.LocalScriptsPlugin,cloudbaseinit.plugins.common.mtu.MTUPlugin,cloudbaseinit.plugins.windows.createuser.CreateUserPlugin,cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin,cloudbaseinit.plugins.common.sshpublickeys.SetUserSSHPublicKeysPlugin,cloudbaseinit.plugins.common.sethostname.SetHostNamePlugin,cloudbaseinit.plugins.windows.extendvolumes.ExtendVolumesPlugin,cloudbaseinit.plugins.common.userdata.UserDataPlugin,cloudbaseinit.plugins.windows.licensing.WindowsLicensingPlugin
-
-  - first\_logon\_behaviour=no
+```shell
+netbios_host_name_compatibility=false 
+metadata_services=cloudbaseinit.metadata.services.httpservice.HttpService
+plugins=cloudbaseinit.plugins.common.localscripts.LocalScriptsPlugin,cloudbaseinit.plugins.common.mtu.MTUPlugin,cloudbaseinit.plugins.windows.createuser.CreateUserPlugin,cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin,cloudbaseinit.plugins.common.sshpublickeys.SetUserSSHPublicKeysPlugin,cloudbaseinit.plugins.common.sethostname.SetHostNamePlugin,cloudbaseinit.plugins.windows.extendvolumes.ExtendVolumesPlugin,cloudbaseinit.plugins.common.userdata.UserDataPlugin,cloudbaseinit.plugins.windows.licensing.WindowsLicensingPlugin
+first_logon_behaviour=no
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image91.png)
 
 Opcionalmente, adicione também as seguintes configurações:
 
-  - plugins=cloudbaseinit.plugins.windows.winrmlistener.ConfigWinRMListenerPlugin,cloudbaseinit.plugins.windows.winrmcertificateauth.ConfigWinRMCertificateAuthPlugin
-
-  - retry\_count=40
-
-  - retry\_count\_interval=5
-
-  - real\_time\_clock\_utc=true
-
-  - \[openstack\]
-
-    add\_metadata\_private\_ip\_route=False
+```shell
+plugins=cloudbaseinit.plugins.windows.winrmlistener.ConfigWinRMListenerPlugin,cloudbaseinit.plugins.windows.winrmcertificateauth.ConfigWinRMCertificateAuthPlugin
+retry_count=40
+retry_count_interval=5
+real_time_clock_utc=true
+[openstack]
+add_metadata_private_ip_route=False
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image92.png)
 
@@ -618,8 +614,5 @@ criadas a partir do arquivo ISO baixado na etapa 2\!
 
 # Referências:
 
-  - Documentação do IMS:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0220.html>.
-
-  - Documentação do Workspace:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>.
+  - Documentação do IMS: <https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0220.html>.
+  - Documentação do Workspace: <https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>.

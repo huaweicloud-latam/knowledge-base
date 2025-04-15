@@ -102,7 +102,7 @@ a lista abaixo:
     mantidos.
 
 ```shell
-docker tag\[Image name 1:tag 1\] \[Image repository address\]/\[Organization name\]/\[Image name 2:tag 2\]
+docker tag {Image name 1:tag 1} {Image repository address} {Organization name} {Image name 2:tag 2}
 ```
 
 Exemplo:
@@ -114,7 +114,7 @@ docker tag novo:1.0 swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1
 Agora bata realizar o upload da imagem com o seguinte comando:
 
 ```shell
-docker push \[Image repository address\]/\[Organization name\]/\[Image name 2:tag 2\]
+ddocker push {Image repository address} {Organization name} {Image name 2:tag 2}
 ```
 
 Exemplo:

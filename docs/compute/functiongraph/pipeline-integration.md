@@ -22,7 +22,16 @@ This document aims to present the procedures required to integrate a function fr
 
 # Considerations
 
-**<span class="underline">Important:</span>** To integrate FunctionGraph with pipelines, simply upload the updated image to Huawei Cloud's SWR image repository service. However, it is mandatory that both the image name and its tag are the same as those of the image that originated the FunctionGraph function, to ensure that the URL of this image is the same as that configured in the function at the time of its creation. You can also change the URL of the image associated with the function through the following API: <https://support.huaweicloud.com/intl/en-us/api-functiongraph/functiongraph_06_0111.html>. There are two approaches to this integration: using pipelines from HWC’s CodeArts Pipelines service or using pipelines from third-party services. Both approaches will be explored below: 1. **CodeArts Pipeline:** In the Build task configuration, simply select the “Build Image and Push to SWR” option. The image will be built and then automatically published to the SWR repository; 2. **Third-party pipeline:** In the final step of the pipeline, simply add an action to upload the image to the SWR repository. # SWR Organization Navigate to the SWR service in the Huawei Cloud console. Click the “Organizations” tab and click “Create Organization”. Give the organization a name and click “OK” to confirm the organization creation.
+**<span class="underline">Important:</span>** To integrate FunctionGraph with pipelines, simply upload the updated image to Huawei Cloud's SWR image repository service. However, it is mandatory that both the image name and its tag are the same as those of the image that originated the FunctionGraph function, to ensure that the URL of this image is the same as that configured in the function at the time of its creation. You can also change the URL of the image associated with the function through the following API: <https://support.huaweicloud.com/intl/en-us/api-functiongraph/functiongraph_06_0111.html>. 
+
+There are two approaches to this integration: using pipelines from HWC’s CodeArts Pipelines service or using pipelines from third-party services. Both approaches will be explored below: 
+
+1. **CodeArts Pipeline:** In the Build task configuration, simply select the “Build Image and Push to SWR” option. The image will be built and then automatically published to the SWR repository; 
+2. **Third-party pipeline:** In the final step of the pipeline, simply add an action to upload the image to the SWR repository. 
+   
+# SWR Organization 
+
+Navigate to the SWR service in the Huawei Cloud console. Click the “Organizations” tab and click “Create Organization”. Give the organization a name and click “OK” to confirm the organization creation.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image3.png)
 
@@ -161,9 +170,7 @@ la-south-2, while the “Image repository address” is
 swr.la-south-2.myhuaweicloud.com. Here is an example of the authentication command:
 
 ```shell
-docker login -u la-south-2@RVHVMX\*\*\*\*\*\* -p
-cab4ceab4a1545\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
-swr.la-south-2.myhuaweicloud.com
+docker login -u la-south-2@RVHVMX\*\*\*\*\*\* -p cab4ceab4a1545\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\* swr.la-south-2.myhuaweicloud.com
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image34.png)
@@ -189,21 +196,19 @@ the SWR. Similar to a rename, the same name and tag can be
 kept.
 
 ```shell
-docker tag\[Image name 1:tag 1\] \[Image repository
-address\]/\[Organization name\]/\[Image name 2:tag 2\]
+docker tag {Image name 1:tag 1} {Image repository address} {Organization name} {Image name 2:tag 2}
 ```
 
 Example:
 
 ```shell
-docker tag new:1.0 swr.la-south-2.myhuaweicloud.com/adada/serase
+docker tag novo:1.0 swr.la-south-2.myhuaweicloud.com/adada/serase
 ```
 
 Now just upload the image with the following command:
 
 ```shell
-docker push \[Image repository address\]/\[Organization name\]/\[Image
-name 2:tag 2\]
+docker push {Image repository address} {Organization name} {Image name 2:tag 2}
 ```
 
 Example:
@@ -282,11 +287,8 @@ FunctionGraph function, the changes will be reflected in the desired function.
 
 # References
 
-- FunctionGraph documentation:
-<https://support.huaweicloud.com/intl/en-us/api-functiongraph/functiongraph_06_0111.html>.
+- FunctionGraph documentation: <https://support.huaweicloud.com/intl/en-us/api-functiongraph/functiongraph_06_0111.html>.
 
-- SWR documentation:
-<https://support.huaweicloud.com/intl/en-us/usermanual-swr/swr_01_1000.html>.
+- SWR documentation: <https://support.huaweicloud.com/intl/en-us/usermanual-swr/swr_01_1000.html>.
 
-- Azure Pipeline Tasks documentation:
-<https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/docker-v2?view=azure-pipelines&tabs=yaml>.
+- Azure Pipeline Tasks documentation: <https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/docker-v2?view=azure-pipelines&tabs=yaml>.

@@ -230,9 +230,7 @@ discos da ECS para inserir na ECS original novamente
 
   - Documentação do SMS:
     <https://support.huaweicloud.com/intl/en-us/bestpractice-sms/sms_05_0071.html>.
-
   - Documentação do IMS:
     <https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0215.html>.
-
   - Documentação do obsutil:
     <https://support.huaweicloud.com/intl/en-us/utiltg-obs/obs_11_0003.html>.

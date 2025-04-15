@@ -180,11 +180,6 @@ After that, unmount the disk from the directory where it was mounted and remove 
 
 # References
 
-- SMS Documentation:
-<https://support.huaweicloud.com/intl/en-us/bestpractice-sms/sms_05_0071.html>.
-
-- IMS documentation:
-<https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0215.html>.
-
-- obsutil documentation:
-<https://support.huaweicloud.com/intl/en-us/utiltg-obs/obs_11_0003.html>.
+- SMS Documentation: <https://support.huaweicloud.com/intl/en-us/bestpractice-sms/sms_05_0071.html>.
+- IMS documentation: <https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0215.html>.
+- obsutil documentation: <https://support.huaweicloud.com/intl/en-us/utiltg-obs/obs_11_0003.html>.

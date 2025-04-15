@@ -88,7 +88,7 @@ SWR. Similar to a rename, the same name and tag can be
 kept.
 
 ```shell
-docker tag\[Image name 1:tag 1\] \[Image repository address\]/\[Organization name\]/\[Image name 2:tag 2\]
+docker tag {Image name 1:tag 1} {Image repository address} {Organization name} {Image name 2:tag 2}
 ```
 
 Example:
@@ -100,7 +100,7 @@ docker tag novo:1.0 swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1
 Now upload the image with the following command:
 
 ```shell
-docker push \[Image repository address\]/\[Organization name\]/\[Image name 2:tag 2\]
+docker push {Image repository address} {Organization name} {Image name 2:tag 2}
 ```
 
 Example:

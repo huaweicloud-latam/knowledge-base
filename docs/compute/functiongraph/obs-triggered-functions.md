@@ -87,5 +87,4 @@ Result in the server listener:
 
 # References
 
-- FunctionGraph documentation:
-<https://support.huaweicloud.com/intl/en-us/usermanual-functiongraph/functiongraph_01_0205.html>
+- FunctionGraph documentation: <https://support.huaweicloud.com/intl/en-us/usermanual-functiongraph/functiongraph_01_0205.html>

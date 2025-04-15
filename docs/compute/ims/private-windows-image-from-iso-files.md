@@ -63,7 +63,17 @@ Wait until the progress bar reaches the end.
 
 # Upload the ISO
 
-To upload the ISO of the instance to be created, the OBS storage service will be used. Access the Huawei Cloud console and go to the OBS section. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image13.png) If the OBS Browser + application is not installed on your computer, please read section 3.1. Otherwise, skip to section 3.2. ## OBS Browser + Within OBS, click “Download” on the icon representing OBS Browser +. Download and install the OBS Browser + software. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image14.png) Return to the Huawei Cloud console, hover over your Huawei Cloud ID, and click “My Credentials”. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image15.png)
+To upload the ISO of the instance to be created, the OBS storage service will be used. Access the Huawei Cloud console and go to the OBS section. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image13.png) If the OBS Browser + application is not installed on your computer, please read section 3.1. Otherwise, skip to section 3.2. 
+
+## OBS Browser + 
+
+Within OBS, click “Download” on the icon representing OBS Browser +. Download and install the OBS Browser + software. 
+
+![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image14.png) 
+
+Return to the Huawei Cloud console, hover over your Huawei Cloud ID, and click “My Credentials”. 
+
+![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image15.png)
 
 Click on “Access Keys”, “Create Access Keys”, “Ok” and “Download”.
 
@@ -98,7 +108,17 @@ Click Upload
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image23.png)
 
 Select the “Standard” option in “Storage Class” and in “Add File” to
-add the iso of the instance to be created. In this case, the Windows Server 2019 ISO. Wait until the upload is complete before proceeding to the next steps. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image24.png) # Creating the image in IMS Access the Huawei Cloud console and go to the IMS section. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image25.png) Go to the “Private Images” section and click “Create Now”. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image26.png)
+add the iso of the instance to be created. In this case, the Windows Server 2019 ISO. Wait until the upload is complete before proceeding to the next steps. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image24.png) 
+
+# Creating the image in IMS 
+
+Access the Huawei Cloud console and go to the IMS section. 
+
+![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image25.png) 
+
+Go to the “Private Images” section and click “Create Now”. 
+
+![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image26.png)
 
 Configure the parameters according to the instance image that will be created. In this case, the Windows Server 2019 Standard OS.
 
@@ -380,7 +400,11 @@ To verify the successful installation of the plugin, open the task manager in th
 Cloudbase-init is an important software that manages virtual machines. To download it, access the following link through the ECS browser:
 <https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi>.
 
-After downloading it, open the “CloudbaseInitSetup” installer and click “Next” three times in a row until the user settings screen appears. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image87.png) Set the “Username” to “Administrator” and select “COM1” in the “Serial port for logging” option. Click “Next” to continue and “Install” to install the software. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image88.png) Finally, disable the two available options and click “Finish”. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image89.png)
+After downloading it, open the “CloudbaseInitSetup” installer and click “Next” three times in a row until the user settings screen appears. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image87.png) Set the “Username” to “Administrator” and select “COM1” in the “Serial port for logging” option. Click “Next” to continue and “Install” to install the software. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image88.png) 
+
+Finally, disable the two available options and click “Finish”. 
+
+![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image89.png)
 
 Finally, cloudbase-init needs to be configured. Navigate to the following path: “C:\\Program Files\\Cloudbase
 Solutions\\Cloudbase-Init\\conf” and open the “cloudbase-init.conf” file using notepad.
@@ -389,29 +413,25 @@ Solutions\\Cloudbase-Init\\conf” and open the “cloudbase-init.conf” file u
 
 Add the following settings to the end of the file:
 
-- netbios\_host\_name\_compatibility=false
-
-- metadata\_services=cloudbaseinit.metadata.services.httpservice.HttpService
-
-- plugins=cloudbaseinit.plugins.common.localscripts.LocalScriptsPlugin,cloudbaseinit.plugins.common.mtu.MTUPlugin,cloudbaseinit.plugins.windows.createuser.CreateUserPlugin,cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin,cloudbaseinit.plugins.common.sshpub lickeys.SetUserSSHPublicKeysPlugin,cloudbaseinit.plugins.common.sethostname.SetHostNamePlugin,cloudbaseinit.plugins.windows.extendvolume s.ExtendVolumesPlugin,cloudbaseinit.plugins.common.userdata.UserDataPlugin,cloudbaseinit.plugins.windows.licensing.WindowsLicensingPlugin
-
- - first\_logon\_behaviour=no
+```shell
+netbios_host_name_compatibility=false 
+metadata_services=cloudbaseinit.metadata.services.httpservice.HttpService
+plugins=cloudbaseinit.plugins.common.localscripts.LocalScriptsPlugin,cloudbaseinit.plugins.common.mtu.MTUPlugin,cloudbaseinit.plugins.windows.createuser.CreateUserPlugin,cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin,cloudbaseinit.plugins.common.sshpublickeys.SetUserSSHPublicKeysPlugin,cloudbaseinit.plugins.common.sethostname.SetHostNamePlugin,cloudbaseinit.plugins.windows.extendvolumes.ExtendVolumesPlugin,cloudbaseinit.plugins.common.userdata.UserDataPlugin,cloudbaseinit.plugins.windows.licensing.WindowsLicensingPlugin
+first_logon_behaviour=no
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image91.png)
 
 Optionally, also add the following settings:
 
-- plugins=cloudbaseinit.plugins.windows.winrmlistener.ConfigWinRMListenerPlugin,cloudbaseinit.plugins.windows.winrmcertificateauth.ConfigWinRMCertificateAuthPlugin
-
-- retry\_count=40
-
-- retry\_count\_interval=5
-
-- real\_time\_clock\_utc=true
-
-- \[openstack\]
-
-add\_metadata\_private\_ip\_route=False
+```shell
+plugins=cloudbaseinit.plugins.windows.winrmlistener.ConfigWinRMListenerPlugin,cloudbaseinit.plugins.windows.winrmcertificateauth.ConfigWinRMCertificateAuthPlugin
+retry_count=40
+retry_count_interval=5
+real_time_clock_utc=true
+[openstack]
+add_metadata_private_ip_route=False
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image92.png)
 
@@ -469,8 +489,5 @@ created from the ISO file downloaded in step 2\!
 
 # References:
 
-- IMS documentation:
-<https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0220.html>.
-
-- Workspace documentation:
-<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>.
+- IMS documentation: <https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0220.html>.
+- Workspace documentation: <https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>.
