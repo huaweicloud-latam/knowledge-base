@@ -3,7 +3,7 @@ title: Terraform Startup
 layout: default
 parent: Huawei Cloud Stack Online (HCSO)
 grand_parent: Huawei Cloud Stack
-permalink: /docs/Huawei Cloud Stack/HCSO/Terraform Startup
+permalink: /docs/huawei-cloud-stack/hcso/terraform-startup
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -17,53 +17,38 @@ V1.0 – November 2024
 | V1.0 – 2024-11-21 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
 | V1.0 – 2024-11-21 | Gustavo Scovini 00918380       | Revisão do Documento |
 
-# Objetivo
+# Objective
 
-Este documento objetiva apresentar os procedimentos necessários para a
-efetivação da configuração do provedor Huawei Cloud na ferramenta de
-infraestrutura como código Terraform para implementações Huawei Cloud
-Stack Online (HCSO).
+This document aims to present the procedures required to configure the Huawei Cloud provider in the Terraform infrastructure-as-code tool for Huawei Cloud Stack Online (HCSO) deployments.
 
 # IAM
 
-Para delegar permissões para a criação de recursos através da ferramenta
-Terraform, faz-se necessária a criação de uma chave de acesso AK/SK no
-console da Huawei Cloud, chave a qual será utilizada para autenticação
-com a conta da Huawei Cloud.
+To delegate permissions for creating resources using the Terraform tool, it is necessary to create an AK/SK access key in the Huawei Cloud console, which will be used to authenticate with the Huawei Cloud account.
 
-Para isso, acesse o console da Huawei Cloud, passe o mouse sobre o nome
-da conta no canto superior direito e clique em “My Credentials”. Feito
-isso, clique em “Access Keys” e em “Create Access Key”.
+To do this, access the Huawei Cloud console, hover over the account name in the upper right corner and click “My Credentials”. Once done, click “Access Keys” and “Create Access Key”.
 
 ![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image3.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image4.png)
 
-Caso uma janela de aviso seja exibida, aceite a criação da credencial e
-clique em “Create”, seguido por “Download” para realizar o download do
-par de chaves AK/SK.
+If a warning window appears, accept the credential creation and
+click “Create” followed by “Download” to download the
+AK/SK key pair.
 
 ![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image5.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image6.png)
 
-**Nota:** As permissões da chave AK/SK criada serão herdadas do usuário
-que a criou. Caso algum problema oriundo de permissão seja encontrado,
-tome como referência a seguinte documentação de permissões do IAM para
-delegar as permissões necessárias:
-<https://support.huaweicloud.com/intl/en-us/productdesc-iam/iam_01_0036.html>.
+**Note:** The permissions of the created AK/SK key will be inherited from the
+user who created it. If you encounter any permission-related issues, refer to the following IAM permissions documentation to delegate the necessary permissions: <https://support.huaweicloud.com/intl/en-us/productdesc-iam/iam_01_0036.html>.
 
 # Terraform
 
-Primeiramente, baixe e instale a ferramenta Terraform, disponível no
-seguinte
-hyperlink:<https://developer.hashicorp.com/terraform/install?product_intent=terraform>.
+First, download and install the Terraform tool, available at the following hyperlink: <https://developer.hashicorp.com/terraform/install?product_intent=terraform>.
 
-Após a realização da instalação da ferramenta, crie um arquivo .tf no
-diretório desejado em que o código relativo à infraestrutura será
-armazenado. Feito isso, edite o arquivo e insira ambos trechos de código
-abaixo relativos ao provedor do registry Terraform, substituindo os
-parâmetros em destaque:
+After installing the tool, create a .tf file in the desired directory where the infrastructure code will be stored. Once this is done, edit the file and insert both code snippets
+below related to the Terraform registry provider, replacing the
+highlighted parameters:
 
 ```terraform
 terraform {
@@ -73,7 +58,7 @@ terraform {
             version = "\>= 1.36.0"
         }
     }
-} 
+}
 
 provider "huaweicloud" {
     region = "{região}"
@@ -85,20 +70,19 @@ provider "huaweicloud" {
 }
 ```
 
-  - região: região do HCSO em que os recursos serão criados;
+- region: HCSO region where the resources will be created;
 
-  - AK: access Key criada no item 2.0 deste documento;
+- AK: access Key created in item 2.0 of this document;
 
-  - SK: secret Key criada no item 2.0 deste documento;
+- SK: secret Key created in item 2.0 of this document;
 
-  - domínio: domínio do console HCSO;
+- domain: HCSO console domain;
 
-  - insecure: parâmetro opcional, somente necessário em caso de erros
-    decorrentes de certificados do HCSO.
+- insecure: optional parameter, only required in case of errors
+arising from HCSO certificates.
 
-Após ter configurado os campos de terraform e provedor, crie algum
-recurso para realizar a validação do funcionamento da ferramenta. Abaixo
-segue um trecho de código de exemplo para criar uma VPC:
+After configuring the terraform and provider fields, create a
+resource to validate the tool's operation. Below is a sample code snippet to create a VPC:
 
 ```terraform
 resource "huaweicloud\_vpc" "vpc-hcso" {
@@ -107,44 +91,37 @@ resource "huaweicloud\_vpc" "vpc-hcso" {
 }
 ```
 
-**Nota:** Segue o registry oficial do provedor Terraform da Huawei
-Cloud, compatível tanto com a nuvem pública Huawei Cloud quanto com
-implementações HCSO:
-<https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs>.
-Alternativamente, também existe o seguinte registry que pode ser
-utilizado exclusivamente para implementações HCSO:
-<https://registry.terraform.io/providers/huaweicloud/hcso/latest/docs>.
+**Note:** Below is the official registry of the Huawei Cloud Terraform provider, compatible with both the Huawei Cloud public cloud and
+HCSO implementations:
+<https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs>. Alternatively, there is also the following registry that can be used exclusively for HCSO implementations: <https://registry.terraform.io/providers/huaweicloud/hcso/latest/docs>. 
 
-# Exemplo
+# Example
 
-A seguir segue um exemplo de validação da configuração realizada na
-ferramenta Terraform, assim como o resultado no console HCSO:
+Below is an example of validating the configuration performed in the
+Terraform tool, as well as the result in the HCSO console:
 
 ![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image7.png)
 
-Utilizando o comando terraform init para inicializar o repositório
-Terraform:
+Using the terraform init command to initialize the
+Terraform repository:
 
 ![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image8.png)
 
-Utilizando o comando terraform plan para realizar a verificação do
-código desenvolvido pelo Terraform:
+Using the terraform plan command to verify the
+code developed by Terraform:
 
 ![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image9.png)
 
-Utilizando o comando terraform apply para aplicar as modificações
-realizadas, no caso a criação do recurso VPC:
+Using the terraform apply command to apply the
+modifications made, in this case the creation of the resource VPC:
 
 ![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image10.png)
 
-Resultado da criação da VPC no console HCSO:
+Result of creating VPC in HCSO console:
 
 ![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image11.png)
 
-# Referências
+# References
 
-  - Registry do Terraform da Huawei Cloud:
-    <https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs>.
-
-  - Registry do Terraform da Huawei Cloud HCSO:
-    <https://registry.terraform.io/providers/huaweicloud/hcso/latest/docs>.
+- Huawei Cloud Terraform Registry: <https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs>.
+- Huawei Cloud HCSO Terraform Registry: <https://registry.terraform.io/providers/huaweicloud/hcso/latest/docs>.

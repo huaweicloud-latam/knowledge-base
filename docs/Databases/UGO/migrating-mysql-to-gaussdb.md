@@ -20,7 +20,13 @@ V1.0 – April 2024
 
 Database and Application Migration (UGO) is a free tool available on Huawei Cloud for migrating heterogeneous database schemas. UGO can convert DDL statements to those compatible with the databases available on Huawei Cloud, such as GaussDB and RDS. In addition to schema migration and migration evaluation, UGO can automatically convert the source database syntax to be compatible with the target database.
 
-This document aims to guide the reader to use the UGO tool for migrating heterogeneous databases to RDS or GaussDB instances on HWC through a scenario of migrating a MySQL database to GaussDB. The dataset used is one of the MySQL test datasets, Sakila, publicly available on the MySQL website. # UGO To migrate a MySQL database to GaussDB, it is necessary to use the UGO service available at HWC to evaluate the migration and convert the source database syntax to a syntax compatible with the target database, in addition to checking the compatibility of the source engine with the target engine. To access the UGO service, simply search for “UGO” in the list of services available in the HWC console. It is worth noting that the service is only available in the regions of Santiago and Singapore. ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image3.png)
+This document aims to guide the reader to use the UGO tool for migrating heterogeneous databases to RDS or GaussDB instances on HWC through a scenario of migrating a MySQL database to GaussDB. The dataset used is one of the MySQL test datasets, Sakila, publicly available on the MySQL website. 
+
+# UGO 
+
+o migrate a MySQL database to GaussDB, it is necessary to use the UGO service available at HWC to evaluate the migration and convert the source database syntax to a syntax compatible with the target database, in addition to checking the compatibility of the source engine with the target engine. To access the UGO service, simply search for “UGO” in the list of services available in the HWC console. It is worth noting that the service is only available in the regions of Santiago and Singapore. 
+
+![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image3.png)
 
 ## **DB Evaluation**
 

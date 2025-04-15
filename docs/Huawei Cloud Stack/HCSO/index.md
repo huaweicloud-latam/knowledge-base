@@ -1,7 +1,7 @@
 ---
 title: Huawei Cloud Stack Online (HCSO)
 parent: Huawei Cloud Stack
-permalink: /docs/Huawei Cloud Stack/HCSO
+permalink: /docs/huawei-cloud-stack/hcso
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/HuaweiCloudStack/huaweicloudstack.png" width="80" height="80" alt="Huawei Cloud Stack Online (HCSO)">

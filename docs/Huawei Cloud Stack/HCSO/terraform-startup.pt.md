@@ -4,7 +4,7 @@ layout: default
 parent: Huawei Cloud Stack Online (HCSO)
 grand_parent: Huawei Cloud Stack
 lang: pt
-permalink: /docs/Huawei Cloud Stack/HCSO/Terraform Startup
+permalink: /docs/huawei-cloud-stack/hcso/terraform-startup
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
