@@ -17,35 +17,35 @@ V1.0 – November 2023
 |                   |                                |                 |
 |                   |                                |                 |
 
-# Objetivo
+# Objective
 
-Este documento objetiva colher e formalizar informações necessárias para
-a implementação criação de imagens privadas no serviço IMS para serem
-utilizadas no serviço de Workspace da Huawei Cloud.
+This document aims to collect and formalize the information required for
+implementing the creation of private images in the IMS service to be
+used in the Huawei Cloud Workspace service.
 
-# Criação imagem Windows 10
+# Creating a Windows 10 image
 
-1.  Faço o download da imagem ISO do Windows 10 no site da Microsoft.
+1. Download the Windows 10 ISO image from the Microsoft website.
 
-2.  Faça o download dos pacotes conforme apresentado no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0507.html>) e adicione em um bucket para facilitar a transferência para a máquina no momento da instalação.
+2. Download the packages as shown in the link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0507.html>) and add them to a bucket to facilitate transfer to the machine at the time of installation.
 
-3.  Depois de baixar a imagem ISO do Windows 10 e todos os pacotes realize o procedimento do link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0508.html>) para adicionar drivers no arquivo ISO.
+3. After downloading the Windows 10 ISO image and all the packages, perform the procedure in the link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0508.html>) to add drivers to the ISO file.
 
-4.  Inicie a instalação e configure o driver conforme o demonstrado no link (<https://support.huaweicloud.com/intl/en-us/usermanual-ims/en-us_topic_0146474784.html>).
+4. Start the installation and configure the driver as shown in the link (<https://support.huaweicloud.com/intl/en-us/usermanual-ims/en-us_topic_0146474784.html>).
 
-5.  Acesse o CD abra a pasta vmtools que foi adicionada na ISO e instale o vmtools.
+5. Access the CD, open the vmtools folder that was added to the ISO, and install vmtools.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image3.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image4.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/IMS-private-w indows-10-and-ubuntu-workspace-images/media/image5.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image6.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image7.png)
 
-### Ative o usuário Administrator clicando com botão direto do mouse no botão iniciar, acessando opção “Computer Management”, acesse a opção “Local User...”, depois “User”, clique com botão direito no usuário Administrator, propriedades e depois desmarque a opção de desabilitar o usuário. Repita o procedimento para acessar o usuário e configure uma senha para o usuário. Faço logoff com usuário atual e o login com o usuário Administrator.
+### Activate the Administrator user by right-clicking on the start button, accessing the “Computer Management” option, accessing the “Local User...” option, then “User”, right-click on the Administrator user, properties and then uncheck the option to disable the user. Repeat the procedure to access the user and set a password for the user. Log off with the current user and log in with the Administrator user.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image8.png)
 
@@ -53,47 +53,47 @@ utilizadas no serviço de Workspace da Huawei Cloud.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image10.png)
 
-### Efetue os ajuste indicados no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) **até o item 56**.
+### Make the settings indicated in the link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) **up to item 56**.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image11.png)
 
-### Ignore o item marcado em vermelho nesse item.
+### Ignore the item marked in red in this item.
 
-### Pode ignorar os itens entre 40 e 49
+### You can ignore items 40 to 49
 
-### Itens 50 a 56 apenas verificações (raramente é necessário ajuste).
+### Items 50 to 56 are just checks (adjustment is rarely required).
 
-Efetue a instalação dos softwares indicados no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) do item 57 em diante.
+Install the software listed in the link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) from item 57 onwards.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image12.png)
 
-### Verifique no painel de controle se os programas foram instalados
+### Check in the control panel if the programs have been installed
 
-### Antes da instalação da última ferramenta (Workspace\_HDP\_WindowsDesktop\_Installer) garanta que todas as atualizações do sistema operacional foram realizadas, caso contrário pode receber o erro:
+### Before installing the latest tool (Workspace\_HDP\_WindowsDesktop\_Installer) make sure that all operating system updates have been performed, otherwise you may receive the error:
 
 ![C:\\Users\\w00830850\\AppData\\Roaming\\eSpace\_Desktop\\UserData\\w00830850\\imagefiles\\130E24AA-8D4F-40C5-8D3C-CA991947FBDC.png](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image13.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image14.png)
 
-### Esse comando tem um erro a palavra marcada falta uma letra “n” o comando correto é: run\_silent.bat --passive --environment\_type 2 --nocheck --noshutdown
+### This command has an error the marked word is missing a letter “n” the correct command is: run\_silent.bat --passive --environment\_type 2 --nocheck --noshutdown
 
-### Quando inicializar o acesso do Administrator estará indisponível, login com usuário criado na instalação e set uma nova senha para o Administrator, faça o login com Administrator para o procedimento ser finalizado.
+### When initializing, Administrator access will be unavailable. Log in with the user created during installation and set a new password for Administrator. Log in with Administrator to complete the procedure.
 
-### Com todos os ajustes da instância realizados, agora utilizamos a ECS para criação da imagem, basta parar a ECS e na opção more selecionar “Manage Image” e depois Create Image.
+### With all the instance adjustments made, we now use ECS to create the image. Just stop ECS and in the more option select “Manage Image” and then Create Image.
 
 ### ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image15.png)
 
-### Com a imagem criada e aparecendo no serviço de IMS já está disponível para ser utilizada no serviço do Workspace.
+### With the image created and appearing in the IMS service, it is now available to be used in the Workspace service.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image16.png)
 
-# Criação imagem Ubuntu
+# Creating Ubuntu image
 
-### Faça o download da imagem ISO do Ubuntu Desktop (são suportados no momento do documento as versões 18.04.5-desktop-amd64 ou ubuntu-20.04.5.0-desktop-amd64 - <https://mu.releases.ubuntu.com/20.04.5/> - <https://old-releases.ubuntu.com/releases/18.04.5/>) e faça o upload no OBS.
+### Download the Ubuntu Desktop ISO image (supported at the time of writing are 18.04.5-desktop-amd64 or ubuntu-20.04.5.0-desktop-amd64 - <https://mu.releases.ubuntu.com/20.04.5/> - <https://old-releases.ubuntu.com/releases/18.04.5/>) and upload it to OBS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image17.png)
 
-## Importe a imagem ISO do ubuntu no serviço IMS.
+## Import the Ubuntu ISO image into the IMS service.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image18.png)
 
@@ -101,19 +101,19 @@ Efetue a instalação dos softwares indicados no link (<https://support.huaweicl
 
 ## ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image20.png)
 
-## Crie uma ECS usando a imagem criada com o importe da imagem ISO.
+## Create an ECS using the image created by importing the ISO image.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image21.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image22.png)
 
-## Acesso a instância e abra o terminal shell
+## Access the instance and open the shell terminal
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image23.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image24.png)
 
-## Instale os pacotes libxcb-xinerama0, gawk
+## Install the libxcb-xinerama0, gawk packages
 
 ```shell
 sudo su
@@ -122,7 +122,7 @@ apt install libxcb-xinerama0 -y
 apt install gawk -y
 ```
 
-##  Install the Linux Kernel (For Ubuntu 20.04 Only)
+## Install the Linux Kernel (For Ubuntu 20.04 Only)
 
 ```shell
 apt install linux-image-5.15.0-72-generic -y
@@ -133,7 +133,7 @@ grep menuentry /boot/grub/grub.cfg
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image25.png)
 
-## Registre a localização da versão 5.15.0-72, como mostrado na figura do kernel:
+## Record the location of version 5.15.0-72, as shown in the kernel figure:
 
 ```shell
 sudo nano /etc/default/grub
@@ -141,7 +141,7 @@ sudo nano /etc/default/grub
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image26.png)
 
-##  Instale e inicie o openssh
+## Install and start openssh
 
 ```shell
 apt update
@@ -149,7 +149,7 @@ apt install openssh-server -y
 service sshd start
 ```
 
-##  Configura o sshd.conf
+## Configure sshd.conf
 
 ```shell
 nano /etc/ssh/sshd_config
@@ -157,35 +157,35 @@ nano /etc/ssh/sshd_config
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image27.png)
 
-## Instalar python 3
+## Install python 3
 
 ```shell
 apt install python3 -y
 python3 --version
 ```
 
-## Instalar e configurar o cloud-init
+## Install and configure cloud-init
 
 ```shell
 apt install cloud-init -y
 nano /etc/cloud/cloud.cfg
 ```
 
-### Altere o parâmetro disable\_root para false, adicione as linhas no final
-do arquivo, ajuste os módulos config comentando a linha “locale”, na
-lista de módulos de inicialização coloque o ssh como primeiro item :
+### Change the disable\_root parameter to false, add the lines at the end
+of the file, adjust the config modules by commenting out the “locale” line, in the
+initialization module list place ssh as the first item:
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image28.png)
 
 ```shell
 datasource_list: [ OpenStack ]
 datasource:
-  OpenStack:
-    metadata_urls: ['http://169.254.169.254']
-    max_wait: 120
-    timeout: 5
+OpenStack:
+metadata_urls: ['http://169.254.169.254']
+max_wait: 120
+timeout: 5
 network:
-  config: disabled
+config: disabled
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image29.png)
@@ -194,17 +194,17 @@ network:
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image31.png)
 
-###  Verifique o cloud-init, caso apresente algum erro tente reiniciar a instância e execute o comando novamente:
+### Check cloud-init, if any error occurs try restarting the instance and run the command again:
 
 ```shell
-sudo cloud-init init --local
+sudo cloud-init init --location
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image32.png)
 
-##  Instalar KVM
+## Install KVM
 
-### Adicione o drivers do virtio no arquivo: “/etc/initramfs-tools/modules”:
+### Add the virtio drivers to the file: “/etc/initramfs-tools/modules”:
 
 ```shell
 nano /etc/initramfs-tools/modules
@@ -225,28 +225,28 @@ update-initramfs -u
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image34.png)
 
-## Baixe o pacote do HDA
+## Download the HDA package
 
 ```shell
 wget https://workspace-hdp-gray-cn-east-3.obs.cn-east-3.myhuaweicloud.com/WorkspaceHDP/HDPAgent/23.05.5/Workspace_HDP_LinuxDesktop_23.5.5.0922.iso
 cp Workspace_HDP_LinuxDesktop_23.5.5.0922.iso /tmp
 ```
 
-## Instalar o HAD
+## Install HAD
 
 ```shell
 mount /tmp/Workspace_HDP_LinuxDesktop_23.5.5.0922.iso /mnt
 cd /mnt
 /bin/bash autorun.sh
 
-# O sistema vai reiniciar
+# The system will restart
 
 rm -rf /tmp/Workspace_HDP_LinuxDesktop_23.5.5.0922.iso
 cat /usr/local/hdpserver/version.txt
 sudo apt-mark hold `uname -r`
 ```
 
-## Limpe o cache
+## Clear cache
 
 ```shell
 cd /usr/local/hdpserver/hwsysagent/scripts20
@@ -267,7 +267,7 @@ nano /usr/share/glib-2.0/schemas/19_mysettings.gschema.override
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 ```
 
-## Para a instância e criar a imagem:
+## Stop the instance and create the image
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image37.png)
 

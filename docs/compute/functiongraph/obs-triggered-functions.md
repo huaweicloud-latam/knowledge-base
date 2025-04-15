@@ -16,30 +16,22 @@ V1.0 – July 2024
 | V1.0 – 2024-07-04 | Diogo Hatz d50037923           | Versão Inicial       |
 | V1.0 – 2024-07-04 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
 
-# Objetivo
+# Objective
 
-Este documento objetiva apresentar os procedimentos necessários para a
-criação de uma função no serviço serverless FunctionGraph da Huawei
-Cloud com ativação por meio de upload de novos objetos em buckets do
-OBS.
+This document aims to present the procedures required to create a function in the Huawei Cloud FunctionGraph serverless service with activation by uploading new objects to OBS buckets.
 
 # Agency
 
-Para delegar permissões do serviço de object storage (OBS) para o
-FunctionGraph, faz-se necessário criar uma agency com permissões sobre o
-OBS. Navegue até o serviço IAM no console da Huawei Cloud e clique na
-página “Agencies”. Clique para criar uma agency em “Create Agency”.
+To delegate permissions from the object storage (OBS) service to FunctionGraph, it is necessary to create an agency with permissions over OBS. Navigate to the IAM service in the Huawei Cloud console and click the “Agencies” page. Click “Create Agency” to create an agency.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image3.png)
 
-Dê um nome para a agency, selecione o tipo de agency como “Cloud
-Service” e selecione o serviço FunctionGraph. Clique em “Next” para
-avançar.
+Give the agency a name, select the agency type as “Cloud Service”, and select the FunctionGraph service. Click “Next” to proceed.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image4.png)
 
-Delegue permissões de “OBS ReadOnlyAccess” para a agency e clique em
-“Next” e, então, em “OK” para concluir.
+Delegate “OBS ReadOnlyAccess” permissions to the agency and click
+“Next” and then “OK” to finish.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image5.png)
 
@@ -47,57 +39,53 @@ Delegue permissões de “OBS ReadOnlyAccess” para a agency e clique em
 
 # FunctionGraph
 
-Acesse o serviço FunctionGraph no console da Huawei Cloud e navegue até
-a página Functions \> Function List. Clique em “Create Function”.
+Access the FunctionGraph service in the Huawei Cloud console and navigate to
+the Functions \> Function List page. Click “Create Function”.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image7.png)
 
-Selecione a opção “Create from scratch”, dê um nome para a função,
-selecione o runtime em que a função será executada e selecione a agency
-criada no item 2.0 deste documento.
+Select the “Create from scratch” option, give the function a name,
+select the runtime in which the function will be executed, and select the agency
+created in item 2.0 of this document.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image8.png)
 
-Tendo criada a função, clique em “Create Trigger” para criar um trigger
-para a função ser ativada.
+Once you have created the function, click “Create Trigger” to create a trigger
+for the function to be activated.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image9.png)
 
-Selecione o Trigger Type como sendo “Object Storage Service (OBS)”,
-selecione o bucket desejado e o Event como “ObjectCreated”, para que a
-função seja ativada toda vez que um novo objeto aparecer no bucket em
-questão. Também é possível configurar um prefixo e um sufixo dos objetos
-específicos que irão acionar a função, configurando um Prefix ou Suffix.
+Select the Trigger Type as “Object Storage Service (OBS)”,
+select the desired bucket and the Event as “ObjectCreated”, so that the
+function is activated every time a new object appears in the bucket in question.
+
+It is also possible to configure a prefix and a suffix of the specific objects that will trigger the function, by configuring a Prefix or Suffix.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image10.png)
 
-Tendo criado o trigger, agora basta importar o código que será executado
-pela função em Code Source, como APIs.
+Having created the trigger, now simply import the code that will be executed by the function in Code Source, such as APIs.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image11.png)
 
-Também é possível adicionar dependências e bibliotecas third-party
-navegando até a parte de baixo do painel da função.
+You can also add third-party dependencies and libraries by navigating to the bottom of the function panel.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image12.png)
 
-# Exemplo
+# Example
 
-Neste exemplo, uma função em Python foi escrita para realizar uma
-requisição em um servidor web rodando em uma ECS toda vez que um novo
-objeto aparecer no bucket definido no item 3.0 deste documento.
+In this example, a Python function was written to make a request to a web server running on an ECS every time a new object appears in the bucket defined in item 3.0 of this document.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image13.png)
 
-Realizando o upload de um objeto no bucket definido:
+Uploading an object to the defined bucket:
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image14.png)
 
-Resultado no listener do servidor:
+Result in the server listener:
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-OBS-Trigger/media/image15.png)
 
-# Referências
+# References
 
-  - Documentação do FunctionGraph:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-functiongraph/functiongraph_01_0205.html>
+- FunctionGraph documentation:
+<https://support.huaweicloud.com/intl/en-us/usermanual-functiongraph/functiongraph_01_0205.html>

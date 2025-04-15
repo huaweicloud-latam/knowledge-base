@@ -17,18 +17,18 @@ V1.0 – November 2023
 |                   |                                |                 |
 |                   |                                |                 |
 
-# Objetivo
+# Objective
 
-Este documento objetiva apresentar os procedimentos necessários para
-criação de imagem do Ubuntu 20.04 com UEFI utilizando o serviço de IMS.
+This document aims to present the necessary procedures for
+creating an Ubuntu 20.04 image with UEFI using the IMS service.
 
-# Criação imagem Ubuntu
+# Creating an Ubuntu image
 
-## Faça o download da imagem ISO do Ubuntu Server (exemplo - <https://releases.ubuntu.com/focal/>) e faça o upload no OBS.
+## Download the Ubuntu Server ISO image (example - <https://releases.ubuntu.com/focal/>) and upload it to OBS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image3.png)
 
-## Importe a imagem ISO do ubuntu no serviço IMS.
+## Import the Ubuntu ISO image into the IMS service.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image4.png)
 
@@ -36,25 +36,21 @@ criação de imagem do Ubuntu 20.04 com UEFI utilizando o serviço de IMS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image6.png)
 
-Obs.: No momento da criação deste documento quando selecionamos UEFI e
-Ubuntu não aparece as opções para versões 18.04 e 20.04, mas isso foi
-reportado ao time de produto que informou e a alteração será feita em
-dezembro de 2023. Nesse momento pode selecionar a opção 16.04 que o
-sistema irá funcionar normalmente.
+Note: At the time of creating this document, when we select UEFI and Ubuntu, the options for versions 18.04 and 20.04 do not appear, but this was reported to the product team, who informed us and the change will be made in December 2023. At that time, you can select the 16.04 option and the system will work normally.
 
-## Crie uma ECS usando a imagem criada com o importe da imagem ISO.
+## Create an ECS using the image created by importing the ISO image.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image7.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image8.png)
 
-## Acesso a instância e abra o terminal shell
+## Access the instance and open the shell terminal
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image9.png)
 
-## Instalar KVM
+## Install KVM
 
-Adicione o drivers do virtio no arquivo: “/etc/initramfs-tools/modules”:
+Add the virtio drivers to the file: “/etc/initramfs-tools/modules”:
 
 ```shell
 nano /etc/initramfs-tools/modules
@@ -73,7 +69,7 @@ virtio
 update-initramfs -u
 ```
 
-## Instale e inicie o openssh
+## Install and start openssh
 
 ```shell
 apt update
@@ -81,7 +77,7 @@ apt install openssh-server -y
 service sshd start
 ```
 
-##  Configura o sshd.conf
+## Configure sshd.conf
 
 ```shell
 nano /etc/ssh/sshd_config
@@ -89,10 +85,10 @@ nano /etc/ssh/sshd_config
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image11.png)
 
-## Instalar e configurar o cloud-init
+## Install and configure cloud-init
 
-(apt install cloud-init não está funcionando para versão 20.04, instala
-a versão 23 e ela está com problemas de compatibilidade)
+(apt install cloud-init is not working for version 20.04, install
+version 23 and it has compatibility issues)
 
 ```shell
 apt remove cloud-init
@@ -117,12 +113,12 @@ cloud-init init --local
 nano /etc/cloud/cloud.cfg
 ```
 
-Altere os parâmetros conforme imagens, adicione as linhas no final do
-arquivo:
+Change the parameters as shown in the images, add the lines at the end of the
+file:
 
 ```shell
 - name: root
-   lock_passwd: False
+lock_passwd: False
 
 ssh_pwauth: true
 ```
@@ -136,18 +132,18 @@ ssh_pwauth: true
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image15.png)
 
 ```shell
-datasource_list: [ OpenStack ]
+datasource_list: [OpenStack]
 datasource:
-  OpenStack:
-    metadata_urls: ['http://169.254.169.254']
-    max_wait: 120
-    timeout: 5
-    apply_network_config: false
+ OpenStack:
+ metadata_urls: ['http://169.254.169.254']
+max_wait: 120
+timeout: 5
+apply_network_config: false
 network:
-  config: disabled
+config: disabled
 ```
 
-##  Verifique o cloud-init, caso apresente algum erro tente reiniciar a instância e execute o comando novamente:
+## Check cloud-init, if any error occurs try restarting the instance and run the command again:
 
 ```shell
 sudo cloud-init init --local
@@ -155,7 +151,7 @@ sudo cloud-init init --local
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image16.png)
 
-## Para a instância e criar a imagem:
+## Stop the instance and create the image:
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image17.png)
 

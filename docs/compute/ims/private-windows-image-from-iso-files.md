@@ -16,100 +16,56 @@ V1.0 – January 2024
 | V1.0 – 2024-01-02 | Diogo Hatz 50037923   | Versão Inicial       |
 | V1.0 – 2024-01-02 | Wisley Paulo 00830850 | Revisão do Documento |
 
-# Introdução
+# Introduction
 
-O Image Management Service (IMS) é um serviço disponibilizado na Huawei
-Cloud que permite a administração de imagens. Imagens são nada mais que
-servidores em cloud ou templates de disco que contêm um sistema
-operacional (SO), dados de serviço ou software.
+Image Management Service (IMS) is a service provided on Huawei Cloud that allows image management. Images are nothing more than cloud servers or disk templates that contain an operating system (OS), service data, or software.
 
-Este documento tem como finalidade discorrer o passo-a-passo de como
-fazer a criação de imagens personalizadas no IMS na Huawei Cloud a
-partir de arquivos ISO externos à Huawei Cloud.
+This document aims to provide a step-by-step guide on how to create customized images on IMS on Huawei Cloud from ISO files external to Huawei Cloud.
 
-# Preparação da ISO
+# ISO preparation
 
-A fim de prover as instâncias geradas a partir do arquivo ISO com acesso
-à internet e às demais funcionalidades de uma VM, faz-se necessária a
-instalação de drivers do VMTools nessas instâncias. Para isso, o driver
-do VMTools será integrado ao arquivo ISO desejado por meio do software
-AnyBurn, que pode ser baixado através do seguinte hyperlink:
+In order to provide the instances generated from the ISO file with access to the Internet and other VM functionalities, it is necessary to install VMTools drivers on these instances. To do this, the VMTools driver will be integrated into the desired ISO file using the AnyBurn software, which can be downloaded via the following hyperlink:
 <http://www.anyburn.com/index.htm>.
 
-Ademais, o pacote de drivers do VMTools pode ser baixado através do
-seguinte link:
-<https://ecs-instance-driver.obs.cn-north-1.myhuaweicloud.com/vmtools-windows.zip>.
-
-Após instalar o AnyBurn e extrair os arquivos do pacote de drivers do
-VMTools do arquivo “vmtools-windows.zip”, abra o software instalado do
-AnyBurn e clique em “Browse/Extract image file”.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image3.png)
-
-Selecione o diretório da pasta “vmtools-windows” e selecione o arquivo
-“vmtools-windows.iso”. Clique em “Next” duas vezes.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image4.png)
+In addition, the VMTools driver package can be downloaded from the following link: <https://ecs-instance-driver.obs.cn-north-1.myhuaweicloud.com/vmtools-windows.zip>. After installing AnyBurn and extracting the VMTools driver package files from the “vmtools-windows.zip” file, open the installed AnyBurn software and click “Browse/Extract image file”. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image3.png) Select the “vmtools-windows” folder directory and select the “vmtools-windows.iso” file. Click “Next” twice. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image4.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image5.png)
 
-Selecione o diretório para onde os arquivos da iso serão extraídos. Como
-sugestão, selecione a pasta “vmtools-windows” previamente extraída e
-clique em “Next”.
+Select the directory where the ISO files will be extracted. As a suggestion, select the previously extracted “vmtools-windows” folder and
+click “Next”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image6.png)
 
-Volte ao menu inicial do software AnyBurn e selecione a opção “Edit
-image file”.
+Return to the AnyBurn software home menu and select the “Edit image file” option.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image7.png)
 
-Selecione o diretório da iso da imagem a ser criada e clique em “Next”.
-Neste caso, o arquivo selecionado será a iso do Windows server 2019.
+Select the directory of the ISO image to be created and click “Next”.
+
+In this case, the selected file will be the Windows Server 2019 ISO.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image8.png)
 
-Selecione a opção “More” e clique em “New Folder”. Nomeie a pasta como
+Select the “More” option and click “New Folder”. Name the folder as
 “vmtools-windows”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image9.png)
 
-Clique na pasta criada e em “Add+”. Selecione os quatro arquivos
-extraídos da iso “vmtools-windows.iso” e clique em “Next” e
-posteriormente em “Create now”.
+Click on the created folder and click “Add+”. Select the four files extracted from the “vmtools-windows.iso” ISO and click “Next” and then “Create now”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image10.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image11.png)
 
-Aguarde até que a barra de progresso chegue ao fim.
+Wait until the progress bar reaches the end.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image12.png)
 
-# Upload da ISO
+# Upload the ISO
 
-Para realizar o upload da ISO da instância a ser criada, o serviço de
-storage OBS será utilizado. Acesse o console da Huawei Cloud e vá até a
-seção do OBS.
+To upload the ISO of the instance to be created, the OBS storage service will be used. Access the Huawei Cloud console and go to the OBS section. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image13.png) If the OBS Browser + application is not installed on your computer, please read section 3.1. Otherwise, skip to section 3.2. ## OBS Browser + Within OBS, click “Download” on the icon representing OBS Browser +. Download and install the OBS Browser + software. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image14.png) Return to the Huawei Cloud console, hover over your Huawei Cloud ID, and click “My Credentials”. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image15.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image13.png)
-
-Caso o aplicativo OBS Browser + não esteja instalado em seu computador,
-leia a seção 3.1. Caso contrário, pule para a seção 3.2.
-
-## OBS Browser +
-
-Dentro do OBS, clique em “Download” no ícone representando o OBS Browser
-+. Baixe e instale o software do OBS Browser +.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image14.png)
-
-Retorne ao console da Huawei Cloud, coloque o mouse em cima do seu ID da
-Huawei Cloud e clique em “My Credentials”.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image15.png)
-
-Clique em “Access Keys”, “Create Access Keys”, “Ok” e “Download”.
+Click on “Access Keys”, “Create Access Keys”, “Ok” and “Download”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image16.png)
 
@@ -119,118 +75,95 @@ Clique em “Access Keys”, “Create Access Keys”, “Ok” e “Download”
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image19.png)
 
-## Upload da ISO no bucket
+## Upload ISO to bucket
 
-Na seção do OBS dentro do console da Huawei Cloud, clique em “Create
+In the OBS section within the Huawei Cloud console, click “Create
 Bucket”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image20.png)
 
-Dê um nome para o bucket e selecione “Standard” em “Default Storage
-Class”. Esta configuração é importe, tendo em vista que se outra opção
-de classe for selecionada haverá um erro ao criar a imagem a partir da
-ISO posteriormente.
+Give the bucket a name and select “Standard” in “Default Storage Class”. This setting is important, since if another class option is selected, an error will occur when creating the image from the ISO later.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image21.png)
 
-Clique em “Create Now” para criar o bucket. Abra o aplicativo OBS
-Browser + e insira as informações para acesso conforme pedidas na seção
-“AK Login”. Nos campos “Access Key ID” e “Secret Access Key”, insira
-os dados gerados na seção 3.1. Em “Service”, selecione “HUAWEI CLOUD OBS
-(default)”. Em “Access Path” insira “obs://” seguido do nome do bucket
-criado. Neste exemplo, o caminho será “obs://ims-iso-tutorial”. Clique
-em “Log In”.
+Click “Create Now” to create the bucket. Open the OBS Browser + application and enter the access information as requested in the “AK Login” section. In the “Access Key ID” and “Secret Access Key” fields, enter the generated data in section 3.1. In “Service”, select “HUAWEI CLOUD OBS
+(default)”. In “Access Path” enter “obs://” followed by the name of the bucket
+created. In this example, the path will be “obs://ims-iso-tutorial”. Click
+on “Log In”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image22.png)
 
-Clique em Upload
+Click Upload
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image23.png)
 
-Selecione a opção “Standard” em “Storage Class” e em “Add File” para
-adicionar a iso da instância a ser criada. Neste caso, a iso do Windows
-Server 2019. Aguarde até que o upload seja concluído para seguir para as
-próximas etapas.
+Select the “Standard” option in “Storage Class” and in “Add File” to
+add the iso of the instance to be created. In this case, the Windows Server 2019 ISO. Wait until the upload is complete before proceeding to the next steps. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image24.png) # Creating the image in IMS Access the Huawei Cloud console and go to the IMS section. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image25.png) Go to the “Private Images” section and click “Create Now”. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image26.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image24.png)
-
-# Criação da imagem no IMS
-
-Acesse o console da Huawei Cloud e vá até a seção do IMS.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image25.png)
-
-Vá até a seção de “Private Images” e clique em “Create Now”.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image26.png)
-
-Configure os parâmetros de acordo com a imagem da instância que será
-criada. Neste caso, o OS do Windows Server 2019 Standard.
+Configure the parameters according to the instance image that will be created. In this case, the Windows Server 2019 Standard OS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image27.png)
 
-Para imagens Windows, selecione a opção “Bring your own license (BYOL)”.
-Clique em “Next” após configurar todos os campos.
+For Windows images, select the “Bring your own license (BYOL)” option.
+
+Click “Next” after configuring all fields.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image28.png)
 
-Verifique se as informações estão corretas e clique em “Submit”.
+Check if the information is correct and click “Submit”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image29.png)
 
-Aguarde até que a imagem da ISO seja criada e clique em “Create ECS”
-para criar uma instância da imagem gerada.
+Wait until the ISO image is created and click “Create ECS”
+to create an instance of the generated image.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image30.png)
 
-Configure as informações necessárias para a criação da ECS e clique em
-“OK” para criar a ECS.
+Configure the information required to create the ECS and click
+“OK” to create the ECS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image31.png)
 
-As próximas etapas serão importantes para configurar a imagem com os
-softwares e configurações necessárias para o bom funcionamento das
-instâncias criadas a partir dessa imagem.
+The next steps will be important to configure the image with the
+software and settings required for the proper functioning of the
+instances created from this image.
 
-# Instalação do SO
+# OS Installation
 
-Acesse o console da Huawei Cloud e vá até a seção relativa ao serviço
-ECS. Clique em “Remote Login” para acessar remotamente a instância
-criada na etapa 4 deste documento.
+Access the Huawei Cloud console and go to the ECS service section. Click “Remote Login” to remotely access the instance created in step 4 of this document.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image32.png)
 
-Configure o idioma do sistema e clique em “Next” e “Install now”.
+Set the system language and click “Next” and “Install now”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image33.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image34.png)
 
-Selecione a versão do SO a ser instalado, verifique que a opção contém
-“Desktop Experience” para que uma interface gráfica seja instalada
-junto ao sistema, caso desejado, e clique em “Next”.
+Select the OS version to be installed, check that the option contains
+“Desktop Experience” so that a graphical interface is installed
+with the system, if desired, and click “Next”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image35.png)
 
-Aceite os termos e clique em “Next”.
+Accept the terms and click “Next”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image36.png)
 
-Selecione a opção “Custom: Install Windows only (advanced)”.
+Select the “Custom: Install Windows only (advanced)” option.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image37.png)
 
-Clique em “Load driver” e em “Browse”. Selecione o seguinte caminho:
-“C:vmtools-windows/upgrade/**sua-versão-do-SO**/drivers/viostor”.
+Click “Load driver” and then “Browse”. Select the following path:
+“C:\vmtools-windows/upgrade/**your-OS-version**/drivers/viostor”.
 
-**Nota: Para o Windows Server 2019 e 2022, selecione o driver relativo
-ao Windows Server 2016.**
+**Note: For Windows Server 2019 and 2022, select the driver for Windows Server 2016.**
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image38.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image39.png)
 
-Clique em “Next” duas vezes seguidas e aguarde a instalação do Windows.
+Click “Next” twice in a row and wait for Windows to install.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image40.png)
 
@@ -238,80 +171,70 @@ Clique em “Next” duas vezes seguidas e aguarde a instalação do Windows.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image42.png)
 
-Configure uma senha para o perfil de Administrador do Windows e clique
-em “Finish” para finalizar a instalação do Windows.
+Set a password for the Windows Administrator profile and click “Finish” to complete the Windows installation.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image43.png)
 
-Acesse o desktop do Windows, abra o explorador de arquivos e vá até a
-unidade ejetável. Abra a pasta “vmtools-windows” e instale o software
-“setup”, que corresponde aos drivers do VMTools.
+Go to the Windows desktop, open File Explorer, and navigate to the ejectable drive. Open the “vmtools-windows” folder and install the “setup” software, which corresponds to the VMTools drivers.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image44.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image45.png)
 
-Reinicie o computador quando pedido.
+Restart the computer when prompted.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image46.png)
 
-# Configuração da ECS
+# ECS Configuration
 
 ## EIP
 
-Para disponibilizar o acesso à internet para a ECS, faz-se necessário
-atrelar um EIP à ECS. Para isso, clique em “More” ao lado da ECS
-desejada na seção ECS do console da Huawei Cloud, “Manage Network” e
-“Bind EIP”.
+To provide Internet access to the ECS, it is necessary to
+attach an EIP to the ECS. To do this, click “More” next to the desired ECS in the ECS section of the Huawei Cloud Console, “Manage Network” and “Bind EIP”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image47.png)
 
-Caso nenhum EIP esteja disponível, compre um EIP clicando em “Buy EIP”.
+If no EIP is available, purchase an EIP by clicking “Buy EIP”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image48.png)
 
-Clique em “Buy EIP novamente”.
+Click “Buy EIP again”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image49.png)
 
-Selecione os parâmetros do EIP que será atrelado à ECS, como a sua
-largura de banda e clique em “Next” e “Submit”.
+Select the parameters of the EIP that will be attached to the ECS, such as its bandwidth, and click “Next” and “Submit”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image50.png)
 
-Selecione o EIP comprado para ser atrelado à ECS.
+Select the purchased EIP to be attached to the ECS.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image51.png)
 
-Caso seja desejado que as atualizações do sistema sejam instaladas, siga
-para a seção 6.2. Caso contrário, pule para a seção 6.3. **Aviso: É
-importante que as atualizações do sistema sejam feitas antes de qualquer
-outra configuração no sistema caso optado.**
+If you want to install system updates, proceed to section 6.2. Otherwise, skip to section 6.3. **Warning: It is
+important that system updates are performed before any
+other system configuration if chosen.**
 
-## Atualização do sistema
+## System update
 
-Para atualizar o sistema, clique no Windows Search, digite “update” e
-clique em “Check for updates”.
+To update the system, click on Windows Search, type “update” and
+click on “Check for updates”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image52.png)
 
-Clique em “Check for updates” novamente e espere até que todas as
-atualizações sejam feitas. A ECS poderá ser reiniciada algumas vezes
-nesse processo.
+Click on “Check for updates” again and wait until all
+updates are performed. ECS may be restarted a few times
+in this process.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image53.png)
 
 ## Gpedit.msc
 
-Clique no Windows Search e digite “gpedit.msc” para abrir o editor de
-políticas do grupo local.
+Click on Windows Search and type “gpedit.msc” to open the local group policy editor.
 
 ### Server Manager
 
-Navegue até “Computer Configuration \> Administrative Templates \>
-System \> Server Manager”. Clique duas vezes em “Do not display Server
-Manager automatically at logon” e selecione “Enabled” para evitar com
-que o Server Manager seja aberto automaticamente ao iniciar a instância.
+Navigate to “Computer Configuration \> Administrative Templates \> System \> Server Manager”. Double-click on “Do not display Server
+Manager automatically at logon” and select “Enabled” to prevent Server Manager from opening automatically when starting the instance.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image54.png)
 
@@ -319,26 +242,24 @@ que o Server Manager seja aberto automaticamente ao iniciar a instância.
 
 ### Shut down
 
-Navegue até “Computer Configuration \> Windows Settings \> Security
-Settings \> User Rights Assignment“ e clique duas vezes na opção “Shut
-down the system”.
+Navigate to “Computer Configuration \> Windows Settings \> Security
+Settings \> User Rights Assignment“ and double-click on the “Shut down the system” option.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image56.png)
 
-Clique em “Add User or Group”.
+Click “Add User or Group”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image57.png)
 
-Clique em “Object Types”.
+Click “Object Types”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image58.png)
 
-Habilite a opção “Groups” e clique em “OK”.
+Enable the “Groups” option and click “OK”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image59.png)
 
-Em “Enter the object names to select”, escreva “Users” e clique na tecla
-Enter. Clique “OK”.
+In “Enter the object names to select”, type “Users” and press the Enter key. Click “OK”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image60.png)
 
@@ -346,17 +267,13 @@ Enter. Clique “OK”.
 
 ### Firewall
 
-Navegue até “Computer Configuration \> Network \> Network Connections \>
-Domain Profile”, clique duas vezes em “Windows Firewall: Protect all
-network connections” e selecione a opção “Disabled”.
+Navigate to “Computer Configuration \> Network \> Network Connections \> Domain Profile”, double-click “Windows Firewall: Protect all network connections” and select the “Disabled” option.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image62.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image63.png)
 
-Navegue até “Computer Configuration \> Network \> Network Connections \>
-Standard Profile”, clique duas vezes em “Windows Firewall: Protect all
-network connections” e selecione a opção “Disabled”.
+Navigate to “Computer Configuration \> Network \> Network Connections \> Standard Profile”, double-click “Windows Firewall: Protect all network connections” and select the “Disabled” option.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image64.png)
 
@@ -364,23 +281,22 @@ network connections” e selecione a opção “Disabled”.
 
 ## Services
 
-**Nota: Para o Windows Server 2019, ignore a seção 6.4.**
+**Note: For Windows Server 2019, skip section 6.4.**
 
-Clique no Windows Search e digite “services” para abrir a janela
-relativa à administração dos serviços do Windows.
+Click on Windows Search and type “services” to open the Windows services management window.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image66.png)
 
-Navegue até “Windows Firewall” e clique duas vezes. Em “Startup type”
-selecione “Disabled”.
+Navigate to “Windows Firewall” and double-click it. In “Startup type”
+select “Disabled”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image67.png)
 
 ## DHCP
 
-Cheque se os NICs da instância estão configuradas como DHCP. Para isso,
-navegue até o “Control Panel” através do Windows Search, vá até “Network
-and Internet Connections”, clique em ”Network and Sharing Center”.
+Check if the instance's NICs are configured as DHCP. To do this,
+navigate to the “Control Panel” through Windows Search, go to “Network
+and Internet Connections”, click on ”Network and Sharing Center”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image68.png)
 
@@ -388,237 +304,173 @@ and Internet Connections”, clique em ”Network and Sharing Center”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image70.png)
 
-Clique no adaptador de rede disponível em sua instância e em
+Click on the network adapter available in your instance and click on
 “Properties”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image71.png)
 
-Selecione o protocolo de rede utilizado pela instância, neste caso IPv4,
-e clique em “Properties”.
+Select the network protocol used by the instance, in this case IPv4,
+and click “Properties”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image72.png)
 
-Cheque se para ambas as opções a alternativa habilitada é relativa a
-obter o endereço IP e DNS automaticamente. Clique em “Ok” para salvar.
+Check whether the enabled option for both options is related to
+obtain the IP address and DNS automatically. Click “Ok” to save.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image73.png)
 
 ## Remote Desktop
 
-Para habilitar o acesso remoto à instância, abra o Windows Search e
-digite “Allow remote access to your computer”.
+To enable remote access to the instance, open Windows Search and
+type “Allow remote access to your computer”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image74.png)
 
-Habilite a opção “Allow remote connections to this computer” e clique em
-“OK” para confirmar a mudança feita.
+Enable the “Allow remote connections to this computer” option and click “OK” to confirm the change.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image75.png)
 
-Cheque se o firewall do Windows permite a entrada e saída de tráfego do
-serviço de acesso remoto navegando até Windows Firewall
+Check if the Windows firewall allows incoming and outgoing traffic for the
+remote access service by navigating to Windows Firewall
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image76.png)
 
-Clique em “Allow an app or feature through Windows Defender Firewall”.
+Click “Allow an app or feature through Windows Defender Firewall”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image77.png)
 
-Habilite o acesso remoto pelo firewall habilitando as opções do serviço
-“Remote Desktop".
+Enable remote access through the firewall by enabling the “Remote Desktop” service options.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image78.png)
 
 ## PV Driver
 
-O PV Driver é responsável por fazer a gestão de instâncias com a
-virtualização Xen. Por mais que esse tipo de tecnologia de virtualização
-tenha sido descontinuado na Huawei Cloud, ainda é importante que os
-drivers sejam instalados. Baixe-os através do seguinte link na
-instância:
-<https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0317.html>.
-Extraia o arquivo baixado e abra o instalador “pvdriver-win”. Aceite os
-termos de serviço e clique em “Install”.
+The PV Driver is responsible for managing instances with Xen virtualization. Although this type of virtualization technology has been discontinued in Huawei Cloud, it is still important that the drivers are installed. Download them through the following link in the instance:
+<https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0317.html>. Extract the downloaded file and launch the “pvdriver-win” installer. Accept the terms of service and click “Install”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image79.png)
 
-Clique em “Finish” após a instalação terminar.
+Click “Finish” after the installation is complete.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image80.png)
 
 ## One-click reset password plugin
 
-Este plugin permite que a senha da instância seja resetada através do
-console da Huawei Cloud. Para instalá-lo, baixe-o através do seguinte
-link na instância :
-<https://cn-north-1-cloud-reset-pwd.obs.cn-north-1.myhuaweicloud.com/windows/reset_pwd_agent/CloudResetPwdAgent.zip>.
-Extraia o arquivo “CloudResetPwdAgent.zip” baixado. Antes de instalá-lo,
-no entanto, a porta 80 precisa ser habilitada no security group da ECS
-para que a instalação ocorra com sucesso.
+This plugin allows the instance password to be reset via the
+Huawei Cloud console. To install it, download it from the following link on the instance: <https://cn-north-1-cloud-reset-pwd.obs.cn-north-1.myhuaweicloud.com/windows/reset_pwd_agent/CloudResetPwdAgent.zip>. Extract the downloaded “CloudResetPwdAgent.zip” file. Before installing it, however, port 80 needs to be enabled in the ECS security group for the installation to be successful. Navigate to the Huawei Cloud console and go to the ECS section. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image81.png) Under “Network and Security”, click “Security Groups”. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image82.png)
 
-Navegue até o console da Huawei Cloud e vá para a seção ECS.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image81.png)
-
-Em “Network and Security”, clique em “Security Groups”.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image82.png)
-
-Selecione o security group a que a instância da ECS está atrelada.
+Select the security group to which the ECS instance is attached.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image83.png)
 
-Em “Outbound Rules”, adicione a regra para permitir o acesso ao
-protocolo TCP à porta 80 do seguinte destino: “169.254.0.0/16”.
+In “Outbound Rules”, add the rule to allow access to the TCP protocol to port 80 from the following destination: “169.254.0.0/16”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image84.png)
 
-Retorne à ECS e execute o arquivo “Setup” presenta na pasta extraída
-previamente.
+Return to ECS and run the “Setup” file present in the previously extracted folder.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image85.png)
 
-Para verificar a instalação com sucesso do plugin, abra o gerenciador de
-tarefas na seção de serviços e cheque se o serviço “cloudResetPwdAgent”
-está presente.
+To verify the successful installation of the plugin, open the task manager in the services section and check if the “cloudResetPwdAgent” service is present.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image86.png)
 
 ## Cloudbase-Init
 
-O cloudbase-init é um importante software que realiza a gestão de
-máquinas virtuais. Para baixa-lo, acesse o seguinte link através do
-navegador da ECS:
+Cloudbase-init is an important software that manages virtual machines. To download it, access the following link through the ECS browser:
 <https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi>.
 
-Após baixá-lo, abra o instalador “CloudbaseInitSetup” e clique em “Next”
-três vezes consecutivas até a tela de configurações dos usuários
-aparecer.
+After downloading it, open the “CloudbaseInitSetup” installer and click “Next” three times in a row until the user settings screen appears. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image87.png) Set the “Username” to “Administrator” and select “COM1” in the “Serial port for logging” option. Click “Next” to continue and “Install” to install the software. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image88.png) Finally, disable the two available options and click “Finish”. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image89.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image87.png)
-
-Configure o “Username” como “Administrator” e selecione “COM1” na opção
-“Serial port for logging”. Clique em “Next” para avançar e em
-“Install” para instalar o software.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image88.png)
-
-Ao fim, desabilite as duas opções disponíveis e clique em “Finish”.
-
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image89.png)
-
-Por último, o cloudbase-init precisa ser configurado. Navegue até o
-seguinte caminho: “C:\\Program Files\\Cloudbase
-Solutions\\Cloudbase-Init\\conf” e abra o arquivo “cloudbase-init.conf”
-através do bloco de notas.
+Finally, cloudbase-init needs to be configured. Navigate to the following path: “C:\\Program Files\\Cloudbase
+Solutions\\Cloudbase-Init\\conf” and open the “cloudbase-init.conf” file using notepad.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image90.png)
 
-Adicione as seguintes configurações ao final do arquivo:
+Add the following settings to the end of the file:
 
-  - netbios\_host\_name\_compatibility=false
+- netbios\_host\_name\_compatibility=false
 
-  - metadata\_services=cloudbaseinit.metadata.services.httpservice.HttpService
+- metadata\_services=cloudbaseinit.metadata.services.httpservice.HttpService
 
-  - plugins=cloudbaseinit.plugins.common.localscripts.LocalScriptsPlugin,cloudbaseinit.plugins.common.mtu.MTUPlugin,cloudbaseinit.plugins.windows.createuser.CreateUserPlugin,cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin,cloudbaseinit.plugins.common.sshpublickeys.SetUserSSHPublicKeysPlugin,cloudbaseinit.plugins.common.sethostname.SetHostNamePlugin,cloudbaseinit.plugins.windows.extendvolumes.ExtendVolumesPlugin,cloudbaseinit.plugins.common.userdata.UserDataPlugin,cloudbaseinit.plugins.windows.licensing.WindowsLicensingPlugin
+- plugins=cloudbaseinit.plugins.common.localscripts.LocalScriptsPlugin,cloudbaseinit.plugins.common.mtu.MTUPlugin,cloudbaseinit.plugins.windows.createuser.CreateUserPlugin,cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin,cloudbaseinit.plugins.common.sshpub lickeys.SetUserSSHPublicKeysPlugin,cloudbaseinit.plugins.common.sethostname.SetHostNamePlugin,cloudbaseinit.plugins.windows.extendvolume s.ExtendVolumesPlugin,cloudbaseinit.plugins.common.userdata.UserDataPlugin,cloudbaseinit.plugins.windows.licensing.WindowsLicensingPlugin
 
-  - first\_logon\_behaviour=no
+ - first\_logon\_behaviour=no
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image91.png)
 
-Opcionalmente, adicione também as seguintes configurações:
+Optionally, also add the following settings:
 
-  - plugins=cloudbaseinit.plugins.windows.winrmlistener.ConfigWinRMListenerPlugin,cloudbaseinit.plugins.windows.winrmcertificateauth.ConfigWinRMCertificateAuthPlugin
+- plugins=cloudbaseinit.plugins.windows.winrmlistener.ConfigWinRMListenerPlugin,cloudbaseinit.plugins.windows.winrmcertificateauth.ConfigWinRMCertificateAuthPlugin
 
-  - retry\_count=40
+- retry\_count=40
 
-  - retry\_count\_interval=5
+- retry\_count\_interval=5
 
-  - real\_time\_clock\_utc=true
+- real\_time\_clock\_utc=true
 
-  - \[openstack\]
+- \[openstack\]
 
-    add\_metadata\_private\_ip\_route=False
+add\_metadata\_private\_ip\_route=False
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image92.png)
 
-Para melhor compreensão do funcionamento de cada uma das configurações
-aqui realizadas, consulte a documentação oficial do IMS no seguinte
-link:
+For a better understanding of how each of the configurations performed here works, please refer to the official IMS documentation at the following link:
 <https://support.huaweicloud.com/intl/en-us/usermanual-ims/en-us_topic_0030730602.html>.
 
-Abra o cmd do Windows para limpar o endereço DHCP configurado
-atualmente. Esta etapa limitará o acesso à internet da instância até que
-ela seja reiniciada. Abra o Windows Search e digite “cmd”.
+Open Windows cmd to clear the currently configured DHCP address. This step will limit the instance's internet access until it is restarted. Open Windows Search and type “cmd”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image93.png)
 
-Digite o seguinte comando: “ipconfig /release”.
+Type the following command: “ipconfig /release”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image94.png)
 
-Ademais, digite a seguinte sequência de comandos: “diskpart” e “san
-policy=onlineall”. Cheque se a configuração foi aplicada digitando o
-comando “san”.
+Also, type the following sequence of commands: “diskpart” and “san
+policy=onlineall”. Check if the configuration was applied by typing the
+“san” command.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image95.png)
 
-Digite “exit” duas vezes consecutivas para sair do cmd. Reinicie a
-instância para que a instância retome o acesso à internet. Note que ao
-fazer o login na conta de Administrator, a ECS reiniciará
-automaticamente. Após a segunda reinicialização, você perceberá que a
-senha outrora configurada não mais funciona no perfil de administrador.
-Isso se dá pela instalação do cloudbase-init, que irá aleatorizar a
-senha do perfil após a primeira reinicialização do sistema depois de sua
-instalação. Para configurar a senha novamente, vá até o console da
-Huawei Cloud na seção ECS, clique em “More” e “Reset password” ao lado
-da instância desejada.
+Type “exit” twice consecutively to exit the cmd. Restart the
+instance so that the instance can resume internet access. Please note that when you log in to the Administrator account, ECS will automatically restart. After the second restart, you will notice that the password you previously set no longer works for the administrator profile. This is due to the installation of cloudbase-init, which will randomize the profile password after the first system restart after its installation. To set the password again, go to the Huawei Cloud console in the ECS section, click “More” and “Reset password” next to the desired instance. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image96.png) Set the password again, enable the “Auto Restart” box and click “OK”. ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image97.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image96.png)
+After the instance automatically restarts, you will notice how the Administrator profile password has been changed to the password defined in the console.
 
-Defina a senha novamente, habilite a caixa de “Auto Restart” e clique em
-“OK”.
+Now, perform the other desired configurations in ECS to generate the final instance image.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image97.png)
+# Creating the image
 
-Após a reinicialização automática da instância, é notório como a senha
-do perfil Administrator foi trocada pela senha definida no console.
-Agora realize as demais configurações desejadas na ECS para gerar a
-imagem final da instância.
+After performing all the above adjustments and those chosen by you, navigate to the ECS section in the Huawei Cloud console, click “More” next to the desired instance, and click “Stop” to shut down the instance.
 
-# Criação da imagem
-
-Após realizar todos os ajustes acima e os escolhidos por você, navegue
-até a seção ECS no console da Huawei Cloud, clique em “More” ao lado da
-instância desejada e clique em “Stop” para desligar a instância.
-Selecione “Yes”.
+Select “Yes”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image98.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image99.png)
 
-Navegue até a seção IMS no console da Huawei Cloud
+Navigate to the IMS section in the Huawei Cloud Console
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image100.png)
 
-Clique em “Create Now”, em “Image creation”.
+Click “Create Now” under “Image creation”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image101.png)
 
-Selecione “Create Image” em “Type” e “System disk image” em “Image
-Type”. Selecione a ECS desejada, dê um nome para a imagem e clique em
-“Next”, após selecionar a caixa para aceitar os termos. Clique em
+Select “Create Image” in “Type” and “System disk image” in “Image
+Type”. Select the desired ECS, give the image a name and click
+“Next”, after checking the box to accept the terms. Click
 “Submit”.
 
 ![](/huaweicloud-knowledge-base/assets/images/IMS-Private-Images-From-ISO/media/image102.png)
 
-Após finalizada a criação da imagem, agora novas instâncias podem ser
-criadas a partir do arquivo ISO baixado na etapa 2\!
+After the image creation is complete, new instances can now be
+created from the ISO file downloaded in step 2\!
 
-# Referências:
+# References:
 
-  - Documentação do IMS:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0220.html>.
+- IMS documentation:
+<https://support.huaweicloud.com/intl/en-us/usermanual-ims/ims_01_0220.html>.
 
-  - Documentação do Workspace:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>.
+- Workspace documentation:
+<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>.

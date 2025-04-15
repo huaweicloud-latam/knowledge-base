@@ -18,75 +18,47 @@ V1.0 – March 2024
 | V1.0 – 2024-03-14 | Diogo Hatz 50037923      | Tradução do Documento para Português |
 | V1.0 – 2024-03-14 | Wisley da Silva 00830850 | Revisão do Documento                 |
 
-# Introdução
+# Introduction
 
-O SMS é um serviço de migração de máquinas virtuais disponibilizado na
-Huawei Cloud. Com esse serviço, é possível migrar VMs de outras
-provedoras cloud ou de ambientes on-premises para a nuvem. O SMS migra
-máquinas virtuais para ECSs, que correspondem ao serviço de máquinas
-virtuais na Huawei Cloud.
+SMS is a virtual machine migration service provided by Huawei Cloud. With this service, you can migrate VMs from other cloud providers or from on-premises environments to the cloud. SMS migrates virtual machines to ECSs, which correspond to the virtual machine service in Huawei Cloud.
 
-Este documento tem como objetivo listar otimizações para VMs migradas da
-provedora Azure Cloud para a Huawei Cloud, assim como solucionar o erro
-de tela congelada em ECSs para a funcionalidade Remote Login no console
-da HWC.
+This document aims to list optimizations for VMs migrated from the Azure Cloud provider to Huawei Cloud, as well as to solve the error of a frozen screen in ECSs for the Remote Login functionality in the HWC console.
 
-# Configurações
+# Configurations
 
-O erro em questão para que o Remote Login fique congelado é relativo ao
-VNC, software de acesso remoto a outros computadores.
+The error in question for the Remote Login to freeze is related to VNC, software for remote access to other computers.
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image3.png)
 
-As VMs Linux criadas na Azure Cloud possuem o kernel modificado, o que
-pode causar problemas de conflitos com o software do VNC. Para realizar
-as modificações necessárias, siga o passo-a-passo abaixo:
-
-1.  Conecte à instância via SSH e modifique os seguintes parâmetros:
-
-    1.1 Comente a linha GRUB\_TIMEOUT\_STYLE=hidden
-
-    1.2 Modifique o GRUB\_TIMEOUT para 10: GRUB\_TIMEOUT=10
-
-![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image4.png)
-
-Delete o arquivo
-
-```shell
-rm -rf /etc/default/grub.d/50*
-```
-
-Após a deleção dos arquivos, execute o seguinte comando para atualizar as configurações do grub.
-
-```shell
+Linux VMs created in Azure Cloud have modified kernels, which may cause conflict issues with VNC software. To make the necessary changes, follow the steps below: 1. Connect to the instance via SSH and modify the following parameters: 1.1 Comment out the line GRUB\_TIMEOUT\_STYLE=hidden 1.2 Modify GRUB\_TIMEOUT to 10: GRUB\_TIMEOUT=10 ![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image4.png) Delete the file ```shell rm -rf /etc/default/grub.d/50* After deleting the files, run the following command to update the grub settings. ```shell
 update-grub2
 ```
 
-Modifique o repositório do Yum para apontar para o repositório da Huawei:
+Modify the Yum repository to point to the Huawei repository:
 
 ```shell
 sed -i 's/azure.archive.ubuntu.com/repo.huaweicloud.com/g' /etc/apt/sources.list
 apt autoclean && apt update
 ```
 
-Instale o kernel público do Ubuntu:
+Install the Ubuntu public kernel:
 
 ```shell
 apt install linux-image-generic
 ```
 
-Após a instalação ser concluída, reinicie a ECS e selecione o kernel genérico na tela do grub. **Obs:** É possível modificar o parâmetro **GRUB_DEFAULT** para apontar para o kernel genérico ao invés de manualmente selecionar o kernel genérico ao bootar a ECS.
+After the installation is complete, reboot the ECS and select the generic kernel in the grub screen. **Note:** It is possible to modify the **GRUB_DEFAULT** parameter to point to the generic kernel instead of manually selecting the generic kernel when booting the ECS.
 
-# Configurações Opcionais
+# Optional Configurations
 
-Além das configurações realizadas acima, também é recomendado que o agente da Azure, que é instalado por padrão em VMs da Azure, seja desinstalado, uma vez que o agente reporta logs para o console da VNC constantemente, o que pode afetar a performance do VNC:
+In addition to the configurations performed above, it is also recommended that the Azure agent, which is installed by default on Azure VMs, be uninstalled, since the agent constantly reports logs to the VNC console, which can affect VNC performance:
 
-Digite o seguinte comando para desinstalar o agente da Azure:
+Type the following command to uninstall the Azure agent:
 
 ```shell
 sudo apt -y remove walinuxagent
 ```
 
-# Referências
+# References
 
-  - <https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disable-provisioning>.
+- <https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disable-provisioning>.

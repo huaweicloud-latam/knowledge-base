@@ -4,7 +4,7 @@ layout: default
 parent: Cloud Container Engine (CCE)
 grand_parent: Containers
 lang: pt
-permalink: /docs/Containers/CCE/Migrating Azure AKS to Huawei CCE
+permalink: /docs/containers/cce/Migrating Azure AKS to Huawei CCE
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

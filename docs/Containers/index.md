@@ -1,6 +1,6 @@
 ---
 title: Containers
-permalink: /docs/Containers
+permalink: /docs/containers
 ---
 
 # Containers

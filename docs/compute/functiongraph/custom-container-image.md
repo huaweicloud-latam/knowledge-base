@@ -16,63 +16,38 @@ V1.0 – July 2024
 | V1.0 – 2024-07-11 | Diogo Hatz d50037923           | Versão Inicial       |
 | V1.0 – 2024-07-11 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
 
-# Objetivo
+# Objective
 
-Este documento objetiva apresentar os procedimentos necessários para a
-criação de uma função no serviço serverless FunctionGraph da Huawei
-Cloud com runtime baseado em uma imagem de container.
+This document aims to present the procedures required to create a function in Huawei Cloud's FunctionGraph serverless service with a runtime based on a container image.
 
-# Considerações
+# Considerations
 
-**<span class="underline">Importante:</span>** Para a execução de
-funções baseadas em imagens de containers no FunctionGraph, os
-seguintes critérios precisam ser cumpridos:
+**<span class="underline">Important:</span>** To execute functions based on container images in FunctionGraph, the following criteria must be met:
 
-1.  Um servidor HTTP ouvindo na porta 8000 precisa ser configurado e
-    estar rodando no container criado;
+1. An HTTP server listening on port 8000 must be configured and
+be running in the created container;
 
-2.  O usuário USER que irá rodar o container não pode ser o root. É
-    necessário criar um novo usuário para rodar o container com UID
-    diferente de 0, 1000 e 1002. O UID padrão do FunctionGraph é 1003,
-    portanto, se um UID diferente for configurado, é necessário alterar
-    na configuração da função no FunctionGraph;
+2. The USER user that will run the container cannot be root. It is necessary to create a new user to run the container with a UID
+other than 0, 1000, and 1002. The default UID of FunctionGraph is 1003,
+therefore, if a different UID is configured, it is necessary to change
+it in the function configuration in FunctionGraph;
 
-3.  É necessário que as seguintes variáveis de ambiente existam dentro
-    do container:
-
-    1.  **HOME**: Path onde o código-fonte da função se encontrará;
-
-    2.  **GROUP\_ID**: GID do grupo do usuário que irá executar o
-        container;
-
-    3.  **GROU\_NAME**: Nome do grupo do usuário que irá executar o
-        container;
-
-    4.  **USER\_ID**: UID do usuário que irá executar o container;
-
-    5.  **USER\_NAME**: Nome do usuário que irá executar o container.
-
-# SWR
-
-Para criar uma função com base em uma imagem de container, primeiramente
-se faz necessário realizar o upload dessa imagem no serviço de
-repositório da Huawei Cloud SWR (Software Repository for Container).
-**<span class="underline">Aviso:</span>** Para os itens 2.0 e 3.0 deste
-documento, também é possível se referir ao seguinte vídeo da HWC para
-configuração do SWR:
+3. The following environment variables must exist within the container: 1. **HOME**: Path where the function source code will be located; 2. **GROUP\_ID**: GID of the user group that will run the container; 3. **GROU\_NAME**: Name of the user group that will run the container; 4. **USER\_ID**: UID of the user that will run the container; 5. **USER\_NAME**: Name of the user that will run the container. # SWR To create a function based on a container image, you must first upload the image to the Huawei Cloud SWR (Software Repository for Container) repository service. **<span class="underline">Notice:</span>** For items 2.0 and 3.0 of this
+document, you can also refer to the following HWC video for
+SWR configuration:
 <https://developer.huaweicloud.com/intl/en-us/forum/topic/02117151603960362356>.
 
-Acesse o painel do serviço SWR no console da HWC e clique em “Create
-Organization”. Preencha o campo relativo ao nome da organização e
-confirme a sua criação clicando em “OK”.
+Access the SWR service panel in the HWC console and click “Create
+Organization”. Fill in the field for the organization name and
+confirm its creation by clicking “OK”.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image3.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image4.png)
 
-Criada a Organization, clique no botão relativo a “Generate Login
-Command” e copie o comando gerado que será utilizado para realizar a
-autenticação do Docker com o repositório SWR.
+Once the Organization has been created, click on the button related to “Generate Login
+Command” and copy the generated command that will be used to perform
+Docker authentication with the SWR repository.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image5.png)
 
@@ -80,72 +55,67 @@ autenticação do Docker com o repositório SWR.
 
 # Docker
 
-Acesse a máquina que possui a imagem do container localmente que irá
-rodar no FunctionGraph e cole o comando copiado no item 2.0 deste
-documento, relativo à autenticação do Docker com o serviço SWR da HWC.
+Access the machine that has the container image locally that will run in FunctionGraph and paste the command copied in item 2.0 of this
+document, related to Docker authentication with the HWC SWR service.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image7.png)
 
-Feito o login no repositório SWR através do Docker, copie o seguinte
-comando, alterando os campos \[image name 1:tag 1\], \[Image repositor
-address\], \[Organization name\] e \[Image name 2:tag 2\] de acordo com
-a lista abaixo:
+After logging into the SWR repository via Docker, copy the following
+command, changing the fields \[image name 1:tag 1\], \[Image repositor
+address\], \[Organization name\] and \[Image name 2:tag 2\] according to
+the list below:
 
-  - **\[Image name 1:tag 1\]:** {nome:tag} da imagem que será feito o
-    upload;
+- **\[Image name 1:tag 1\]:** {name:tag} of the image to be
+uploaded;
 
-  - **\[Image repositor address\]:** Domínio do SWR. Pode ser obtido no
-    comando de login obtido no item 2.0 deste documento;
+- **\[Image repositor address\]:** SWR domain. It can be obtained in
+the login command obtained in item 2.0 of this document;
 
-  - **\[Organization name\]:** Nome da organização criada no item 2.0
-    deste documento;
+- **\[Organization name\]:** Name of the organization created in item 2.0
+of this document;
 
-  - **\[Image name 2:tag 2\]:** {nome:tag} da imagem que aparecerá no
-    SWR. Similar a uma renomeação, o mesmo nome e tag podem ser
-    mantidos.
+- **\[Image name 2:tag 2\]:** {name:tag} of the image that will appear in
+SWR. Similar to a rename, the same name and tag can be
+kept.
 
 docker tag\[Image name 1:tag 1\] \[Image repository
 address\]/\[Organization name\]/\[Image name 2:tag 2\]
 
-Exemplo:
+Example:
 
-docker tag novo:1.0
+docker tag new:1.0
 swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
 
-Agora bata realizar o upload da imagem com o seguinte comando:
+Now upload the image with the following command:
 
 docker push \[Image repository address\]/\[Organization name\]/\[Image
 name 2:tag 2\]
 
-Exemplo:
+Example:
 
 docker push
 swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image8.png)
 
-Na página do serviço do SWR no console da HWC é possível ver que a
-imagem foi publicada com sucesso no repositório:
+On the SWR service page in the HWC console, You can see that the image has been successfully published to the repository:
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image9.png)
 
 # Agency
 
-Para delegar permissões do serviço SWR para o FunctionGraph, faz-se
-necessário criar uma agency com permissões sobre o SWR. Navegue até o
-serviço IAM no console da Huawei Cloud e clique na página “Agencies”.
-Clique para criar uma agency em “Create Agency”.
+To delegate permissions from the SWR service to FunctionGraph, you need to create an agency with permissions over SWR. Navigate to the IAM service in the Huawei Cloud console and click the “Agencies” page.
+
+Click “Create Agency” to create an agency.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image10.png)
 
-Dê um nome para a agency, selecione o tipo de agency como “Cloud
-Service” e selecione o serviço FunctionGraph. Clique em “Next” para
-avançar.
+Give the agency a name, select the agency type as “Cloud Service”, and select the FunctionGraph service. Click “Next” to proceed.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image11.png)
 
-Delegue permissões de “SWR FullAccess” e “SWR Admin” para a agency e
-clique em “Next” e, então, em “OK” para concluir.
+Delegate “SWR FullAccess” and “SWR Admin” permissions to the agency and
+click “Next” and then click “OK” to finish.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image12.png)
 
@@ -153,32 +123,31 @@ clique em “Next” e, então, em “OK” para concluir.
 
 # FunctionGraph
 
-Acesse o serviço FunctionGraph no console da Huawei Cloud e navegue até
-a página Functions \> Function List. Clique em “Create Function”.
+Access the FunctionGraph service in the Huawei Cloud console and navigate to
+the Functions \> Function List page. Click “Create Function”.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image14.png)
 
-Selecione a opção “Container Image”, “HTTP Function”, dê um nome para a
-função, selecione a agency criada no item 4.0 deste documento e
-selecione a imagem do SWR.
+Select the “Container Image”, “HTTP Function” option, give the function a name, select the agency created in item 4.0 of this document, and
+select the SWR image.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image15.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image16.png)
 
-Também é possível configurar opções adicionais do container, como o
-comando CMD de startup, argumentos de execução, User ID e Group ID.
-**<span class="underline">Importante:</span>** O User ID padrão
-utilizado é o 1003, e o User ID relativo ao usuário root de sistemas
-UNIX não pode ser utilizado. Para a execução de funções baseadas em
-imagens de containers, recomenda-se criar um novo usuário com UID = 1003
-e definir esse usuário como sendo o USER no momento de build da imagem.
+You can also configure additional container options, such as the
+CMD startup command, execution arguments, User ID, and Group ID.
+
+**<span class="underline">Important:</span>** The default User ID used is 1003, and the User ID corresponding to the root user on UNIX systems cannot be used. To execute functions based on container images, it is recommended to create a new user with UID = 1003
+and set this user as the USER when building the image.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image17.png)
 
-Tendo criada a função, clique em “Test” para testar a função criada.
-Confirme o exemplo de requisição HTTP recebida e clique em “Create”.
-Clique novamente em “Test” para realizar o teste da função criada.
+Once you have created the function, click “Test” to test the created function.
+
+Confirm the example of the HTTP request received and click “Create”.
+
+Click “Test” again to test the created function.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image18.png)
 
@@ -188,18 +157,18 @@ Clique novamente em “Test” para realizar o teste da função criada.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image21.png)
 
-**<span class="underline">Importante:</span>** Caso a execução da função
-apresente o erro “runtime process is exited”, verifique a memória
-alocada para a função em “Configuration” e “Memory(MB)”, alocando mais
-memória.
+**<span class="underline">Important:</span>** If the function execution
+shows the error “runtime process is exited”, check the memory
+allocated to the function in “Configuration” and “Memory(MB)”, allocating more
+memory.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image22.png)
 
-Por último, basta configurar um trigger para a função. Neste exemplo, o
-trigger que irá chamar a função do FunctionGraph será uma API Gateway do
-serviço APIG da HWC. Para criar um trigger, basta clicar em “+ Create
-Trigger” e configurar a instância do APIG, preenchendo o API Group,
-Environment, Security Authentication, protocolo e timeout.
+Finally, just configure a trigger for the function. In this example, the
+trigger that will call the FunctionGraph function will be an API Gateway from
+the HWC APIG service. To create a trigger, just click on “+ Create
+Trigger” and configure the APIG instance, filling in the API Group,
+Environment, Security Authentication, protocol and timeout.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image23.png)
 
@@ -207,30 +176,30 @@ Environment, Security Authentication, protocolo e timeout.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image25.png)
 
-Vale ressaltar que na configuração da API relativa à chamada da função,
-deve ser explicitada a referida função como backend da API.
+It is worth noting that in the API configuration related to the function call,
+the function in question must be explicitly specified as the API backend.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image26.png)
 
-# Exemplo
+# Example
 
-Neste exemplo, uma função escrita em .NET 8.0 foi desenvolvida com um
-trigger pelo API Gateway (APIG) da HWC para que, toda vez que for
-chamada, a função fazer uma requisição GET em um servidor HTTP remoto.
+In this example, a function written in .NET 8.0 was developed with a
+trigger by HWC's API Gateway (APIG) so that, every time it is
+called, the function makes a GET request to a remote HTTP server.
 
-Chamando a API através do painel do API Gateway no console da HWC:
+Calling the API via the API Gateway dashboard in the HWC console:
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image27.png)
 
-Listener do servidor HTTP remoto:
+Remote HTTP Server Listener:
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image28.png)
 
-Resultado da execução da API:
+API Execution Result:
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image29.png)
 
-# Referências
+# References
 
-  - Documentação do FunctionGraph:
-    <https://support.huaweicloud.com/intl/en-us/qs-functiongraph/functiongraph_04_0103.html#section2>.
+- FunctionGraph Documentation:
+<https://support.huaweicloud.com/intl/en-us/qs-functiongraph/functiongraph_04_0103.html#section2>.

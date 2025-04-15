@@ -3,7 +3,7 @@ title: Migrating K8S Cluster Using Velero
 layout: default
 parent: Cloud Container Engine (CCE)
 grand_parent: Containers
-permalink: /docs/Containers/CCE/Migrating K8S Cluster Using Velero
+permalink: /docs/containers/cce/Migrating K8S Cluster Using Velero
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

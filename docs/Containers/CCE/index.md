@@ -1,7 +1,7 @@
 ---
 title: Cloud Container Engine (CCE)
 parent: Containers
-permalink: /docs/Containers/CCE
+permalink: /docs/containers/cce
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Containers/CCE.png" width="80" height="80" alt="Cloud Container Engine (CCE)">

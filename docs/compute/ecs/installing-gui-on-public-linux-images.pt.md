@@ -14,7 +14,7 @@ V1.0 – Janeiro 2024
 | **Versão**        | **Autor**             | **Descrição**        |
 | ----------------- | --------------------- | -------------------- |
 | V1.0 – 2024-01-05 | Diogo Hatz 50037923   | Versão Inicial       |
-|                   | Wisley Paulo 00830850 | Revisão do Documento |
+| V1.0 – 2024-01-07 | Wisley Paulo 00830850 | Revisão do Documento |
 
 1. Índice
 {:toc}

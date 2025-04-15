@@ -16,18 +16,18 @@ V1.0 – June 2024
 | V1.0 – 2024-06-06 | Diogo Hatz d50037923           | Versão Inicial       |
 | V1.0 – 2024-06-06 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
 
-# Objetivo
+# Objective
 
-Este documento objetiva apresentar os procedimentos necessários para
-criação de imagem do OracleOS 9.4 utilizando o serviço de IMS.
+This document aims to present the procedures required to
+create an OracleOS 9.4 image using the IMS service.
 
-# Criação imagem OracleOS
+# Creating an OracleOS image
 
-Faça o download da imagem ISO do Ubuntu Server (exemplo - <https://yum.oracle.com/oracle-linux-isos.html>) e faça o upload no OBS.
+Download the Ubuntu Server ISO image (example - <https://yum.oracle.com/oracle-linux-isos.html>) and upload it to OBS.
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image3.png)
 
-## Importe a imagem ISO do OracleOS no serviço IMS.
+## Import the OracleOS ISO image into the IMS service.
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image4.png)
 
@@ -35,21 +35,21 @@ Faça o download da imagem ISO do Ubuntu Server (exemplo - <https://yum.oracle.c
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image6.png)
 
-## Crie uma ECS usando a imagem criada com o importe da imagem ISO.
+## Create an ECS using the image created by importing the ISO image.
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image7.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image8.png)
 
-## Acesse a instância e abra o terminal shell
+## Access the instance and open the shell terminal
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image9.png)
 
-## Vincule um EIP à máquina
+## Bind an EIP to the machine
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image10.png)
 
-## Instalar e configurar o cloud-init
+## Install and configure cloud-init
 
 ```shell
 yum update -y
@@ -57,7 +57,7 @@ yum update -y
 yum install cloud-init -y
 ```
 
-## Instale o plugin de troca de senha da HWC
+## Install the HWC password change plugin
 
 ```shell
 vi /etc/selinux/config
@@ -90,17 +90,17 @@ systemctl start cloudResetPwdAgent
 systemctl enable cloudResetPwdAgent
 ```
 
-## (opcional) Troque o kernel default do Grub para o kernel que será utilizado
+## (optional) Change the default kernel of Grub to the kernel that will be used
 
 <https://docs.oracle.com/en/learn/oracle-linux-kernels/#change-the-default-kernel>
 
-## (opcional) Caso algum dos kernels apresente erros para a inicialização, digite o seguinte comando
+## (optional) If any of the kernels show errors during boot, type the following command
 
 ```shell
 dracut --regenerate-all –force
 ```
 
-## Para a instância e criar a imagem:
+## Stop the instance and create the image:
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image12.png)
 
