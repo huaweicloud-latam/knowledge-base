@@ -101,15 +101,16 @@ nano credentials-velero
 aws_access_key_id = {AK}
 aws_secret_access_key = {SK}
 
-#execute the command (for it to work, the machine must have internet access to download the image (NAT or EIP)). Note: The –uploader-type and –use-node-agent settings are related to creating a snapshot of the cluster disks. velero install \
---provider aws \
---plugins velero/velero-plugin-for-aws:v1.7.1 \
---bucket migration-velero-cce \
---secret-file ./credentials-velero \
---uploader-type=restic \
---use-node-agent \
---use-volume-snapshots=false \
---backup-location-config region=la-south-2,s3ForcePathStyle="true",s3Url=http://obs.la-south-2.myhuaweicloud.com
+#execute the command (for it to work, the machine must have internet access to download the image (NAT or EIP)). Note: The –uploader-type and –use-node-agent settings are related to creating a snapshot of the cluster disks.
+velero install \
+  --provider aws \
+  --plugins velero/velero-plugin-for-aws:v1.7.1 \
+  --bucket migration-velero-cce \
+  --secret-file ./credentials-velero \
+  --uploader-type=restic \
+  --use-node-agent \
+  --use-volume-snapshots=false \
+  --backup-location-config region=la-south-2,s3ForcePathStyle="true",s3Url=http://obs.la-south-2.myhuaweicloud.com
 #check if the pod is running
 kubectl get pod -n velero
 #check if the connection to the bucket is ok

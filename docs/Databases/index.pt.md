@@ -1,7 +1,7 @@
 ---
 title: Bancos de Dados
 lang: pt
-permalink: /docs/Databases
+permalink: /docs/databases
 ---
 
 # Bancos de Dados

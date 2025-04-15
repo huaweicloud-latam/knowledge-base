@@ -3,7 +3,7 @@ title: Migrating MySQL to GaussDB
 layout: default
 parent: Database and Application Migration (UGO)
 grand_parent: Databases
-permalink: /docs/Databases/UGO/Migrating MySQL to GaussDB
+permalink: /docs/databases/ugo/migrating-mysql-to-gaussdb
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -16,229 +16,143 @@ V1.0 – April 2024
 | V1.0 – 2024-04-23 | Diogo Hatz 50037923      | Versão Inicial       |
 | V1.0 – 2024-04-24 | Wisley da Silva 00830850 | Revisão do Documento |
 
-# Introdução
+# Introduction
 
-O Database and Application Migration (UGO) é uma ferramenta gratuita
-disponível na Huawei Cloud para a migração de schemas de bancos de dados
-heterogêneos. O UGO pode converter statements em DDL para aqueles
-compatíveis com os bancos de dados disponíveis na Huawei Cloud, como o
-GaussDB e RDS. Além da migração de schemas e da avaliação da migração, o
-UGO pode converter automaticamente a sintaxe do banco de origem para ser
-compatível com o banco de destino.
+Database and Application Migration (UGO) is a free tool available on Huawei Cloud for migrating heterogeneous database schemas. UGO can convert DDL statements to those compatible with the databases available on Huawei Cloud, such as GaussDB and RDS. In addition to schema migration and migration evaluation, UGO can automatically convert the source database syntax to be compatible with the target database.
 
-Este documento tem como objetivo guiar o leitor a utilizar a ferramenta
-UGO para a migração de bancos de dados heterogêneos para instâncias RDS
-ou GaussDB na HWC através de um cenário de migração de um banco de dados
-MySQL para GaussDB. O dataset utilizado é um dos datasets de teste do
-MySQL, Sakila, disponível publicamente no website do MySQL.
-
-# UGO
-
-Para a migração do banco de dados MySQL para o GaussDB, faz-se
-necessário utilizar o serviço UGO disponível na HWC para a avaliação da
-migração e conversão da sintaxe do banco de origem para uma sintaxe
-compatível com o banco de destino, além da checagem da compatibilidade
-da engine de origem com a engine de destino. Para acessar o serviço UGO,
-basta pesquisar por “UGO” na lista de serviços disponíveis no console da
-HWC. Vale notar que o serviço somente está disponível nas regiões de
-Santiago e Singapura.
-
-![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image3.png)
+This document aims to guide the reader to use the UGO tool for migrating heterogeneous databases to RDS or GaussDB instances on HWC through a scenario of migrating a MySQL database to GaussDB. The dataset used is one of the MySQL test datasets, Sakila, publicly available on the MySQL website. # UGO To migrate a MySQL database to GaussDB, it is necessary to use the UGO service available at HWC to evaluate the migration and convert the source database syntax to a syntax compatible with the target database, in addition to checking the compatibility of the source engine with the target engine. To access the UGO service, simply search for “UGO” in the list of services available in the HWC console. It is worth noting that the service is only available in the regions of Santiago and Singapore. ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image3.png)
 
 ## **DB Evaluation**
 
-Para realizar a migração do banco, primeiramente é necessário fazer a
-avaliação dos bancos de origem e destino para checar a compatibilidade
-entre eles. Para isso, acesse a janela “DB Evaluation”, no item “Schema
-Migration”, e selecione “Create Project”.
+To perform the database migration, it is first necessary to evaluate the source and target databases to check their compatibility. To do this, access the “DB Evaluation” window, in the “Schema Migration” item, and select “Create Project”.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image4.png)
 
-Preencha as informações relativas ao banco de dados de origem, como IP
-público, porta, usuário e senha do banco. Vale notar que, atualmente, a
-ferramenta UGO não permite a migração do banco através de VPN, portanto
-um IP público precisa ser fornecido. Ademais, é necessário que o usuário
-informado à ferramenta tenha permissão de DBA no banco de origem.
+Fill in the information related to the source database, such as the public IP, port, user and password of the database. It is worth noting that, currently, the UGO tool does not allow database migration via VPN, therefore a public IP must be provided. Furthermore, the user entered into the tool must have DBA permissions on the source database. ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image5.png) The “Skip Target DB Evaluation” checkbox must be selected if the target database has already been selected. Otherwise, leave this option disabled so that UGO can analyze the compatibility of the source database with the target database. After completing the fields, perform the connection test with the source database and click “Next”. If the connection test fails, check if port 3306 is open in the security group of the source database instance. ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image6.png)
 
-![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image5.png)
-
-A caixa de opção “Skip Target DB Evaluation” precisa ser selecionada
-caso o banco de dados de destino já tenha sido escolhido. Caso
-contrário, deixe essa opção desabilitada para que o UGO faça uma
-análise da compatibilidade do banco de origem com o banco de destino.
-Após o preenchimento, realize o teste de conexão com o banco de origem e
-clique em “Next”. Caso o teste de conexão falhe, verifique se a porta
-3306 está aberta no security group da instância do banco de origem.
-
-![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image6.png)
-
-Após o pre-check ser feito, clique em “Next” novamente.
+After the pre-check is done, click “Next” again.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image7.png)
 
-Nesta janela, selecione os objetos do banco de origem a serem migrados,
-como tabelas, schemas, triggers, procedures, etc. Após isso, selecione a
-engine do banco de dados de destino, neste caso o GaussDB 8.1
+In this window, select the source database objects to be migrated,
+such as tables, schemas, triggers, procedures, etc. After that, select the
+target database engine, in this case GaussDB 8.1
 Primary/Standby Enterprise Edition.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image8.png)
 
-Selecione o dataset a ser migrado. Neste caso, o dataset Sakila. Clique
-em “Next” para continuar.
+Select the dataset to be migrated. In this case, the Sakila dataset. Click “Next” to continue.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image9.png)
 
-Confirme a avaliação do banco de dados de origem clicando em “Create”.
+Confirm the source database assessment by clicking “Create”.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image10.png)
 
-Aguarde o final da avaliação do banco de dados de origem e clique em
-“Confirm Target DB Pending”.
+Wait for the source database assessment to finish and click “Confirm Target DB Pending”.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image11.png)
 
-Confirme a engine do banco de dados de destino e clique em “Confirm DB
+Confirm the target database engine and click “Confirm DB
 Selection”.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image12.png)
 
-Clique em “Create Now” para criar um projeto de migração.
+Click “Create Now” to create a migration project.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image13.png)
 
-Preencha as informações relativas ao banco de dados de destino, como a
-instância do banco de dados, o nome do banco de dados, o usuário e
-senha; e clique em “Test Connection” para testar a conectividade com o
-banco de dados de destino. Caso a conexão falhe, verifique se a porta
-8000 está aberta no security group do banco de destino. Clique em “Next”
-para continuar.
+Fill in the information related to the target database, such as the
+database instance, database name, user and
+password; and click “Test Connection” to test connectivity with the target database. If the connection fails, check whether port 8000 is open in the target database security group. Click “Next” to continue. 
 
-![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image14.png) 
 
-Nesta janela alguns itens de risco para a migração do banco de dados são
-mostrados. Clique em “View Details” para ver os detalhes dos riscos
-encontrados pelo UGO e confirme se os riscos efetivamente são um risco
-ou não. Clique em “Next” após confirmar os riscos.
+In this window, some risk items for database migration are displayed. Click “View Details” to view the details of the risks found by UGO and confirm whether the risks are actually a risk or not. Click “Next” after confirming the risks. 
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image15.png)
 
-Clique em “Create” para confirmar o projeto de migração do banco de
-dados.
+Click “Create” to confirm the database migration project.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image16.png)
 
 ## **Object Migration**
 
-Clique em “Migrate” no projeto de migração criado acima para começar a
-migração dos objetos do banco de dados.
+Click “Migrate” in the migration project created above to start migrating the database objects.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image17.png)
 
-Confirme os objetos a serem migrados, bem como os objetos a não serem
-migrados através dos botões “Select Migration Object Types” e “Convert
-Specified Objects”. Clique em “Next” para continuar com a conversão dos
-objetos.
+Confirm the objects to be migrated as well as the objects not to be migrated using the “Select Migration Object Types” and “Convert Specified Objects” buttons. Click “Next” to continue with the object conversion.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image18.png)
 
-Crie uma senha temporária para que os objetos de tipo usuário possam ser
-migrados. Note que após a migração é necessário manualmente mudar a
-senha. Clique em “Create Password” após inserir a senha.
+Create a temporary password so that user type objects can be migrated. Note that after migration, you need to manually change the password. Click “Create Password” after entering the password.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image19.png)
 
-Ajuste as configurações de parâmetros conforme necessário clicando em
-“Edit”. Após a realização das configurações, confirme clicando em
-“Next”.
+Adjust the parameter settings as needed by clicking “Edit”. After making the settings, confirm by clicking “Next”.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image20.png)
 
-Para iniciar o processo de conversão de sintaxe, clique em “Start” ao
-lado de “Pending”. Aguarde até que a sintaxe de todos os objetos seja
-convertida para a sintaxe compatível pelo banco de dados de destino.
+To start the syntax conversion process, click “Start” next to “Pending”. Wait until the syntax of all objects is converted to the syntax supported by the target database.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image21.png)
 
-Após a conclusão da conversão da sintaxe, será mostrado quais objetos
-foram convertidos dinamicamente sem erros e quais conversões
-apresentaram erros. Para esta parte, é necessário checar manualmente
-todas as conversões de sintaxe, com erro ou sem erro, para garantir que
-nenhuma conversão errada foi realizada. Para analisar os detalhes das
-conversões de cada tipo de objeto, clique em “Details” ao lado dos
-objetos.
+After the syntax conversion is complete, it will show which objects were dynamically converted without errors and which conversions were in error. For this part, it is necessary to manually check all syntax conversions, whether with or without errors, to ensure that no erroneous conversions were performed. To review the conversion details of each object type, click “Details” next to the objects.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image22.png)
 
-Clique em “View Details” ao lado dos objetos que falharam para ser
-convertidos para analisar o motivo dos erros e retificar esses erros.
+Click “View Details” next to the objects that failed to be converted to analyze the reason for the errors and rectify those errors.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image23.png)
 
-Nesta tela, faça as modificações necessárias na janela da direita
-(Target) para que o objeto migrado seja compatível com o banco de dados
-de destino. Após fazer as modificações necessárias, clique em “Save”.
+On this screen, make the necessary modifications in the right-hand window (Target) so that the migrated object is compatible with the target database. After making the necessary modifications, click “Save”.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image24.png)
 
-Faça as alterações necessárias em todos os objetos em que a conversão
-automática de sintaxe apresentou erros. Após esse processo, clique em
-“Next” para confirmar a conversão da sintaxe dos objetos.
+Make the necessary changes to all objects where the automatic syntax conversion
+returned errors. After this process, click "Next" to confirm the syntax conversion of the objects.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image25.png)
 
-Clique em “Start” para começar a migração dos objetos convertidos e
-aguarde a conclusão da migração.
+Click "Start" to begin migrating the converted objects and
+wait for the migration to complete.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image26.png)
 
-Faça a verificação dos resultados da migração. Após obter uma taxa de
-sucesso considerável, clique em “Finish” para finalizar a migração dos
-objetos do banco.
+Check the migration results. After achieving a considerable success rate, click “Finish” to complete the migration of the database objects.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image27.png)
 
 # DRS
 
-Vale notar como nas etapas anteriores somente os objetos do banco de
-dados de origem foram migrados para o banco de dados, como as tabelas,
-funções e schemas. Para realizar a migração dos dados do banco, faz-se
-necessário criar uma task de sincronização entre os dois bancos através
-da ferramenta de migração de banco de dados Data Replication Service
-(DRS). Navegue até o serviço DRS no console da HWC.
+It is worth noting that in the previous steps only the objects from the source database were migrated to the database, such as tables, functions and schemas. To perform the migration of the database data, it is necessary to create a synchronization task between the two databases using the Data Replication Service (DRS) database migration tool. Navigate to the DRS service in the HWC console.
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image28.png)
 
 ## **Syncronization Task**
 
-Navegue até a subseção "Data Synchronization Management" e clique em "Create Synchronization Task" para criar uma task do DRS. Preencha os campos da task conforme demonstrado abaixo:
+Navigate to the "Data Synchronization Management" subsection and click "Create Synchronization Task" to create a DRS task. Fill in the task fields as shown below:
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image29.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image30.png)
 
-Aguarde até que a instância de sincronização seja criada, processo o
-qual pode levar alguns minutos. Após a instância ser iniciada, preencha
-as informações relativas ao banco de origem e o banco de destino, como
-usuário, senha e IP público, e teste a conexão com ambos os bancos. Após
-testar as conexões, selecione o botão “Next” para continuar.
+Wait until the synchronization instance is created, which may take a few minutes. After the instance is started, fill in the information related to the source database and the target database, such as username, password and public IP, and test the connection to both databases. After testing the connections, select the “Next” button to continue. 
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image31.png)
 
-Selecione as tabelas a serem sincronizadas
+Select the tables to be synchronized
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image32.png)
 
-Aguarde pelo pre-check da sincronização ser completo. Caso algum dos
-parâmetros falhar na sincronização, confirme o motivo da falha
+Wait for the synchronization pre-check to complete. If any of the
+parameters fails to sync, please confirm the reason for the failure
 
 ![](/huaweicloud-knowledge-base/assets/images/UGO-Migrating-MySQL-to-GaussDB/media/image33.png)
 
-# Referências
+# References
 
-  - Dataset de teste Sakila:
-    <https://dev.mysql.com/doc/sakila/en/sakila-preface.html>;
+- Sakila test dataset: <https://dev.mysql.com/doc/sakila/en/sakila-preface.html>;
 
-  - Documentação do UGO:
-    <https://support.huaweicloud.com/intl/pt-br/productdesc-ugo/ugo_01_0014.html>;
-
-
+- UGO documentation: <https://support.huaweicloud.com/intl/en-us/productdesc-ugo/ugo_01_0014.html>;

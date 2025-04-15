@@ -4,7 +4,7 @@ layout: default
 parent: Database and Application Migration (UGO)
 grand_parent: Bancos de Dados
 lang: pt
-permalink: /docs/Databases/UGO/Migrating MySQL to GaussDB
+permalink: /docs/databases/ugo/migrating-mysql-to-gaussdb
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

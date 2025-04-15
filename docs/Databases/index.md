@@ -1,6 +1,6 @@
 ---
 title: Databases
-permalink: /docs/Databases
+permalink: /docs/databases
 ---
 
 # Databases

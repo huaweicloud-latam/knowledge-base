@@ -2,7 +2,7 @@
 title: Database and Application Migration (UGO)
 parent: Bancos de Dados
 lang: pt
-permalink: /docs/Databases/UGO
+permalink: /docs/databases/ugo
 ---
 
 <img src="https://res-static.hc-cdn.cn/cloudbu-site/public/new-product-icon/Databases/UGO.png" width="80" height="80" alt="Database and Application Migration (UGO)">
