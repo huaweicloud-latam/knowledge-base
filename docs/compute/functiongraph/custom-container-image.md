@@ -32,7 +32,16 @@ other than 0, 1000, and 1002. The default UID of FunctionGraph is 1003,
 therefore, if a different UID is configured, it is necessary to change
 it in the function configuration in FunctionGraph;
 
-3. The following environment variables must exist within the container: 1. **HOME**: Path where the function source code will be located; 2. **GROUP\_ID**: GID of the user group that will run the container; 3. **GROU\_NAME**: Name of the user group that will run the container; 4. **USER\_ID**: UID of the user that will run the container; 5. **USER\_NAME**: Name of the user that will run the container. # SWR To create a function based on a container image, you must first upload the image to the Huawei Cloud SWR (Software Repository for Container) repository service. **<span class="underline">Notice:</span>** For items 2.0 and 3.0 of this
+3. The following environment variables must exist within the container: 
+   1. **HOME**: Path where the function source code will be located; 
+   2. **GROUP\_ID**: GID of the user group that will run the container; 
+   3. **GROU\_NAME**: Name of the user group that will run the container; 
+   4. **USER\_ID**: UID of the user that will run the container; 
+   5. **USER\_NAME**: Name of the user that will run the container. 
+   
+# SWR 
+
+To create a function based on a container image, you must first upload the image to the Huawei Cloud SWR (Software Repository for Container) repository service. **<span class="underline">Notice:</span>** For items 2.0 and 3.0 of this
 document, you can also refer to the following HWC video for
 SWR configuration:
 <https://developer.huaweicloud.com/intl/en-us/forum/topic/02117151603960362356>.
@@ -78,23 +87,27 @@ of this document;
 SWR. Similar to a rename, the same name and tag can be
 kept.
 
-docker tag\[Image name 1:tag 1\] \[Image repository
-address\]/\[Organization name\]/\[Image name 2:tag 2\]
+```shell
+docker tag\[Image name 1:tag 1\] \[Image repository address\]/\[Organization name\]/\[Image name 2:tag 2\]
+```
 
 Example:
 
-docker tag new:1.0
-swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
+```shell
+docker tag novo:1.0 swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
+```
 
 Now upload the image with the following command:
 
-docker push \[Image repository address\]/\[Organization name\]/\[Image
-name 2:tag 2\]
+```shell
+docker push \[Image repository address\]/\[Organization name\]/\[Image name 2:tag 2\]
+```
 
 Example:
 
-docker push
-swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
+```shell
+docker push swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image8.png)
 
@@ -143,11 +156,7 @@ and set this user as the USER when building the image.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image17.png)
 
-Once you have created the function, click “Test” to test the created function.
-
-Confirm the example of the HTTP request received and click “Create”.
-
-Click “Test” again to test the created function.
+Once you have created the function, click “Test” to test the created function. Confirm the example of the HTTP request received and click “Create”. Click “Test” again to test the created function.
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image18.png)
 
@@ -201,5 +210,4 @@ API Execution Result:
 
 # References
 
-- FunctionGraph Documentation:
-<https://support.huaweicloud.com/intl/en-us/qs-functiongraph/functiongraph_04_0103.html#section2>.
+- FunctionGraph Documentation: <https://support.huaweicloud.com/intl/en-us/qs-functiongraph/functiongraph_04_0103.html>.

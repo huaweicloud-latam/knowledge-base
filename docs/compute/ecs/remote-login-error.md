@@ -30,7 +30,22 @@ The error in question for the Remote Login to freeze is related to VNC, software
 
 ![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image3.png)
 
-Linux VMs created in Azure Cloud have modified kernels, which may cause conflict issues with VNC software. To make the necessary changes, follow the steps below: 1. Connect to the instance via SSH and modify the following parameters: 1.1 Comment out the line GRUB\_TIMEOUT\_STYLE=hidden 1.2 Modify GRUB\_TIMEOUT to 10: GRUB\_TIMEOUT=10 ![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image4.png) Delete the file ```shell rm -rf /etc/default/grub.d/50* After deleting the files, run the following command to update the grub settings. ```shell
+Linux VMs created in Azure Cloud have modified kernels, which may cause conflict issues with VNC software. To make the necessary changes, follow the steps below: 
+1. Connect to the instance via SSH and modify the following parameters: 
+    1.1 Comment out the line GRUB\_TIMEOUT\_STYLE=hidden 
+    1.2 Modify GRUB\_TIMEOUT to 10: GRUB\_TIMEOUT=10 
+    
+![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image4.png) 
+
+Delete the file 
+
+```shell 
+rm -rf /etc/default/grub.d/50* 
+```
+
+After deleting the files, run the following command to update the grub settings. 
+
+```shell
 update-grub2
 ```
 

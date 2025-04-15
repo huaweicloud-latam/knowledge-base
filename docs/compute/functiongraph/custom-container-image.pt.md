@@ -42,15 +42,11 @@ seguintes critérios precisam ser cumpridos:
     do container:
 
     1.  **HOME**: Path onde o código-fonte da função se encontrará;
-
     2.  **GROUP\_ID**: GID do grupo do usuário que irá executar o
         container;
-
     3.  **GROU\_NAME**: Nome do grupo do usuário que irá executar o
         container;
-
     4.  **USER\_ID**: UID do usuário que irá executar o container;
-
     5.  **USER\_NAME**: Nome do usuário que irá executar o container.
 
 # SWR
@@ -105,23 +101,27 @@ a lista abaixo:
     SWR. Similar a uma renomeação, o mesmo nome e tag podem ser
     mantidos.
 
-docker tag\[Image name 1:tag 1\] \[Image repository
-address\]/\[Organization name\]/\[Image name 2:tag 2\]
+```shell
+docker tag\[Image name 1:tag 1\] \[Image repository address\]/\[Organization name\]/\[Image name 2:tag 2\]
+```
 
 Exemplo:
 
-docker tag novo:1.0
-swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
+```shell
+docker tag novo:1.0 swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
+```
 
 Agora bata realizar o upload da imagem com o seguinte comando:
 
-docker push \[Image repository address\]/\[Organization name\]/\[Image
-name 2:tag 2\]
+```shell
+docker push \[Image repository address\]/\[Organization name\]/\[Image name 2:tag 2\]
+```
 
 Exemplo:
 
-docker push
-swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
+```shell
+docker push swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Custom-Container-Image/media/image8.png)
 
@@ -169,6 +169,7 @@ selecione a imagem do SWR.
 
 Também é possível configurar opções adicionais do container, como o
 comando CMD de startup, argumentos de execução, User ID e Group ID.
+
 **<span class="underline">Importante:</span>** O User ID padrão
 utilizado é o 1003, e o User ID relativo ao usuário root de sistemas
 UNIX não pode ser utilizado. Para a execução de funções baseadas em
@@ -234,4 +235,4 @@ Resultado da execução da API:
 # Referências
 
   - Documentação do FunctionGraph:
-    <https://support.huaweicloud.com/intl/en-us/qs-functiongraph/functiongraph_04_0103.html#section2>.
+    <https://support.huaweicloud.com/intl/en-us/qs-functiongraph/functiongraph_04_0103.html>.
