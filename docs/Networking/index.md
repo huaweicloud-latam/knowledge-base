@@ -1,6 +1,6 @@
 ---
 title: Networking
-permalink: /docs/Networking
+permalink: /docs/networking
 ---
 
 # Networking

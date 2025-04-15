@@ -3,7 +3,7 @@ title: Configurando uma VPN Client to Site
 layout: default
 parent: Virtual Private Network (VPN)
 grand_parent: Redes
-permalink: /docs/Redes/VPN/VPN Client to Site Startup
+permalink: /docs/networking/vpn/vpn-client-to-site-startup
 lang: pt
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">

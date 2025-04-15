@@ -3,7 +3,7 @@ title: VPN Client to Site Startup
 layout: default
 parent: Virtual Private Network (VPN)
 grand_parent: Networking
-permalink: /docs/Redes/VPN/VPN Client to Site Startup
+permalink: /docs/networking/vpn/vpn-client-to-site-startup
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -13,55 +13,42 @@ V1.0 – Setembro 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
-| V1.0 – 2024-09-10 | Diogo Hatz d50037923           | Versão Inicial       |
-| V1.0 – 2024-09-10 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
+| V1.0 – 2024-09-10 | Diogo Hatz d50037923           | Initial Version      |
+| V1.0 – 2024-09-10 | Wisley da Silva Paulo 00830850 | Document Review      |
 
-# Objetivo
+# Objective
 
-Este documento objetiva apresentar os procedimentos necessários para o
-provisionamento de uma VPN Client-to-Site utilizando o serviço de VPN
-P2C da Huawei Cloud e realizando o acesso através do cliente OpenVPN.
+This document aims to present the procedures required to provision a Client-to-Site VPN using Huawei Cloud's P2C VPN service and accessing it through the OpenVPN client.
 
-# Considerações
+# Considerations
 
-1.  No momento de escrita deste documento, a VPN P2C da Huawei Cloud só
-    se encontra disponível na região de São Paulo e no método de billing
-    yearly/monthly;
+1. At the time of writing this document, Huawei Cloud's P2C VPN is only available in the São Paulo region and with the yearly/monthly billing method;
 
-2.  Um certificado SSL é necessário para realizar a autenticação da VPN,
-    certificado o qual pode ser gerado gratuitamente através da
-    ferramenta EasyRSA.
+2. An SSL certificate is required to authenticate the VPN, which can be generated free of charge using the EasyRSA tool.
 
-# Certificado
+# Certificate
 
-Para realizar a autenticação da VPN P2C, primeiramente se faz necessário
-gerar um certificado SSL que será hosteado no serviço CCM da Huawei
-Cloud. Neste exemplo, a ferramenta que será utilizada para a geração do
-certificado será o Easy-RSA, no entanto, todas as demais ferramentas
-também são suportadas, como o Let’s Encrypt.
+To authenticate the P2C VPN, it is first necessary to generate an SSL certificate that will be hosted on Huawei Cloud's CCM service. In this example, the tool that will be used to generate the certificate will be Easy-RSA, however, all other tools are also supported, such as Let's Encrypt.
 
-**Obs:** Caso outra ferramenta de emissão de certificado seja utilizada,
-faz-se necessário incluir o certificate chain no certificado.
+**Note:** If another certificate issuing tool is used, it is necessary to include the certificate chain in the certificate.
 
-Baixe a ferramenta Easy-RSA através do seguinte hyperlink:
+Download the Easy-RSA tool through the following hyperlink:
 <https://github.com/OpenVPN/easy-rsa/releases/download/v3.1.7/EasyRSA-3.1.7-win64.zip>.
 
-Após extrair o arquivo baixado, abra o CMD e navegue até a pasta
-extraída do arquivo baixado.
+After extracting the downloaded file, open CMD and navigate to the extracted folder of the downloaded file.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image3.png)
 
-Após navegar até a pasta do EasyRSA, execute o arquivo
-“EasyRSA-Start.bat” através do comando “.\\EasyRSA-Start.bat”
+After navigating to the EasyRSA folder, run the “EasyRSA-Start.bat” file using the “.\\EasyRSA-Start.bat” command
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image4.png)
 
-Digite o comando “./easyrsa init-pki” para inicializar o ambiente de PKI
+Enter the “./easyrsa init-pki” command to initialize the PKI environment
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image5.png)
 
-Copie o arquivo “vars.example” do diretório C:\\EasyRSA-3.1.7 para o
-diretório C:\\EasyRSA-3.1.7\\pki e, então, renomeie o arquivo para
+Copy the “vars.example” file from the C:\\EasyRSA-3.1.7 directory to the
+C:\\EasyRSA-3.1.7\\pki and then rename the file to
 “vars”.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image6.png)
@@ -70,76 +57,55 @@ diretório C:\\EasyRSA-3.1.7\\pki e, então, renomeie o arquivo para
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image8.png)
 
-Volte para o CMD e use o comando “./easyrsa build-ca nopass” para gerar
-um certificado CA.
+Go back to CMD and use the command “./easyrsa build-ca nopass” to generate
+a CA certificate.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image9.png)
 
-  - Por padrão, o certificado CA será armazenado no diretório
-    C:\\EasyRSA-3.1.7\\pki. Neste exemplo, o certificado “ca.crt” foi
-    gerado.
+- By default, the CA certificate will be stored in the
+C:\\EasyRSA-3.1.7\\pki directory. In this example, the
+“ca.crt” certificate was generated.
 
-  - Por padrão, a chave privada do certificado CA será armazenado no
-    diretório C:\\EasyRSA-3.1.7\\pki\\private. Neste exemplo, o
-    certificado “ca.key” foi gerado.
+- By default, the private key of the CA certificate will be stored in the
+C:\\EasyRSA-3.1.7\\pki\\private directory. In this example, the
+“ca.key” certificate was generated.
 
-Use o comando “./easyrsa build-server-full p2cserver.com nopass” para
-gerar um certificado de servidor e a sua chave privada. Note que o
-argumento “p2cserver.com” será o common name (CN) do certificado gerado.
+Use the “./easyrsa build-server-full p2cserver.com nopass” command to
+generate a server certificate and its private key. Note that the
+“p2cserver.com” argument will be the common name (CN) of the generated certificate.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image10.png)
 
-  - Por padrão, o certificado do servidor será armazenado no diretório
-    C:\\EasyRSA-3.1.7\\pki\\issued. Neste exemplo, o certificado
-    “p2cserver.com.crt” foi gerado.
+- By default, the server certificate will be stored in the
+C:\\EasyRSA-3.1.7\\pki\\issued directory. In this example, the
+“p2cserver.com.crt” certificate was generated.
 
-  - Por padrão, a chave privada do certificado do servidor será
-    armazenado no diretório C:\\EasyRSA-3.1.7\\pki\\private. Neste
-    exemplo, o certificado “p2cserver.com.key” foi gerado.
+- By default, the server certificate’s private key will be
+stored in the C:\\EasyRSA-3.1.7\\pki\\private directory. In this
+example, the “p2cserver.com.key” certificate was generated.
 
-**Obs:** Existem duas formas de realizar a autenticação do cliente, uma
-delas sendo através de usuário e senha definidos no console da HWC e o
-outro sendo através de um certificado SSL. Para a segunda opção, siga a
-etapa abaixo. Caso contrário, pule esta etapa.
+**Note:** There are two ways to perform client authentication, one
+is through a username and password defined in the HWC console and the
+other is through an SSL certificate. For the second option, follow the
+step below. Otherwise, skip this step.
 
-Use o comando ./easyrsa build-client-full p2cclient.com nopass” para
-gerar um certificado de cliente e a sua chave privada.
+Use the command ./easyrsa build-client-full p2cclient.com nopass” to
+generate a client certificate and its private key.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image11.png)
 
-  - Por padrão, o certificado do cliente será armazenado no diretório
-    C:\\EasyRSA-3.1.7\\pki\\issued. Neste exemplo, o certificado
-    “p2cclient.com.crt” foi gerado.
+- By default, the client certificate will be stored in the
+C:\\EasyRSA-3.1.7\\pki\\issued directory. In this example, the
+“p2cclient.com.crt” certificate was generated.
 
-  - Por padrão, a chave privada do certificado do servidor será
-    armazenado no diretório C:\\EasyRSA-3.1.7\\pki\\private. Neste
-    exemplo, o certificado “p2cclient.com.key” foi gerado.
+- By default, the server certificate’s private key will be
+stored in the C:\\EasyRSA-3.1.7\\pki\\private directory. In this
+example, the “p2cclient.com.key” certificate was generated.
 
 # CCM
 
-Após ter realizado a emissão do(s) certificado(s) na seção anterior,
-faz-se necessário publicar o certificado do servidor no serviço Cloud
-Certificate Manager (CCM) da Huawei Cloud.
-
-Para isso, navegue até o serviço CCM no console da HWC
-
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image12.png)
-
-Clique na seção “Hosted Certificates” e selecione a opção “Upload
-Certificate”.
-
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image13.png)
-
-No campo “Certificate File”, faz-se necessário inserir tanto o
-certificado do servidor quanto do CA, nessa ordem. Portanto, insira
-primeiramente o certificado do servidor e posteriormente, na mesma caixa
-de texto, o certificado do CA.
-
-No campo “Private Key”, basta inserir o conteúdo da private key do
-servidor.
-
-Após inserir ambos campos, basta clicar em “Submit” para salvar o
-certificado.
+After issuing the certificate(s) in the previous section,
+you need to publish the server certificate to the service Huawei Cloud Certificate Manager (CCM). To do this, navigate to the CCM service in the HWC console. ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image12.png) Click on the “Hosted Certificates” section and select the “Upload Certificate” option. ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image13.png) In the “Certificate File” field, you must enter both the server and CA certificates, in that order. Therefore, enter the server certificate first and then, in the same text box, the CA certificate. In the “Private Key” field, simply enter the content of the server’s private key. After entering both fields, simply click “Submit” to save the certificate.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image14.png)
 
@@ -147,99 +113,90 @@ certificado.
 
 # P2C VPN
 
-Navegue até o serviço VPN no console da Huawei Cloud e clique na seção
-“Enterprise – VPN Gateways”, seguido por “P2C VPN Gateways” e em “Buy
+Navigate to the VPN service in the Huawei Cloud console and click the
+“Enterprise – VPN Gateways” section, followed by “P2C VPN Gateways” and “Buy
 P2C VPN Gateway”.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image16.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image17.png)
 
-Preencha as informações relativas à VPN Gateway, como o seu nome, VPC e
-Subnet em que estarão. Ademais, especifique também um EIP para o
-gateway, assim como a sua largura de banda. Após isso, basta clicar em
+Fill in the information regarding the VPN Gateway, such as its name, VPC and
+Subnet where it will be located. Additionally, specify an EIP for the
+gateway, as well as its bandwidth. After that, simply click
 “Buy Now”.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image18.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image19.png)
 
-Clique no VPN Gateway comprado e navegue até a seção “Server” para
-configurar o certificado do servidor e a forma de autenticação do
-cliente.
+Click on the VPN Gateway you purchased and navigate to the “Server” section to
+configure the server certificate and client authentication method.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image20.png)
 
-Preencha as informações relativas ao CIDR local, CIDR do cliente, o
-certificado do servidor e a forma de autenticação do cliente.
+Fill in the information regarding the local CIDR, client CIDR, server certificate, and client authentication method.
 
-**Obs:** O CIDR local corresponde ao bloco de rede da cloud que a VPN
-será fechada, ao passo em que o CIDR do cliente corresponde ao bloco
-virtual de endereçamento utilizado pelo cliente. É importante que não
-haja overlap entre os blocos de rede local e de cliente.
+**Note:** The local CIDR corresponds to the network block of the cloud where the VPN will be closed, while the client CIDR corresponds to the virtual address block used by the client. It is important that there is no overlap between the local and client network blocks.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image21.png)
 
-Caso a forma de autenticação do cliente seja feita através de usuário e
-senha, é necessário configurar também um usuário e senha na seção “User
-Management”.
+If the client authentication method is done through username and password, it is also necessary to configure a username and password in the “User Management” section.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image22.png)
 
-Crie um usuário e senha e defina um grupo de usuário para o usuário.
+Create a username and password and define a user group for the user.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image23.png)
 
-Para delegar permissões a um grupo de usuários, navegue até a seção
-“Access Policies” e clique em “Create Policy”.
+To delegate permissions to a group of users, navigate to the
+“Access Policies” section and click “Create Policy”.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image24.png)
 
-Insira o nome da policy, assim como o CIDR local preenchido
-anteriormente e o grupo de usuários que poderão acessar os blocos de
-rede especificados.
+Enter the name of the policy, as well as the local CIDR
+filled in previously and the group of users who will be allowed to access the
+specified network blocks.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image25.png)
 
-Feito isso, retorne até a página do serviço de VPN P2C Gateway e clique
-na opção “More” seguido por “Download Client Configuration”.
+Once done, return to the P2C Gateway VPN service page and click
+on the “More” option followed by “Download Client Configuration”.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image26.png)
 
 # OpenVPN
 
-Para acessar a VPN P2C criada, faz-se necessário baixar o cliente
-OpenVPN através do seguinte hyperlink:
+To access the created P2C VPN, you must download the OpenVPN client through the following hyperlink:
 <https://openvpn.net/downloads/openvpn-connect-v3-windows.msi>.
 
-Após baixar o OpenVPN, execute a sua instalação padrão.
+After downloading OpenVPN, run its standard installation.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image27.png)
 
-Após a instalação do cliente OpenVPN, execute-o e clique em Upload File
-para realizar a configuração da VPN. Faça o upload do arquivo .OVPN
-baixado no item 5.0 deste documento.
+After installing the OpenVPN client, run it and click Upload File
+to configure the VPN. Upload the .OVPN file
+downloaded in item 5.0 of this document.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image28.png)![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image29.png)
+![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image28.png)
 
-Insira o usuário e senha configurados no item 5.0 deste documento e
-clique em “Connect”.
+![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image29.png)
+
+Enter the username and password configured in item 5.0 of this document and
+click “Connect”.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image30.png)
 
-Caso uma janela de aviso apareça solicitando um certificado externo,
-basta clicar em “Continue”.
+If a warning window appears requesting an external certificate,
+just click “Continue”.
 
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image31.png)
 ![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image32.png)
 
-Caso todas as etapas tenham sido seguidas corretamente, o cliente do
-OpenVPN irá se conectar à VPN criada.
+If all steps have been followed correctly, the OpenVPN client will connect to the created VPN.
 
-# Referências
+# References
 
-  - Documentação da VPN P2C:
-    <https://support.huaweicloud.com/intl/en-us/admin-vpn/p2cvpn_admin_00001.html>
+- P2C VPN documentation: <https://support.huaweicloud.com/intl/en-us/admin-vpn/p2cvpn_admin_00001.html>
 
-  - Documentação da VPN P2C:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-vpn/vpn_ug_p2c_00016.html>.
+- P2C VPN documentation: <https://support.huaweicloud.com/intl/en-us/usermanual-vpn/vpn_ug_p2c_00016.html>.

@@ -1,7 +1,7 @@
 ---
 title: Redes
 lang: pt
-permalink: /docs/Networking
+permalink: /docs/networking
 ---
 
 # Redes

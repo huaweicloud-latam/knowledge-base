@@ -1,7 +1,7 @@
 ---
 title: Virtual Private Network (VPN)
 parent: Redes
-permalink: /docs/Networking/VPN
+permalink: /docs/networking/vpn
 lang: pt
 ---
 
