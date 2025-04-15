@@ -4,7 +4,7 @@ layout: default
 parent: Elastic Cloud Server (ECS)
 grand_parent: Computação
 lang: pt
-permalink: /docs/compute/ecs/install-sql-server-ubuntu
+permalink: /docs/compute/ecs/installing-sql-server-ubuntu
 ---
 
 # Instalando SQL Server no Ubuntu

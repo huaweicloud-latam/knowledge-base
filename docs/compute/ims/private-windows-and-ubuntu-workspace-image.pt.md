@@ -4,7 +4,7 @@ layout: default
 parent: Image Management Service (IMS)
 grand_parent: Computação
 lang: pt
-permalink: /docs/compute/ims/Creating a Private Windows 10 and Ubuntu Workspace Image
+permalink: /docs/compute/ims/creating-a-private-windows-10-and-ubuntu-workspace-image
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

@@ -3,7 +3,7 @@ title: Migrating Azure AKS to Huawei CCE
 layout: default
 parent: Cloud Container Engine (CCE)
 grand_parent: Containers
-permalink: /docs/containers/cce/Migrating Azure AKS to Huawei CCE
+permalink: /docs/containers/cce/migrating-azure-aks-to-huawei-cce
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -16,188 +16,125 @@ V1.0 – January 2024
 | V1.0 – 2024-01-16 | Diogo Hatz 50037923   | Tradução do documento |
 | V1.0 – 2024-01-16 | Wisley Paulo 00830850 | Revisão do documento  |
 
-# Migração de cluster Kubernetes de AKS para CCE
+# Kubernetes Cluster Migration from AKS to CCE
 
-## Introdução
+## Introduction
 
-Realizar a migração do serviço de Kubernetes AKS, da provedora Microsoft
-Azure, para o serviço gerenciado de clusters Cloud Container Engine
-(CCE) da Huawei Cloud é uma decisão estratégica que pode empoderar
-organizações a refinar a sua estratégia de orquestração de containers em
-resposta às crescentes demandas do cenário de cloud. A transição
-representa uma oportunidade para otimizar operações, aumentar a
-escalabilidade e analisar o ecossistema da Huawei Cloud. Crucialmente, a
-jornada de migração é guiada e facilitada pela poderosa ferramenta de
-backup e migração de containers Velero, garantindo a integridade dos
-dados e minimizando a interrupção dos serviços. Seja a migração motivada
-por custo-benefício, o anseio por uma integração suave com os serviços
-da Huawei Cloud, ou a jornada por uma maior performance, este guia
-oferece um passo-a-passo detalhado para uma transição bem-sucedida,
-permitindo que a sua empresa abrace a era cloud-native com confiança,
-juntamente com o suporte imensurável da ferramenta Velero.
+Migrating the Kubernetes service AKS from Microsoft Azure to Huawei Cloud’s Cloud Container Engine (CCE) managed cluster service is a strategic decision that can empower organizations to refine their container orchestration strategy in response to the growing demands of the cloud landscape. The transition represents an opportunity to optimize operations, increase scalability, and analyze the Huawei Cloud ecosystem. Crucially, the migration journey is guided and facilitated by the powerful Velero container backup and migration tool, ensuring data integrity and minimizing service disruption. Whether the migration is driven by cost-effectiveness, the desire for smooth integration with Huawei Cloud services, or the quest for higher performance, this guide provides a detailed step-by-step guide for a successful transition, enabling your enterprise to embrace the cloud-native era with confidence, along with the immeasurable support of the Velero tool. ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image3.png) ## Operation Process For the migration of Microsoft Azure Kubernetes Service (AKS) to Huawei Cloud Container Engine (CCE), a meticulous operation was performed. First, a detailed analysis was conducted to identify all workloads, configurations, and dependencies within the AKS cluster. The necessary resources were provisioned within Huawei CCE, ensuring compatibility and scalability to accommodate the workloads. Preparations for data migration were then made, including the transfer of container images, persistent volumes, and configuration files, all backed up by Velero for reliable backup and restore. The migration itself was executed carefully to minimize downtime, with continuous monitoring throughout the transition to promptly address any challenges. After the migration was complete, workloads on Huawei CCE were validated to ensure stable operation. Configurations were optimized as needed, and monitoring and maintenance practices were established to ensure the continued success of operating containerized applications in the Huawei CCE environment. The migration process ensured a smooth and successful migration, aligning the infrastructure with the evolving needs and strategies of Huawei Cloud Container Engine. ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image4.png)
 
-![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image3.png)
-
-## Processo da Operação
-
-Para a migração do serviço Microsoft Azure Kubernetes Service (AKS) para
-a Huawei Cloud Container Engine (CCE), uma operação meticulosa foi
-executada. Primeiramente, uma análise detalhada foi conduzida para
-identificar todos os workloads, configurações e dependências dentro do
-cluster AKS. Os recursos necessários foram provisionados dentro da
-Huawei CCE, garantindo a compatibilidade e escalabilidade para acomodar
-os workloads.
-
-Em seguida, as preparações para a migração dos dados foram realizadas,
-incluindo a transferência de imagens do container, volumes persistentes
-e arquivos de configuração, tudo resguardado pelo Velero para backup e
-restauração confiáveis. A migração por si foi executada com cautela para
-minimizar downtime, com monitoramento contínuo ao longo de toda a
-transição para abordar quaisquer desafios prontamente.
-
-Após a conclusão da migração, workloads na Huawei CCE foram validados
-para garantir uma operação estável. Configurações foram otimizados
-conforme o necessário, e práticas de monitoramento e manutenção foram
-estabelecidas para garantir o sucesso contínuo da operação de aplicações
-em container no ambiente Huawei CCE. O processo dessa operação garantiu
-uma migração suave e bem-sucedida, alinhando a infraestrutura com as
-necessidades crescentes e estratégias na Huawei Cloud Container Engine.
-
-![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image4.png)
-
-# Implementação
+# Implementation
 
 ## **Microsoft Azure**
 
-### **VPC para os Nodes**
+### **VPC for Nodes**
 
-Neste exemplo, o AKS tem 1 VPC com 1 subnet. Redes virtuais foram
-utilizadas para o gerenciamento dos endereços de IP, segurança,
-integração com os serviços da Azure e demais funcionalidades
-relacionadas à rede para os nodes do AKS. Eles são uma parte essencial
-na implementação e gerenciamento dos clusters AKS na Azure.
+In this example, AKS has 1 VPC with 1 subnet. Virtual networks were used to manage IP addresses, security, integration with Azure services, and other network-related features for AKS nodes. They are an essential part of deploying and managing AKS clusters on Azure.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image5.png)
 
 ### **AKS – Cluster**
 
-1.  Primeiramente, é necessário checar os recursos essenciais do
-    Kubernetes, como os workloads, namespaces, armazenamento, nodes,
-    pods e serviços.
+1. First, you need to check the essential Kubernetes resources, such as workloads, namespaces, storage, nodes, pods, and services.
 
-2.  Navegue até a home, Kubernetes services e clique no serviço de
-    Kubernetes para migrar.
+2. Navigate to the home, Kubernetes services, and click on the Kubernetes service to migrate.
 
-3.  Conecte no cluster utilizando a ferramenta de comandos por texto
-    para interagir diretamente com o cluster utilizando o kubectl, a
-    ferramenta de comandos por texto do Kubernetes. Kubectl está
-    disponível dentro do Azure Cloud Shell por padrão e pode, também,
-    ser instalado localmente.
+3. Connect to the cluster using the scripting tool to interact directly with the cluster using kubectl, the Kubernetes scripting tool. Kubectl is available within the Azure Cloud Shell by default and can also be installed locally.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image6.png)
 
-4.  Após abrir o cloud shell, também é necessário configurar a
-    subscription do cluster e fazer download das credenciais.
+4. After opening the cloud shell, you also need to configure the cluster subscription and download the credentials.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image7.png)
 
-5.  Após conectar ao cluster, é possível checar os deployments,
-    namespaces, pods e as informações do cluster para analisar o
-    cluster.
+5. After connecting to the cluster, you can check the deployments, namespaces, pods, and cluster information to analyze the cluster.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image8.png)
 
-### **Preparação dos Clusters**
+### **Preparing Clusters**
 
-Neste exemplo, há um nodepool no AKS.
+In this example, there is one nodepool in AKS.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image9.png)
 
-### **Configurações Adicionais para Pods e ELB**
+### **Additional Configurations for Pods and ELB**
 
-Para utilizar os serviços de PV e ELB no AKS, algumas configurações
-adicionais precisam ser realizadas. Não é necessário instalar o driver
-CSI ou o plugin kubenet, somente é necessário ativá-los.
+To use PV and ELB services in AKS, some additional configurations need to be performed. There is no need to install the CSI driver or kubenet plugin, you only need to enable them.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image10.png)
 
-Igualmente, é possível ver as imagens dos containers em execução no
-Kubernetes utilizando:
+Also, you can view images of containers running on
+Kubernetes using:
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image11.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image12.png)
 
-**Instalando o Velero e realizando configurações adicionais**
+**Installing Velero and performing additional configuration**
 
-1.  Primeiramente, verifique o cluster AKS e o resource group através do
-    seguinte comando:
+1. First, verify the AKS cluster and resource group using the
+following command:
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image13.png)
 
-2.  Configure o arquivo kubeconfig:
+2. Configure the kubeconfig file:
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image14.png)
 
-3.  Cheque se a conta de storage está configurada ou não. Em caso
-    negativo, crie uma conta de storage através do seguinte comando:
+3. Check if the user account is storage is configured or not. If not, create a storage account using the following command:
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image15.png)
 
-4.  Instale o Velero no Azure Cloud Shell:
+4. Install Velero on Azure Cloud Shell:
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image16.png)
 
-5.  Instale o Velero Server no cluster AKS:
+5. Install Velero Server on AKS cluster:
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image17.png)
 
-6.  A este ponto, o arquivo “credentials-velero” precisa estar
-    preenchido com certos parâmetros, como “Azure\_Client\_ID”,
-    “Azure\_Subscription\_ID”, “Azure\_Tenant\_ID”,
-    “Azure\_Client\_Secret” e “Azure\_Resource\_Group”. Essas
-    configurações podem ser obtidas na etapa 5 acima.
+6. At this point, the “credentials-velero” file needs to be populated with certain parameters, such as “Azure\_Client\_ID”,
+“Azure\_Subscription\_ID”, “Azure\_Tenant\_ID”,
+“Azure\_Client\_Secret” and “Azure\_Resource\_Group”. These
+settings can be obtained in step 5 above.
 
 <!-- end list -->
 
-1.  Somente o parâmetro “Azure\_Client\_ID” é obtido através do console
-    da Azure. Para obter esse parâmetro, navegue até “Azure AD” e clique
-    em “APP Registrations”, selecione “All Aplications” e “Storage
-    account” para conseguir o Client ID.
+1. Only the “Azure\_Client\_ID” parameter is obtained through the
+Azure console. To obtain this parameter, navigate to “Azure AD” and click
+on “APP Registrations”, select “All Applications” and “Storage
+account” to get the Client ID.
 
-2.  Azure AD \> APP Registrations \> All Applications \> Storage Account
+2. Azure AD \> APP Registrations \> All Applications \> Storage Account
 
 > ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image18.png)
 
-7.  Por fim, instale o Velero na AKS. Cheque todas as variáveis e
-    valores antes de iniciar o Velero.
+7. Finally, install Velero on AKS. Check all the variables and
+values ​​before starting Velero.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image19.png)
 
-8.  Cheque se os pods, deployments e replicasets estão criados ou não.
+8. Check whether the pods, deployments and replicasets are created or not.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image20.png)
 
-**Criando um backup utilizando o Velero**
+**Creating a backup using Velero**
 
-1.  Crie um novo backup através do comando: “./velero backup create
-    $Backup\_Name” e espere alguns minutos até que o backup esteja
-    concluído.
+1. Create a new backup using the command: “./velero backup create
+$Backup\_Name” and wait a few minutes until the backup is
+completed.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image21.png)
 
-2.  Cheque se o backup está completo ou não. É possível utilizar o
-    seguinte comando para verificar:
-    
+2. Check whether the backup is complete or not. You can use the following command to verify:
+
 ```shell
 ./velero backup describe newbackup2
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image22.png)
 
-3.  Navegue até a seção relativa às storage accounts e cheque se o
-    backup dos dados foi realizado com sucesso. Navegue até Home \>
-    Storage Account \> Containers.
+3. Navigate to the storage accounts section and check if the data was successfully backed up. Navigate to Home \>
+Storage Account \> Containers.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image23.png)
 
@@ -207,26 +144,26 @@ Kubernetes utilizando:
 
 ## **Huawei Cloud**
 
-### **Criar uma VPC**
+### **Create a VPC**
 
-Primeiramente, uma VPC precisa ser criada. Neste exemplo, a subnet com
-CIDR 192.168.0.0/16 será utilizada.
+First, a VPC needs to be created. In this example, the subnet with
+CIDR 192.168.0.0/16 will be used.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image26.png)
 
-### **Criar o Cluster no Console da Huawei Cloud**
+### **Create Cluster in Huawei Cloud Console**
 
-1.  Navegue até o console da CCE e clique em “Create CCE”;
+1. Navigate to the CCE console and click “Create CCE”;
 
-2.  Selecione a AZ correspondente;
+2. Select the corresponding AZ;
 
-3.  Selecione as especificações de acordo com o cenário;
+3. Select the specifications according to the scenario;
 
-4.  Selecione a VPC e security group apropriados;
+4. Select the appropriate VPC and security group;
 
-5.  Após a criação do CCE, faça login na instância da ECS criada;
+5. After the CCE is created, log in to the created ECS instance;
 
-6.  Teste a conexão e atrele um EIP se necessário.
+6. Test the connection and attach an EIP if necessary.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image27.png)
 
@@ -234,50 +171,43 @@ CIDR 192.168.0.0/16 será utilizada.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image29.png)
 
-### **Criar os nodes**
+### **Create the nodes**
 
-7.  Vá para a seção de Nodes no console do CCE;
+7. Go to the Nodes section in the CCE console;
 
-8.  Clique em “Create a Node”;
+8. Click “Create a Node”;
 
-9.  Selecione as especificações do Host do Node;
+9. Select the Node Host specifications;
 
-10. Selecione o Container Engine, SO e armazenamento;
+10. Select the Container Engine, OS and Storage;
 
-11. Modifique a rede de acordo com o necessário.
+11. Modify the network as needed.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image30.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image31.png)
 
-### **Instalar o Velero nos Clusters de Origem e de Destino (Mesmo Processo)**
+### **Install Velero on Source and Target Clusters (Same Process)**
 
-1.  É necessário fazer o download do kubectl e o seu arquivo de
-    configurações, copiar o arquivo para o seu cliente e configure o
-    kubectl. Após realizar a configuração, é possível utilizar o kubectl
-    para acessar o cluster Kubernetes.
+1. You need to download kubectl and its configuration file, copy the file to your client, and configure kubectl. After configuring, you can use kubectl to access the Kubernetes cluster.
 
-2.  Copie “kubectl” e o seu arquivo de configurações para o diretório
-    “/home” no seu client. Se o kubectl já tiver sido instalado, só é
-    necessário copiar o arquivo kubeconfig.
+2. Copy “kubectl” and its configuration file to the “/home” directory on your client. If kubectl has already been installed, you only need to copy the kubeconfig file. 
 
-![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image32.png)
+![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image32.png) 
 
-3.  Logue no seu client e configure o kubectl. Se o kubectl já tiver
-    sido configurado, pule esta etapa.
+3. Log in to your client and configure kubectl. If kubectl has already been configured, skip this step. 
 
-![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image33.png)
+![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image33.png) 
 
-4.  Troque o modo de acesso do kubectl baseado no cenário de aplicação.
-    Use o seguinte comando para habilitar intra-vpc-access.
+4. Change the kubectl access mode based on the application scenario. Use the following command to enable intra-vpc-access. 
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image34.png)
 
-5.  Cheque as informações do cluster.
+5. Check the cluster information.
 
 > ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image35.png)
 
-6. Execute os seguintes comandos:
+6. Run the following commands:
 
 ```shell
 wget https://github.com/vmware-tanzu/velero/releases/download/v1.9.1/velero-v1.9.1-linux-amd64.tar.gz
@@ -285,33 +215,32 @@ tar -xvf velero-v1.7.0-linux-amd64.tar.gz
 cd velero-v1.9.1-linux-amd64/ && sudo chmod +x velero && sudo mv velero /usr/local/bin
 ```
 
-9.  Crie o arquivo de acesso **credentials-velero** para o armazenamento
-    de objetos de backup.
-    
+9. Create the **credentials-velero** access file for storage
+ of backup objects.
+
 ```shell
 vim credentials-velero
 tar -xvf velero-v1.7.0-linux-amd64.tar.gz
 ```
 
-10.  Configure as variáveis para o arquivo credentials-velero.
-    Especifique todos os dados especificados abaixo:
+10. Configure the variables for the credentials-velero file.
+Specify all the data specified below:
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image36.png)
 
-9.  Crie o arquivo de configurações velero-credentials e o preencha com
-    as informações abaixo:
+11. Create the velero-credentials configuration file and fill it with
+the information below:
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image37.png)
 
-10. Abra o client do Velero. Mude o valor de **credentials**.
-    Especifique –provider –plugins –bucket –secret-file
-    –backup-location-config –snapshot-location-config –resource-group.
-    Neste exemplo, o nome do bucket é **velero**. Mude a região e o url
-    de acordo com o contexto de sua aplicação.
+12. Open the Velero client. Change the value of **credentials**. Specify –provider –plugins –bucket –secret-file
+–backup-location-config –snapshot-location-config –resource-group.
+In this example, the bucket name is **velero**. Change the region and url
+according to the context of your application.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image38.png)
 
-11. Verifique a instalação do Velero com o kubectl.
+13. Verify the Velero installation with kubectl.
 
 ```shell
 kubectl get pod -n velero
@@ -319,48 +248,44 @@ kubectl get pod -n velero
 
 > ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image39.png)
 
-### **Migrando os Recursos**
+### **Migrating Resources**
 
-Após realizar a instalação do Velero para ambos os clusters, é
-importante verificar o status do backup diretamente do servidor do
-Velero. Para fazer isso, é possível checar os backups atuais através do
-comando: “./velero get backup-locations”. Esse comando provê informações
-importantes em relação aos backups administrados pelo Velero, garantindo
-a segurança e disponibilidade dos recursos do Kubernetes.
+After installing Velero for both clusters, it is
+important to check the backup status directly from the Velero server. To do this, you can check the current backups using the
+command: “./velero get backup-locations”. This command provides
+important information regarding the backups managed by Velero, ensuring
+the security and availability of Kubernetes resources.
 
-1.  Para ver todos os backups disponíveis, utilize o comando: “./velero
-    get backup-locations”.
+1. To see all available backups, use the command: “./velero
+get backup-locations”.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image40.png)
 
-2.  Verifique se todos os backups estão disponíveis e podem ser
-    restaurados
+2. Verify that all backups are available and can be restored
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image41.png)
 
-### **Restaurando Aplicações no Cluster de Destino**
+### **Restoring Applications to the Target Cluster**
 
-1.  Utilize a ferramenta do Velero para criar um restore e especificar
-    um backup. Neste exemplo, o backup nomeado **vpro-backup** será
-    utilizado para restaurar uma aplicação WordPress para o cluster CCE.
+1. Use the Velero tool to create a restore and specify
+a backup. In this example, the backup named **vpro-backup** will be
+used to restore a WordPress application to the CCE cluster.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image42.png)
 
-### Atualizar o Cluster de Destino e Validar a Migração
+### Update the Target Cluster and Validate the Migration
 
-Atualize os campos de imagem nos arquivos yaml dentro do CCE cluster de
-acordo com o seu SWR.
+Update the image fields in the yaml files within the CCE cluster according to your SWR.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image43.png)
 
-Edite os campos specs e annotations do arquivo yaml de entrada de acordo
-com as regras na documentação oficial da Huawei Cloud.
+Edit the specs and annotations fields of the input yaml file according to the rules in the official Huawei Cloud documentation.
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image44.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image45.png)
 
-**Verifique e valide o cluster**
+**Please verify and validate the cluster**
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-Azure-AKS-to-Huawei-CCE/media/image46.png)
 

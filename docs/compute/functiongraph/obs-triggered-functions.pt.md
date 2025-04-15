@@ -4,7 +4,7 @@ layout: default
 parent: FunctionGraph
 grand_parent: Computação
 lang: pt
-permalink: /docs/compute/functiongraph/OBS-triggered Functions
+permalink: /docs/compute/functiongraph/obs-triggered-functions
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

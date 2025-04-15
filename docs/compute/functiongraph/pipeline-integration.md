@@ -3,7 +3,7 @@ title: Pipeline Integration
 layout: default
 parent: FunctionGraph
 grand_parent: Compute
-permalink: /docs/compute/functiongraph/Pipeline Integration
+permalink: /docs/compute/functiongraph/pipeline-integration
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

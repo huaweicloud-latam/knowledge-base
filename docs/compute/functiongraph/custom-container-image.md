@@ -3,7 +3,7 @@ title: Custom Container Image Function
 layout: default
 parent: FunctionGraph
 grand_parent: Compute
-permalink: /docs/compute/functiongraph/Custom Container Image Function
+permalink: /docs/compute/functiongraph/custom-container-image-function
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

@@ -4,7 +4,7 @@ layout: default
 parent: Elastic Cloud Server (ECS)
 grand_parent: Computação
 lang: pt
-permalink: /docs/compute/ecs/Remote Login Bricked Error
+permalink: /docs/compute/ecs/remote-login-bricked-error
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

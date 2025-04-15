@@ -4,7 +4,7 @@ layout: default
 parent: Image Management Service (IMS)
 grand_parent: Computação
 lang: pt
-permalink: /docs/compute/ims/Creating a Private Ubuntu Image
+permalink: /docs/compute/ims/creating-a-private-ubuntu-image
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 

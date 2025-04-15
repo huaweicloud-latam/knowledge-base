@@ -3,7 +3,7 @@ title: Migrating K8S Cluster Using Velero
 layout: default
 parent: Cloud Container Engine (CCE)
 grand_parent: Containers
-permalink: /docs/containers/cce/Migrating K8S Cluster Using Velero
+permalink: /docs/containers/cce/migrating-k8s-cluster-using-velero
 ---
 <img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg">
 
@@ -17,14 +17,14 @@ V1.1 – January 2024
 | V1.1 – 2024-01-22 | Diogo Hatz 50037923   | Atualização do documento |
 | V1.1 – 2024-01-22 | Wisley Paulo w0083850 | Revisão do documento     |
 
-Este documento apresenta os procedimentos para criar um cluster CCE e
-implementar uma aplicação com ngix e wordpress no cluster, depois das
-aplicações serem testadas, realizar backup e restore do ambiente
-utilizando velero.
+This document presents the procedures for creating a CCE cluster and
+implementing an application with ngix and wordpress in the cluster, after
+the applications are tested, perform backup and restore of the environment
+using velero.
 
-# Criação cluster
-    
-Para iniciar acessamos o serviço do CCE e criamos o cluster conforme apresentado nas imagens abaixo (para esses teste o cluster de origem foi criado na região de Santiago e o cluster de destino na região de São Paulo):
+# Cluster creation
+
+To start, we access the CCE service and create the cluster as shown in the images below (for these tests, the source cluster was created in the Santiago region and the target cluster in the São Paulo region):
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-K8S-Using-Velero/media/image3.png)
 
@@ -32,14 +32,14 @@ Para iniciar acessamos o serviço do CCE e criamos o cluster conforme apresentad
 
 ![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-K8S-Using-Velero/media/image5.png)
 
-# Instalar e configurar kubectl (bastion)
+# Install and configure kubectl (bastion)
 
-Crie uma instância de bastion com serviço de ECS na mesma região do
-cluster com ip público e apenas com acesso ssh para os IPs públicos
-seguros para gestão do cluster.
+Create a bastion instance with ECS service in the same region as the
+cluster with public IP and only with ssh access to secure public IPs
+for cluster management.
 
 ```shell
-#install kubectl (Recomendado em bastion na mesma região)
+#install kubectl (Recommended on bastion in the same region)
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
 echo "$(<kubectl.sha256) kubectl" | sha256sum --check
@@ -54,15 +54,15 @@ chmod +x kubectl
 mv -f kubectl /usr/local/bin
 cd /home
 mkdir -p $HOME/.kube
-#transferir o arquivo da console do cce para bastion
+#transfer the file from the cce console to the bastion
 mv -f cce-test-migration-kubeconfig.yaml $HOME/.kube/config
-#para external necessário ativar EIP (caso acesso de um bastion usar internal). Recomendamos o uso do bastion com as configurações acima
+#for external it is necessary to activate EIP (if access from a bastion uses internal). We recommend using bastion with the above configurations
 kubectl config use-context internal
 #kubectl config use-context external
 kubectl cluster-info
 ```
 
-# Criar cluster Nginx e Wordpress
+# Create Nginx and Wordpress cluster
 
 <https://support.huaweicloud.com/intl/en-us/qs-cce/cce_qs_0003.html>
 
@@ -70,25 +70,24 @@ kubectl cluster-info
 
 <https://res-static.hc-cdn.cn/cloudbu-site/intl/en-us/Video/cce/wordpress_en.mp4>
 
-# Configurar os pods
+# Configure pods
 
-Para realizar o snapshot de discos específicos do cluster, é preciso ser
-feito uma anotação no pod do disco em questão.
+To snapshot specific disks in the cluster, a note must be made in the pod for the disk in question.
 
 ```shell
 kubectl -n <namespace> annotate <pod/pod_name> backup.velero.io/backup-volumes=<volume_name_1>,<volume_name_2>,...
 ```
 
-Exemplo:
+Example:
 
 ```shell
 kubectl annotate pod/wordpress-758fbf6fc7-s7fsr backup.velero.io/backup-volumes=wp-storage
 ```
 
-# Instalar o Velero
+# Install Velero
 
-Para esse procedimento ser realizado o workernode precisa ter um EIP, ou
-um NAT Gateway configurado ou as imagens do Velero no SWR.
+For this procedure to be performed, the workernode needs to have an EIP, or
+a NAT Gateway configured or the Velero images on the SWR.
 
 ```shell
 wget https://github.com/vmware-tanzu/velero/releases/download/v1.12.1/velero-v1.12.1-linux-amd64.tar.gz
@@ -97,41 +96,38 @@ tar -xvf velero-v1.12.1-linux-amd64.tar.gz
 cp ./velero-v1.12.1-linux-amd64/velero /usr/local/bin
 
 nano credentials-velero
-#colocar no arquivo
+#place in the file
 [default]
 aws_access_key_id = {AK}
 aws_secret_access_key = {SK}
 
-#execute o comando (para funcionar é necessário que a máquina tenha acesso a internet para baixar imagem (NAT ou EIP)). Obs: As configurações –uploader-type e –use-node-agent são relativos à criação de uma snapshot dos discos do cluster.
-velero install \
-  --provider aws \
-  --plugins velero/velero-plugin-for-aws:v1.7.1 \
-  --bucket migration-velero-cce \
-  --secret-file ./credentials-velero \
-  --uploader-type=restic \
-  --use-node-agent \
-  --use-volume-snapshots=false \
-  --backup-location-config region=la-south-2,s3ForcePathStyle="true",s3Url=http://obs.la-south-2.myhuaweicloud.com
-#verifique se o pod está rodando 
+#execute the command (for it to work, the machine must have internet access to download the image (NAT or EIP)). Note: The –uploader-type and –use-node-agent settings are related to creating a snapshot of the cluster disks. velero install \
+--provider aws \
+--plugins velero/velero-plugin-for-aws:v1.7.1 \
+--bucket migration-velero-cce \
+--secret-file ./credentials-velero \
+--uploader-type=restic \
+--use-node-agent \
+--use-volume-snapshots=false \
+--backup-location-config region=la-south-2,s3ForcePathStyle="true",s3Url=http://obs.la-south-2.myhuaweicloud.com
+#check if the pod is running
 kubectl get pod -n velero
-#verifique se a conexão com o bucket está ok
+#check if the connection to the bucket is ok
 velero backup-location get
 ```
 
-# Backup com Velero
+# Backup with Velero
 
 ```shell
-#Obs: A flag –default-volumes-to-fs-backup é relativa à criação de uma snapshot dos discos do cluster.
+#Obs: The flag –default-volumes-to-fs-backup is related to creating a snapshot of the cluster's disks.
 velero backup create backup20231129 --default-volumes-to-fs-backup
 velero backup describe backup20231129
 ```
 
-# Restore backup do Velero
+# Restore Velero backup
 
 ```shell
 velero backup get
 velero restore create --from-backup=backup20231129
 velero restore describe backup20231129-2376345178
 ```
-
-
