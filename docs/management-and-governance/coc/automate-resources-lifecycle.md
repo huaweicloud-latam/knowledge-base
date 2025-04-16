@@ -13,94 +13,71 @@ V1.0 – September 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
-| V1.0 – 2024-09-10 | Diogo Hatz d50037923           | Versão Inicial       |
-| V1.0 – 2024-09-10 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
+| V1.0 – 2024-09-10 | Diogo Hatz d50037923           | Initial Version      |
+| V1.0 – 2024-09-10 | Wisley da Silva Paulo 00830850 | Document Review      |
 
-# Objetivo
+# Objective
 
-Este documento objetiva apresentar os procedimentos necessários para a
-criação de uma task automatizada para ligar e desligar recursos na
-Huawei Cloud de forma periódica através do serviço Cloud Operations
-Center (COC).
+This document aims to present the procedures required to create an automated task to periodically turn on and off resources in Huawei Cloud through the Cloud Operations Center (COC) service.
 
 # COC
 
-Para criar uma task automatizada para ligar e desligar os recursos de
-uma conta na Huawei Cloud, primeiramente, acesse o serviço COC através
-do console da HWC e permita a delegação de permissões para a agency
-relativa ao serviço do COC. **Obs:** As agencies criadas para o serviço
-do COC serão utilizadas somente para delegar permissões ao serviço COC.
+To create an automated task to turn on and off resources for an account in Huawei Cloud, first access the COC service through the HWC console and allow the delegation of permissions to the agency related to the COC service. **Note:** The agencies created for the COC service will only be used to delegate permissions to the COC service.
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image3.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image4.png)
 
-Navegue até a seção “Resource O\&M” e acesse a subseção “Automated
-O\&M”.
+Navigate to the “Resource O&M” section and access the “Automated O&M” subsection.
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image5.png)
 
-Selecione a rotina de “Scheduled O\&M” para definir uma política
-automatizada de ligamento e desligamento de recursos e clique em “Create
-Task”.
+Select the “Scheduled O\&M” routine to define an automated resource power-on and power-off policy and click “Create Task”.
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image6.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image7.png)
 
-Insira informações pertinentes à task, como o seu nome e o enterprise
-project a qual a task pertencerá. Ademais, insira, também, um fuzo
-horário para a definição periódica da task. Selecione a opção “Periodic
-execution” para definir uma data e horário para a execução da função
-periódica, assim como a data de expiração da função.
+Enter information relevant to the task, such as its name and the enterprise project to which the task belongs. Additionally, enter a time zone for the periodic definition of the task. Select the “Periodic execution” option to set a date and time for the periodic execution of the function, as well as the expiration date of the function.
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image8.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image9.png)
 
-Selecione o tipo de task como “Jobs” e “Common Jobs” e selecione o job
-desejado. Neste exemplo, será criada uma tarefa para a inicialização de
-ECSs automaticamente. Selecione a agency “ServiceLinkedAgencyForCOC” em
-“IAM Agency” e a região utilizada.
+Select the task type as “Jobs” and “Common Jobs” and select the desired job. In this example, a task will be created to automatically initialize ECSs. Select the agency “ServiceLinkedAgencyForCOC” in “IAM Agency” and the region used.
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image10.png)
 
-Clique em “+Add” para adicionar instâncias de ECSs que farão parte da
-task periódica e selecione as respectivas instâncias.
+Click “+Add” to add ECS instances that will be part of the periodic task and select the respective instances.
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image11.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image12.png)
 
-Após isso, basta desabilitar a opção de Batch Policy e Manual Review e
-clicar em “Submit” para salvar a task criada. **Obs:** A opção de batch
-policy serve para delimitar grupos distintos de recursos para a task, ao
-passo em que a opção manual review serve para forçar a autorização da
-execução da task por um aprovador delimitado.
+After that, simply disable the Batch Policy and Manual Review options and
+click “Submit” to save the created task. **Note:** The batch policy option is used to delimit distinct groups of resources for the task,
+while the manual review option is used to force authorization for the execution of the task by a delimited approver.
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image13.png)
 
-É possível ver o status da task como “Enabled” no console do COC.
+You can see the task status as “Enabled” in the COC console.
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image14.png)
 
-# Exemplo
+# Example
 
-Após a definição da task criada no item 2.0 deste documento, é possível
-ver que, no momento em que o dia e horário especificados na task foram
-atingidos, a ECS delimitada na task foi inicializada.
+After defining the task created in item 2.0 of this document, you can see that when the day and time specified in the task were reached, the ECS defined in the task was initialized.
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image15.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image16.png)
 
-Também é possível ver o status de execução da task pelo console do COC
+You can also view the task execution status through the COC console
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image17.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/COC-Automate-Resources-Lifecycle/media/image18.png)
 
-# Referências
+# References
 
-  - Documentação do COC:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-coc/coc_um_05_03_01.html>.
+- COC Documentation: <https://support.huaweicloud.com/intl/en-us/usermanual-coc/coc_um_05_03_01.html>.

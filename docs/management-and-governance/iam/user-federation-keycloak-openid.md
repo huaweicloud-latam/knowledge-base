@@ -13,156 +13,120 @@ V1.0 – October 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
-| V1.0 – 2024-10-15 | Diogo Hatz d50037923           | Versão Inicial       |
-| V1.0 – 2024-10-15 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
+| V1.0 – 2024-10-15 | Diogo Hatz d50037923           | Initial Version      |
+| V1.0 – 2024-10-15 | Wisley da Silva Paulo 00830850 | Document Review      |
 
-# Objetivo
+# Objective
 
-Este documento objetiva apresentar os procedimentos necessários para a
-efetivação da configuração de federação de identidade na Huawei Cloud
-(Service Provider) através de um provedor de identidade (IdP), como o
-RedHat SSO ou Keycloak. Neste exemplo, o protocolo utilizado para a
-federação de identidade será o OpenID, mapeando os usuários do provedor
-de identidade para usuários virtuais na Huawei Cloud.
+This document aims to present the procedures required to implement identity federation configuration in Huawei Cloud (Service Provider) through an identity provider (IdP), such as RedHat SSO or Keycloak. In this example, the protocol used for identity federation will be OpenID, mapping users from the identity provider to virtual users in Huawei Cloud.
 
-No diagrama abaixo, é possível visualizar o fluxo do processo de
-autenticação na Huawei Cloud utilizando um IdP.
+In the diagram below, you can see the authentication process flow in Huawei Cloud using an IdP.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image3.png)
 
 # Keycloak
 
-Primeiramente, faz-se necessário realizar a configuração do provedor de
-identidade (IdP). Para isso, acesse a página de configurações do IdP
-(Keycloak) e navegue até a seção “Clients”. Clique em “Create” para
-criar um novo cliente.
+First, you need to configure the identity provider (IdP). To do this, access the IdP (Keycloak) configuration page and navigate to the “Clients” section. Click “Create” to create a new client.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image4.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image5.png)
 
-Selecione o “Client Protocol” como sendo “openid-connect” e insira
-“hws-oidc” no campo relativo ao “Client ID”. Feito isso, clique em
-“Save” para efetivar a criação do client.
+Select “Client Protocol” as “openid-connect” and enter “hws-oidc” in the “Client ID” field. Once done, click “Save” to create the client.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image6.png)
 
-Navegue até o cliente da Huawei Cloud criado e clique em “Edit” para
-editar as configurações do cliente.
+Navigate to the Huawei Cloud client you created and click “Edit” to edit the client settings.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image7.png)
 
-Habilite a opção “Implicit Flow Enabled”, altere o campo “Access Type”
-para “confidential” e insira o seguinte hyperlink no campo de “Valid
-Redirect URIs”: <https://auth.huaweicloud.com/authui/oidc/post>. Feito
-isso, clique em “Save” para salvar as modificações feitas.
+Enable the “Implicit Flow Enabled” option, change the “Access Type” field to “confidential” and insert the following hyperlink in the “Valid Redirect URIs” field: <https://auth.huaweicloud.com/authui/oidc/post>. Once done, click “Save” to save the changes made.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image8.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image9.png)
 
-Navegue até a seção de “Mappers”, ainda nas configurações do cliente da
-Huawei Cloud, e clique em “Create” para criar um mapper para o username.
+Navigate to the “Mappers” section, still in the Huawei Cloud client settings, and click “Create” to create a mapper for the username.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image10.png)
 
-Selecione o “Mapper Type” como de tipo “User Property” e preencha os
-demais campos conforme a imagem abaixo.
+Select the “Mapper Type” as “User Property” and fill in the remaining fields as shown in the image below.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image11.png)
 
-Navegue mais uma vez até a seção de “Mappers”, ainda nas configurações
-do cliente da Huawei Cloud, e clique em “Create” para criar um mapper
-para o group.
+Navigate once again to the “Mappers” section, still in the Huawei Cloud client settings, and click “Create” to create a mapper for the group.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image10.png)
 
-Selecione o “Mapper Type” como de tipo “Group Membership”, desabilite a
-opção “Full group path” e preencha os demais campos conforme a imagem
-abaixo.
+Select the “Mapper Type” as “Group Membership”, disable the “Full group path” option and fill in the remaining fields as shown in the image below.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image12.png)
 
-Para realizar a federação de usuários da Huawei Cloud, faz-se necessária
-a existência de usuários primeiramente. Caso não exista nenhum usuário
-criado no Keycloak, crie um usuário.
+To perform Huawei Cloud user federation, users must first exist. If there is no user created in Keycloak, create a user. Navigate to the “Realm Settings” section and click on “OpenID Endpoint Configuration” in the “Endpoints” subsection. 
 
-Navegue até a seção de “Realm Settings” e clique em “OpenID Endpoint
-Configuration”, na subseção de “Endpoints”.
+![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image13.png) 
+![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image14.png) 
 
-![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image13.png)
-
-![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image14.png)
-
-Tome nota dos seguintes parâmetros, que precisarão ser configurados no
-lado do service provider (Huawei Cloud): “authorization\_endpoint” e
-“jwks\_uri”.
+Note the following parameters, which will need to be configured on the service provider (Huawei Cloud) side: “authorization\_endpoint” and “jwks\_uri”. 
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image15.png)
 
-No web browser, navegue até o hyperlink relativo ao parâmetro
-“jwks\_uri” copiado acima e tome nota da chave.
+In the web browser, navigate to the hyperlink for the
+“jwks\_uri” parameter copied above and make a note of the key.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image16.png)
 
 # IAM
 
-Acesse o serviço IAM no console da Huawei Cloud e navegue até a seção
-“Identity Providers”. Clique em “Create Identity Provider” para criar
-uma configuração de federação de identidade.
+Access the IAM service in the Huawei Cloud console and navigate to the
+“Identity Providers” section. Click “Create Identity Provider” to create
+an identity federation configuration.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image17.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image18.png)
 
-Selecione o protocolo OpenID-Connect e o “SSO Type” como “Virtual User”.
-Clique no botão “OK” para salvar as configurações da criação da IdP.
+Select the OpenID-Connect protocol and the “SSO Type” as “Virtual User”.
+
+Click the “OK” button to save the IdP creation settings.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image19.png)
 
-Feito isso, selecione a opção “Modify” ao lado do provedor de identidade
-criado e preencha os campos conforme mostrado na figura abaixo.
+Once done, select the “Modify” option next to the created identity provider and fill in the fields as shown in the figure below.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image20.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image21.png)
 
-1.  > **<span class="underline">Identity Provider URL:</span>**
-    > Hyperlink relativo ao realm em que o cliente foi configurado no
-    > keycloak. Exemplo: ;
+1. > **<span class="underline">Identity Provider URL:</span>**
+> Hyperlink relative to the realm in which the client was configured in
+> keycloak. Example: ;
 
-2.  **<span class="underline">Client ID:</span>** Mesmo parâmetro
-    configurado no campo “Client ID” do Keycloak;
+2. **<span class="underline">Client ID:</span>** Same parameter
+configured in the “Client ID” field of Keycloak;
 
-3.  > **<span class="underline">Authorization Endpoint:</span>**
-    > Parâmetro “authorization\_endpoint” presente no arquivo de
-    > configurações do endpoint Open-ID no Keycloak;
+3. > **<span class="underline">Authorization Endpoint:</span>**
+> Parameter “authorization\_endpoint” present in the Open-ID endpoint
+> configuration file in Keycloak;
 
-4.  **<span class="underline">Response Mode:</span>** “form\_post”;
+4. **<span class="underline">Response Mode:</span>** “form\_post”;
 
-5.  > **<span class="underline">Signing Key:</span>** Conteúdo do
-    > parâmetro “jwks\_uri”, presente no arquivo de configurações do
-    > endpoint Open-ID no Keycloak.
+5. > **<span class="underline">Signing Key:</span>** Contents of the “jwks\_uri” parameter, present in the Open-ID endpoint
+> configuration file in Keycloak.
 
-**<span class="underline">Importante:</span>** O protocolo Open-ID
-requer, necessariamente, que um certificado SSL seja configurado no
-provedor de identidade para possibilitar comunicação via protocolo
-HTTPS. O certificado SSL pode ser um certificado auto assinado.
+**<span class="underline">Important:</span>** The Open-ID protocol
 
-Por fim, na seção de “Identity Conversion Rules”, clique em “Create
-Rule” para criar uma regra de conversão de usuários e grupos do IdP
-para os usuários e grupos correspondentes na Huawei Cloud. É possível
-utilizar o exemplo de regra de conversão abaixo.
+necessarily requires an SSL certificate to be configured in the
 
-**<span class="underline">Importante:</span>** A regra de conversão
-abaixo mapeia **todos** os usuários do Keycloak para os grupos do IAM na
-Huawei Cloud que possuam os mesmos nomes dos grupos configurados no
-Keycloak. Por exemplo: No Keycloak, o usuário “Teste” pertencente ao
-grupo “admin” será mapeado, na Huawei Cloud, para o usuário virtual
-“Teste” no grupo “admin”. Não é necessário que o usuário “Teste” seja
-previamente criado na Huawei Cloud. No entanto, é obrigatório que o
-grupo “admin” seja criado previamente na Huawei Cloud com as devidas
-políticas de controle de acesso.
+identity provider to enable communication via the HTTPS
+
+protocol. The SSL certificate can be a self-signed certificate.
+
+Finally, in the “Identity Conversion Rules” section, click “Create
+
+Rule” to create a rule for converting users and groups from the IdP
+
+to the corresponding users and groups in Huawei Cloud. You can use the following example conversion rule. **<span class="underline">Important:</span>** The conversion rule below maps **all** Keycloak users to IAM groups in Huawei Cloud that have the same names as the groups configured in Keycloak. For example: In Keycloak, the user “Test” belonging to the “admin” group will be mapped, in Huawei Cloud, to the virtual user “Test” in the “admin” group. It is not necessary for the “Test” user to be previously created in Huawei Cloud. However, it is mandatory for the “admin” group to be previously created in Huawei Cloud with the appropriate access control policies. 
 
 ```json
 [
@@ -195,45 +159,38 @@ políticas de controle de acesso.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image23.png)
 
-Feito isso, clique em “OK” para salvar as modificações feitas no IdP.
+Once done, click “OK” to save the changes made to the IdP.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image24.png)
 
-# Exemplo
+# Example
 
-A seguir segue um exemplo de validação do login no console da Huawei
-Cloud por meio da federação de identidade.
+The following is an example of validating login to the Huawei Cloud console through identity federation.
 
-Acessando o console da Huawei Cloud e selecionando a opção de login por
-meio de usuário federado.
+Accessing the Huawei Cloud console and selecting the option to log in through a federated user.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image25.png)
 
-Inserindo o nome da conta e selecionando a IdP configurada no dropdown.
+Entering the account name and selecting the configured IdP from the dropdown.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image26.png)
 
-Realizando o login na provedora de identidade configurada.
+Logging in to the configured identity provider.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image27.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image28.png)
 
-Autenticação realizada com sucesso, redirecionando para o console da
-Huawei Cloud.
+Authentication successful, redirecting to the Huawei Cloud console.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image29.png)
 
-**<span class="underline">Importante:</span>** Também é possível
-realizar o login no console através da federação de identidade por meio
-do hyperlink gerado na configuração de Identity Provider no console da
-Huawei Cloud.
+**<span class="underline">Important:</span>** You can also log in to the console through identity federation using the hyperlink generated in the Identity Provider configuration in the Huawei Cloud console.
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-OpenID/media/image30.png)
 
-# Referências
+# References
 
-  - Documentação do IAM:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-iam/iam_08_0002.html>
+- IAM Documentation: <https://support.huaweicloud.com/intl/en-us/usermanual-iam/iam_08_0002.html>
 
-  - Blog da Huawei Cloud: <https://bbs.huaweicloud.com/blogs/401343>
+- Huawei Cloud Blog: <https://bbs.huaweicloud.com/blogs/401343>
