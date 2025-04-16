@@ -68,37 +68,31 @@ was obtained in item 3.0 of this document. For the other settings, you can see w
 
 - **period:** Possible values: 1, 300, 1200, 3600, 14400 or 86400:
 
-- **1:** No aggregation is performed, the data is shown in raw format;
+  - **1:** No aggregation is performed, the data is shown in raw format;
 
-- **300:** Data aggregation is performed every 5 minutes;
+  - **300:** Data aggregation is performed every 5 minutes;
 
-- **1200:** Data aggregation is performed every 20 minutes;
+  - **1200:** Data aggregation is performed every 20 minutes;
 
-- **3600:** Data aggregation is performed every 60 minutes;
+  - **3600:** Data aggregation is performed every 60 minutes;
 
-- **14400:** Data aggregation is performed every 4 hours;
+  - **14400:** Data aggregation is performed every 4 hours;
 
-- **86400:** Data aggregation is performed every 24 hours.
+  - **86400:** Data aggregation is performed every 24 hours.
 
 - **filter:** Possible values: max, min, average, sum or variance.
 
-- **Max:** Returns the maximum values ​​of the data;
+  - **Max:** Returns the maximum values ​​of the data;
 
-- **Min:** Returns the minimum values ​​of the data;
+  - **Min:** Returns the minimum values ​​of the data;
 
-- **Average:** Returns an average of the data;
+  - **Average:** Returns an average of the data;
 
-- **Variance:** Returns the variance of the data.
+  - **Variance:** Returns the variance of the data.
 
-- **from:** The start period of the search. This time parameter uses the **UNIX** time unit in **milliseconds**. A standard time converter for UNIX can be found at the following page:
-<https://www.unixtimestamp.com/>. After performing the conversion,
-add three zeros (0) to the number, so that it is represented in
-milliseconds.
+- **from:** The start period of the search. This time parameter uses the **UNIX** time unit in **milliseconds**. A standard time converter for UNIX can be found at the following page: <https://www.unixtimestamp.com/>. After performing the conversion, add three zeros (0) to the number, so that it is represented in milliseconds.
 
-- **to:** The end period of the search. This time parameter uses the **UNIX** time unit in **milliseconds**. A standard time converter for UNIX can be found at the following page:
-<https://www.unixtimestamp.com/>. After performing the conversion,
-add three zeros (0) to the number, so that it is represented in
-milliseconds.
+- **to:** The end period of the search. This time parameter uses the **UNIX** time unit in **milliseconds**. A standard time converter for UNIX can be found at the following page: <https://www.unixtimestamp.com/>. After performing the conversion, add three zeros (0) to the number, so that it is represented in milliseconds.
 
 Request example:
 

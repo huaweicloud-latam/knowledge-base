@@ -115,7 +115,14 @@ an ECS, for example, the **Resource Type** is Elastic Cloud Server and the
 
 If the alarm triggering condition is a metric, such as
 the ECS CPU or memory utilization rate, select Metric in
-**Alarm Type**. If the alarm triggering condition is an event, for example, the event of an uninstalled GPU, select Event in the **Alarm Type** field. In this example, the metric to trigger the alarm will be the ECS CPU utilization above 80%. In **Monitoring Scope**, the specific resource that will trigger the alarm must be configured. The resource can be selected in three different ways: - <span class="underline">All resources</span>: Select this option if the alarm can be triggered by all instances of the selected resource. - <span class="underline">Resource groups</span>: Select this option if the alarm can be triggered by all resources present in a resource group. See section 3.3. - <span class="underline">Specific resources</span>: Select this option to choose a specific instance of the selected service to trigger the alarm. ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image9.png)
+**Alarm Type**. If the alarm triggering condition is an event, for example, the event of an uninstalled GPU, select Event in the **Alarm Type** field. In this example, the metric to trigger the alarm will be the ECS CPU utilization above 80%. 
+
+In **Monitoring Scope**, the specific resource that will trigger the alarm must be configured. The resource can be selected in three different ways: 
+- <span class="underline">All resources</span>: Select this option if the alarm can be triggered by all instances of the selected resource. 
+- <span class="underline">Resource groups</span>: Select this option if the alarm can be triggered by all resources present in a resource group. See section 3.3. 
+- <span class="underline">Specific resources</span>: Select this option to choose a specific instance of the selected service to trigger the alarm. 
+
+![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image9.png)
 
 In this example, the ECS “ecs-4194” will be selected as the instance that
 can trigger the alarm in the **Specific resources** field under **Monitoring
