@@ -114,19 +114,9 @@ configured in the “Client ID” field of Keycloak;
 5. > **<span class="underline">Signing Key:</span>** Contents of the “jwks\_uri” parameter, present in the Open-ID endpoint
 > configuration file in Keycloak.
 
-**<span class="underline">Important:</span>** The Open-ID protocol
+**<span class="underline">Important:</span>** The Open-ID protocol necessarily requires an SSL certificate to be configured in the identity provider to enable communication via the HTTPS protocol. The SSL certificate can be a self-signed certificate. Finally, in the “Identity Conversion Rules” section, click “Create Rule” to create a rule for converting users and groups from the IdP to the corresponding users and groups in Huawei Cloud. You can use the following example conversion rule. 
 
-necessarily requires an SSL certificate to be configured in the
-
-identity provider to enable communication via the HTTPS
-
-protocol. The SSL certificate can be a self-signed certificate.
-
-Finally, in the “Identity Conversion Rules” section, click “Create
-
-Rule” to create a rule for converting users and groups from the IdP
-
-to the corresponding users and groups in Huawei Cloud. You can use the following example conversion rule. **<span class="underline">Important:</span>** The conversion rule below maps **all** Keycloak users to IAM groups in Huawei Cloud that have the same names as the groups configured in Keycloak. For example: In Keycloak, the user “Test” belonging to the “admin” group will be mapped, in Huawei Cloud, to the virtual user “Test” in the “admin” group. It is not necessary for the “Test” user to be previously created in Huawei Cloud. However, it is mandatory for the “admin” group to be previously created in Huawei Cloud with the appropriate access control policies. 
+**<span class="underline">Important:</span>** The conversion rule below maps **all** Keycloak users to IAM groups in Huawei Cloud that have the same names as the groups configured in Keycloak. For example: In Keycloak, the user “Test” belonging to the “admin” group will be mapped, in Huawei Cloud, to the virtual user “Test” in the “admin” group. It is not necessary for the “Test” user to be previously created in Huawei Cloud. However, it is mandatory for the “admin” group to be previously created in Huawei Cloud with the appropriate access control policies. 
 
 ```json
 [

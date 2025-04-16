@@ -106,7 +106,9 @@ After confirming the file upload, click “OK” on the settings extracted from 
 
 ![](/huaweicloud-knowledge-base/assets/images/IAM-Keycloak-SAML/media/image22.png)
 
-Finally, in the “Identity Conversion Rules” section, click “Create Rule” to create users and groups conversion rule from the IdP to the corresponding users and groups in Huawei Cloud. You can use the example translation rule below. **<span class="underline">Important:</span>** The translation rule below maps **all** Keycloak users to IAM groups in Huawei Cloud that have the same names as the groups configured in Keycloak. For example: In Keycloak, the user “Test” belonging to the “admin” group will be mapped to the virtual user “Test” in the “admin” group in Huawei Cloud. It is not necessary to create the “Test” user in Huawei Cloud in advance. However, it is mandatory to create the “admin” group in Huawei Cloud with the appropriate access control policies. 
+Finally, in the “Identity Conversion Rules” section, click “Create Rule” to create users and groups conversion rule from the IdP to the corresponding users and groups in Huawei Cloud. You can use the example translation rule below. 
+
+**<span class="underline">Important:</span>** The translation rule below maps **all** Keycloak users to IAM groups in Huawei Cloud that have the same names as the groups configured in Keycloak. For example: In Keycloak, the user “Test” belonging to the “admin” group will be mapped to the virtual user “Test” in the “admin” group in Huawei Cloud. It is not necessary to create the “Test” user in Huawei Cloud in advance. However, it is mandatory to create the “admin” group in Huawei Cloud with the appropriate access control policies. 
 
 ```json
 [
