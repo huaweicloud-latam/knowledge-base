@@ -87,33 +87,35 @@ montagem do disco com o comando mount. Por exemplo: “mount /dev/vdb1
 
 Feito a montagem, realize os seguintes passos:
 
-1.  > Delete o arquivo de configurações do grub com o comando “rm
-    > /mnt/boot/grub/grub.cfg”.
+1.  > Delete o arquivo de configurações do grub com o comando:
+```shell
+rm /mnt/boot/grub/grub.cfg
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image13.png)
 
 2.  > Copie o kernel genérico da ECS temporária para o diretório /boot
-    > da ECS congelada: “cp /boot/vmlinuz-5.4.0-170-generic
-    > /mnt/boot/vmlinuz-5.4.0-170-generic”.
-    > **<span class="underline">Importante:</span>** O nome do kernel
-    > utilizado foi somente um exemplo, é necessário copiar o kernel
-    > utilizado pela ECS temporária. Em caso de dúvida, utilize o
-    > comando “uname -r” para listar a versão do kernel em execução.
+    > da ECS congelada: 
+```shell
+cp /boot/vmlinuz-5.4.0-170-generic /mnt/boot/vmlinuz-5.4.0-170-generic
+```
+**<span class="underline">Importante:</span>** O nome do kernel utilizado foi somente um exemplo, é necessário copiar o kernel utilizado pela ECS temporária. Em caso de dúvida, utilize o comando “uname -r” para listar a versão do kernel em execução.
 
-> ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image14.png)
 
 3.  > Copie o initrd da ESC temporária para o diretório /boot da ECS
-    > congelada: “cp /boot/initrd.img-5.4.0-170-generic
-    > /mnt/boot/initrd.img-5.4.0-170-generic”.
-    > **<span class="underline">Importante:</span>** Copie o initrd
-    > relativo ao kernel copiado no item 2.0. Caso não haja nenhum
-    > initrd, gere um com o comando “update-initramfs -u”.
+    > congelada: 
 
-> ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image15.png)
->
-> Remova o disco de dados com o comando “umount /dev/vdb1”.
->
-> ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image16.png)
+```shell
+cp /boot/initrd.img-5.4.0-170-generic /mnt/boot/initrd.img-5.4.0-170-generic
+```
+**<span class="underline">Importante:</span>** Copie o initrd relativo ao kernel copiado no item 2.0. Caso não haja nenhum initrd, gere um com o comando “update-initramfs -u”.
+
+![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image15.png)
+
+Remova o disco de dados com o comando “umount /dev/vdb1”.
+
+![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image16.png)
 
 Feito isso, coloque o disco de sistema da ECS congelada de volta na ECS
 original, seguindo o passo-a-passo do item 4.0 deste documento. Feito
@@ -136,21 +138,30 @@ vistas pelo comando “ls”.
 Ao encontrar a partição correta, efetue os seguintes passos para dar
 boot em modo single-user no kernel da ECS temporária:
 
-4.  “set root=(hd0,gpt1)”:
-    Substituindo (hd0,gpt1) pela partição encontrada acima;
+1. Substituindo (hd0,gpt1) pela partição encontrada acima;
+```shell
+set root=(hd0,gpt1)
+```
 
-5.  > “linux /boot/vmlinuz-5.4.0-170-generic root=/dev/vda1 ro single”
-    > Substituindo “vmlinuz-5.4.0-170-generic” pelo kernel copiado da
-    > ECS temporária no item 4.0 deste documento e substituindo “vda1”
-    > de acordo com a partição encontrada.
-    > **<span class="underline">Exemplo:</span>** (hd0,gp1) = vda1,
-    > (hd1,gpt1) = vdb1, (hd3,gpt2) = /dev/vdd2, e assim por diante;
+2. Substituindo “vmlinuz-5.4.0-170-generic” pelo kernel copiado da
+ECS temporária no item 4.0 deste documento e substituindo “vda1”
+de acordo com a partição encontrada.
 
-6.  > “initrd /boot/initrd.img-5.4.0-170-generic”:
-    > Substituindo “initrd.img-5.4.0-170-generic” pelo initrd copiado da
-    > ECS temporária no item 4.0 deste documento;
+**<span class="underline">Exemplo:</span>** (hd0,gp1) = vda1, (hd1,gpt1) = vdb1, (hd3,gpt2) = /dev/vdd2, e assim por diante;
+```shell
+linux /boot/vmlinuz-5.4.0-170-generic root=/dev/vda1 ro single
+```
 
-7.  “boot”
+3. Substituindo “initrd.img-5.4.0-170-generic” pelo initrd copiado da
+ECS temporária no item 4.0 deste documento;
+```shell
+initrd /boot/initrd.img-5.4.0-170-generic
+```
+
+4. Finalize dando boot.
+```shell
+boot
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image20.png)
 
@@ -178,8 +189,8 @@ que o Grub dê boot por padrão.
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image24.png)
 
 Utilize o comando “vim /etc/default/grub” para modificar o arquivo de
-configurações do grub. Altere os parâmetros grub\_default={nome do
-kernel copiado acima}, grub\_timeout\_style=menu e grub\_timeout=10.
+configurações do grub. Altere os parâmetros grub_default={nome do
+kernel copiado acima}, "grub_timeout_style=menu" e "grub_timeout=10".
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image25.png)
 
@@ -225,22 +236,30 @@ Caso a VM tenha sido migrada da Azure, será necessário alterar os
 repositórios do Yum da máquina para apontar para o repositório da
 Huawei:
 
-8.  **sed -i 's/azure.archive.ubuntu.com/repo.huaweicloud.com/g'
-    /etc/apt/sources.list**
+```shell
+sed -i 's/azure.archive.ubuntu.com/repo.huaweicloud.com/g' /etc/apt/sources.list
 
-9.  **apt autoclean && apt update**
+apt autoclean && apt update
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image30.png)
 
-Feito a troca dos repositórios, reinstale o cloud-init com o comando
-“apt-get install cloud-init”.
+Feito a troca dos repositórios, reinstale o cloud-init com o comando:
+
+```shell
+apt-get install cloud-init
+```
+
 **<span class="underline">Importante:</span>** Não instale a versão
 23.3.3 do cloud-init.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image31.png)
 
-Instale uma nova versão do kernel do Linux com o comando “**apt-get
-install linux-image-generic**”.
+Instale uma nova versão do kernel do Linux com o comando:
+
+```shell
+apt-get install linux-image-generic
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image32.png)
 
@@ -271,11 +290,11 @@ constantemente, o que pode afetar a performance do VNC:
 
 Digite o seguinte comando para desinstalar o agente da Azure:
 
-  - **sudo apt -y remove walinuxagent**
-
-  - **apt-get remove -y linux-azure-\***
-
-  - **apt-get remove -y \*azure**
+```shell
+sudo apt -y remove walinuxagent
+apt-get remove -y linux-azure-*
+apt-get remove -y *azure
+```
 
 # Referências
 

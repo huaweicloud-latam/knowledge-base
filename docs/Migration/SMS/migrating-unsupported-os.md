@@ -11,70 +11,40 @@ permalink: /docs/migration/sms/migrating-unsupported-os
 
 V1.0 – May 2024
 
-| **Version**       | **Author**              | **Description**    |
+| **Version**       | **Author**               | **Description**      |
 | ----------------- | ------------------------ | -------------------- |
-| V1.0 – 2024-05-17 | Diogo Hatz 50037923      | Versão Inicial       |
-| V1.0 – 2024-05-17 | Wisley da Silva 00830850 | Revisão do Documento |
+| V1.0 – 2024-05-17 | Diogo Hatz 50037923      | Initial Version      |
+| V1.0 – 2024-05-17 | Wisley da Silva 00830850 | Document Review      |
 
-# Introdução
+# Introduction
 
-O SMS é uma ferramenta de migração de servidores online disponível na
-Huawei Cloud. Além da migração de servidores de inúmeros sistemas
-operacionais, também é possível realizar a sincronização entre
-servidores com a função de sync. No entanto, o SMS possui restrições
-sobre certos sistemas operacionais específicos, os quais podem ser
-verificados na documentação presente nas referências.
+SMS is an online server migration tool available on Huawei Cloud. In addition to migrating servers from a variety of operating systems, it is also possible to perform synchronization between servers using the sync function. However, SMS has restrictions on certain specific operating systems, which can be found in the documentation in the references.
 
-Este documento tem como objetivo descrever a metodologia que circunda a
-migração de servidores cujos SOs não são suportados pela ferramenta SMS
-através do SMS. Vale notar que não é garantido que esse processo
-funcionará, tendo em vista que o SMS não é compatível com certos
-sistemas operacionais e é possível que configurações adicionais precisem
-ser feitas.
+This document aims to describe the methodology for migrating servers whose OSes are not supported by the SMS tool using SMS. It is worth noting that this process is not guaranteed to work, since SMS is not compatible with certain operating systems and additional configuration may need to be done.
 
 # SMS-Agent
 
-A fim de realizar a migração de VMs que possuem um sistema operacional
-não suportado pelo SMS, primeiramente é necessário alterar o arquivo
-que contém o nome que representa a versão do sistema operacional para
-fazer com que o SMS não falhe durante o precheck da migração.
+In order to migrate VMs that have an operating system not supported by SMS, it is first necessary to modify the file containing the name representing the operating system version to prevent SMS from failing during the migration precheck.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image3.png)
 
-Para realizar essa modificação, faça login no ambiente de origem e
-digite o seguinte comando: “echo "Amazon\_2018\_3\_64BIT" \>
-/root/RainbowOsFile”, em que “Amazon\_2018\_3\_64BIT” ´pode ser
-substituído por quaisquer versões compatíveis com o SMS.
+To perform this modification, log in to the source environment and
+enter the following command, where “Amazon_2018_3_64BIT” can be
+replaced with any supported SMS versions.
+
+```shell
+echo "Amazon_2018_3_64BIT" > /root/RainbowOsFile
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image4.png)
 
-Após a configuração sido feita, navegue até a seção relativa ao serviço
-do SMS no console da HWC e delete as tarefas de migração com erro.
-Depois, entre no diretório de instalação do agente do SMS na máquina de
-origem e reinicie o agente rodando o script “./restart.sh”. Insira as
-chaves AK/SK assim como o endpoint do SMS para configurar novamente o
-agente do SMS.
-
-#  Erro de Inicialização da ECS Migrada
-
-Caso a máquina migrada apresente problemas durante a inicialização, como
-ficar presa no processo de boot, é possível que alguns ajustes precisem
-ser feitos na máquina migrada. Abaixo há uma lista de alguns erros
-conhecidos. Caso nenhuma das soluções abaixo resolva o problema, é
-recomendado que um ticket seja aberto para que os especialistas possam
-averiguar o problema com maior precisão.
-
-Para realizar as seguintes configurações, será necessário remover o
-disco de sistema da máquina migrada como um disco de dados em uma ECS
-intermediária da seguinte forma.
-
-Após a criação de uma nova ECS no console da HWC, monte os discos na
-máquina intermediária. Primeiramente, remova os discos danificados da
-ECS original para depois os colocar na ECS intermediária.
+Once the configuration is done, navigate to the SMS service section
+in the HWC console and delete the migration tasks that are in error. Then, enter the SMS agent installation directory on the source machine and restart the agent by running the “./restart.sh” script. Enter the AK/SK keys as well as the SMS endpoint to configure the SMS agent again. # Migrated ECS Initialization Error If the migrated machine presents problems during initialization, such as getting stuck in the boot process, it is possible that some adjustments need to be made to the migrated machine. Below is a list of some known errors. If none of the solutions below solve the problem, it is recommended that a ticket be opened so that the experts can investigate the problem more precisely. To perform the following configurations, it will be necessary to remove the system disk of the migrated machine as a data disk in an intermediate ECS as follows. After creating a new ECS in the HWC console, mount the disks on the intermediate machine. First, remove the damaged disks from the
+original ECS and then place them in the intermediate ECS.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image5.png)
 
-> Após remover os discos da ECS original, monte-os na ECS intermediária
+> After removing the disks from the original ECS, mount them on the intermediate ECS
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image6.png)
 
@@ -84,93 +54,73 @@ ECS original para depois os colocar na ECS intermediária.
 
 ## **IPV6**
 
-Caso o erro durante a inicialização da ECS se assemelhe à imagem abaixo,
-é possível que o erro é relativo a uma configuração de IPV6 na máquina.
+If the error during ECS ​​initialization resembles the image below,
+it is possible that the error is related to an IPV6 configuration on the machine.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image9.png)
 
-Para resolver esse erro, desmonte o disco de sistema da máquina migrada
-e o conecte à ECS intermediária. Monte o disco de sistema em um novo
-diretório (neste exemplo foi montado na pasta /mnt) com o comando
-“mount” e acesse o seguinte arquivo: “vim
-/mnt/etc/sysconfig/network-scripts/ifcfg-eth0”. Comente as duas
-seguintes linhas no arquivo e salve o arquivo com “:wq”.
-**<span class="underline">Observação:</span>** caso o erro “Failed to
-Mount Wrong FS Type, Bad Option, Bad Superblock on Linux” apareça
-durante a montagem do disco, pule para a etapa **3.2** deste documento.
+To resolve this error, unmount the system disk of the migrated machine
+and connect it to the intermediate ECS. Mount the system disk in a new
+directory (in this example it was mounted in the /mnt folder) with the
+“mount” command and access the following file: “vim
+/mnt/etc/sysconfig/network-scripts/ifcfg-eth0”. Comment out the
+following two lines in the file and save the file with “:wq”.
+
+**<span class="underline">Note:</span>** If the error “Failed to
+Mount Wrong FS Type, Bad Option, Bad Superblock on Linux” appears
+while mounting the disk, skip to step **3.2** of this document.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image10.png)
 
-Agora desmonte o disco montado com o comando “umount”, remova o disco de
-sistema da máquina migrada da ECS intermediária e a conecte novamente na
-ECS migrada. Ligue-a e verifique se a máquina inicializa sem erros.
+Now unmount the mounted disk with the “umount” command, remove the system disk of the migrated machine from the intermediate ECS and reconnect it to the migrated ECS. Power it on and check if the machine boots without errors.
 
-Para garantir que a funcionalidade de Sync funcione sem quebrar a
-máquina migrada, realize a seguinte configuração no script do agente do
-SMS na VM de origem:
+To ensure that the Sync functionality works without breaking the migrated machine, perform the following configuration in the SMS agent script on the source VM:
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image11.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image12.png)
 
-Após esse ajuste, a funcionalidade de Sync deve funcionar sem demais
-problemas.
+After this adjustment, the Sync functionality should work without any further problems.
 
-## **Sistema de Arquivos**
+## **File System**
 
-Caso o filesystem das máquinas migradas esteja corrompido após a
-migração, será necessário restaura-lo através de uma VM intermediária.
-Para confirmar que o filesystem do disco de sistema está danificado,
-primeiro espere até que a seguinte mensagem apareça durante o boot.
-Esperar o seguinte erro aparecer antes de seguir para as próximas etapas
-é importante para o processo.
+If the file system of the migrated machines is corrupted after the migration, it will be necessary to restore it through an intermediate VM.
+
+To confirm that the file system of the system disk is corrupted, first wait until the following message appears during boot.
+
+Wait for the following error appears before proceeding to the next steps
+is important for the process.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image13.png)
 
-Faça login na ECS intermediária e digite o comando “fdisk -l” para
-listar os discos montados na ECS. Copie o path do device cujo filesystem
-está danificado, como “/dev/vdc” ou “/dev/vdb1”.
+Log in to the intermediate ECS and enter the command “fdisk -l” to
+list the disks mounted on the ECS. Copy the path of the device whose filesystem
+is corrupted, such as “/dev/vdc” or “/dev/vdb1”.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image14.png)
 
-Para recuperar o filesystem danificado, digite o comando “fsck
-/dev/vdb”, em que /dev/vdb será substituído pelo disco ou partição que
-precisa ser recuperada. Pressione “a” para recuperar todos os inodes
-corrompidos. Vale notar que o disco não precisa ser montado em um
-diretório para esse processo.
+To recover the corrupted filesystem, enter the command “fsck
+/dev/vdb”, where /dev/vdb will be replaced with the disk or partition that
+needs to be recovered. Press “a” to recover all corrupted inodes. It is worth noting that the disk does not need to be mounted in a directory for this process. ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image15.png) Wait until all inode recovery is complete, remove the system disk of the migrated machine from the intermediate ECS and connect it again to the migrated ECS. Turn it on and check if the machine boots without errors. 
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image15.png)
+## **Fstab** 
 
-Aguarde até que a recuperação de todos os inodes seja concluída, remova
-o disco de sistema da máquina migrada da ECS intermediária e a conecte
-novamente na ECS migrada. Ligue-a e verifique se a máquina inicializa
-sem erros.
-
-## **Fstab**
-
-Caso a ECS apresente problemas durante a sua inicialização, siga os
-seguintes passos para editar a tabela de discos fstab do sistema. Vale a
-nota que para este passo também será necessário a utilização de uma ECS
-intermediária caso o filesystem da ECS original esteja definido como
-somente para leitura devido a uma má inicialização. Primeiramente, monte
-o disco de sistema em um diretório.
+If the ECS has problems during its initialization, follow the steps below to edit the system's fstab disk table. It is worth noting that for this step it will also be necessary to use an intermediate ECS if the filesystem of the original ECS is set to read-only due to a bad initialization. First, mount the system disk in a directory. 
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image16.png)
 
-Edite o arquivo “/etc/fstab” do disco de sistema da ECS original.
+Edit the “/etc/fstab” file of the original ECS system disk.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image17.png)
 
-Comente todas as passagens de antigos discos montados no fstab.
+Comment out all the old mounted disks in fstab.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image18.png)
 
-Após isso, desmonte o disco do diretório em que foi montado e remova os
-discos da ECS para inserir na ECS original novamente
+After that, unmount the disk from the directory where it was mounted and remove the disks from the ECS to insert into the original ECS again
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image19.png)
 
-# Referências
+# References
 
-  - Documentação do SMS:
-    <https://support.huaweicloud.com/intl/en-us/productdesc-sms/sms3_01_0012.html>.
+- SMS Documentation: <https://support.huaweicloud.com/intl/en-us/productdesc-sms/sms3_01_0012.html>.

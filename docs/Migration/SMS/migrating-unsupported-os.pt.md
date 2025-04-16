@@ -43,9 +43,12 @@ fazer com que o SMS não falhe durante o precheck da migração.
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image3.png)
 
 Para realizar essa modificação, faça login no ambiente de origem e
-digite o seguinte comando: “echo "Amazon\_2018\_3\_64BIT" \>
-/root/RainbowOsFile”, em que “Amazon\_2018\_3\_64BIT” ´pode ser
+digite o seguinte comando, em que “Amazon_2018_3_64BIT” pode ser
 substituído por quaisquer versões compatíveis com o SMS.
+
+```shell
+echo "Amazon_2018_3_64BIT" > /root/RainbowOsFile
+```
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image4.png)
 

@@ -13,34 +13,20 @@ V1.0 – May 2024
 
 | **Version**       | **Author**               | **Description**      |
 | ----------------- | ------------------------ | -------------------- |
-| V1.0 – 2024-05-07 | Diogo Hatz 50037923      | Versão Inicial       |
-| V1.0 – 2024-05-07 | Wisley da Silva 00830850 | Revisão do Documento |
+| V1.0 – 2024-05-07 | Diogo Hatz 50037923      | Initial Version      |
+| V1.0 – 2024-05-07 | Wisley da Silva 00830850 | Document Review      |
 
-# Introdução
+# Introduction
 
-O SMS é uma ferramenta de migração de servidores online disponível na
-Huawei Cloud. Durante a migração, é possível fazer o resizing do disco
-da máquina de origem a fim de modificar as suas partições para melhor
-atender o cenário de destino da máquina. O SMS possui uma restrição no
-que diz respeito ao tamanho dos discos de sistema operacional, não
-podendo ser maiores do que 1TiB.
+SMS is an online server migration tool available on Huawei Cloud. During migration, you can resize the disk of the source machine in order to modify its partitions to better suit the target machine scenario. SMS has a restriction on the size of operating system disks, which cannot be larger than 1 TiB.
 
-Este documento tem como objetivo descrever a metodologia que circunda a
-migração de servidores com o disco de sistema operacional excedendo
-1TiB.
+This document aims to describe the methodology for migrating servers with operating system disks exceeding 1 TiB.
 
 # API Explorer
 
-A fim de realizar a migração de máquinas com o disco de sistema
-operacional maiores do que 1TiB através da ferramenta SMS, faz-se
-necessário criar o servidor de destino manualmente e expandir o tamanho
-do seu disco de sistema por meio de uma API, API a qual é
-disponibilizada no ambiente API Explorer da Huawei Cloud.
+In order to migrate machines with operating system disks larger than 1 TiB using the SMS tool, you need to create the target server manually and expand the size of its system disk through an API, which is available in the API Explorer environment of Huawei Cloud.
 
-Para expandir o disco de um servidor, é necessário obter o ID do seu
-disco. Para isso, navegue até a seção ECS no console da Huawei Cloud,
-clique no servidor em que o disco está montado e clique no disco de
-sistema desejado:
+To expand a server's disk, you need to obtain its disk ID. To do this, navigate to the ECS section in the Huawei Cloud console, click the server where the disk is mounted, and then click the desired system disk:
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image3.png)
 
@@ -48,23 +34,13 @@ sistema desejado:
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image5.png)
 
-Após obter o ID do disco que será redimensionado, navegue até a seção
-API Explorer do console da Huawei Cloud, passando o mouse sobre “More”,
-“Tools” e “API Explorer”. Selecione a seção “Elastic Volume Service
-EVS” e, por fim, a API “ResizeVolume”. Alternativamente, clique no
-seguinte link para ir diretamente até a API:
-<https://console-intl.huaweicloud.com/apiexplorer/#/openapi/EVS/doc?api=ResizeVolume>.
+After obtaining the ID of the disk to be resized, navigate to the API Explorer section of the Huawei Cloud console by hovering over “More”, “Tools”, and “API Explorer”. Select the “Elastic Volume Service EVS” section, and then select the “ResizeVolume” API. Alternatively, click the following link to go directly to the API: <https://console-intl.huaweicloud.com/apiexplorer/#/openapi/EVS/doc?api=ResizeVolume>. 
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image6.png) 
+![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image7.png) 
+![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image8.png) 
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image7.png)
-
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image8.png)
-
-Na janela da API, preencha os campos em vermelho com o ID do disco
-selecionado anteriormente e o seu novo tamanho, em GiB. Após preencher
-as lacunas, basta clicar em “Debug” que o disco será redimensionado para
-o novo tamanho:
+In the API window, fill in the fields in red with the ID of the disk you selected earlier and its new size in GiB. After filling in the blanks, simply click “Debug” and the disk will be resized to the new size:
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image9.png)
 
@@ -72,12 +48,8 @@ o novo tamanho:
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image11.png)
 
-Após redimensionar o disco do servidor de destino para um tamanho maior
-do que o servidor de origem, o SMS poderá ser utilizado sem problemas
-para a migração do servidor para a Huawei Cloud.
+After resizing the disk of the target server to a size larger than the source server, SMS can be used smoothly to migrate the server to Huawei Cloud.
 
-# Referências
+# References
 
-  - API da EVS:
-    <https://support.huaweicloud.com/intl/pt-br/api-evs/CinderResizeVolumeV3.html>.
-
+- EVS API: <https://support.huaweicloud.com/intl/en-us/api-evs/CinderResizeVolumeV3.html>.
