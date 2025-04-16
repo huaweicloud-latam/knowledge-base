@@ -66,14 +66,14 @@ When you identify the disk that was attached to the temporary ECS, mount the dis
 Once the mount is complete, perform the following steps:
 
 1. > Delete the grub configuration file with the command:
+
 ```shell
 rm /mnt/boot/grub/grub.cfg
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image13.png)
 
-2. > Copy the generic kernel from the temporary ECS to the /boot directory
-> of the frozen ECS:
+1. > Copy the generic kernel from the temporary ECS to the /boot directory of the frozen ECS:
 
 ```shell
 cp /boot/vmlinuz-5.4.0-170-generic /mnt/boot/vmlinuz-5.4.0-170-generic
@@ -121,7 +121,6 @@ set root=(hd0,gpt1)
 2. Replacing “vmlinuz-5.4.0-170-generic” with the kernel copied from the
 temporary ECS in item 4.0 of this document and replacing “vda1”
 according to the partition found.
-
 **<span class="underline">Example:</span>** (hd0,gp1) = vda1, (hd1,gpt1) = vdb1, (hd3,gpt2) = /dev/vdd2, and so on; 
 ```shell
 linux /boot/vmlinuz-5.4.0-170-generic root=/dev/vda1 ro single

@@ -88,14 +88,15 @@ montagem do disco com o comando mount. Por exemplo: “mount /dev/vdb1
 Feito a montagem, realize os seguintes passos:
 
 1.  > Delete o arquivo de configurações do grub com o comando:
+2.  
 ```shell
 rm /mnt/boot/grub/grub.cfg
 ```
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image13.png)
 
-2.  > Copie o kernel genérico da ECS temporária para o diretório /boot
-    > da ECS congelada: 
+2.  > Copie o kernel genérico da ECS temporária para o diretório /boot da ECS congelada: 
+
 ```shell
 cp /boot/vmlinuz-5.4.0-170-generic /mnt/boot/vmlinuz-5.4.0-170-generic
 ```
@@ -103,8 +104,7 @@ cp /boot/vmlinuz-5.4.0-170-generic /mnt/boot/vmlinuz-5.4.0-170-generic
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image14.png)
 
-3.  > Copie o initrd da ESC temporária para o diretório /boot da ECS
-    > congelada: 
+3.  > Copie o initrd da ESC temporária para o diretório /boot da ECS congelada: 
 
 ```shell
 cp /boot/initrd.img-5.4.0-170-generic /mnt/boot/initrd.img-5.4.0-170-generic
@@ -146,7 +146,6 @@ set root=(hd0,gpt1)
 2. Substituindo “vmlinuz-5.4.0-170-generic” pelo kernel copiado da
 ECS temporária no item 4.0 deste documento e substituindo “vda1”
 de acordo com a partição encontrada.
-
 **<span class="underline">Exemplo:</span>** (hd0,gp1) = vda1, (hd1,gpt1) = vdb1, (hd3,gpt2) = /dev/vdd2, e assim por diante;
 ```shell
 linux /boot/vmlinuz-5.4.0-170-generic root=/dev/vda1 ro single

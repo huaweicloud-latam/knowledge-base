@@ -13,106 +13,81 @@ V1.1 – December 2023
 
 | **Version**       | **Author**               | **Description**      |
 | ----------------- | ------------------------ | -------------------- |
-| V1.0 – 2023-12-20 | Diogo Hatz 50037923      | Versão Inicial       |
-| V1.0 – 2023-12-21 | Wisley da Silva 00830850 | Revisão do Documento |
+| V1.0 – 2023-12-20 | Diogo Hatz 50037923      | Initial Version      |
+| V1.0 – 2023-12-21 | Wisley da Silva 00830850 | Document Review      |
 
-# Introdução
+# Introduction
 
-O Cloud Eye (CES) é uma ferramenta gratuita para o monitoramento de
-recursos da Huawei Cloud. Além do monitoramento de recursos, o Cloud Eye
-também pode ser utilizado para criar alarmes baseados em eventos ou
-métricas, identificar o mau funcionamento de recursos e rapidamente
-reagir à mudança de recursos. Vale ressaltar que, por mais que o Cloud
-Eye seja um serviço gratuito, **as cobranças geradas pelo envio de
-notificações ao disparar alarmes são cobradas**.
+Cloud Eye (CES) is a free tool for monitoring Huawei Cloud resources. In addition to resource monitoring, Cloud Eye can also be used to create event- or metric-based alarms, identify resource malfunctions, and quickly react to resource changes. It is worth noting that, although Cloud Eye is a free service, **charges for sending notifications when alarms are triggered are charged**.
 
-Este documento tem como objetivo descrever as principais funcionalidades
-do serviço Cloud Eye e guiar o leitor a utilizar o CES para o
-monitoramento de recursos da nuvem, como ECSs, VPNs e CBRs etc. Ademais,
-também é descrito como criar alarmes baseados em eventos ou métricas e
-customizar dashboards para o monitoramento de recursos.
+This document aims to describe the main functionalities of the Cloud Eye service and guide the reader to use CES for monitoring cloud resources, such as ECSs, VPNs, and CBRs, etc. In addition, it also describes how to create event- or metric-based alarms and customize dashboards for resource monitoring.
 
-# Cloud Eye no console
+# Cloud Eye on the console
 
 ## Overview
 
-Ao abrir o Cloud Eye no console, a página inicial que será carregada é a
-Overview, na qual é possível ter uma visão geral de todos os recursos
-utilizados na Huawei Cloud, a utilização geral de rede, CPU, memória e
-disco e quais recursos dispararam alarmes recentemente e precisam de uma
-maior atenção.
+When you open Cloud Eye on the console, the home page that will load is the
+Overview, where you can see an overview of all resources
+used in Huawei Cloud, the overall network, CPU, memory, and disk
+utilization, and which resources have recently triggered alarms and need
+further attention.
 
-  - <span class="underline">Visão geral dos recursos:</span> Permite a
-    visualização do número total de recursos monitorados e os alarmes
-    gerados para esses recursos.
+- <span class="underline">Resource Overview:</span> Allows you to
+view the total number of monitored resources and the alarms
+generated for these resources.
 
-  - <span class="underline">Estatística dos alarmes:</span> Mostra os
-    alarmes disparados nos últimos sete dias por severidade do alarme.
+- <span class="underline">Alarm Statistics:</span> Shows the
+alarms triggered in the last seven days by alarm severity.
 
-  - <span class="underline">Monitoramento de servidores:</span> Permite
-    a visualização da utilização geral de CPU e memória dos servidores
-    monitorados e uma lista do top 5 ECSs ranqueados pela utilização de
-    CPU ou memória.
+- <span class="underline">Server Monitoring:</span> Allows you to
+view the overall CPU and memory utilization of
+monitored servers and a list of the top 5 ECSs ranked by CPU or
+memory utilization.
 
-  - <span class="underline">Monitoramento de rede:</span> Mostra a
-    utilização geral de largura de banda de EIPs e uma lista do top 5
-    EIPs ranqueados por utilização de largura de banda.
+- <span class="underline">Network Monitoring:</span> Shows the
+overall bandwidth utilization of EIPs and a list of the top 5
+EIPs ranked by bandwidth utilization.
 
-  - <span class="underline">Monitoramento de armazenamento:</span>
-    Permite a visualização da utilização geral de disco (EVS) por IOPS
-    de leitura e escrita e uma lista do top 5 discos ranqueados por
-    IOPS.
+- <span class="underline">Storage Monitoring:</span>
+Allows you to view the overall disk utilization (EVS) by read and write IOPS
+and a list of the top 5 disks ranked by IOPS.
 
-É possível ter uma visão de como a página inicial do Cloud Eye é nas
-imagens abaixo:
+You can see what the Cloud Eye home page looks like in the images below:
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image3.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image4.png)
 
-## Monitoramento de servidores
+## Server Monitoring
 
-O monitoramento de servidores (ECSs e BMSs) pode ser visualizado na
-seção **Server Monitoring**. Vale ressaltar que para o monitoramento
-de servidores, a instalação do agente (Telescope) é recomendada, uma vez
-que providencia métricas mais específicas e precisas, de acordo com o
-anexo 4.1.
+Server Monitoring (ECSs and BMSs) can be viewed in the **Server Monitoring** section. It is worth noting that for server monitoring, installing the agent (Telescope) is recommended, since it provides more specific and accurate metrics, according to appendix 4.1.
 
-A instalação do agente pode ser feita de três formas distintas: de forma
-manual, automática ou em lote. Independentemente da forma de instalação
-escolhida, é necessário configurar as permissões para o agente
-previamente: na seção de monitoramento de servidores, clique em
-**Configure** no aviso de que a permissão do agente não foi configurada
-para a região atual.
+The agent can be installed in three different ways: manually, automatically, or in batch mode. Regardless of the installation method chosen, you must configure the permissions for the agent in advance: in the server monitoring section, click **Configure** on the warning that the agent permission has not been configured for the current region. 
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image5.png) 
+![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image6.png) 
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image6.png)
+### Automatic:
 
-### Automática:
-
-Para instalar o agente de forma automática, basta clicar na peça de
-quebra-cabeça na seção de **monitoramento de servidores** e na coluna de
-**status do agente** na ECS/BMS correspondente e aguardar a instalação
-do agente.
-
+To install the agent automatically, simply click on the puzzle piece in the **server monitoring** section and in the **agent status** column in the corresponding ECS/BMS and wait for the agent to install. 
+ 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image7.png)
 
 ### Manual:
 
-Para instalar o agente de forma manual, primeiramente vá para a seção
-relativa à **ECS** ou **BMS**, a depender do tipo de servidor em que o
-agente será instalado.
+To install the agent manually, first go to the section
+related to **ECS** or **BMS**, depending on the type of server on which
+the agent will be installed.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image8.png)
 
-Selecione **Remote Login** para realizar o login no servidor desejado
+Select **Remote Login** to log in to the desired server
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image9.png)
 
-Realize o login no servidor digitando o usuário e a senha configurados
-no momento de criação do servidor e, posteriormente, digite o seguinte
-comando, caso a região em que o servidor se encontre seja
+Log in to the server by entering the username and password configured
+when the server was created and then enter the following
+command, if the region where the server is located is
 **LA-Santiago**:
 
 ```shell
@@ -121,251 +96,221 @@ cd /usr/local && curl -k -O https://uniagent-la-south-2.obs.la-south-2.myhuaweic
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image10.png)
 
-Caso a região em que o servidor se encontre seja diferente de
-**LA-Santiago**, é possível encontrar a lista de comandos por região no
-seguinte link:
+If the region where the server is located is different from
+**LA-Santiago**, you can find the list of commands by region in
+the following link:
 <https://support.huaweicloud.com/intl/en-us/usermanual-ces/ces_01_0029.html>
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image11.png)
 
-Caso a mensagem em vermelho acima apareça ao final da instalação, o
-agente foi instalado com sucesso.
+If the red message above appears at the end of the installation, the
+agent has been successfully installed.
 
 ## Dashboard
 
-A seção **Dashboard** diz respeito à área em que gráficos personalizados
-podem ser criados para o monitoramento de serviços e recursos
-selecionados, com as métricas escolhidas.
+The **Dashboard** section concerns the area where custom
+charts can be created for monitoring selected services and resources, with the chosen metrics.
 
-Para criar um dashboard, navegue até a seção **My Dashboards** em
-**Dashboards** e clique em **Create Dashboard**.
+To create a dashboard, navigate to the **My Dashboards** section in
+**Dashboards** and click **Create Dashboard**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image12.png)
 
-Escolha um nome para o dashboard em **Name** e clique em **OK**.
+Choose a name for the dashboard in **Name** and click **OK**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image13.png)
 
-Para adicionar gráficos para o monitoramento de métricas específicas,
-gráficos podem ser adicionados à dashboards. Para adicionar um gráfico,
-clique no dashboard criado e em **Add Graph**.
+To add graphs for monitoring specific metrics,
+graphs can be added to dashboards. To add a graph,
+click on the created dashboard and click **Add Graph**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image14.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image15.png)
 
-Escolha o tipo de gráfico a ser criado e clique em **OK**.
+Choose the type of chart to create and click **OK**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image16.png)
 
-Certas configurações podem ser feitas ao adicionar um gráfico a uma
-dashboard, como se o mesmo gráfico irá possuir múltiplas métricas ou
-somente uma métrica, o período em que os dados foram coletados, o tipo
-de dado que será visualizado (dados brutos, máximo, mínimo, média ou
-soma) e as métricas a serem mostradas.
+Certain settings can be made when adding a chart to a dashboard, such as whether the same chart will have multiple metrics or only one metric, the period in which the data was collected, the type of data to be displayed (raw data, maximum, minimum, average or sum) and the metrics to be displayed.
 
-Em **Metric Display** selecione **One graph for a single metric** para
-adicionar uma única métrica ao gráfico ou selecione **One graph for
-multiple metrics** para adicionar múltiplas métricas ao gráfico.
+Under **Metric Display**, select **One graph for a single metric** to add a single metric to the graph, or select **One graph for multiple metrics** to add multiple metrics to the graph.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image17.png)
 
-Clique em **Select Resource and Metric** para selecionar o recurso que
-será monitorado e a métrica para esse recurso.
+Click **Select Resource and Metric** to select the resource to be monitored and the metric for that resource.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image18.png)
 
-Selecione o tipo de serviço que será monitorado à esquerda da página
-**Select Resource and Metric**, o recurso específico a ser monitorado na
-área central da página e as métricas desse recurso à direita. Neste
-exemplo, o uso da CPU, disco, memória e rede serão monitorados na
-“ecs-9152”.
+Select the type of service to be monitored on the left side of the **Select Resource and Metric** page, the specific resource to be monitored in the middle area of ​​the page, and the metrics for that resource on the right. In this example, CPU, disk, memory, and network usage will be monitored on “ecs-9152”.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image19.png)
 
-Ajuste o horário da coleta dos dados no canto superior direito da página
+Adjust the data collection time in the upper right corner of the page
 **Add Graph**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image20.png)
 
-Uma amostra do gráfico gerado irá aparecer na página. Clique em **Save**
-para confirmar e adicionar o gráfico à dashboard.
+A sample of the generated graph will appear on the page. Click **Save**
+to confirm and add the graph to the dashboard.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image21.png)
 
-Na dashboard, é possível criar uma legenda para o gráfico, edita-lo,
-colocá-lo em tela cheia, recarregar os dados mostrados no gráfico e
-mover o gráfico de lugar.
+On the dashboard, you can create a legend for the graph, edit it,
+make it full screen, reload the data shown in the graph, and
+move the graph.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image22.png)
 
-No Cloud Eye é possível criar inúmeras dashboards com diversos gráficos
-em cada dashboard, sendo que cada gráfico pode mostrar múltiplas
-métricas de monitoramento. Além disso, como descrito no tópico 3.1, na
-seção **Overview** do CES é possível ter a visualização geral dos
-recursos monitorados com as principais métricas utilizadas, como uso de
-CPU, memória e disco em servidores; uso de rede e um total de alarmes
-disparados no Cloud Eye.
+In Cloud Eye, you can create numerous dashboards with several graphs in each dashboard, and each graph can show multiple monitoring metrics. In addition, as described in topic 3.1, in the CES **Overview** section, you can have an overview of the monitored resources with the main metrics used, such as CPU, memory and disk usage on servers; network usage and a total of alarms triggered in Cloud Eye.
 
-## Monitoramento de serviços da nuvem
+## Cloud service monitoring
 
-Na seção **Cloud Service Monitoring**, dashboards para cada recurso dos
-serviços de ECS, EIP e largura de banda, NAT e VPN são criados
-automaticamente durante a criação desses recursos. As principais
-métricas de monitoramento desses serviços são adicionadas em forma de
-gráfico nessa seção para o monitoramento rápido e geral desses serviços.
+In the **Cloud Service Monitoring** section, dashboards for each resource of the ECS, EIP and bandwidth, NAT and VPN services are automatically created during the creation of these resources. The main monitoring metrics of these services are added in the form of a graph in this section for quick and general monitoring of these services.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image23.png)
 
-Além da visualização dos gráficos relativos às principais métricas
-monitoradas, também é possível exportar os dados coletados clicando no
-botão **Export Data**.
+In addition to viewing the graphs related to the main monitored metrics, it is also possible to export the collected data by clicking the
+**Export Data** button.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Resources-Monitoring/media/image24.png)
 
-# Anexos
+# Attachments
 
-## Métricas de monitoramento de servidores
+## Server Monitoring Metrics
 
-| **Métricas**                                           | **Sem agente** | **Agente instalado** |
+| **Metrics** | **Agentless** | **Agent Installed** |
 | ------------------------------------------------------ | -------------- | -------------------- |
-| Uso de CPU                                             | Sim            | Sim / Dedicado       |
-| Uso de disco                                           | Sim            | Sim                  |
-| Uso de memória                                         | Sim            | Sim / Dedicado       |
-| Largura de banda de escrita em disco                   | Sim            | Sim                  |
-| Largura de banda de leitura em disco                   | Sim            | Sim                  |
-| IOPS de escrita em disco                               | Sim            | Sim                  |
-| IOPS de leitura em disco                               | Sim            | Sim                  |
-| Taxa de entrada em banda                               | Sim            | Sim                  |
-| Taxa de saída em banda                                 | Sim            | Sim                  |
-| Taxa de entrada fora de banda                          | Sim            | Sim                  |
-| Taxa de saída fora de banda                            | Sim            | Sim                  |
-| Uso de crédito de CPU                                  | Sim            | Sim                  |
-| Balanceamento de crédito de CPU                        | Sim            | Sim                  |
-| Excedente de balanceamento de crédito de CPU           | Sim            | Sim                  |
-| Excedente de crédito carregado de CPU                  | Sim            | Sim                  |
-| Conexões de rede                                       | Sim            | Sim                  |
-| Largura de banda de entrada por servidor               | Sim            | Sim                  |
-| Largura de banda de saída por servidor                 | Sim            | Sim                  |
-| PPS de entrada                                         | Sim            | Sim                  |
-| PPS de saída                                           | Sim            | Sim                  |
-| Novas conexões                                         | Sim            | Sim                  |
-| Erros incorrigíveis agregados de ECC                   | Sim            | Sim                  |
-| Páginas aposentadas com erros de bit único             | Sim            | Sim                  |
-| Páginas aposentadas com erros de bit duplos            | Sim            | Sim                  |
-| Status de saúde da GPU                                 | Sim            | Sim                  |
-| Uso de encoder da GPU                                  | Sim            | Sim                  |
-| Uso de decoder da GPU                                  | Sim            | Sim                  |
-| Erros corrigíveis voláteis de ECC                      | Sim            | Sim                  |
-| Erros incorrigíveis voláteis de ECC                    | Sim            | Sim                  |
-| CPU ociosa                                             | Não            | Sim / Dedicado       |
-| Uso de CPU de espaço de usuário                        | Não            | Sim / Dedicado       |
-| Uso de CPU de espaço de kernel                         | Não            | Sim / Dedicado       |
-| Uso de CPU de outros processos                         | Não            | Sim / Dedicado       |
-| Uso de CPU de processos ótimos                         | Não            | Sim / Dedicado       |
-| Tempo em que a CPU está esperando por operações de E/S | Não            | Sim / Dedicado       |
-| Tempo de interrupção de CPU                            | Não            | Sim / Dedicado       |
-| Tempo de interrupção de CPU por software               | Não            | Sim / Dedicado       |
-| Memória disponível                                     | Não            | Sim / Dedicado       |
-| Memória ociosa                                         | Não            | Sim / Dedicado       |
-| Buffer                                                 | Não            | Sim / Dedicado       |
-| Cache                                                  | Não            | Sim / Dedicado       |
-| Largura de banda de entrada por NIC                    | Não            | Sim / Dedicado       |
-| Largura de banda de saída por NIC                      | Não            | Sim / Dedicado       |
-| Taxa de pacotes enviados por NIC                       | Não            | Sim / Dedicado       |
-| Taxa de pacotes recebidos por NIC                      | Não            | Sim / Dedicado       |
-| Taxa de pacotes com erro recebidos por NIC             | Não            | Sim / Dedicado       |
-| Taxa de pacotes com erro transmitidos por NIC          | Não            | Sim / Dedicado       |
-| Taxa de pacotes recebidos largados por NIC             | Não            | Sim / Dedicado       |
-| Taxa de pacotes transmitidos largados por NIC          | Não            | Sim / Dedicado       |
-| Processos em execução                                  | Não            | Sim / Dedicado       |
-| Processos ociosos                                      | Não            | Sim / Dedicado       |
-| Processos zombies                                      | Não            | Sim / Dedicado       |
-| Processos bloqueados                                   | Não            | Sim / Dedicado       |
-| Processos dormindo                                     | Não            | Sim / Dedicado       |
-| Total de processos                                     | Não            | Sim / Dedicado       |
-| Taxa de retransmissão TCP                              | Não            | Sim / Dedicado       |
-| TCP SYS\_SENT                                          | Não            | Sim / Dedicado       |
-| TCP SYS\_RECV                                          | Não            | Sim / Dedicado       |
-| TCP FIN\_WAIT1                                         | Não            | Sim / Dedicado       |
-| TCP FIN\_WAIT2                                         | Não            | Sim / Dedicado       |
-| TCP CLOSE                                              | Não            | Sim / Dedicado       |
-| TCP LAST\_ACK                                          | Não            | Sim / Dedicado       |
-| TCP LISTEN                                             | Não            | Sim / Dedicado       |
-| TCP CLOSING                                            | Não            | Sim / Dedicado       |
-| Média de carga da CPU no último minuto                 | Não            | Sim / Dedicado       |
-| Média de carga da CPU nos últimos 15 minutos           | Não            | Sim / Dedicado       |
-| Média de carga da CPU nos últimos 5 minutos            | Não            | Sim / Dedicado       |
-| TCP ESTABLISHED                                        | Não            | Sim / Dedicado       |
-| TCP TOTAL                                              | Não            | Sim / Dedicado       |
-| UDP TOTAL                                              | Não            | Sim / Dedicado       |
-| NTP Offset                                             | Não            | Sim / Dedicado       |
-| Total de arquivos processados                          | Não            | Sim / Dedicado       |
+| CPU Usage | Yes | Yes / Dedicated |
+| Disk Usage | Yes | Yes |
+| Memory Usage | Yes | Yes / Dedicated |
+| Disk Write Bandwidth | Yes | Yes |
+| Disk Read Bandwidth | Yes | Yes |
+| Disk Write IOPS | Yes | Yes |
+| Disk Read IOPS | Yes | Yes |
+| Bandwidth Input Rate | Yes | Yes |
+| In-band egress rate | Yes | Yes |
+| Out-of-band egress rate | Yes | Yes |
+| Out-of-band egress rate | Yes | Yes |
+| CPU credit usage | Yes | Yes |
+| CPU credit balancing | Yes | Yes |
+| CPU credit balancing surplus | Yes | Yes |
+| CPU credit loaded surplus | Yes | Yes |
+| Network connections | Yes | Yes |
+| Inbound bandwidth per server | Yes | Yes |
+| Outbound bandwidth per server | Yes | Yes |
+| Inbound PPS | Yes | Yes |
+| Outbound PPS | Yes | Yes |
+| New connections | Yes | Yes |
+| Aggregate ECC uncorrectable errors | Yes | Yes |
+| Pages retired with single bit errors | Yes | Yes |
+| Pages retired with double bit errors | Yes | Yes |
+| GPU health status | Yes | Yes |
+| GPU encoder usage | Yes | Yes |
+| GPU decoder usage | Yes | Yes |
+| ECC volatile correctable errors | Yes | Yes |
+| ECC volatile uncorrectable errors | Yes | Yes |
+| Idle CPU | No | Yes / Dedicated |
+| User space CPU usage | No | Yes / Dedicated |
+| Kernel space CPU usage | No | Yes / Dedicated |
+| Other processes CPU usage | No | Yes / Dedicated |
+| Optimal processes CPU usage | No | Yes / Dedicated |
+| Time CPU is waiting for I/O operations | No | Yes / Dedicated |
+| CPU interrupt time | No | Yes / Dedicated |
+| Software CPU interrupt time | No | Yes / Dedicated |
+| Available memory | No | Yes / Dedicated |
+| Idle memory | No | Yes / Dedicated |
+| Buffer | No | Yes / Dedicated |
+| Cache | No | Yes / Dedicated |
+| Inbound bandwidth per NIC | No | Yes / Dedicated |
+| Outbound bandwidth per NIC | No | Yes / Dedicated |
+| Packet rate sent per NIC | No | Yes / Dedicated |
+| Packet rate received per NIC | No | Yes / Dedicated |
+| Packet rate with error received per NIC | No | Yes / Dedicated |
+| Packet rate with error transmitted per NIC | No | Yes / Dedicated |
+| Packet rate received dropped per NIC | No | Yes / Dedicated |
+| Packet rate transmitted dropped per NIC | No | Yes / Dedicated |
+| Processes running | No | Yes / Dedicated |
+| Idle processes | No | Yes / Dedicated |
+| Zombie processes | No | Yes / Dedicated |
+| Blocked processes | No | Yes / Dedicated |
+| Sleeping processes | No | Yes / Dedicated |
+| Total processes | No | Yes / Dedicated |
+| TCP retransmission rate | No | Yes / Dedicated |
+| TCP SYS\_SENT | No | Yes / Dedicated |
+| TCP SYS\_RECV | No | Yes / Dedicated |
+| TCP FIN\_WAIT1 | No | Yes / Dedicated |
+| TCP FIN\_WAIT2 | No | Yes / Dedicated |
+| TCP CLOSE | No | Yes / Dedicated |
+| TCP LAST\_ACK | No | Yes / Dedicated |
+| TCP LISTEN | No | Yes / Dedicated |
+| TCP CLOSING | No | Yes / Dedicated |
+| Average CPU load in the last minute | No | Yes / Dedicated |
+| Average CPU load in the last 15 minutes | No | Yes / Dedicated |
+| Average CPU load in the last 5 minutes | No | Yes / Dedicated |
+| TCP ESTABLISHED | No | Yes / Dedicated |
+| TCP TOTAL | No | Yes / Dedicated |
+| UDP TOTAL | No | Yes / Dedicated |
+| NTP Offset | No | Yes / Dedicated |
+| Total files processed | No | Yes / Dedicated |
 
-## Métricas de monitoramento de VPN Gateway
+## VPN Gateway Monitoring Metrics
 
-| **Métricas**                       | **Suportado** |
+| **Metrics** | **Supported** |
 | ---------------------------------- | ------------- |
-| Taxa de pacotes de entrada         | Sim           |
-| Taxa de pacotes de saída           | Sim           |
-| Largura de banda de entrada        | Sim           |
-| Largura de banda de saída          | Sim           |
-| Uso de largura de banda de entrada | Sim           |
-| Número de conexões                 | Sim           |
-| Uso de largura de banda de saída   | Sim           |
+| Inbound Packet Rate | Yes |
+| Outbound Packet Rate | Yes |
+| Inbound Bandwidth | Yes |
+| Outbound Bandwidth | Yes |
+| Inbound Bandwidth Usage | Yes |
+| Number of Connections | Yes |
+| Outbound Bandwidth Usage | Yes |
 
-## Métricas de monitoramento da conexão VPN
+## VPN Connection Monitoring Metrics
 
-| **Métricas**                      | **Suportado** |
+| **Metrics** | **Supported** |
 | --------------------------------- | ------------- |
-| Média de RTT do túnel             | Sim           |
-| Máximo de RTT do túnel            | Sim           |
-| Taxa de perda de pacotes do túnel | Sim           |
-| Média de link RTT                 | Sim           |
-| Máximo de link RTT                | Sim           |
-| Taxa de perda de pacotes do link  | Sim           |
-| Status da conexão VPN             | Sim           |
-| Taxa de recebimento de pacotes    | Sim           |
-| Taxa de envio de pacotes          | Sim           |
-| Taxa de recebimento de tráfego    | Sim           |
-| Taxa de envio de tráfego          | Sim           |
-| Taxa de envio de pacote SA        | Sim           |
-| Taxa de recebimento de pacote SA  | Sim           |
-| Taxa de envio de tráfego SA       | Sim           |
-| Taxa de recebimento de tráfego SA | Sim           |
+| Tunnel Average RTT | Yes |
+| Tunnel Max RTT | Yes |
+| Tunnel Packet Loss Rate | Yes |
+| Link Average RTT | Yes |
+| Link Max RTT | Yes |
+| Link Packet Loss Rate | Yes |
+| VPN Connection Status | Yes |
+| Packet Receive Rate | Yes |
+| Packet Send Rate | Yes |
+| Traffic Receive Rate | Yes |
+| Traffic Send Rate | Yes |
+| SA Packet Send Rate | Yes |
+| SA Packet Receive Rate | Yes |
+| SA Traffic Send Rate | Yes |
+| SA Traffic Receive Rate | Yes |
 
-## Métricas de monitoramento de NAT
+## NAT Monitoring Metrics
 
-| **Métricas**                                      | **Suportado** |
+| **Metrics** | **Supported** |
 | ------------------------------------------------- | ------------- |
-| Conexões SNAT                                     | Sim           |
-| Largura de banda de entrada                       | Sim           |
-| Largura de banda de saída                         | Sim           |
-| PPS de entrada                                    | Sim           |
-| PPS de saída                                      | Sim           |
-| Tráfego de entrada                                | Sim           |
-| Tráfego de saída                                  | Sim           |
-| Taxa de uso de conexões SNAT                      | Sim           |
-| Taxa de uso de largura de banda de entrada        | Sim           |
-| Taxa de uso de largura de banda de saída          | Sim           |
-| Total de largura de banda de saída (UDP)          | Sim           |
-| Total de largura de banda de saída (TCP)          | Sim           |
-| Total de largura de banda de entrada (UDP)        | Sim           |
-| Total de largura de banda de entrada (TCP)        | Sim           |
-| Pacotes perdidos por conexões SNAT excessivas     | Sim           |
-| Pacotes perdidos por excesso de PPS               | Sim           |
-| Pacotes perdidos por todos os portes EIP alocados | Sim           |
+| SNAT Connections | Yes |
+| Inbound Bandwidth | Yes |
+| Outbound Bandwidth | Yes |
+| Inbound PPS | Yes |
+| Outbound PPS | Yes |
+| Inbound Traffic | Yes |
+| Outbound Traffic | Yes |
+| SNAT Connection Usage Rate | Yes |
+| Ingress bandwidth usage rate | Yes |
+| Egress bandwidth usage rate | Yes |
+| Total egress bandwidth (UDP) | Yes |
+| Total egress bandwidth (TCP) | Yes |
+| Total ingress bandwidth (UDP) | Yes |
+| Total ingress bandwidth (TCP) | Yes |
+| Packets lost due to excessive SNAT connections | Yes |
+| Packets lost due to excessive PPS | Yes |
+| Packets lost by all allocated EIP ports | Yes |
 
-# Referências
+# References
 
-  - Documentação do CES:
-    <https://support.huaweicloud.com/intl/en-us/function-ces/index.html>
-
-  - Limitações do CES:
-    <https://support.huaweicloud.com/intl/en-us/productdesc-ces/ces_07_0007.html>
-
-  - FAQ:
-    <https://support.huaweicloud.com/intl/en-us/ces_faq/ces_faq_0059.html>
-
-  - Instalação do agente do CES em lote:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-ces/ces_01_0033.html>
+- CES documentation: <https://support.huaweicloud.com/intl/en-us/function-ces/index.html>
+- CES limitations: <https://support.huaweicloud.com/intl/en-us/productdesc-ces/ces_07_0007.html>
+- FAQ: <https://support.huaweicloud.com/intl/en-us/ces_faq/ces_faq_0059.html>
+- CES agent batch installation: <https://support.huaweicloud.com/intl/en-us/usermanual-ces/ces_01_0033.html>

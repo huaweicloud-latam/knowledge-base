@@ -9,7 +9,7 @@ permalink: /docs/networking/vpn/vpn-client-to-site-startup
 
 # VPN Client to Site Startup
 
-V1.0 – Setembro 2024
+V1.0 – September 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |

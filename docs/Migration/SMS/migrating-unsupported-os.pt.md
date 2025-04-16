@@ -78,7 +78,7 @@ ECS original para depois os colocar na ECS intermediária.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image5.png)
 
-> Após remover os discos da ECS original, monte-os na ECS intermediária
+Após remover os discos da ECS original, monte-os na ECS intermediária
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image6.png)
 
@@ -99,6 +99,7 @@ diretório (neste exemplo foi montado na pasta /mnt) com o comando
 “mount” e acesse o seguinte arquivo: “vim
 /mnt/etc/sysconfig/network-scripts/ifcfg-eth0”. Comente as duas
 seguintes linhas no arquivo e salve o arquivo com “:wq”.
+
 **<span class="underline">Observação:</span>** caso o erro “Failed to
 Mount Wrong FS Type, Bad Option, Bad Superblock on Linux” apareça
 durante a montagem do disco, pule para a etapa **3.2** deste documento.

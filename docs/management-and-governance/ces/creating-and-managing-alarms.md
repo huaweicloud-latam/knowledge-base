@@ -13,469 +13,378 @@ V1.1 – December 2023
 
 | **Version**       | **Author**               | **Description**      |
 | ----------------- | ------------------------ | -------------------- |
-| V1.0 – 2023-12-20 | Diogo Hatz 50037923      | Versão Inicial       |
-| V1.0 – 2023-12-21 | Wisley da Silva 00830850 | Revisão do Documento |
+| V1.0 – 2023-12-20 | Diogo Hatz 50037923      | Initial Version      |
+| V1.0 – 2023-12-21 | Wisley da Silva 00830850 | Document Review      |
 
-# Introdução
+# Introduction
 
-O Cloud Eye (CES) é uma ferramenta gratuita para o monitoramento de
-recursos da Huawei Cloud. Além do monitoramento de recursos, o Cloud Eye
-também pode ser utilizado para criar alarmes baseados em eventos ou
-métricas, identificar o mau funcionamento de recursos e rapidamente
-reagir à mudança de recursos. Vale ressaltar que, por mais que o Cloud
-Eye seja um serviço gratuito, **as cobranças geradas pelo envio de
-notificações ao disparar alarmes são cobradas**.
+Cloud Eye (CES) is a free tool for monitoring Huawei Cloud resources. In addition to resource monitoring, Cloud Eye can also be used to create event- or metric-based alarms, identify resource malfunctions, and quickly react to resource changes. It is worth noting that, although Cloud Eye is a free service, **charges for sending notifications when alarms are triggered are charged**.
 
-Este documento tem como objetivo descrever as principais funcionalidades
-do serviço Cloud Eye e guiar o leitor a utilizar o CES para o
-monitoramento de recursos da nuvem, como ECSs, VPNs e CBRs etc. Ademais,
-também é descrito como criar alarmes baseados em eventos ou métricas e
-customizar dashboards para o monitoramento de recursos.
+This document aims to describe the main functionalities of the Cloud Eye service and guide the reader to use CES for monitoring cloud resources, such as ECSs, VPNs, and CBRs, etc. In addition, it also describes how to create event- or metric-based alarms and customize dashboards for resource monitoring.
 
-# Cloud Eye no console
+# Cloud Eye on the console
 
 ## Overview
 
-Ao abrir o Cloud Eye no console, a página inicial que será carregada é a
-Overview, na qual é possível ter uma visão geral de todos os recursos
-utilizados na Huawei Cloud, a utilização geral de rede, CPU, memória e
-disco e quais recursos dispararam alarmes recentemente e precisam de uma
-maior atenção.
+When you open Cloud Eye on the console, the home page that will load is the
+Overview, where you can see an overview of all resources
+used in Huawei Cloud, the overall network, CPU, memory, and disk
+utilization, and which resources have recently triggered alarms and need
+further attention.
 
-  - <span class="underline">Visão geral dos recursos:</span> Permite a
-    visualização do número total de recursos monitorados e os alarmes
-    gerados para esses recursos.
+- <span class="underline">Resource Overview:</span> Allows you to
+view the total number of monitored resources and the alarms
+generated for these resources.
 
-  - <span class="underline">Estatística dos alarmes:</span> Mostra os
-    alarmes disparados nos últimos sete dias por severidade do alarme.
+- <span class="underline">Alarm Statistics:</span> Shows the
+alarms triggered in the last seven days by alarm severity.
 
-  - <span class="underline">Monitoramento de servidores:</span> Permite
-    a visualização da utilização geral de CPU e memória dos servidores
-    monitorados e uma lista do top 5 ECSs ranqueados pela utilização de
-    CPU ou memória.
+- <span class="underline">Server Monitoring:</span> Allows you to
+view the overall CPU and memory utilization of
+monitored servers and a list of the top 5 ECSs ranked by CPU or
+memory utilization.
 
-  - <span class="underline">Monitoramento de rede:</span> Mostra a
-    utilização geral de largura de banda de EIPs e uma lista do top 5
-    EIPs ranqueados por utilização de largura de banda.
+- <span class="underline">Network Monitoring:</span> Shows the
+overall bandwidth utilization of EIPs and a list of the top 5
+EIPs ranked by bandwidth utilization.
 
-  - <span class="underline">Monitoramento de armazenamento:</span>
-    Permite a visualização da utilização geral de disco (EVS) por IOPS
-    de leitura e escrita e uma lista do top 5 discos ranqueados por
-    IOPS.
+- <span class="underline">Storage Monitoring:</span>
+Allows you to view the overall disk utilization (EVS) by read and write IOPS
+and a list of the top 5 disks ranked by IOPS.
 
-É possível ter uma visão de como a página inicial do Cloud Eye é nas
-imagens abaixo:
+You can see what the Cloud Eye home page looks like in the images below:
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image3.png)
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image4.png)
 
-## Grupos de recurso
+## Resource groups
 
-Os grupos de recursos viabilizam o agrupamento de diversos recursos da
-Huawei Cloud para o seu monitoramento em conjunto, além de facilitar a
-gestão de alarmes para diversos recursos em lote.
+Resource groups allow you to group multiple Huawei Cloud resources for joint monitoring, and also facilitate the management of alarms for multiple resources in batches.
 
-Um grupo de recursos pode ser criado na seção **Resource Groups**,
-clicando em **Create Resource Group**.
+A resource group can be created in the **Resource Groups** section by clicking **Create Resource Group**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image5.png)
 
-Na página carregada, escolha um nome para o grupo de recursos em
-**Name** e selecione os recursos a serem adicionados ao grupo por
-serviço. Após adicionar todos os recursos desejados, clique em
+On the page that loads, choose a name for the resource group in
+**Name** and select the resources to add to the group by
+service. After adding all the desired resources, click
 **Create**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image6.png)
 
-É possível criar alarmes para um grupo de recursos específico,
-facilitando a criação de alarmes em lote para múltiplos recursos que
-compartilhem um mesmo contexto.
+You can create alarms for a specific resource group,
+making it easy to create batch alarms for multiple resources that
+share the same context.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image7.png)
 
-## Gestão de alarmes
+## Alarm management
 
-A seção relativa à gestão de alarmes possui as seguintes subseções:
+The alarm management section has the following subsections:
 
-  - <span class="underline">Regras de alarme:</span> Subseção utilizada
-    para visualizar e criar alarmes baseados em métricas ou eventos.
+- <span class="underline">Alarm rules:</span> Subsection used
+to view and create alarms based on metrics or events.
 
-  - <span class="underline">Histórico de alarmes:</span> Subseção
-    utilizada para visualizar os alarmes disparados.
+- <span class="underline">Alarm history:</span> Subsection
+used to view triggered alarms.
 
-  - <span class="underline">Template de alarmes:</span> Subseção
-    relativa à visualização de templates para alarmes.
+- <span class="underline">Alarm template:</span> Subsection
+related to viewing alarm templates.
 
-  - <span class="underline">Monitoramento em um clique:</span> Subseção
-    que permite a habilitação de monitoramento para eventos comuns de
-    serviços
+- <span class="underline">One-click monitoring:</span> Subsection
+that allows you to enable monitoring for common service events
 
-  - <span class="underline">Máscara de alarme:</span> Subseção que
-    permite a criação de máscaras de alarmes para que alarmes disparados
-    não sejam notificados.
+- <span class="underline">Alarm mask:</span> Subsection that
+allows you to create alarm masks so that triggered alarms
+are not notified.
 
-### Criação de um alarme
+### Creating an alarm
 
-Para criar um alarme para determinado recurso baseado em um evento ou
-métrica, navegue para a seção **Alarm Rules**, em **Alarm Management**
-e clique em **Create Alarm Rule**.
+To create an alarm for a specific resource based on an event or
+metric, navigate to the **Alarm Rules** section in **Alarm Management**
+and click **Create Alarm Rule**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image8.png)
 
-Configure os ajustes básicos do alarme, como o nome do alarme em
-**Name** e o tipo de recurso que será monitorado em **Resource Type**,
-assim como o seu escopo em **Dimension**. Para configurar um alarme para
-uma ECS, por exemplo, o **Resource Type** é Elastic Cloud Server e a
-**Dimension** é ECSs.
+Configure the basic alarm settings, such as the alarm name in
+**Name** and the type of resource to be monitored in **Resource Type**,
+as well as its scope in **Dimension**. To configure an alarm for
+an ECS, for example, the **Resource Type** is Elastic Cloud Server and the
+**Dimension** is ECSs.
 
-Caso a condição de disparo do alarme seja uma métrica, como por exemplo
-a taxa de utilização da CPU ou memória da ECS, selecione Metric em
-**Alarm Type**. Já caso a condição de disparo do alarme seja um evento,
-como por exemplo o evento de uma GPU não instalada, selecione Event no
-campo **Alarm Type**. Neste exemplo, a métrica para disparar o alarme
-será a utilização da CPU da ECS acima de 80%.
+If the alarm triggering condition is a metric, such as
+the ECS CPU or memory utilization rate, select Metric in
+**Alarm Type**. If the alarm triggering condition is an event, for example, the event of an uninstalled GPU, select Event in the **Alarm Type** field. In this example, the metric to trigger the alarm will be the ECS CPU utilization above 80%. In **Monitoring Scope**, the specific resource that will trigger the alarm must be configured. The resource can be selected in three different ways: - <span class="underline">All resources</span>: Select this option if the alarm can be triggered by all instances of the selected resource. - <span class="underline">Resource groups</span>: Select this option if the alarm can be triggered by all resources present in a resource group. See section 3.3. - <span class="underline">Specific resources</span>: Select this option to choose a specific instance of the selected service to trigger the alarm. ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image9.png)
 
-Em **Monitoring Scope**, o recurso específico que irá disparar o alarme
-precisa ser configurado. É possível selecionar o recurso de três formas
-distintas:
-
-  - <span class="underline">All resources</span>: Selecione essa opção
-    caso o alarme poderá ser disparado por todas as instâncias do
-    recurso selecionado.
-
-  - <span class="underline">Rresource groups</span>: Selecione essa
-    opção caso o alarme poderá ser disparado por todos os recursos
-    presentes em um grupo de recursos. Ver seção 3.3.
-
-  - <span class="underline">Specific resources</span>: Selecione essa
-    opção para escolher uma instância específica do serviço selecionado
-    para disparar o alarme.
-
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image9.png)
-
-Neste exemplo, a ECS “ecs-4194” será selecionada como a instância que
-poderá disparar o alarme no campo **Specific resources** em **Monitoring
+In this example, the ECS “ecs-4194” will be selected as the instance that
+can trigger the alarm in the **Specific resources** field under **Monitoring
 Scope**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image10.png)
 
-Há três formas distintas de configurar a métrica que irá disparar o
-alarme em **Method**:
+There are three different ways to configure the metric that will trigger the
+alarm in **Method**:
 
-  - <span class="underline">Associate template:</span> Nesta opção, a
-    métrica para disparar o alarme será configurada com base em um
-    template já existente.
+- <span class="underline">Associate template:</span> In this option, the
+metric to trigger the alarm will be configured based on an
+existing template.
 
-  - <span class="underline">Use existing template</span>: Nesta opção, a
-    métrica para disparar o alarme será configurada com base em um
-    template já existente.
+- <span class="underline">Use existing template</span>: In this option, the metric to trigger the alarm will be configured based on an existing template.
 
-  - <span class="underline">Configure manually</span>: Nesta opção, a
-    métrica para disparar o alarme será configurada manualmente, o que
-    permite uma maior flexibilidade.
+- <span class="underline">Configure manually</span>: In this option, the metric to trigger the alarm will be configured manually, which allows for greater flexibility.
 
-Neste exemplo, a métrica que será configurada para disparar o alarme
-será caso a utilização de CPU da ECS seja superior ou igual a 80%. Em
-**Metric Name** é possível selecionar a métrica que poderá disparar o
-alarme, como neste caso é **(Agent) CPU Usage (Recommended)**. Para esta
-opção ser selecionada, é necessário que o agente do Cloud Eye seja
-instalado, como feito na seção 3.5. É importante que o agente seja
-instalado em servidores monitorados para obter uma melhor precisão no
-monitoramento dos dados e uma gama maior de métricas de monitoramento.
+In this example, the metric that will be configured to trigger the alarm will be if the ECS CPU usage is greater than or equal to 80%. In **Metric Name**, it is possible to select the metric that can trigger the alarm, as in this case it is **(Agent) CPU Usage (Recommended)**. For this option to be selected, the Cloud Eye agent must be installed, as done in section 3.5. It is important that the agent is installed on monitored servers to obtain better accuracy in data monitoring and a wider range of monitoring metrics.
 
-Em **Alarm Policy** é possível selecionar o tipo de dado que será
-analisado, como dados brutos, média, máximo, mínimo, variância ou soma
-dos dados ingeridos; assim como a porcentagem que irá disparar o alarme
-e a forma de comparação, como maior ou igual, maior, menor, menor ou
-igual, aumento em relação à ou decremento em relação à.
+In **Alarm Policy**, you can select the type of data that will be analyzed, such as raw data, average, maximum, minimum, variance or sum of the ingested data; as well as the percentage that will trigger the alarm and the form of comparison, such as greater than or equal, greater than, less than, less than or equal, increase in relation to or decrease in relation to.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image11.png)
 
-Na seção **Alarm Notification** é possível configurar uma notificação
-para os alarmes disparados por e-mail, SMS, requests HTTP e HTTPS ou
-então por meio de um trigger no FunctionGraph. Caso a notificação
-somente precise ser encaminhada no e-mail do dono da conta do console da
-Huawei Cloud, é possível selecionar a opção **Account contact** em
-**Notification Object** diretamente. Neste exemplo, um segundo e-mail
-será configurado para receber as notificações dos alarmes do Cloud Eye.
-Para isso, é necessário primeiro ativar o serviço Short Message
-Notification (SMN).
+In the **Alarm Notification** section, you can configure a notification for alarms triggered by email, SMS, HTTP and HTTPS requests or through a trigger in FunctionGraph. If the notification only needs to be sent to the email of the account owner in the Huawei Cloud console, you can select the **Account contact** option in **Notification Object** directly. In this example, a second email address will be configured to receive notifications of Cloud Eye alarms. To do this, you must first enable the Short Message Notification (SMN) service. ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image12.png) Click **Topics** to view the notification topics that you have created. ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image13.png) Click **Create Topic** to create a notification topic. ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image14.png)
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image12.png)
-
-Clique em **Topics** para visualizar os tópicos de notificação criados.
-
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image13.png)
-
-Clique em **Create Topic** para criar um tópico de notificações.
-
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image14.png)
-
-Digite o nome do tópico das notificações em **Topic Name** e clique em
+Enter the name of the notification topic in **Topic Name** and click
 **OK**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image15.png)
 
-Em seguida, clique em **Add Subscription** para adicionar um canal de
-comunicações pelo qual a notificação será enviada.
+Next, click **Add Subscription** to add a communication channel through which the notification will be sent.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image16.png)
 
-Em seguida, escolha o protocolo de envio da notificação, neste caso
-**Email**, e digite o e-mail escolhido em **Endpoints**. Clique em
+Next, choose the protocol for sending the notification, in this case
+**Email**, and enter the chosen email in **Endpoints**. Click
 **OK**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image17.png)
 
-Um e-mail será enviado para o endpoint selecionado. Para que o serviço
-SMN funcione corretamente, faz-se necessário que o usuário confirme o
-seu e-mail através de uma confirmação que será enviada assim que a
-**Subscription** for configurada.
+An email will be sent to the selected endpoint. For the SMN service to work correctly, the user must confirm their email through a confirmation that will be sent as soon as the **Subscription** is configured.
 
-Voltando para a criação do alarme, selecione o tópico criado nas etapas
-anteriores em **Notification Object** e configure a janela de horários
-em que a notificação pode ser enviada em **Notification Window**.
-Ademais, também selecione as ocasiões em que a notificação será enviada
-na seção **Trigger Condition**: quando o alarme é gerado ou quando o
-alarme é limpo. Após configurado, selecione **Create** para criar o
-alarme.
+Returning to the alarm creation, select the topic created in the previous steps in **Notification Object** and configure the time window in which the notification can be sent in **Notification Window**.
+
+In addition, also select the occasions in which the notification will be sent in the **Trigger Condition**: when the alarm is generated or when the
+alarm is cleared. After configuring, select **Create** to create the
+alarm.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image18.png)
 
-Em **Alarm Rules** é possível ver os alarmes criados e os seus status,
-assim como o recurso que é monitorado e a política de ativação do
-alarme.
+In **Alarm Rules** you can see the created alarms and their statuses,
+as well as the resource that is monitored and the alarm activation policy.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image19.png)
 
-Após um alarme ser disparado, é possível consulta-lo na seção **Alarm
-Records** em **Alarm Management**.
+After an alarm is triggered, you can view it in the **Alarm
+Records** section in **Alarm Management**.
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image20.png)
 
-Também é possível visualizar a notificação gerada pelo alarme no
-endpoint escolhido para o envio da notificação no serviço SMN. Em um
-outro contexto, o seguinte e-mail foi gerado para o monitoramento de um
-bucket no serviço OBS para armazenamento de objetos na Huawei Cloud:
+You can also view the notification generated by the alarm on the endpoint selected for sending the notification in the SMN service. In another context, the following email was generated for monitoring a bucket in the OBS service for object storage in Huawei Cloud:
 
 ![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image21.png)
 
-As tabelas referentes às métricas e eventos monitorados para os serviços
-de ECS, VPN, NAT e CBR da Huawei Cloud foram incluídas na seção 4.0 de
-anexos deste documento. Para criar alarmes baseados em eventos ou
-métricas para esses serviços, o procedimento é o mesmo do descrito
-acima.
+The tables for the metrics and events monitored for Huawei Cloud ECS, VPN, NAT, and CBR services have been included in the appendices section 4.0 of this document. To create event-based alarms or metrics for these services, the procedure is the same as that described above.
 
-# Anexos
+# Attachments
 
-## Métricas de monitoramento de servidores
+## Server Monitoring Metrics
 
-| **Métricas**                                           | **Sem agente** | **Agente instalado** |
+| **Metrics** | **No Agent** | **Agent Installed** |
 | ------------------------------------------------------ | -------------- | -------------------- |
-| Uso de CPU                                             | Sim            | Sim / Dedicado       |
-| Uso de disco                                           | Sim            | Sim                  |
-| Uso de memória                                         | Sim            | Sim / Dedicado       |
-| Largura de banda de escrita em disco                   | Sim            | Sim                  |
-| Largura de banda de leitura em disco                   | Sim            | Sim                  |
-| IOPS de escrita em disco                               | Sim            | Sim                  |
-| IOPS de leitura em disco                               | Sim            | Sim                  |
-| Taxa de entrada em banda                               | Sim            | Sim                  |
-| Taxa de saída em banda                                 | Sim            | Sim                  |
-| Taxa de entrada fora de banda                          | Sim            | Sim                  |
-| Taxa de saída fora de banda                            | Sim            | Sim                  |
-| Uso de crédito de CPU                                  | Sim            | Sim                  |
-| Balanceamento de crédito de CPU                        | Sim            | Sim                  |
-| Excedente de balanceamento de crédito de CPU           | Sim            | Sim                  |
-| Excedente de crédito carregado de CPU                  | Sim            | Sim                  |
-| Conexões de rede                                       | Sim            | Sim                  |
-| Largura de banda de entrada por servidor               | Sim            | Sim                  |
-| Largura de banda de saída por servidor                 | Sim            | Sim                  |
-| PPS de entrada                                         | Sim            | Sim                  |
-| PPS de saída                                           | Sim            | Sim                  |
-| Novas conexões                                         | Sim            | Sim                  |
-| Erros incorrigíveis agregados de ECC                   | Sim            | Sim                  |
-| Páginas aposentadas com erros de bit único             | Sim            | Sim                  |
-| Páginas aposentadas com erros de bit duplos            | Sim            | Sim                  |
-| Status de saúde da GPU                                 | Sim            | Sim                  |
-| Uso de encoder da GPU                                  | Sim            | Sim                  |
-| Uso de decoder da GPU                                  | Sim            | Sim                  |
-| Erros corrigíveis voláteis de ECC                      | Sim            | Sim                  |
-| Erros incorrigíveis voláteis de ECC                    | Sim            | Sim                  |
-| CPU ociosa                                             | Não            | Sim / Dedicado       |
-| Uso de CPU de espaço de usuário                        | Não            | Sim / Dedicado       |
-| Uso de CPU de espaço de kernel                         | Não            | Sim / Dedicado       |
-| Uso de CPU de outros processos                         | Não            | Sim / Dedicado       |
-| Uso de CPU de processos ótimos                         | Não            | Sim / Dedicado       |
-| Tempo em que a CPU está esperando por operações de E/S | Não            | Sim / Dedicado       |
-| Tempo de interrupção de CPU                            | Não            | Sim / Dedicado       |
-| Tempo de interrupção de CPU por software               | Não            | Sim / Dedicado       |
-| Memória disponível                                     | Não            | Sim / Dedicado       |
-| Memória ociosa                                         | Não            | Sim / Dedicado       |
-| Buffer                                                 | Não            | Sim / Dedicado       |
-| Cache                                                  | Não            | Sim / Dedicado       |
-| Largura de banda de entrada por NIC                    | Não            | Sim / Dedicado       |
-| Largura de banda de saída por NIC                      | Não            | Sim / Dedicado       |
-| Taxa de pacotes enviados por NIC                       | Não            | Sim / Dedicado       |
-| Taxa de pacotes recebidos por NIC                      | Não            | Sim / Dedicado       |
-| Taxa de pacotes com erro recebidos por NIC             | Não            | Sim / Dedicado       |
-| Taxa de pacotes com erro transmitidos por NIC          | Não            | Sim / Dedicado       |
-| Taxa de pacotes recebidos largados por NIC             | Não            | Sim / Dedicado       |
-| Taxa de pacotes transmitidos largados por NIC          | Não            | Sim / Dedicado       |
-| Processos em execução                                  | Não            | Sim / Dedicado       |
-| Processos ociosos                                      | Não            | Sim / Dedicado       |
-| Processos zombies                                      | Não            | Sim / Dedicado       |
-| Processos bloqueados                                   | Não            | Sim / Dedicado       |
-| Processos dormindo                                     | Não            | Sim / Dedicado       |
-| Total de processos                                     | Não            | Sim / Dedicado       |
-| Taxa de retransmissão TCP                              | Não            | Sim / Dedicado       |
-| TCP SYS\_SENT                                          | Não            | Sim / Dedicado       |
-| TCP SYS\_RECV                                          | Não            | Sim / Dedicado       |
-| TCP FIN\_WAIT1                                         | Não            | Sim / Dedicado       |
-| TCP FIN\_WAIT2                                         | Não            | Sim / Dedicado       |
-| TCP CLOSE                                              | Não            | Sim / Dedicado       |
-| TCP LAST\_ACK                                          | Não            | Sim / Dedicado       |
-| TCP LISTEN                                             | Não            | Sim / Dedicado       |
-| TCP CLOSING                                            | Não            | Sim / Dedicado       |
-| Média de carga da CPU no último minuto                 | Não            | Sim / Dedicado       |
-| Média de carga da CPU nos últimos 15 minutos           | Não            | Sim / Dedicado       |
-| Média de carga da CPU nos últimos 5 minutos            | Não            | Sim / Dedicado       |
-| TCP ESTABLISHED                                        | Não            | Sim / Dedicado       |
-| TCP TOTAL                                              | Não            | Sim / Dedicado       |
-| UDP TOTAL                                              | Não            | Sim / Dedicado       |
-| NTP Offset                                             | Não            | Sim / Dedicado       |
-| Total de arquivos processados                          | Não            | Sim / Dedicado       |
+| CPU Usage | Yes | Yes / Dedicated |
+| Disk Usage | Yes | Yes |
+| Memory Usage | Yes | Yes / Dedicated |
+| Disk Write Bandwidth | Yes | Yes |
+| Disk Read Bandwidth | Yes | Yes |
+| Disk Write IOPS | Yes | Yes |
+| Disk Read IOPS | Yes | Yes |
+| In-Band Rate | Yes | Yes |
+| In-Band Rate | Yes | Yes |
+| In-Band Rate | Yes | Yes |
+| Out-Band Rate | Yes | Yes |
+| Out-Band Rate | Yes | Yes |
+| CPU Credit Usage | Yes | Yes |
+| CPU Credit Balancing | Yes | Yes |
+| CPU Credit Balancing Overage | Yes | Yes |
+| CPU Loaded Credit Overage | Yes | Yes |
+| Network Connections | Yes | Yes |
+| Inbound Bandwidth Per Server | Yes | Yes |
+| Outbound Bandwidth Per Server | Yes | Yes |
+| Inbound PPS | Yes | Yes |
+| Outbound PPS | Yes | Yes |
+| New Connections | Yes | Yes |
+| Aggregate ECC Uncorrectable Errors | Yes | Yes |
+| Pages Retired with Single Bit Errors | Yes | Yes |
+| Pages Retired with Double Bit Errors | Yes | Yes |
+| GPU Health Status | Yes | Yes |
+| GPU Encoder Usage | Yes | Yes |
+| GPU Decoder Usage | Yes | Yes |
+| ECC Volatile Correctable Errors | Yes | Yes |
+| ECC Volatile Uncorrectable Errors | Yes | Yes |
+| CPU Idle | No | Yes / Dedicated |
+| User space CPU usage | No | Yes / Dedicated |
+| Kernel space CPU usage | No | Yes / Dedicated |
+| Other processes CPU usage | No | Yes / Dedicated |
+| Optimal processes CPU usage | No | Yes / Dedicated |
+| Time the CPU is waiting for I/O operations | No | Yes / Dedicated |
+| CPU interrupt time | No | Yes / Dedicated |
+| Software CPU interrupt time | No | Yes / Dedicated |
+| Available memory | No | Yes / Dedicated |
+| Idle memory | No | Yes / Dedicated |
+| Buffer | No | Yes / Dedicated |
+| Cache | No | Yes / Dedicated |
+| Input bandwidth per NIC | No | Yes / Dedicated |
+| Output bandwidth per NIC | No | Yes / Dedicated |
+| Packet rate sent per NIC | No | Yes / Dedicated |
+| Packet rate received per NIC | No | Yes / Dedicated |
+| Error packet rate received per NIC | No | Yes / Dedicated |
+| Error packet rate transmitted per NIC | No | Yes / Dedicated |
+| Received packets dropped rate per NIC | No | Yes / Dedicated |
+| Transmitted packets dropped rate per NIC | No | Yes / Dedicated |
+| Running processes | No | Yes / Dedicated |
+| Idle processes | No | Yes / Dedicated |
+| Zombie processes | No | Yes / Dedicated |
+| Blocked processes | No | Yes / Dedicated |
+| Sleeping processes | No | Yes / Dedicated |
+| Total processes | No | Yes / Dedicated |
+| TCP retransmission rate | No | Yes / Dedicated |
+| TCP SYS\_SENT | No | Yes / Dedicated |
+| TCP SYS\_RECV | No | Yes / Dedicated |
+| TCP FIN\_WAIT1 | No | Yes / Dedicated |
+| TCP FIN\_WAIT2 | No | Yes / Dedicated |
+| TCP CLOSE | No | Yes / Dedicated |
+| TCP LAST\_ACK | No | Yes / Dedicated |
+| TCP LISTEN | No | Yes / Dedicated |
+| TCP CLOSING | No | Yes / Dedicated |
+| Average CPU load in the last minute | No | Yes / Dedicated |
+| Average CPU load in the last 15 minutes | No | Yes / Dedicated |
+| Average CPU load in the last 5 minutes | No | Yes / Dedicated |
+| TCP ESTABLISHED | No | Yes / Dedicated |
+| TCP TOTAL | No | Yes / Dedicated |
+| UDP TOTAL | No | Yes / Dedicated |
+| NTP Offset | No | Yes / Dedicated |
+| Total files processed | No | Yes / Dedicated |
 
-## Métricas de monitoramento de VPN Gateway
+## VPN Gateway Monitoring Metrics
 
-| **Métricas**                       | **Suportado** |
+| **Metrics** | **Supported** |
 | ---------------------------------- | ------------- |
-| Taxa de pacotes de entrada         | Sim           |
-| Taxa de pacotes de saída           | Sim           |
-| Largura de banda de entrada        | Sim           |
-| Largura de banda de saída          | Sim           |
-| Uso de largura de banda de entrada | Sim           |
-| Número de conexões                 | Sim           |
-| Uso de largura de banda de saída   | Sim           |
+| Ingress Packet Rate | Yes |
+| Egress Packet Rate | Yes |
+| Ingress Bandwidth | Yes |
+| Egress Bandwidth | Yes |
+| Ingress Bandwidth Usage | Yes |
+| Number of Connections | Yes |
+| Egress Bandwidth Usage | Yes |
 
-## Métricas de monitoramento da conexão VPN
+## VPN Connection Monitoring Metrics
 
-| **Métricas**                      | **Suportado** |
+| **Metrics** | **Supported** |
 | --------------------------------- | ------------- |
-| Média de RTT do túnel             | Sim           |
-| Máximo de RTT do túnel            | Sim           |
-| Taxa de perda de pacotes do túnel | Sim           |
-| Média de link RTT                 | Sim           |
-| Máximo de link RTT                | Sim           |
-| Taxa de perda de pacotes do link  | Sim           |
-| Status da conexão VPN             | Sim           |
-| Taxa de recebimento de pacotes    | Sim           |
-| Taxa de envio de pacotes          | Sim           |
-| Taxa de recebimento de tráfego    | Sim           |
-| Taxa de envio de tráfego          | Sim           |
-| Taxa de envio de pacote SA        | Sim           |
-| Taxa de recebimento de pacote SA  | Sim           |
-| Taxa de envio de tráfego SA       | Sim           |
-| Taxa de recebimento de tráfego SA | Sim           |
+| Tunnel Average RTT | Yes |
+| Tunnel Max RTT | Yes |
+| Tunnel Packet Loss Rate | Yes | 
+| Link Average RTT | Yes | 
+| Link Max RTT | Yes |
+| Link Packet Loss Rate | Yes | 
+| VPN Connection Status | Yes | 
+| Packet Receive Rate | Yes | 
+| Packet Send Rate | Yes | 
+| Traffic Receive Rate | Yes | 
+| Traffic Send Rate | Yes |
+| SA packet sending rate | Yes |
+| SA packet receiving rate | Yes |
+| SA traffic sending rate | Yes |
+| SA traffic receiving rate | Yes |
 
-## Métricas de monitoramento de NAT
+## NAT monitoring metrics
 
-| **Métricas**                                      | **Suportado** |
+| **Metrics** | **Supported** |
 | ------------------------------------------------- | ------------- |
-| Conexões SNAT                                     | Sim           |
-| Largura de banda de entrada                       | Sim           |
-| Largura de banda de saída                         | Sim           |
-| PPS de entrada                                    | Sim           |
-| PPS de saída                                      | Sim           |
-| Tráfego de entrada                                | Sim           |
-| Tráfego de saída                                  | Sim           |
-| Taxa de uso de conexões SNAT                      | Sim           |
-| Taxa de uso de largura de banda de entrada        | Sim           |
-| Taxa de uso de largura de banda de saída          | Sim           |
-| Total de largura de banda de saída (UDP)          | Sim           |
-| Total de largura de banda de saída (TCP)          | Sim           |
-| Total de largura de banda de entrada (UDP)        | Sim           |
-| Total de largura de banda de entrada (TCP)        | Sim           |
-| Pacotes perdidos por conexões SNAT excessivas     | Sim           |
-| Pacotes perdidos por excesso de PPS               | Sim           |
-| Pacotes perdidos por todos os portes EIP alocados | Sim           |
+| SNAT connections | Yes |
+| Inbound bandwidth | Yes |
+| Outbound bandwidth | Yes |
+| Inbound PPS | Yes |
+| Outbound PPS | Yes |
+| Inbound traffic | Yes |
+| Outbound traffic | Yes |
+| SNAT connections usage rate | Yes |
+| Inbound bandwidth usage rate | Yes |
+| Outbound bandwidth usage rate | Yes |
+| Total outbound bandwidth (UDP) | Yes |
+| Total outbound bandwidth (TCP) | Yes |
+| Total inbound bandwidth (UDP) | Yes |
+| Total inbound bandwidth (TCP) | Yes |
+| Packets lost due to excessive SNAT connections | Yes |
+| Packets lost due to excessive PPS | Yes |
+| Packets lost by all allocated EIP ports | Yes |
 
-## Eventos monitorados para alarme de CBR
+## Events monitored for CBR alarm
 
-| **Eventos**                                                   | **Suportado** |
+| **Events** | **Supported** |
 | ------------------------------------------------------------- | ------------- |
-| Agente online                                                 | Sim           |
-| Agente offline                                                | Sim           |
-| Falha ao criar o backup                                       | Sim           |
-| Falha ao restaurar o recurso usando um backup                 | Sim           |
-| Falha ao deletar o backup                                     | Sim           |
-| Falha ao deletar o vault                                      | Sim           |
-| O backup foi feito com sucesso                                | Sim           |
-| Restaurar o recursando usando um backup foi feito com sucesso | Sim           |
-| O backup foi deletado com sucesso                             | Sim           |
-| O vault foi deletado com sucesso                              | Sim           |
-| Erro durante replicação                                       | Sim           |
-| Replicação feita com sucesso                                  | Sim           |
+| Agent online | Yes |
+| Agent offline | Yes |
+| Failed to create backup | Yes | 
+| Failed to restore resource from backup | Yes | 
+| Failed to delete backup | Yes | 
+| Failed to delete vault | Yes | 
+| Backup was successful | Yes | 
+| Restore resource from backup was successful | Yes | 
+| Backup was deleted successfully | Yes |
+| Vault was deleted successfully | Yes |
+| Error during replication | Yes |
+| Replication was successful | Yes |
 
-## Eventos monitorados para alarme de servidores
+## Events monitored for server alarms
 
-| **Eventos**                                               | **Suportado** |
+| **Events** | **Supported** |
 | --------------------------------------------------------- | ------------- |
-| Reimplantação agendada para ser autorizada                | Sim           |
-| Troca de disco local cancelada                            | Sim           |
-| Troca de disco local para ser executada                   | Sim           |
-| Alarme de evento xid disparado na GPU                     | Sim           |
-| Modificação de especificações agendada para ser executada | Sim           |
-| Migração agendada para ser executada                      | Sim           |
-| Encerramento agendado para ser executado                  | Sim           |
-| Reinicialização agendada para ser executada               | Sim           |
-| Reimplantação agendada para ser executada                 | Sim           |
-| Erros ECC irrecuperáveis gerados pela SRAM da GPU         | Sim           |
-| Alarme inforom gerado na GPU                              | Sim           |
-| Alarme de bit duplo ECC gerado na GPU                     | Sim           |
-| Páginas aposentadas em excesso                            | Sim           |
-| Alarme ECC gerado na GPU a100                             | Sim           |
-| Falha ECC na aposentadoria de página de memória da GPU    | Sim           |
-| Falha ECC na aposentadoria de página de GPU               | Sim           |
-| Erros ECC demasiados de bit único na GPU                  | Sim           |
-| Placa de vídeo não encontrada                             | Sim           |
-| Link de GPU com defeito                                   | Sim           |
-| Placa de vídeo perdida                                    | Sim           |
-| Página de memória da GPU com defeito                      | Sim           |
-| Imagem de engine da GPU com defeito                       | Sim           |
-| Temperatura da GPU muito alta                             | Sim           |
-| NVLink da GPU com defeito                                 | Sim           |
-| Suspensão da nvidia-smi                                   | Sim           |
-| ECS apagada                                               | Sim           |
-| ECS reiniciada                                            | Sim           |
-| ECS desligada                                             | Sim           |
-| NIC deletada                                              | Sim           |
-| ECS redimensionada                                        | Sim           |
-| Reinicialização por erro de hardware                      | Sim           |
-| Reinicialização por erro de hardware feita com sucesso    | Sim           |
-| Timeout de auto recuperação                               | Sim           |
-| Erro na inicialização                                     | Sim           |
-| Erro no link da GPU                                       | Sim           |
-| Erro no link da FPGA                                      | Sim           |
-| Erro na ECS por processos anormais no host                | Sim           |
-| GuestOS reiniciado                                        | Sim           |
-| Migração iniciada                                         | Sim           |
-| Migração finalizada com sucesso                           | Sim           |
-| Erro durante migração                                     | Sim           |
-| Risco de quebra de host                                   | Sim           |
-| Erros irrecuperáveis de ECC: NPU                          | Sim           |
+| Redeployment scheduled to be authorized | Yes | 
+| Local disk swap canceled | Yes | 
+| Local disk swap to be executed | Yes | 
+| Xid event alarm triggered on GPU | Yes | 
+| Spec modification scheduled to be executed | Yes | 
+| Migration scheduled to be executed | Yes | 
+| Shutdown scheduled to be executed | Yes | 
+| Reboot scheduled to be executed | Yes | 
+| Redeployment scheduled to be executed | Yes | 
+| Unrecoverable ECC errors generated by GPU SRAM | Yes | 
+| Inforom alarm generated on GPU | Yes |
+| ECC double bit alarm generated on GPU | Yes |
+| Excessive retired pages | Yes |
+| ECC alarm generated on GPU a100 | Yes |
+| ECC failure on GPU memory page retirement | Yes | 
+| ECC failure on GPU page retirement | Yes | 
+| Too many single bit ECC errors on GPU | Yes | 
+| Video card not found | Yes | 
+| Faulty GPU link | Yes | 
+| Video card lost | Yes | 
+| Faulty GPU memory page | Yes | 
+| Faulty GPU engine image | Yes | 
+| GPU temperature too high | Yes | 
+| Faulty GPU NVLink | Yes | 
+| nvidia-smi hang | Yes | 
+| ECS cleared | Yes |
+| ECS restarted | Yes |
+| ECS shut down | Yes |
+| NIC deleted | Yes |
+| ECS resized | Yes |
+| Hardware error reboot | Yes |
+| Hardware error reboot successful | Yes |
+| Auto-recovery timeout | Yes |
+| Initialization error | Yes |
+| GPU link error | Yes |
+| FPGA link error | Yes |
+| ECS error due to abnormal processes on host | Yes |
+| GuestOS restarted | Yes |
+| Migration started | Yes |
+| Migration completed successfully | Yes |
+| Error during migration | Yes |
+| Risk of host crash | Yes |
+| Unrecoverable ECC errors: NPU | Yes |
 
-# Referências
+# References
 
-  - Documentação do CES:
-    <https://support.huaweicloud.com/intl/en-us/function-ces/index.html>
-
-  - Limitações do CES:
-    <https://support.huaweicloud.com/intl/en-us/productdesc-ces/ces_07_0007.html>
-
-  - FAQ:
-    <https://support.huaweicloud.com/intl/en-us/ces_faq/ces_faq_0059.html>
-
-  - Instalação do agente do CES em lote:
-    <https://support.huaweicloud.com/intl/en-us/usermanual-ces/ces_01_0033.html>
-
+- CES documentation: <https://support.huaweicloud.com/intl/en-us/function-ces/index.html>
+- CES limitations: <https://support.huaweicloud.com/intl/en-us/productdesc-ces/ces_07_0007.html>
+- FAQ: <https://support.huaweicloud.com/intl/en-us/ces_faq/ces_faq_0059.html>
+- CES agent batch installation: <https://support.huaweicloud.com/intl/en-us/usermanual-ces/ces_01_0033.html>

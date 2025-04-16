@@ -39,12 +39,15 @@ echo "Amazon_2018_3_64BIT" > /root/RainbowOsFile
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image4.png)
 
 Once the configuration is done, navigate to the SMS service section
-in the HWC console and delete the migration tasks that are in error. Then, enter the SMS agent installation directory on the source machine and restart the agent by running the “./restart.sh” script. Enter the AK/SK keys as well as the SMS endpoint to configure the SMS agent again. # Migrated ECS Initialization Error If the migrated machine presents problems during initialization, such as getting stuck in the boot process, it is possible that some adjustments need to be made to the migrated machine. Below is a list of some known errors. If none of the solutions below solve the problem, it is recommended that a ticket be opened so that the experts can investigate the problem more precisely. To perform the following configurations, it will be necessary to remove the system disk of the migrated machine as a data disk in an intermediate ECS as follows. After creating a new ECS in the HWC console, mount the disks on the intermediate machine. First, remove the damaged disks from the
-original ECS and then place them in the intermediate ECS.
+in the HWC console and delete the migration tasks that are in error. Then, enter the SMS agent installation directory on the source machine and restart the agent by running the “./restart.sh” script. Enter the AK/SK keys as well as the SMS endpoint to configure the SMS agent again. 
+
+# Migrated ECS Initialization Error 
+
+If the migrated machine presents problems during initialization, such as getting stuck in the boot process, it is possible that some adjustments need to be made to the migrated machine. Below is a list of some known errors. If none of the solutions below solve the problem, it is recommended that a ticket be opened so that the experts can investigate the problem more precisely. To perform the following configurations, it will be necessary to remove the system disk of the migrated machine as a data disk in an intermediate ECS as follows. After creating a new ECS in the HWC console, mount the disks on the intermediate machine. First, remove the damaged disks from the original ECS and then place them in the intermediate ECS.
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image5.png)
 
-> After removing the disks from the original ECS, mount them on the intermediate ECS
+After removing the disks from the original ECS, mount them on the intermediate ECS
 
 ![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Unsupported-OS/media/image6.png)
 
