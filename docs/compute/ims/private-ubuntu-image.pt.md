@@ -14,9 +14,7 @@ V1.0 – Novembro 2023
 
 | **Versão**        | **Autor**                      | **Descrição**   |
 | ----------------- | ------------------------------ | --------------- |
-| V1.0 – 2023-11-20 | Wisley da Silva Paulo 00830850 | Initial version |
-|                   |                                |                 |
-|                   |                                |                 |
+| V1.0 – 2023-11-20 | Wisley da Silva Paulo 00830850 | Versão Inicial  |
 
 # Objetivo
 

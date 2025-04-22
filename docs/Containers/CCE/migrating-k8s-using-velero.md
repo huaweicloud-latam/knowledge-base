@@ -13,9 +13,9 @@ V1.1 – January 2024
 
 | **Version**       | **Author**            | **Description**          |
 | ----------------- | --------------------- | ------------------------ |
-| V1.0 – 2023-11-29 | Wisley Paulo w0083850 | Versão inicial           |
-| V1.1 – 2024-01-22 | Diogo Hatz 50037923   | Atualização do documento |
-| V1.1 – 2024-01-22 | Wisley Paulo w0083850 | Revisão do documento     |
+| V1.0 – 2023-11-29 | Wisley Paulo w0083850 | Initial Version          |
+| V1.1 – 2024-01-22 | Diogo Hatz 50037923   | Document Update          |
+| V1.1 – 2024-01-22 | Wisley Paulo w0083850 | Document Review          |
 
 This document presents the procedures for creating a CCE cluster and
 implementing an application with ngix and wordpress in the cluster, after

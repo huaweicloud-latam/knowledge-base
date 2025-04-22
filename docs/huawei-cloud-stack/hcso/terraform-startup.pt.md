@@ -68,21 +68,21 @@ parâmetros em destaque:
 
 ```terraform
 terraform {
-    required\_providers {
-        huaweicloud = {
-            source = "huaweicloud/huaweicloud"
-            version = "\>= 1.36.0"
-        }
+  required_providers {
+    huaweicloud = {
+      source  = "huaweicloud/huaweicloud"
+      version = ">= 1.36.0"
     }
+  }
 }
 
 provider "huaweicloud" {
-    region = "{região}"
-    access\_key = "{AK}"
-    secret\_key = "{SK}"
-    cloud = "{dominio}"
-    auth\_url="https://iam-pub.{regiao}.{dominio}"
-    insecure = true
+  region     = "{região}"
+  access_key = "{AK}"
+  secret_key = "{SK}"
+  cloud = "{dominio}"
+  auth_url="https://iam-pub.{região}.{dominio}"
+  insecure = true
 }
 ```
 
@@ -102,9 +102,9 @@ recurso para realizar a validação do funcionamento da ferramenta. Abaixo
 segue um trecho de código de exemplo para criar uma VPC:
 
 ```terraform
-resource "huaweicloud\_vpc" "vpc-hcso" {
-    name = "vpc-hcso"
-    cidr = "10.0.0.0/8"
+resource "huaweicloud_vpc" "vpc-hcso" {
+  name = "vpc-hcso"
+  cidr = "10.0.0.0/8"
 }
 ```
 

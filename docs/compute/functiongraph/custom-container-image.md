@@ -13,8 +13,8 @@ V1.0 – July 2024
 
 | **Version**       | **Author**                     | **Description**      |
 | ----------------- | ------------------------------ | -------------------- |
-| V1.0 – 2024-07-11 | Diogo Hatz d50037923           | Versão Inicial       |
-| V1.0 – 2024-07-11 | Wisley da Silva Paulo 00830850 | Revisão do Documento |
+| V1.0 – 2024-07-11 | Diogo Hatz d50037923           | Initial Version      |
+| V1.0 – 2024-07-11 | Wisley da Silva Paulo 00830850 | Document Review      |
 
 # Objective
 
@@ -34,10 +34,10 @@ it in the function configuration in FunctionGraph;
 
 3. The following environment variables must exist within the container: 
    1. **HOME**: Path where the function source code will be located; 
-   2. **GROUP\_ID**: GID of the user group that will run the container; 
-   3. **GROU\_NAME**: Name of the user group that will run the container; 
-   4. **USER\_ID**: UID of the user that will run the container; 
-   5. **USER\_NAME**: Name of the user that will run the container. 
+   2. **GROUP_ID**: GID of the user group that will run the container; 
+   3. **GROU_NAME**: Name of the user group that will run the container; 
+   4. **USER_ID**: UID of the user that will run the container; 
+   5. **USER_NAME**: Name of the user that will run the container. 
    
 # SWR 
 
@@ -70,20 +70,20 @@ document, related to Docker authentication with the HWC SWR service.
 ![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image7.png)
 
 After logging into the SWR repository via Docker, copy the following
-command, changing the fields \[image name 1:tag 1\], \[Image repositor
-address\], \[Organization name\] and \[Image name 2:tag 2\] according to
+command, changing the fields [image name 1:tag 1], [Image repository
+address], [Organization name] and [Image name 2:tag 2] according to
 the list below:
 
-- **\[Image name 1:tag 1\]:** {name:tag} of the image to be
+- **[Image name 1:tag 1]:** {name:tag} of the image to be
 uploaded;
 
-- **\[Image repositor address\]:** SWR domain. It can be obtained in
+- **[Image repository address]:** SWR domain. It can be obtained in
 the login command obtained in item 2.0 of this document;
 
-- **\[Organization name\]:** Name of the organization created in item 2.0
+- **[Organization name]:** Name of the organization created in item 2.0
 of this document;
 
-- **\[Image name 2:tag 2\]:** {name:tag} of the image that will appear in
+- **[Image name 2:tag 2]:** {name:tag} of the image that will appear in
 SWR. Similar to a rename, the same name and tag can be
 kept.
 

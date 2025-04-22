@@ -11,12 +11,12 @@ permalink: /docs/compute/ecs/remote-login-bricked-error
 
 V1.0 – March 2024
 
-| **Version**       | **Author**              | **Description**                    |
+| **Version**       | **Author**               | **Description**                      |
 | ----------------- | ------------------------ | ------------------------------------ |
-| V1.0 – 2024-03-13 | Yangqiang 1153592        | Versão Inicial em Chinês             |
-| V1.0 – 2024-03-13 | Gaowei 1074902           | Tradução do Documento para Inglês    |
-| V1.0 – 2024-03-14 | Diogo Hatz 50037923      | Tradução do Documento para Português |
-| V1.0 – 2024-03-14 | Wisley da Silva 00830850 | Revisão do Documento                 |
+| V1.0 – 2024-03-13 | Yangqiang 1153592        | Initial Version in Chinese           |
+| V1.0 – 2024-03-13 | Gaowei 1074902           | Document Translation to English      |
+| V1.0 – 2024-03-14 | Diogo Hatz 50037923      | Document Translation to Portuguese   |
+| V1.0 – 2024-03-14 | Wisley da Silva 00830850 | Document Review                      |
 
 # Introduction
 
@@ -32,8 +32,8 @@ The error in question for the Remote Login to freeze is related to VNC, software
 
 Linux VMs created in Azure Cloud have modified kernels, which may cause conflict issues with VNC software. To make the necessary changes, follow the steps below: 
 1. Connect to the instance via SSH and modify the following parameters: 
-    1.1 Comment out the line GRUB\_TIMEOUT\_STYLE=hidden 
-    1.2 Modify GRUB\_TIMEOUT to 10: GRUB\_TIMEOUT=10 
+    1.1 Comment out the line GRUB_TIMEOUT_STYLE=hidden 
+    1.2 Modify GRUB_TIMEOUT to 10: GRUB_TIMEOUT=10 
     
 ![](/huaweicloud-knowledge-base/assets/images/compute/ecs/remote-login-error/image4.png) 
 

@@ -42,12 +42,12 @@ seguintes critérios precisam ser cumpridos:
     do container:
 
     1.  **HOME**: Path onde o código-fonte da função se encontrará;
-    2.  **GROUP\_ID**: GID do grupo do usuário que irá executar o
+    2.  **GROUP_ID**: GID do grupo do usuário que irá executar o
         container;
-    3.  **GROU\_NAME**: Nome do grupo do usuário que irá executar o
+    3.  **GROU_NAME**: Nome do grupo do usuário que irá executar o
         container;
-    4.  **USER\_ID**: UID do usuário que irá executar o container;
-    5.  **USER\_NAME**: Nome do usuário que irá executar o container.
+    4.  **USER_ID**: UID do usuário que irá executar o container;
+    5.  **USER_NAME**: Nome do usuário que irá executar o container.
 
 # SWR
 
@@ -84,20 +84,20 @@ documento, relativo à autenticação do Docker com o serviço SWR da HWC.
 ![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image7.png)
 
 Feito o login no repositório SWR através do Docker, copie o seguinte
-comando, alterando os campos \[image name 1:tag 1\], \[Image repositor
-address\], \[Organization name\] e \[Image name 2:tag 2\] de acordo com
+comando, alterando os campos [image name 1:tag 1], [Image repository
+address], [Organization name] e [Image name 2:tag 2] de acordo com
 a lista abaixo:
 
-  - **\[Image name 1:tag 1\]:** {nome:tag} da imagem que será feito o
+  - **[Image name 1:tag 1]:** {nome:tag} da imagem que será feito o
     upload;
 
-  - **\[Image repositor address\]:** Domínio do SWR. Pode ser obtido no
+  - **[Image repository address]:** Domínio do SWR. Pode ser obtido no
     comando de login obtido no item 2.0 deste documento;
 
-  - **\[Organization name\]:** Nome da organização criada no item 2.0
+  - **[Organization name]:** Nome da organização criada no item 2.0
     deste documento;
 
-  - **\[Image name 2:tag 2\]:** {nome:tag} da imagem que aparecerá no
+  - **[Image name 2:tag 2]:** {nome:tag} da imagem que aparecerá no
     SWR. Similar a uma renomeação, o mesmo nome e tag podem ser
     mantidos.
 

@@ -1,5 +1,5 @@
 ---
-title: Remote Login Bricked Error
+title: Erro de Remote Login Travado
 layout: default
 parent: Elastic Cloud Server (ECS)
 grand_parent: Computação
@@ -45,9 +45,9 @@ as modificações necessárias, siga o passo-a-passo abaixo:
 
 1.  Conecte à instância via SSH e modifique os seguintes parâmetros:
 
-    1.1 Comente a linha GRUB\_TIMEOUT\_STYLE=hidden
+    1.1 Comente a linha GRUB_TIMEOUT_STYLE=hidden
 
-    1.2 Modifique o GRUB\_TIMEOUT para 10: GRUB\_TIMEOUT=10
+    1.2 Modifique o GRUB_TIMEOUT para 10: GRUB_TIMEOUT=10
 
 ![](/huaweicloud-knowledge-base/assets/images/compute/ecs/remote-login-error/image4.png)
 

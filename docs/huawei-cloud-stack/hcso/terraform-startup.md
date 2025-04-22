@@ -52,22 +52,23 @@ highlighted parameters:
 
 ```terraform
 terraform {
-    required\_providers {
-        huaweicloud = {
-            source = "huaweicloud/huaweicloud"
-            version = "\>= 1.36.0"
-        }
+  required_providers {
+    huaweicloud = {
+      source  = "huaweicloud/huaweicloud"
+      version = ">= 1.36.0"
     }
+  }
 }
 
 provider "huaweicloud" {
-    region = "{região}"
-    access\_key = "{AK}"
-    secret\_key = "{SK}"
-    cloud = "{dominio}"
-    auth\_url="https://iam-pub.{regiao}.{dominio}"
-    insecure = true
+  region     = "{region}"
+  access_key = "{AK}"
+  secret_key = "{SK}"
+  cloud = "{domain}"
+  auth_url="https://iam-pub.{region}.{domain}"
+  insecure = true
 }
+
 ```
 
 - region: HCSO region where the resources will be created;
@@ -85,9 +86,9 @@ After configuring the terraform and provider fields, create a
 resource to validate the tool's operation. Below is a sample code snippet to create a VPC:
 
 ```terraform
-resource "huaweicloud\_vpc" "vpc-hcso" {
-    name = "vpc-hcso"
-    cidr = "10.0.0.0/8"
+resource "huaweicloud_vpc" "vpc-hcso" {
+  name = "vpc-hcso"
+  cidr = "10.0.0.0/8"
 }
 ```
 

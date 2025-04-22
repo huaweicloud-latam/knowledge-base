@@ -13,8 +13,8 @@ V1.0 – January 2024
 
 | **Version**       | **Author**            | **Description**       |
 | ----------------- | --------------------- | --------------------- |
-| V1.0 – 2024-01-16 | Diogo Hatz 50037923   | Tradução do documento |
-| V1.0 – 2024-01-16 | Wisley Paulo 00830850 | Revisão do documento  |
+| V1.0 – 2024-01-16 | Diogo Hatz 50037923   | Document Translation  |
+| V1.0 – 2024-01-16 | Wisley Paulo 00830850 | Document Review       |
 
 # Kubernetes Cluster Migration from AKS to CCE
 

@@ -12,7 +12,7 @@ permalink: /docs/compute/functiongraph/pipeline-integration
 
 V1.0 – Julho 2024
 
-| **Version**       | **Author**                     | **Description**      |
+| **Versão**        | **Autor**                      | **Descrição**        |
 | ----------------- | ------------------------------ | -------------------- |
 | V1.0 – 2024-07-16 | Diogo Hatz d50037923           | Versão Inicial       |
 | V1.0 – 2024-07-16 | Wisley da Silva Paulo 00830850 | Revisão do Documento |

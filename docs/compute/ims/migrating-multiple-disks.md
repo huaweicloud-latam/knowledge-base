@@ -13,9 +13,9 @@ V2.0 – May 2024
 
 | **Version**       | **Author**               | **Description**          |
 | ----------------- | ------------------------ | ------------------------ |
-| V1.0 – 2024-05-08 | Diogo Hatz 50037923      | Versão Inicial           |
-| V1.0 – 2024-05-08 | Wisley da Silva 00830850 | Revisão do Documento     |
-| V2.0 – 2024-05-16 | Diogo Hatz 50037923      | Atualização do Documento |
+| V1.0 – 2024-05-08 | Diogo Hatz 50037923      | Initial Version          |
+| V1.0 – 2024-05-08 | Wisley da Silva 00830850 | Document Review          |
+| V2.0 – 2024-05-16 | Diogo Hatz 50037923      | Document Update          |
 
 # Introduction
 

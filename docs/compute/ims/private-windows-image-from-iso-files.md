@@ -13,8 +13,8 @@ V1.0 – January 2024
 
 | **Version**       | **Author**            | **Description**      |
 | ----------------- | --------------------- | -------------------- |
-| V1.0 – 2024-01-02 | Diogo Hatz 50037923   | Versão Inicial       |
-| V1.0 – 2024-01-02 | Wisley Paulo 00830850 | Revisão do Documento |
+| V1.0 – 2024-01-02 | Diogo Hatz 50037923   | Initial Version      |
+| V1.0 – 2024-01-02 | Wisley Paulo 00830850 | Document Review      |
 
 # Introduction
 

@@ -13,8 +13,8 @@ V1.0 – April 2024
 
 | **Version**       | **Author**               | **Description**      |
 | ----------------- | ------------------------ | -------------------- |
-| V1.0 – 2024-04-23 | Diogo Hatz 50037923      | Versão Inicial       |
-| V1.0 – 2024-04-24 | Wisley da Silva 00830850 | Revisão do Documento |
+| V1.0 – 2024-04-23 | Diogo Hatz 50037923      | Initial Version      |
+| V1.0 – 2024-04-24 | Wisley da Silva 00830850 | Document Review      |
 
 # Introduction
 
@@ -24,7 +24,7 @@ This document aims to guide the reader to use the UGO tool for migrating heterog
 
 # UGO 
 
-o migrate a MySQL database to GaussDB, it is necessary to use the UGO service available at HWC to evaluate the migration and convert the source database syntax to a syntax compatible with the target database, in addition to checking the compatibility of the source engine with the target engine. To access the UGO service, simply search for “UGO” in the list of services available in the HWC console. It is worth noting that the service is only available in the regions of Santiago and Singapore. 
+To migrate a MySQL database to GaussDB, it is necessary to use the UGO service available at HWC to evaluate the migration and convert the source database syntax to a syntax compatible with the target database, in addition to checking the compatibility of the source engine with the target engine. To access the UGO service, simply search for “UGO” in the list of services available in the HWC console. It is worth noting that the service is only available in the regions of Santiago and Singapore. 
 
 ![](/huaweicloud-knowledge-base/assets/images/databases/ugo/migrating-mysql-to-gaussdb/image3.png)
 
