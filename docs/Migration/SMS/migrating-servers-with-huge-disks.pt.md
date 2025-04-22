@@ -43,11 +43,11 @@ disco. Para isso, navegue até a seção ECS no console da Huawei Cloud,
 clique no servidor em que o disco está montado e clique no disco de
 sistema desejado:
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image3.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image4.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image5.png)
 
 Após obter o ID do disco que será redimensionado, navegue até a seção
 API Explorer do console da Huawei Cloud, passando o mouse sobre “More”,
@@ -56,22 +56,22 @@ EVS” e, por fim, a API “ResizeVolume”. Alternativamente, clique no
 seguinte link para ir diretamente até a API:
 <https://console-intl.huaweicloud.com/apiexplorer/#/openapi/EVS/doc?api=ResizeVolume>.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image6.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image7.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image8.png)
 
 Na janela da API, preencha os campos em vermelho com o ID do disco
 selecionado anteriormente e o seu novo tamanho, em GiB. Após preencher
 as lacunas, basta clicar em “Debug” que o disco será redimensionado para
 o novo tamanho:
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image9.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image10.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Migrating-Huge-Disks/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image11.png)
 
 Após redimensionar o disco do servidor de destino para um tamanho maior
 do que o servidor de origem, o SMS poderá ser utilizado sem problemas

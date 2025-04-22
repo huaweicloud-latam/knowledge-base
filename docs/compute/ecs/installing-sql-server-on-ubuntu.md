@@ -28,23 +28,23 @@ below.
 
 Navigate to the ECS section in the Huawei Cloud console.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image3.png)
 
 Purchase a new instance with the desired OS for installing SQL
 Server.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image4.png)
 
 Navigate to the Security Groups section in the Huawei Cloud console. Click on the security group associated with the created ECS and add a rule for the default SQL Server port 1433.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image5.png)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image6.png)
 
 Return to the ECS section in the Huawei Cloud console and access the created instance by clicking “Remote Login”. Log in as the “root” user with the
 password configured when creating the instance.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image7.png)
 
 ## SQL Server Installation
 
@@ -55,7 +55,7 @@ following command:
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image8.png)
 
 Register the SQL Server Ubuntu repository:
 
@@ -77,7 +77,7 @@ sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubunt
 sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2022.list)"
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image9.png)
 
 Run the following command to update the system package repositories:
 
@@ -85,7 +85,7 @@ Run the following command to update the system package repositories:
 sudo apt-get update
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image10.png)
 
 Run the following command to install SQL Server:
 
@@ -93,7 +93,7 @@ Run the following command to install SQL Server:
 sudo apt-get install -y mssql-server
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image11.png)
 
 Once installed, run the following command to configure SQL Server:
 
@@ -103,7 +103,7 @@ sudo /opt/mssql/bin/mssql-conf setup
 
 Select the SQL Server edition to be installed, accept the terms of service, and set a password for the SQL Server administrator account.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image12.png)
 
 To check if SQL Server is running, run the following
 command:
@@ -112,7 +112,7 @@ command:
 systemctl status mssql-server --no-pager
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image13.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image13.png)
 
 The SQL Server service is running and is denoted by the “active
 (running)” status.
@@ -133,7 +133,7 @@ Import the GPG keys from the Microsoft public repository:
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image14.png)
 
 Register the Microsoft Ubuntu repository:
 
@@ -161,7 +161,7 @@ curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list | sudo tee /et
 curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image15.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image15.png)
 
 Update the system repositories:
 
@@ -169,7 +169,7 @@ Update the system repositories:
 sudo apt-get update
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image16.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image16.png)
 
 Install the sqlcmd utility:
 
@@ -197,7 +197,7 @@ command:
 sqlcmd -S localhost -U sa -P '<YourPassword>' -C
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image17.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image17.png)
 
 ### Windows
 
@@ -208,4 +208,4 @@ Download the SQL Management Studio tool and install it:
 To log in to the SQL Server instance running on the Linux instance, select the authentication option “SQL Server Authentication”
 and Server Type of “Database Engine”. The default user configured during the SQL Server installation is “sa”. Click “Connect” when the login data is entered.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Installing-SQL-Server-on-Ubuntu/media/image18.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/installing-sql-server-on-ubuntu/image18.png)

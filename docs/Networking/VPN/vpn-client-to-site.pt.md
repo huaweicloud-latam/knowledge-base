@@ -50,31 +50,31 @@ Baixe a ferramenta Easy-RSA através do seguinte hyperlink:
 Após extrair o arquivo baixado, abra o CMD e navegue até a pasta
 extraída do arquivo baixado.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image3.png)
 
 Após navegar até a pasta do EasyRSA, execute o arquivo
 “EasyRSA-Start.bat” através do comando “.\\EasyRSA-Start.bat”
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image4.png)
 
 Digite o comando “./easyrsa init-pki” para inicializar o ambiente de PKI
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image5.png)
 
 Copie o arquivo “vars.example” do diretório C:\\EasyRSA-3.1.7 para o
 diretório C:\\EasyRSA-3.1.7\\pki e, então, renomeie o arquivo para
 “vars”.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image6.png)
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image7.png)
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image8.png)
 
 Volte para o CMD e use o comando “./easyrsa build-ca nopass” para gerar
 um certificado CA.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image9.png)
 
   - Por padrão, o certificado CA será armazenado no diretório
     C:\\EasyRSA-3.1.7\\pki. Neste exemplo, o certificado “ca.crt” foi
@@ -88,7 +88,7 @@ Use o comando “./easyrsa build-server-full p2cserver.com nopass” para
 gerar um certificado de servidor e a sua chave privada. Note que o
 argumento “p2cserver.com” será o common name (CN) do certificado gerado.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image10.png)
 
   - Por padrão, o certificado do servidor será armazenado no diretório
     C:\\EasyRSA-3.1.7\\pki\\issued. Neste exemplo, o certificado
@@ -106,7 +106,7 @@ etapa abaixo. Caso contrário, pule esta etapa.
 Use o comando ./easyrsa build-client-full p2cclient.com nopass” para
 gerar um certificado de cliente e a sua chave privada.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image11.png)
 
   - Por padrão, o certificado do cliente será armazenado no diretório
     C:\\EasyRSA-3.1.7\\pki\\issued. Neste exemplo, o certificado
@@ -124,12 +124,12 @@ Certificate Manager (CCM) da Huawei Cloud.
 
 Para isso, navegue até o serviço CCM no console da HWC
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image12.png)
 
 Clique na seção “Hosted Certificates” e selecione a opção “Upload
 Certificate”.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image13.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image13.png)
 
 No campo “Certificate File”, faz-se necessário inserir tanto o
 certificado do servidor quanto do CA, nessa ordem. Portanto, insira
@@ -142,9 +142,9 @@ servidor.
 Após inserir ambos campos, basta clicar em “Submit” para salvar o
 certificado.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image14.png)
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image15.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image15.png)
 
 # P2C VPN
 
@@ -152,24 +152,24 @@ Navegue até o serviço VPN no console da Huawei Cloud e clique na seção
 “Enterprise – VPN Gateways”, seguido por “P2C VPN Gateways” e em “Buy
 P2C VPN Gateway”.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image16.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image16.png)
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image17.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image17.png)
 
 Preencha as informações relativas à VPN Gateway, como o seu nome, VPC e
 Subnet em que estarão. Ademais, especifique também um EIP para o
 gateway, assim como a sua largura de banda. Após isso, basta clicar em
 “Buy Now”.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image18.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image18.png)
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image19.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image19.png)
 
 Clique no VPN Gateway comprado e navegue até a seção “Server” para
 configurar o certificado do servidor e a forma de autenticação do
 cliente.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image20.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image20.png)
 
 Preencha as informações relativas ao CIDR local, CIDR do cliente, o
 certificado do servidor e a forma de autenticação do cliente.
@@ -179,33 +179,33 @@ será fechada, ao passo em que o CIDR do cliente corresponde ao bloco
 virtual de endereçamento utilizado pelo cliente. É importante que não
 haja overlap entre os blocos de rede local e de cliente.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image21.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image21.png)
 
 Caso a forma de autenticação do cliente seja feita através de usuário e
 senha, é necessário configurar também um usuário e senha na seção “User
 Management”.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image22.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image22.png)
 
 Crie um usuário e senha e defina um grupo de usuário para o usuário.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image23.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image23.png)
 
 Para delegar permissões a um grupo de usuários, navegue até a seção
 “Access Policies” e clique em “Create Policy”.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image24.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image24.png)
 
 Insira o nome da policy, assim como o CIDR local preenchido
 anteriormente e o grupo de usuários que poderão acessar os blocos de
 rede especificados.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image25.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image25.png)
 
 Feito isso, retorne até a página do serviço de VPN P2C Gateway e clique
 na opção “More” seguido por “Download Client Configuration”.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image26.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image26.png)
 
 # OpenVPN
 
@@ -215,24 +215,24 @@ OpenVPN através do seguinte hyperlink:
 
 Após baixar o OpenVPN, execute a sua instalação padrão.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image27.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image27.png)
 
 Após a instalação do cliente OpenVPN, execute-o e clique em Upload File
 para realizar a configuração da VPN. Faça o upload do arquivo .OVPN
 baixado no item 5.0 deste documento.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image28.png)![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image29.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image28.png)![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image29.png)
 
 Insira o usuário e senha configurados no item 5.0 deste documento e
 clique em “Connect”.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image30.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image30.png)
 
 Caso uma janela de aviso apareça solicitando um certificado externo,
 basta clicar em “Continue”.
 
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image31.png)
-![](/huaweicloud-knowledge-base/assets/images/VPN-Client-to-Site/media/image32.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image31.png)
+![](/huaweicloud-knowledge-base/assets/images/networking/vpn/vpn-client-to-site/image32.png)
 
 Caso todas as etapas tenham sido seguidas corretamente, o cliente do
 OpenVPN irá se conectar à VPN criada.

@@ -37,7 +37,7 @@ da HWC.
 O erro em questão para que o Remote Login fique congelado é relativo ao
 VNC, software de acesso remoto a outros computadores.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/remote-login-error/image3.png)
 
 As VMs Linux criadas na Azure Cloud possuem o kernel modificado, o que
 pode causar problemas de conflitos com o software do VNC. Para realizar
@@ -49,7 +49,7 @@ as modificações necessárias, siga o passo-a-passo abaixo:
 
     1.2 Modifique o GRUB\_TIMEOUT para 10: GRUB\_TIMEOUT=10
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Remote-Login-Error/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ecs/remote-login-error/image4.png)
 
 Delete o arquivo
 

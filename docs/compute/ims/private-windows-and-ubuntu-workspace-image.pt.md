@@ -36,27 +36,27 @@ utilizadas no serviço de Workspace da Huawei Cloud.
 
 5.  Acesse o CD abra a pasta vmtools que foi adicionada na ISO e instale o vmtools.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image3.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image4.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image5.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image6.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image7.png)
 
 ### Ative o usuário Administrator clicando com botão direto do mouse no botão iniciar, acessando opção “Computer Management”, acesse a opção “Local User...”, depois “User”, clique com botão direito no usuário Administrator, propriedades e depois desmarque a opção de desabilitar o usuário. Repita o procedimento para acessar o usuário e configure uma senha para o usuário. Faço logoff com usuário atual e o login com o usuário Administrator.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image8.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image9.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image10.png)
 
 ### Efetue os ajuste indicados no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) **até o item 56**.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image11.png)
 
 ### Ignore o item marcado em vermelho nesse item.
 
@@ -66,15 +66,15 @@ utilizadas no serviço de Workspace da Huawei Cloud.
 
 Efetue a instalação dos softwares indicados no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) do item 57 em diante.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image12.png)
 
 ### Verifique no painel de controle se os programas foram instalados
 
 ### Antes da instalação da última ferramenta (Workspace\_HDP\_WindowsDesktop\_Installer) garanta que todas as atualizações do sistema operacional foram realizadas, caso contrário pode receber o erro:
 
-![C:\\Users\\w00830850\\AppData\\Roaming\\eSpace\_Desktop\\UserData\\w00830850\\imagefiles\\130E24AA-8D4F-40C5-8D3C-CA991947FBDC.png](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image13.png)
+![C:\\Users\\w00830850\\AppData\\Roaming\\eSpace\_Desktop\\UserData\\w00830850\\imagefiles\\130E24AA-8D4F-40C5-8D3C-CA991947FBDC.png](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image13.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image14.png)
 
 ### Esse comando tem um erro a palavra marcada falta uma letra “n” o comando correto é: run\_silent.bat --passive --environment\_type 2 --nocheck --noshutdown
 
@@ -82,37 +82,37 @@ Efetue a instalação dos softwares indicados no link (<https://support.huaweicl
 
 ### Com todos os ajustes da instância realizados, agora utilizamos a ECS para criação da imagem, basta parar a ECS e na opção more selecionar “Manage Image” e depois Create Image.
 
-### ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image15.png)
+### ![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image15.png)
 
 ### Com a imagem criada e aparecendo no serviço de IMS já está disponível para ser utilizada no serviço do Workspace.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image16.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image16.png)
 
 # Criação imagem Ubuntu
 
 ### Faça o download da imagem ISO do Ubuntu Desktop (são suportados no momento do documento as versões 18.04.5-desktop-amd64 ou ubuntu-20.04.5.0-desktop-amd64 - <https://mu.releases.ubuntu.com/20.04.5/> - <https://old-releases.ubuntu.com/releases/18.04.5/>) e faça o upload no OBS.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image17.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image17.png)
 
 ## Importe a imagem ISO do ubuntu no serviço IMS.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image18.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image18.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image19.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image19.png)
 
-## ![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image20.png)
+## ![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image20.png)
 
 ## Crie uma ECS usando a imagem criada com o importe da imagem ISO.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image21.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image21.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image22.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image22.png)
 
 ## Acesso a instância e abra o terminal shell
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image23.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image23.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image24.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image24.png)
 
 ## Instale os pacotes libxcb-xinerama0, gawk
 
@@ -132,7 +132,7 @@ apt install linux-modules-extra-5.15.0-72-generic -y
 grep menuentry /boot/grub/grub.cfg
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image25.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image25.png)
 
 ## Registre a localização da versão 5.15.0-72, como mostrado na figura do kernel:
 
@@ -140,7 +140,7 @@ grep menuentry /boot/grub/grub.cfg
 sudo nano /etc/default/grub
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image26.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image26.png)
 
 ##  Instale e inicie o openssh
 
@@ -156,7 +156,7 @@ service sshd start
 nano /etc/ssh/sshd_config
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image27.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image27.png)
 
 ## Instalar python 3
 
@@ -176,7 +176,7 @@ nano /etc/cloud/cloud.cfg
 do arquivo, ajuste os módulos config comentando a linha “locale”, na
 lista de módulos de inicialização coloque o ssh como primeiro item :
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image28.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image28.png)
 
 ```shell
 datasource_list: [ OpenStack ]
@@ -189,11 +189,11 @@ network:
   config: disabled
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image29.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image29.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image30.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image30.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image31.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image31.png)
 
 ###  Verifique o cloud-init, caso apresente algum erro tente reiniciar a instância e execute o comando novamente:
 
@@ -201,7 +201,7 @@ network:
 sudo cloud-init init --local
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image32.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image32.png)
 
 ##  Instalar KVM
 
@@ -218,13 +218,13 @@ virtio_ring
 virtio
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image33.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image33.png)
 
 ```shell
 update-initramfs -u
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image34.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image34.png)
 
 ## Baixe o pacote do HDA
 
@@ -254,7 +254,7 @@ cd /usr/local/hdpserver/hwsysagent/scripts20
 bash cleanCache.sh
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image35.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image35.png)
 
 
 ```shell
@@ -262,7 +262,7 @@ touch /usr/share/glib-2.0/schemas/19_mysettings.gschema.override
 nano /usr/share/glib-2.0/schemas/19_mysettings.gschema.override
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image36.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image36.png)
 
 ```shell
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
@@ -270,10 +270,10 @@ sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
 ## Para a instância e criar a imagem:
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image37.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image37.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image38.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image38.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image39.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image39.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-private-windows-10-and-ubuntu-workspace-images/media/image40.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image40.png)

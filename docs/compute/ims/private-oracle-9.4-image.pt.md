@@ -26,29 +26,29 @@ criação de imagem do OracleOS 9.4 utilizando o serviço de IMS.
 
 Faça o download da imagem ISO do Ubuntu Server (exemplo - <https://yum.oracle.com/oracle-linux-isos.html>) e faça o upload no OBS.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image3.png)
 
 ## Importe a imagem ISO do OracleOS no serviço IMS.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image4.png)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image5.png)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image6.png)
 
 ## Crie uma ECS usando a imagem criada com o importe da imagem ISO.
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image7.png)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image8.png)
 
 ## Acesse a instância e abra o terminal shell
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image9.png)
 
 ## Vincule um EIP à máquina
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image10.png)
 
 ## Instalar e configurar o cloud-init
 
@@ -64,7 +64,7 @@ yum install cloud-init -y
 vi /etc/selinux/config
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image11.png)
 
 ```shell
 systemctl reboot
@@ -103,10 +103,10 @@ dracut --regenerate-all –force
 
 ## Para a instância e criar a imagem:
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image12.png)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image13.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image13.png)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image14.png)
 
-![](/huaweicloud-knowledge-base/assets/images/ECS-Private-OracleOS-9.4-Image/media/image15.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image15.png)

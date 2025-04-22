@@ -39,7 +39,7 @@ recursos** na respectiva cloud para os seguintes serviços: **EC2, RDS,
 S3 e EFS**. Abaixo se encontra um exemplo das políticas e permissões
 somente de leitura necessárias para o serviço EC2:
 
-![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image3.png)
 
 # Realizando o Discovery de Recursos pela Internet
 
@@ -53,57 +53,57 @@ no console da Huawei Cloud. No canto inferior esquerdo, escolha a opção
 **Settings** e então **Migration Projects**. Clique em **Create
 Project**.
 
-> ![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image4.png)
+> ![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image4.png)
 >
 > Escolha um nome para o projeto a ser criado e escolha o tipo de
 > projeto **Complex**, em que há várias aplicações rodando cujas
 > dependências não são bem delimitadas. Clique, então, em **Confirm**
 > para criar um projeto.
 >
-> ![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image5.png)
+> ![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image5.png)
 
 No menu à esquerda, escolha a opção **Application Discovery** e clique
 em **Discover Over Internet** para realizar o discovery de recursos
 através da internet.
 
-![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image6.png)
 
 Caso uma task de discovery já tenha sido criada previamente, a opção de
 discovery ficará localizada na opção **Discover** e então **Over
 Internet**.
 
-![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image7.png)
 
 Preencha um nome para a task de discovery e a provedora cloud em que a
 conta cujos recursos serão analisados se encontram. Depois, em
 **Credential**, clique na opção **Create**.
 
-![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image8.png)
 
 Preencha um nome para a credencial e em **Authentication** selecione a
 opção **AK/SK** ou **ID and Key**. Depois, coloque a chave obtida no
 item 2.0 deste material e clique em **Verify and Save**.
 
-![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image9.png)
 
 Selecione a credencial cadastrada. No campo de regiões, selecione todas
 em **Select All**.
 
-![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image10.png)
 
 Para **Resource Type** selecione **Select all** e clique em **Confirm**.
 
-![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image11.png)
 
 Aguarde e task de discovery finalizar e então volte para uma página
 anterior
 
-![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image12.png)
 
 Nesta página, é possível visualizar os tipos de recursos analisados e
 clicar neles para ver em detalhes todos os recursos descobertos.
 
-![](/huaweicloud-knowledge-base/assets/images/MgC-Resources-Discovery/media/image13.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image13.png)
 
 # Referências
 

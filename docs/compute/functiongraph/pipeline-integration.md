@@ -33,9 +33,9 @@ There are two approaches to this integration: using pipelines from HWC’s CodeA
 
 Navigate to the SWR service in the Huawei Cloud console. Click the “Organizations” tab and click “Create Organization”. Give the organization a name and click “OK” to confirm the organization creation.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image3.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image4.png)
 
 # CodeArts
 
@@ -45,56 +45,56 @@ To integrate a FunctionGraph function with a pipeline created in the Huawei Clou
 
 Navigate to the CodeArts Req service in the Huawei Cloud console. If this is your first time logging into the service, you will be prompted to create a CodeArts project. Access the settings of the created CodeArts project by clicking on “Settings” \> “General” \> “Service Endpoints” \> “Create Endpoint”. Select the service where the source code related to the Dockerfile is located.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image5.png)
 
 Select the authentication type with the repository and click on “Authorize and Confirm” to authenticate with the repository.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image6.png)
 
 ## **CodeArts Build**
 
 Once the repository endpoint has been created, navigate to the CodeArts Build service and
-click on “Create Task” to create a Build task. Give the task a name, select the Code Source type where the Dockerfile source code will be located. ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image7.png) ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image8.png) Configure the Service Endpoint created in item 4.1 of this document, select the repository and the repository branch and click “Next”. ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image9.png) Select the “Maven and Container” build template and click “OK”. ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image10.png)
+click on “Create Task” to create a Build task. Give the task a name, select the Code Source type where the Dockerfile source code will be located. ![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image7.png) ![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image8.png) Configure the Service Endpoint created in item 4.1 of this document, select the repository and the repository branch and click “Next”. ![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image9.png) Select the “Maven and Container” build template and click “OK”. ![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image10.png)
 
 Delete the Maven build step from the build process.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image11.png)
 
 Click on the “Build Image and Push to SWR” build step, select the desired Docker version, the image repository as SWR, and the organization created in item 3.0 of this document.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image12.png)
 
 **<span class="underline">Important:</span>** For the image name and tag, both must be fixed, since changes to the image in FunctionGraph will only be reflected for a given name and tag pair. It is recommended to use the latest tag.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image13.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image13.png)
 
 ## **CodeArts Pipelines**
 
-Navigate to the CodeArts Pipelines service section in the Huawei Cloud console and click “Create Pipeline”. ![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image14.png)
+Navigate to the CodeArts Pipelines service section in the Huawei Cloud console and click “Create Pipeline”. ![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image14.png)
 
 Set a name for the pipeline, the service where the Dockerfile source code is located, and the endpoint created in item 4.1 of this document.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image15.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image15.png)
 
 Also configure the repository where the source code is located and its branch. Click “Next” to proceed and select the “Blank Template” template.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image16.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image16.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image17.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image17.png)
 
 In “Stage\_1”, delete the existing “New Job” and create a job for Build. In the Build stage configuration, associate the task created in item 4.2 of this document and the repository where the Dockerfile source code is located.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image18.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image18.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image19.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image19.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image20.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image20.png)
 
 To add a trigger to the pipeline, click “Task Orchestration” above and select the “Execution Plan” option. Select the trigger type, such as code commit or merge request.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image21.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image21.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image22.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image22.png)
 
 # Third-party pipeline
 
@@ -110,40 +110,40 @@ first log in to the Huawei Cloud console and access the
 Identity and Access Management (IAM) service, click “User Groups” and then
 “Create User Group”.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image23.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image23.png)
 
 Give the group a name and click “OK”.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image24.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image24.png)
 
 Click “Authorize” next to the created group, select the “SWR
 Admin” policy, followed by “OK” and “Finish”.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image25.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image25.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image26.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image26.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image27.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image27.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image28.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image28.png)
 
 Now to create a new user, click on “Create User”.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image29.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image29.png)
 
 Give the user a name, uncheck the “Management console
 access” box, and check the “Access key” box. Click “Next” to
 proceed, add the user to the group created above, and then click
 “Create”.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image30.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image30.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image31.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image31.png)
 
 Click “OK” to download the generated AK/SK key, which will be used
 to create authentication credentials with Docker later.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image32.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image32.png)
 
 ### **Generating Docker credentials**
 
@@ -156,7 +156,7 @@ printf "AK" | openssl dgst -binary -sha256 -hmac "SK" | od -An -vtx1 |
 sed 's/\[ \\n\]//g' | sed 'N;s/\\n//'
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image33.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image33.png)
 
 After executing the command, a key will be generated. Simply replace the
 key generated in the command below in the “Login key” field and the AK in the “AK” field
@@ -173,7 +173,7 @@ swr.la-south-2.myhuaweicloud.com. Here is an example of the authentication comma
 docker login -u la-south-2@RVHVMX\*\*\*\*\*\* -p cab4ceab4a1545\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\* swr.la-south-2.myhuaweicloud.com
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image34.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image34.png)
 
 ## **Uploading the image to SWR**
 
@@ -217,12 +217,12 @@ Example:
 docker push swr.la-south-2.myhuaweicloud.com/adada/serase
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image35.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image35.png)
 
 On the SWR service page in the HWC console, you can see that the
 image was successfully published to the repository:
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image36.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image36.png)
 
 ## **Creating the pipeline task**
 
@@ -243,9 +243,9 @@ executed in Docker that will follow the following workflow:
 
 7. Log out of the SWR repository;
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image37.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image37.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image38.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image38.png)
 
 # FunctionGraph
 
@@ -254,7 +254,7 @@ Pipeline is exactly the same as the image associated with the function in
 FunctionGraph, any changes made to the image will be reflected in the
 FunctionGraph function.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image39.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image39.png)
 
 # Example
 
@@ -262,28 +262,28 @@ In this example, a pipeline was created so that every time a commit is made to t
 
 Committing to GitHub repository:
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image40.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image40.png)
 
 Pipeline triggered:
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image41.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image41.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image42.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image42.png)
 
 Build complete, pipeline completed:
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image43.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image43.png)
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image44.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image44.png)
 
 You can see in the SWR repository that the image has been updated:
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image45.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image45.png)
 
 Since the image has the same URL as the image associated with the
 FunctionGraph function, the changes will be reflected in the desired function.
 
-![](/huaweicloud-knowledge-base/assets/images/Functiongraph-Pipeline-Integration/media/image39.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image39.png)
 
 # References
 

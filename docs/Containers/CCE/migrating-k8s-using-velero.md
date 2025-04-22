@@ -26,11 +26,11 @@ using velero.
 
 To start, we access the CCE service and create the cluster as shown in the images below (for these tests, the source cluster was created in the Santiago region and the target cluster in the São Paulo region):
 
-![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-K8S-Using-Velero/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/containers/cce/migrating-k8s-using-velero/image3.png)
 
-![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-K8S-Using-Velero/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/containers/cce/migrating-k8s-using-velero/image4.png)
 
-![](/huaweicloud-knowledge-base/assets/images/CCE-Migrating-K8S-Using-Velero/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/containers/cce/migrating-k8s-using-velero/image5.png)
 
 # Install and configure kubectl (bastion)
 

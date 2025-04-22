@@ -30,17 +30,17 @@ Solução:
 Você pode ir para o seguinte diretório: C:\\SMS-Agent-Py3\\config   ou
 C:\\SMS-Agent-Py2\\config.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/media/image1.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image1.png)
 
 Em seguida, abra o arquivo conforme mostrado na imagem: g-property.cfg
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/media/image2.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image2.png)
 
 Em seguida, altere 'start\_type = MANUAL' para 'start\_type = MGC' no arquivo.
 
-antes:![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/media/image3.png)
+antes:![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image3.png)
 
-depois:![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/media/image4.png)
+depois:![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image4.png)
 
 Finalmente, reinicie o agente.
 
@@ -50,7 +50,7 @@ Você pode abrir o arquivo :SMS-Agent/agent/config/g-property.cfg
 
 Então altere 'start\_type = MANUAL' para 'start\_type = MGC' no arquivo.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Failed-to-Start-Agent/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image5.png)
 
 
 

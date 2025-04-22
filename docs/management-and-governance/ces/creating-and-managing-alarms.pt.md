@@ -67,9 +67,9 @@ maior atenção.
 É possível ter uma visão de como a página inicial do Cloud Eye é nas
 imagens abaixo:
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image3.png)
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image4.png)
 
 ## Grupos de recurso
 
@@ -80,20 +80,20 @@ gestão de alarmes para diversos recursos em lote.
 Um grupo de recursos pode ser criado na seção **Resource Groups**,
 clicando em **Create Resource Group**.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image5.png)
 
 Na página carregada, escolha um nome para o grupo de recursos em
 **Name** e selecione os recursos a serem adicionados ao grupo por
 serviço. Após adicionar todos os recursos desejados, clique em
 **Create**.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image6.png)
 
 É possível criar alarmes para um grupo de recursos específico,
 facilitando a criação de alarmes em lote para múltiplos recursos que
 compartilhem um mesmo contexto.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image7.png)
 
 ## Gestão de alarmes
 
@@ -122,7 +122,7 @@ Para criar um alarme para determinado recurso baseado em um evento ou
 métrica, navegue para a seção **Alarm Rules**, em **Alarm Management**
 e clique em **Create Alarm Rule**.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image8.png)
 
 Configure os ajustes básicos do alarme, como o nome do alarme em
 **Name** e o tipo de recurso que será monitorado em **Resource Type**,
@@ -153,13 +153,13 @@ distintas:
     opção para escolher uma instância específica do serviço selecionado
     para disparar o alarme.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image9.png)
 
 Neste exemplo, a ECS “ecs-4194” será selecionada como a instância que
 poderá disparar o alarme no campo **Specific resources** em **Monitoring
 Scope**.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image10.png)
 
 Há três formas distintas de configurar a métrica que irá disparar o
 alarme em **Method**:
@@ -191,7 +191,7 @@ dos dados ingeridos; assim como a porcentagem que irá disparar o alarme
 e a forma de comparação, como maior ou igual, maior, menor, menor ou
 igual, aumento em relação à ou decremento em relação à.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image11.png)
 
 Na seção **Alarm Notification** é possível configurar uma notificação
 para os alarmes disparados por e-mail, SMS, requests HTTP e HTTPS ou
@@ -203,31 +203,31 @@ será configurado para receber as notificações dos alarmes do Cloud Eye.
 Para isso, é necessário primeiro ativar o serviço Short Message
 Notification (SMN).
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image12.png)
 
 Clique em **Topics** para visualizar os tópicos de notificação criados.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image13.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image13.png)
 
 Clique em **Create Topic** para criar um tópico de notificações.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image14.png)
 
 Digite o nome do tópico das notificações em **Topic Name** e clique em
 **OK**.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image15.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image15.png)
 
 Em seguida, clique em **Add Subscription** para adicionar um canal de
 comunicações pelo qual a notificação será enviada.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image16.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image16.png)
 
 Em seguida, escolha o protocolo de envio da notificação, neste caso
 **Email**, e digite o e-mail escolhido em **Endpoints**. Clique em
 **OK**.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image17.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image17.png)
 
 Um e-mail será enviado para o endpoint selecionado. Para que o serviço
 SMN funcione corretamente, faz-se necessário que o usuário confirme o
@@ -242,25 +242,25 @@ na seção **Trigger Condition**: quando o alarme é gerado ou quando o
 alarme é limpo. Após configurado, selecione **Create** para criar o
 alarme.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image18.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image18.png)
 
 Em **Alarm Rules** é possível ver os alarmes criados e os seus status,
 assim como o recurso que é monitorado e a política de ativação do
 alarme.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image19.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image19.png)
 
 Após um alarme ser disparado, é possível consulta-lo na seção **Alarm
 Records** em **Alarm Management**.
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image20.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image20.png)
 
 Também é possível visualizar a notificação gerada pelo alarme no
 endpoint escolhido para o envio da notificação no serviço SMN. Em um
 outro contexto, o seguinte e-mail foi gerado para o monitoramento de um
 bucket no serviço OBS para armazenamento de objetos na Huawei Cloud:
 
-![](/huaweicloud-knowledge-base/assets/images/CES-Creating-and-Managing-Alarms/media/image21.png)
+![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image21.png)
 
 As tabelas referentes às métricas e eventos monitorados para os serviços
 de ECS, VPN, NAT e CBR da Huawei Cloud foram incluídas na seção 4.0 de

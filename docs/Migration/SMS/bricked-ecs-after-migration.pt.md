@@ -43,9 +43,9 @@ fatores que pode causar o congelamento da ECS.
 Ao tentar acessar a ECS por meio de “remote login” ou SSH, os seguintes
 erros ocorrem:
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image3.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image4.png)
 
 # ECS temporária
 
@@ -59,31 +59,31 @@ temporária como um disco de dados.
 
 Removendo o disco de sistema da ECS congelada:
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image5.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image6.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image7.png)
 
 Acoplando o disco de sistema da ECS congelada na ECS temporária como um
 disco de dados:
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image8.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image9.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image10.png)
 
 Após isso, acesse remotamente a ECS temporária e use o comando “fdisk
 -l” para listar os discos acoplados na máquina.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image11.png)
 
 Ao identificar o disco que foi acoplado à ECS temporária, realize a
 montagem do disco com o comando mount. Por exemplo: “mount /dev/vdb1
 /mnt”.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image12.png)
 
 Feito a montagem, realize os seguintes passos:
 
@@ -93,7 +93,7 @@ Feito a montagem, realize os seguintes passos:
 rm /mnt/boot/grub/grub.cfg
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image13.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image13.png)
 
 2.  > Copie o kernel genérico da ECS temporária para o diretório /boot da ECS congelada: 
 
@@ -102,7 +102,7 @@ cp /boot/vmlinuz-5.4.0-170-generic /mnt/boot/vmlinuz-5.4.0-170-generic
 ```
 **<span class="underline">Importante:</span>** O nome do kernel utilizado foi somente um exemplo, é necessário copiar o kernel utilizado pela ECS temporária. Em caso de dúvida, utilize o comando “uname -r” para listar a versão do kernel em execução.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image14.png)
 
 3.  > Copie o initrd da ESC temporária para o diretório /boot da ECS congelada: 
 
@@ -111,21 +111,21 @@ cp /boot/initrd.img-5.4.0-170-generic /mnt/boot/initrd.img-5.4.0-170-generic
 ```
 **<span class="underline">Importante:</span>** Copie o initrd relativo ao kernel copiado no item 2.0. Caso não haja nenhum initrd, gere um com o comando “update-initramfs -u”.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image15.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image15.png)
 
 Remova o disco de dados com o comando “umount /dev/vdb1”.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image16.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image16.png)
 
 Feito isso, coloque o disco de sistema da ECS congelada de volta na ECS
 original, seguindo o passo-a-passo do item 4.0 deste documento. Feito
 isso, inicie a máquina e faça “remote login” nela através do console.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image17.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image17.png)
 
 # Grub shell
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image18.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image18.png)
 
 Execute o comando “ls” para listar as partições de disco vistas pelo
 Grub. Para identificar qual é a partição correta a ser utilizada,
@@ -133,7 +133,7 @@ execute o comando “ls (hd0,gpt1)/” até encontrar a partição com o
 conteúdo do disco de sistema, substituindo “hd0,gpt1” pelas partições
 vistas pelo comando “ls”.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image19.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image19.png)
 
 Ao encontrar a partição correta, efetue os seguintes passos para dar
 boot em modo single-user no kernel da ECS temporária:
@@ -162,43 +162,43 @@ initrd /boot/initrd.img-5.4.0-170-generic
 boot
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image20.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image20.png)
 
 Após digitar o comando boot, a ECS será inicializada em modo
 single-user. Digite a senha root da ECS quando requisitado.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image21.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image21.png)
 
 # Single-user
 
 Utilize o comando “apt-get remove cloud-init -y” para desinstalar o
 cloud-init.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image22.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image22.png)
 
 Utilize o comando “update-grub” para gerar o arquivo de configurações do
 grub previamente deletado.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image23.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image23.png)
 
 Utilize o comando “grep 'menuentry ' /boot/grub/grub.cfg” para listar as
 versões do kernel existentes no sistema e copie a versão desejada para
 que o Grub dê boot por padrão.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image24.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image24.png)
 
 Utilize o comando “vim /etc/default/grub” para modificar o arquivo de
 configurações do grub. Altere os parâmetros grub_default={nome do
 kernel copiado acima}, "grub_timeout_style=menu" e "grub_timeout=10".
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image25.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image25.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image26.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image26.png)
 
 Utilize o comando “update-grub” para atualizar o arquivo de
 configurações do grub novamente.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image23.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image23.png)
 
 Utilize o comando “reboot” para reiniciar a ECS. Note que agora a
 máquina inicializará normalmente.
@@ -216,14 +216,14 @@ Digite o comando “vim /etc/netplan/50-cloud-init.yaml” para abrir o
 arquivo de configurações de rede da ECS e adicione a interface eth0 da
 seguinte forma:
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image27.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image27.png)
 
 Feito isso, aplique as configurações feitas com o comando “netplan
 apply”
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image28.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image28.png)
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image29.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image29.png)
 
 Caso a conectividade ainda não tenha retornado ao normal, verifique a
 instalação dos drivers KVM a partir da seguinte documentação:
@@ -241,7 +241,7 @@ sed -i 's/azure.archive.ubuntu.com/repo.huaweicloud.com/g' /etc/apt/sources.list
 apt autoclean && apt update
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image30.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image30.png)
 
 Feito a troca dos repositórios, reinstale o cloud-init com o comando:
 
@@ -252,7 +252,7 @@ apt-get install cloud-init
 **<span class="underline">Importante:</span>** Não instale a versão
 23.3.3 do cloud-init.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image31.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image31.png)
 
 Instale uma nova versão do kernel do Linux com o comando:
 
@@ -260,23 +260,23 @@ Instale uma nova versão do kernel do Linux com o comando:
 apt-get install linux-image-generic
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image32.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image32.png)
 
 Utilize o comando “grep 'menuentry ' /boot/grub/grub.cfg” para listar as
 versões do kernel existentes no sistema e copie a versão mais recente
 instalada.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image33.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image33.png)
 
 Utilize o comando “vim /etc/default/grub” para modificar o arquivo de
 configurações do grub. Altere os parâmetros grub\_default={nome do
 kernel copiado acima}.
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image34.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image34.png)
 
 Utilize o comando “update-grub” para atualizar o arquivo de
 configurações do grub novamente.
 
-![](/huaweicloud-knowledge-base/assets/images/SMS-Bricked-ECS-After-Migration/media/image35.png)
+![](/huaweicloud-knowledge-base/assets/images/migration/sms/bricked-ecs-after-migration/image35.png)
 
 Utilize o comando “reboot” para reiniciar a ECS no kernel atualizado.
 

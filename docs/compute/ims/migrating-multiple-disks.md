@@ -28,7 +28,7 @@ This document aims to describe the methodology for creating private images from 
 To perform VM migration using IMS, you need to install the qemu-img tool to generate system and disk images. Install the tool using the following command: “yum
 install qemu-img -y”.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image3.png)
 
 To check the paths of the disks to be migrated, type the command
 “fdisk -l” to list the disks present in the VM.
@@ -36,7 +36,7 @@ To check the paths of the disks to be migrated, type the command
 disk as a **whole (vda),** and not just a partition of the disk
 (vda1).
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image4.png)
 
 To export disks to images, type the following command “sudo
 qemu-img convert -f raw -O qcow2 /dev/vda /mnt/vdb/test.qcow2”, where the
@@ -60,7 +60,7 @@ CLI. Obsutil documentation:
 # IMS
 
 In order to import images to IMS, these images must be
-available in a bucket in the Huawei Cloud OBS Object Storage service. After uploading these images to the bucket, navigate to the IMS service section in the Huawei Cloud console and select “Create Image” in the “Private Images” section. ![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image5.png) ![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image6.png) Select the “Import Image” option. For system disks, select the “System disk image” option and click the bucket where the image is located. ![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image7.png)
+available in a bucket in the Huawei Cloud OBS Object Storage service. After uploading these images to the bucket, navigate to the IMS service section in the Huawei Cloud console and select “Create Image” in the “Private Images” section. ![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image5.png) ![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image6.png) Select the “Import Image” option. For system disks, select the “System disk image” option and click the bucket where the image is located. ![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image7.png)
 
 Select the system disk image from the objects contained in the
 bucket and select the “Enable automatic configuration” option.
@@ -70,38 +70,38 @@ or UEFI, the machine’s operating system, the system disk size
 and the name of the image to be created. Click “Next” to proceed and
 confirm the image creation.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image8.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image9.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image10.png)
 
 Wait until the image is finished being created.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image11.png)
 
 To create data disks, repeat the same process
 above, selecting the “Data disk image” option in “Image Type” instead
 of “System disk image”.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image12.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image13.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image13.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image14.png)
 
 # ECS Creation
 
 After the image creation is complete, navigate to the created system disk image and select “Apply for Server” to create a server from the generated image.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image15.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image15.png)
 
 Select the created system disk image and complete the remaining
 ECS creation settings.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image16.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image16.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image17.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image17.png)
 
 # EVS Creation
 
@@ -109,23 +109,23 @@ After creating the server from its system disk, navigate to
 the created data disk image and select “Create Data Disk” to
 create a data disk from the generated image.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image18.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image18.png)
 
 Configure the parameters of the disk to be created, as the disk name and size, and **mark the same AZ as the previously created server**. Otherwise, it will not be possible to mount the disk on the ECS.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image19.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image19.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image20.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image20.png)
 
 # Mount the EVS on the ECS
 
 Finally, to mount the data disk on the server, navigate to the ECS section in the console and click on the created ECS. After that, click on the “Disks” section and select “Attach Disk”
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image21.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image21.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image22.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image22.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image23.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image23.png)
 
 Select the created disk and click “OK” to associate the disk with the
 instance. With the disk associated with the instance, simply configure the disk’s mount
@@ -134,28 +134,28 @@ through the instance’s terminal.
 # Recover File System
 
 If the file system of the migrated machines is corrupted after
-migration, it will be necessary to restore it through an intermediate VM. To confirm that the filesystem of the system disk is damaged, first wait until the following message appears during boot. Waiting for the following error to appear before proceeding to the next steps is important for the process. ![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image24.png) After creating a new ECS in the HWC console, mount the disks whose filesystem needs to be restored to the intermediate ECS. First, remove the damaged disks from the original ECS and then place them in the intermediate ECS. ![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image25.png)
+migration, it will be necessary to restore it through an intermediate VM. To confirm that the filesystem of the system disk is damaged, first wait until the following message appears during boot. Waiting for the following error to appear before proceeding to the next steps is important for the process. ![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image24.png) After creating a new ECS in the HWC console, mount the disks whose filesystem needs to be restored to the intermediate ECS. First, remove the damaged disks from the original ECS and then place them in the intermediate ECS. ![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image25.png)
 
 After removing the disks from the original ECS, mount them on the intermediate ECS
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image26.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image26.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image27.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image27.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image28.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image28.png)
 
 Log in to the intermediate ECS and enter the command “fdisk -l” to
 list the disks mounted on the ECS. Copy the path of the device whose filesystem is corrupted, such as “/dev/vdc” or “/dev/vdb1”.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image29.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image29.png)
 
 To recover the corrupted filesystem, enter the command “fsck /dev/vdb”, where /dev/vdb will be replaced by the disk or partition that needs to be recovered. Press “a” to recover all corrupted inodes. It is worth noting that the disk does not need to be mounted in a directory for this process.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image30.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image30.png)
 
 Wait until the recovery of all inodes is complete.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image31.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image31.png)
 
 # Modifying fstab
 
@@ -164,19 +164,19 @@ following steps to edit the fstab disk table of the system. It is worth
 noting that for this step it will also be necessary to use an intermediate ECS
 if the filesystem of the original ECS is set to read-only due to a bad initialization. First, mount the system disk in a directory.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image32.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image32.png)
 
 Edit the “/etc/fstab” file of the original ECS system disk.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image33.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image33.png)
 
 Comment out all the old mounted disks in fstab.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image34.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image34.png)
 
 After that, unmount the disk from the directory where it was mounted and remove the disks from the ECS to insert them into the original ECS again.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Migrating-Multiple-Disks/media/image35.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/migrating-multiple-disks/image35.png)
 
 # References
 

@@ -27,17 +27,17 @@ To delegate permissions for creating resources using the Terraform tool, it is n
 
 To do this, access the Huawei Cloud console, hover over the account name in the upper right corner and click “My Credentials”. Once done, click “Access Keys” and “Create Access Key”.
 
-![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/huawei-cloud-stack/hcso/terraform-startup/image3.png)
 
-![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/huawei-cloud-stack/hcso/terraform-startup/image4.png)
 
 If a warning window appears, accept the credential creation and
 click “Create” followed by “Download” to download the
 AK/SK key pair.
 
-![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/huawei-cloud-stack/hcso/terraform-startup/image5.png)
 
-![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/huawei-cloud-stack/hcso/terraform-startup/image6.png)
 
 **Note:** The permissions of the created AK/SK key will be inherited from the
 user who created it. If you encounter any permission-related issues, refer to the following IAM permissions documentation to delegate the necessary permissions: <https://support.huaweicloud.com/intl/en-us/productdesc-iam/iam_01_0036.html>.
@@ -100,26 +100,26 @@ HCSO implementations:
 Below is an example of validating the configuration performed in the
 Terraform tool, as well as the result in the HCSO console:
 
-![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/huawei-cloud-stack/hcso/terraform-startup/image7.png)
 
 Using the terraform init command to initialize the
 Terraform repository:
 
-![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/huawei-cloud-stack/hcso/terraform-startup/image8.png)
 
 Using the terraform plan command to verify the
 code developed by Terraform:
 
-![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/huawei-cloud-stack/hcso/terraform-startup/image9.png)
 
 Using the terraform apply command to apply the
 modifications made, in this case the creation of the resource VPC:
 
-![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/huawei-cloud-stack/hcso/terraform-startup/image10.png)
 
 Result of creating VPC in HCSO console:
 
-![](/huaweicloud-knowledge-base/assets/images/HCSO-Terraform/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/huawei-cloud-stack/hcso/terraform-startup/image11.png)
 
 # References
 

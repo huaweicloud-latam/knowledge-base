@@ -26,27 +26,27 @@ creating an Ubuntu 20.04 image with UEFI using the IMS service.
 
 ## Download the Ubuntu Server ISO image (example - <https://releases.ubuntu.com/focal/>) and upload it to OBS.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image3.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image3.png)
 
 ## Import the Ubuntu ISO image into the IMS service.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image4.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image4.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image5.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image5.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image6.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image6.png)
 
 Note: At the time of creating this document, when we select UEFI and Ubuntu, the options for versions 18.04 and 20.04 do not appear, but this was reported to the product team, who informed us and the change will be made in December 2023. At that time, you can select the 16.04 option and the system will work normally.
 
 ## Create an ECS using the image created by importing the ISO image.
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image7.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image7.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image8.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image8.png)
 
 ## Access the instance and open the shell terminal
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image9.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image9.png)
 
 ## Install KVM
 
@@ -63,7 +63,7 @@ virtio_ring
 virtio
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image10.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image10.png)
 
 ```shell
 update-initramfs -u
@@ -83,7 +83,7 @@ service sshd start
 nano /etc/ssh/sshd_config
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image11.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image11.png)
 
 ## Install and configure cloud-init
 
@@ -123,13 +123,13 @@ file:
 ssh_pwauth: true
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image12.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image12.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image13.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image13.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image14.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image14.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image15.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image15.png)
 
 ```shell
 datasource_list: [ OpenStack ]
@@ -149,14 +149,14 @@ network:
 sudo cloud-init init --local
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image16.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image16.png)
 
 ## Stop the instance and create the image:
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image17.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image17.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image18.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image18.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image19.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image19.png)
 
-![](/huaweicloud-knowledge-base/assets/images/IMS-Creating-a-Private-Ubuntu-Image/media/image20.png)
+![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-ubuntu-image/image20.png)
