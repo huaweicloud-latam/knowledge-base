@@ -68,7 +68,6 @@ provider "huaweicloud" {
   auth_url="https://iam-pub.{region}.{domain}"
   insecure = true
 }
-
 ```
 
 - region: HCSO region where the resources will be created;
