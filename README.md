@@ -1,10 +1,56 @@
 # huaweicloud-knowledge-base
 
-TODO
+This repository is home to a collaborative, public knowledge base website for Huawei Cloud services. In this knowledge base, you can find technical guides for specific scenarios. You can access the website in the following hyperlink: <a href="https://hatz-d.github.io/huaweicloud-knowledge-base/" website>, available in English and Portuguese. Use the search bar or the navigation menu to browse the knowledge base.
 
 ## How you can contribute
 
-TODO
+In order to contribute to the knowledge base, you may submit a pull request containing the desired documentation. This repository is structured as follows:
+
+<ul>
+  <li><code>/docs</code>: directory in which the documentations are stored in the markdown file format. In this directory, upload the desired documentation following the structure <code>/docs/{service-category}/{service-name}/{documentation-name}.md</code>. If the documentation is written in Portuguese, modify the file suffix to <code>.pt.md</code>.</li>
+  <li><code>/assets/images</code>: directory in which the images of the documentations are stored. In this directory, upload the documentation assets following the structure <code>/assets/images/{service-category}/{service-name}/{documentation-name}/{assets}</code></li>
+</ul>
+
+You may refer to the documentations present in this repository as examples.
+
+## Documents Headers
+
+All the documentations <b>must</b> have the following header for proper indexing:
+
+```shell
+---
+title: {documentation title}
+layout: default
+parent: {HWC service name} ({HWC service name abbreviation})
+grand_parent: {HWC service category}
+permalink: /docs/{HWC service category}/{HWC service name abbreviation}/{documentation title}
+lang: pt {only when applicable}
+---
+```
+
+Example (English):
+
+```shell
+---
+title: Migrating K8S Cluster Using Velero
+layout: default
+parent: Cloud Container Engine (CCE)
+grand_parent: Containers
+permalink: /docs/containers/cce/migrating-k8s-cluster-using-velero
+---
+```
+
+Example (Portuguese):
+
+```shell
+---
+title: Migrando Cluster K8S Usando Velero
+layout: default
+parent: Cloud Container Engine (CCE)
+grand_parent: Containers
+lang: pt
+permalink: /docs/containers/cce/migrating-k8s-cluster-using-velero
+```
 
 ## Licensing and Attribution
 
