@@ -13,7 +13,7 @@ In order to contribute to the knowledge base, you may submit a pull request cont
 
 You may refer to the documentations present in this repository as examples.
 
-## Documents Headers
+### Documents Headers
 
 All the documentations <b>must</b> have the following header for proper indexing:
 
@@ -51,6 +51,10 @@ grand_parent: Containers
 lang: pt
 permalink: /docs/containers/cce/migrating-k8s-cluster-using-velero
 ```
+
+### Tutorial Video
+
+TODO
 
 ## Licensing and Attribution
 
