@@ -4,10 +4,10 @@ This repository is home to a collaborative, public knowledge base website for Hu
 
 ## How you can contribute
 
-In order to contribute to the knowledge base, you may submit a pull request containing the desired documentation. This repository is structured as follows:
+In order to contribute to the knowledge base, you may submit a pull request containing the desired documentation in the markdown file format and its assets. This repository is structured as follows:
 
 <ul>
-  <li><code>/docs</code>: directory in which the documentations are stored in the markdown file format. In this directory, upload the desired documentation following the structure <code>/docs/{service-category}/{service-name}/{documentation-name}.md</code>. If the documentation is written in Portuguese, modify the file suffix to <code>.pt.md</code>.</li>
+  <li><code>/docs</code>: directory in which the documentations are stored. In this directory, upload the desired documentation following the structure <code>/docs/{service-category}/{service-name}/{documentation-name}.md</code>. If the documentation is written in Portuguese, modify the file suffix to <code>.pt.md</code>.</li>
   <li><code>/assets/images</code>: directory in which the images of the documentations are stored. In this directory, upload the documentation assets following the structure <code>/assets/images/{service-category}/{service-name}/{documentation-name}/{assets}</code></li>
 </ul>
 
