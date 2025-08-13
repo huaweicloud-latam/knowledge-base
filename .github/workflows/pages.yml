@@ -43,7 +43,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: | 
+          sed -i -e "s|REPO-NAME-PLACEHOLDER|${GITHUB_REPOSITORY}|g" -e "s|${GITHUB_REPOSITORY_OWNER}/||g" -e "s|REPO-OWNER-PLACEHOLDER|${GITHUB_REPOSITORY_OWNER}|g" -e "s|REPO-PLACEHOLDER|${GITHUB_REPOSITORY}|g" _config.yml
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
