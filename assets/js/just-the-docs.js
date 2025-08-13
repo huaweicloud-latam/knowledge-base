@@ -95,7 +95,7 @@ function disableHeadStyleSheets() {
 function initSearch() {
   var path = window.location.pathname
   var langPrefix = path.split('/')[2];
-  var endpoint = langPrefix === 'pt' ? '/huaweicloud-knowledge-base/pt/assets/js/search-data.json' : '/huaweicloud-knowledge-base/assets/js/search-data.json';
+  var endpoint = langPrefix === 'pt' ? '/REPO-NAME-PLACEHOLDER/pt/assets/js/search-data.json' : '/REPO-NAME-PLACEHOLDER/assets/js/search-data.json';
 
   var request = new XMLHttpRequest();
   request.open('GET', endpoint, true);
