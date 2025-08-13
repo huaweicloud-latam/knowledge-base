@@ -2,7 +2,7 @@ title: Huawei Cloud Knowledge Base
 description: This blog is a knowledge base created in order to enable faster documentation sharing related to Huawei Cloud.
 theme: just-the-docs
 
-url: https://hatz-d.github.io/huaweicloud-knowledge-base
+url: https://REPO-OWNER-PLACEHOLDER.github.io/REPO-NAME-PLACEHOLDER
 
 defaults:
   - scope:
@@ -25,4 +25,4 @@ exclude_from_localization: ["javascript", "images", "css", "public", "sitemap"]
 parallel_localization: true
 
 aux_links:
-  Contribute: https://github.com/Hatz-D/huaweicloud-knowledge-base
+  Contribute: https://github.com/REPO-PLACEHOLDER
