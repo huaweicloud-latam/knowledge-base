@@ -12,8 +12,8 @@ V1.0 – July 2025
 
 | **Version**       | **Author**                          | **Description**      |
 | ----------------- | ----------------------------------- | -------------------- |
-| V1.0 – 2025-07-31 | Fernando Gabriel Chacon  50037923   | Initial Version      |
-| V1.0 – AAAA-MM-DD | XXXXXXXXXXXX YYYYYYYY               | Document Review      |
+| V1.0 – 2015-08-15 | Fernando Gabriel Chacon  50037923   | Initial Version      |
+| V1.0 – 2015-08-15 | Gabriel Gutierrez  00817435         | Document Review      |
 
 1. Index
 {:toc}
@@ -132,7 +132,7 @@ In the Window that opens, configure the following parameters (Application tab):
 
 - Path: `C:\rclone\rclone.exe`
 - Startup directory: `C:\rclone`
-- Arguments: mount `"obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt`
+- Arguments: `mount "obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt`
 
 {% include image.html post=page.path file="nssm-application-config.png" alt="NSSM set  param in application tab" %} 
 
@@ -145,13 +145,14 @@ In the I/O tab, configure the following parameters:
     
 In the File Rotation tab, configure the following parameters:
 
-- Check **“Rotate files”**
-- Check **“Rotate while service is running”**
-- Set **“Restrict rotation to files bigger than”** to “10000000” (~10MB)
+- Check **Rotate files**
+- Check **Rotate while service is running**
+- Set **Restrict rotation to files bigger than** to “10000000” (~10MB)
 
 {% include image.html post=page.path file="nssm-fr-config.png" alt="NSSM set  param in file rotation tab" %} 
 
 Click **Install service**
+
 Run the following command:
 ```shell
 C:\rclone\nssm.exe start Rclone-OBS

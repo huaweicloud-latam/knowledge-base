@@ -11,8 +11,8 @@ permalink: /docs/storage/obs/mount-obs-bucket-on-windows-using-rclone
 
 | **Versão**        | **Descrição**                       | **Descrição**             |
 | ----------------- | ----------------------------------- | --------------------------|
-| V1.0 – 2025-07-31 | Fernando Gabriel Chacon  50037923   | Versão Inicial            |
-| V1.0 – AAAA-MM-DD | XXXXXXXXXXXX YYYYYYYY               | Revisão do Documento      |
+| V1.0 – 2015-08-151 | Fernando Gabriel Chacon  50037923  | Versão Inicial            |
+| V1.0 – 2015-08-15 | Gabriel Gutierrez 00817435          | Revisão do Documento      |
 
 1. Índice
 {:toc}
@@ -130,7 +130,7 @@ Na janela que será aberta, configure os seguintes parâmetros (aba Application)
 
 - Path: `C:\rclone\rclone.exe`
 - Startup directory: `C:\rclone`
-- Arguments: mount `"obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt`
+- Arguments: `mount "obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt`
 {% include image.html post=page.path file="nssm-application-config.png" alt="NSSM set  param in application tab" %} 
 
 Na aba I/O, configure os seguintes parâmetros:
@@ -142,13 +142,14 @@ Na aba I/O, configure os seguintes parâmetros:
     
 Na aba File Rotation, configure os seguintes parâmetros:
 
-- Check **“Rotate files”**
-- Check **“Rotate while service is running”**
-- Set **“Restrict rotation to files bigger than”** to “10000000” (~10MB)
+- Check **Rotate files**
+- Check **Rotate while service is running**
+- Set **Restrict rotation to files bigger than** to “10000000” (~10MB)
 
 {% include image.html post=page.path file="nssm-fr-config.png" alt="NSSM set  param in file rotation tab" %} 
 
 Clique em `Install service`
+
 Execute o seguinte comando:
 ```shell
 C:\rclone\nssm.exe start Rclone-OBS
@@ -157,7 +158,6 @@ O bucket OBS deverá ser montado.
 
 Reinicie o sistema para confirmar que a montagem automática está funcionando.
 
-    
 {% include image.html post=page.path file="test-after-reboot.png" alt="Testing after rebboting" %}
 
 ## Referências
