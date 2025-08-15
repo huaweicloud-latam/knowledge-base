@@ -4,7 +4,11 @@ This repository is home to a collaborative, public knowledge base website for Hu
 
 ## How you can contribute
 
-In order to contribute to the knowledge base, you may submit a pull request containing the desired documentation in the markdown file format and its assets. This repository is structured as follows:
+In order to contribute to the knowledge base, you may <b><a href="https://github.com/Hatz-D/huaweicloud-knowledge-base/fork">fork this repository</a></b> and submit a pull request containing the desired documentation in the markdown file format and its assets. After having forked the repository, go to the <code>Pages</code> section and enable GitHub pages. After that, go to the <code>Actions</code> section, enable the workflows and manually run the workflow <code>Deploy Jekyll site to Pages</code> in order to build and deploy the knowledge center website. After the workflow has been successfully completed, you may access the website.
+
+## Repository structure
+
+This repository is structured as follows:
 
 <ul>
   <li><code>/docs</code>: directory in which the documentations are stored. In this directory, upload the desired documentation following the structure <code>/docs/{service-category}/{service-name}/{documentation-name}.md</code>. If the documentation is written in Portuguese, modify the file suffix to <code>.pt.md</code>.</li>
