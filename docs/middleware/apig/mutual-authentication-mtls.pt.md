@@ -1,5 +1,5 @@
 ---
-title: Mutual Authentication - MTLS
+title: Autenticação Mútua (mTLS)
 layout: default
 parent: API Gateway (APIG)
 grand_parent: Middleware
@@ -51,7 +51,7 @@ eliminando a necessidade de tokens para autenticação do cliente da API.
 
 # Arquitetura de Exemplo
 
-# <img
+<img
 src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image4.png"
 style="width:6.26667in;height:2.45in" />
 
