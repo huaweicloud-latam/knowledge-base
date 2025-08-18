@@ -360,7 +360,7 @@ openssl verify -CAfile ca.crt client.crt
 
 ## Acesse a API criada no API Gateway.
 
-## <img
+<img
 src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image17.png"
 style="width:6.26806in;height:2.09931in" />
 
