@@ -10,7 +10,7 @@ permalink: /docs/containers/cce/connecting-a-smb-server-in-cce
 
 # Conectando um Servidor SMB no CCE
 
-V1.0 – Janeiro 2024
+V1.0 – Agosto 2024
 
 | **Versão**        | **Autor**                | **Descrição**         |
 | ----------------- | ---------------------    | --------------------- |
