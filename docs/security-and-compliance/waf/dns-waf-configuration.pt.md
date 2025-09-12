@@ -12,8 +12,8 @@ V1.0 – Março de 2024
 
 | **Versão**        | **Autor**                           | **Descrição**        |
 | ----------------- | ----------------------------------- | -------------------- |
-| V1.0 – 03/18/2024 | Gustavo Marques Scovini g50037306   | Versão Inicial       |
-| V1.0 – 03/18/2024 | Leandro Ramos l50032583             | Versão Inicial       |
+| V1.0 – 2024-18-03 | Gustavo Marques Scovini g50037306   | Versão Inicial       |
+| V1.0 – 2024-18-03 | Leandro Ramos l50032583             | Versão Inicial       |
 
 # Compra de Domínio
 
