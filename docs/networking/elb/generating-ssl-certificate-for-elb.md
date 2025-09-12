@@ -10,8 +10,6 @@ permalink: /docs/networking/vpn/generating-ssl-certificate-for-elb
 
 V1.0 – July 2023
 
-# CHANGELOG
-
 | **Version**       | **Author**            | **Description** |
 |-------------------|-----------------------|---------------- |
 | V1.0 – 2023-07-07 | Wisley Paulo w0083850 | Initial release |

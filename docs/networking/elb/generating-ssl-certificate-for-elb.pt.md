@@ -11,8 +11,6 @@ lang: pt
 
 V1.0 – Julho 2023
 
-# REGISTRO DE MUDANÇAS
-
 | **Versão**        | **Autor**             | **Descrição**  |
 |-------------------|-----------------------|----------------|
 | V1.0 – 2023-07-07 | Wisley Paulo w0083850 | Versão inicial |
