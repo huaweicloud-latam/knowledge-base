@@ -5,7 +5,7 @@ permalink: /docs/others/partner-center
 lang: pt
 ---
 
-<img src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg" width="80" height="80" alt="Partner Center">
+<img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg" alt="Partner Center">
 
 # Partner Center
 
