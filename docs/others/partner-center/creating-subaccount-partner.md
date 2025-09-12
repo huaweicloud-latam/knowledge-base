@@ -14,6 +14,8 @@ V1.0 – January 2023
 | ----------------- | ------------------------------ | -------------------- |
 | V1.0 – 2023-01-03 | Thamires Calo 50030210         | Initial Version      |
 
+# Step-by-step
+
 Send an invite through the Partner Center.
 
 <img

@@ -15,6 +15,8 @@ V1.0 – Janeiro 2023
 | ----------------- | ------------------------------ | -------------------- |
 | V1.0 – 2023-01-03 | Thamires Calo 50030210         | Versão Inicial       |
 
+# Passo a passo
+
 Mandar um invite pelo partner center.
 
 <img

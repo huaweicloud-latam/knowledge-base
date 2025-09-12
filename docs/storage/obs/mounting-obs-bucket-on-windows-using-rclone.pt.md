@@ -11,8 +11,8 @@ permalink: /docs/storage/obs/mount-obs-bucket-on-windows-using-rclone
 
 | **Versão**        | **Autor**                           | **Descrição**             |
 | ----------------- | ----------------------------------- | --------------------------|
-| V1.0 – 2015-08-15 | Fernando Gabriel Chacon  50037923   | Versão Inicial            |
-| V1.0 – 2015-08-15 | Gabriel Gutierrez 00817435          | Revisão do Documento      |
+| V1.0 – 2025-08-15 | Fernando Gabriel Chacon  50037923   | Versão Inicial            |
+| V1.0 – 2025-08-15 | Gabriel Gutierrez 00817435          | Revisão do Documento      |
 
 1. Índice
 {:toc}

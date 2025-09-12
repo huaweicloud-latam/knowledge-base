@@ -12,8 +12,8 @@ V1.0 – July 2025
 
 | **Version**       | **Author**                          | **Description**      |
 | ----------------- | ----------------------------------- | -------------------- |
-| V1.0 – 2015-08-15 | Fernando Gabriel Chacon  50037923   | Initial Version      |
-| V1.0 – 2015-08-15 | Gabriel Gutierrez  00817435         | Document Review      |
+| V1.0 – 2025-08-15 | Fernando Gabriel Chacon  50037923   | Initial Version      |
+| V1.0 – 2025-08-15 | Gabriel Gutierrez  00817435         | Document Review      |
 
 1. Index
 {:toc}
