@@ -10,8 +10,6 @@ permalink: /docs/management-and-governance/iam/delegating-account-access-agency
 
 V1.0 – March 2023
 
-# CHANGE LOG
-
 | **Version**           | **Author**               | **Description** |
 |-------------------    |--------------------------|---------------- |
 | V1.0 – March 17, 2023 | Gabriel Gutiérrez 817435 | Initial Release |
