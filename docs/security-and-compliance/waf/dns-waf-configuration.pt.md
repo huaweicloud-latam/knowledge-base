@@ -3,6 +3,7 @@ title: Configurando DNS + WAF
 layout: default
 parent: Web Application Firewall (WAF)
 grand_parent: Segurança e Compliance
+lang: pt
 permalink: /docs/security-and-compliance/waf/dns-waf-configuration
 ---
 
