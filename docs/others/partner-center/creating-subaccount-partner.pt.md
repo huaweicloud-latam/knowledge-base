@@ -2,7 +2,7 @@
 title: Criando uma Subconta de Parceiro
 layout: default
 parent: Partner Center
-grand_parent: Others
+grand_parent: Outros
 permalink: /docs/others/partner-center/creating-subaccount-partner
 lang: pt
 ---

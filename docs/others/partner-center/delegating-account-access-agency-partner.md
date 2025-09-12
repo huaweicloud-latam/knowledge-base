@@ -83,16 +83,20 @@ Agency ID provided by the client; Finally, click “OK”:
 
 ```json
 {
-"Version": "1.1",
-"Statement": [
-{
-"Action": [ "iam:agencies:assume" ],
-"Resource": {
-"uri": [ "/iam/agencies/xxxxx" ]
-},
-"Effect": "Allow"
-}
-]
+   "Version":"1.1",
+   "Statement":[
+      {
+         "Action":[
+            "iam:agencies:assume"
+         ],
+         "Resource":{
+            "uri":[
+               "/iam/agencies/xxxxx"
+            ]
+         },
+         "Effect":"Allow"
+      }
+   ]
 }
 ```
 

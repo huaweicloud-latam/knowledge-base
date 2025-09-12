@@ -9,7 +9,7 @@ lang: pt
 
 # Delegando Acesso à Conta de Cliente via Agency
 
-V1.0 – março 2023
+V1.0 – Março 2023
 
 | **Versão**        | **Autor**                | **Descrição**  |
 |-------------------|--------------------------|----------------|
@@ -87,16 +87,20 @@ style="width:6.26806in;height:2.10625in" />
 
 ```json
 {
-  "Version": "1.1",
-  "Statement": [
-    {
-      "Action": [ "iam:agencies:assume" ],
-      "Resource": {
-        "uri": [ "/iam/agencies/xxxxx" ]
-      },
-      "Effect": "Allow"
-    }
-  ]
+   "Version":"1.1",
+   "Statement":[
+      {
+         "Action":[
+            "iam:agencies:assume"
+         ],
+         "Resource":{
+            "uri":[
+               "/iam/agencies/xxxxx"
+            ]
+         },
+         "Effect":"Allow"
+      }
+   ]
 }
 ```
 
