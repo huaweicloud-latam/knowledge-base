@@ -177,7 +177,7 @@ Select the “Custom: Install Windows only (advanced)” option.
 Click “Load driver” and then “Browse”. Select the following path:
 “C:\vmtools-windows/upgrade/**your-OS-version**/drivers/viostor”.
 
-**Note: For Windows Server 2019 and 2022, select the driver for Windows Server 2016.**
+**Note: For Windows Server versions later than 2016 (2019, 2022 and 2025), select the driver for Windows Server 2016.**
 
 ![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-image-from-iso-files/image38.png)
 
