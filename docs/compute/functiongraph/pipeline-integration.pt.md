@@ -55,9 +55,9 @@ Navegue até o serviço SWR no console da Huawei Cloud. Clique na aba
 “Organizations” e clique em “Create Organization”. Dê um nome para a
 organização e clique em “OK” para confirmar a criação da organização.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
 # CodeArts
 
@@ -75,12 +75,12 @@ CodeArts clicando em “Settings” \> “General” \> “Service Endpoints” 
 “Create Endpoint”. Selecione o serviço em que o código-fonte relativo
 ao Dockerfile se encontra.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
 Selecione o tipo de autenticação com o repositório e clique em
 “Authorize and Confirm” para fazer a autenticação com o repositório.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
 ## **CodeArts Build**
 
@@ -89,74 +89,74 @@ clique em “Create Task” para criar uma tarefa de Build. Dê um nome para
 a tarefa, selecione o tipo de Code Source em que o código-fonte do
 Dockerfile se encontrará.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 Configure o Service Endpoint criado no item 4.1 deste documento,
 selecione o repositório e a branch do repositório e clique em “Next”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 Selecione o template de build “Maven and Container” e clique em “OK”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 Apague a etapa de build com Maven do processo de build.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 Clique na etapa de build “Build Image and Push to SWR”, selecione a
 versão do Docker desejada, o repositório da imagem como sendo SWR e a
 organização criada no item 3.0 deste documento.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 **<span class="underline">Importante:</span>** Para o nome e tag da
 imagem, é necessário que ambos sejam fixos, uma vez que as mudanças
 relativas à imagem no FunctionGraph somente serão refletidas para
 determinado par de nome e tag. Recomenda-se usar a tag latest.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 ## **CodeArts Pipelines**
 
 Navegue até a seção do serviço CodeArts Pipelines no console da Huawei
 Cloud e clique em “Create Pipeline”.
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
 Defina um nome para a pipeline, o serviço onde se encontra o
 código-fonte do Dockerfile e o endpoint criado no item 4.1 deste
 documento.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
 Configure, também, o repositório em que o código-fonte se encontra e a
 sua branch. Clique em “Next” para avançar e selecione o template “Blank
 Template”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
 Em “Stage\_1”, apague o “New Job” existente e crie um job para Build. Na
 configuração do estágio de Build, associe a task criada no item 4.2
 deste documento e o repositório em que o código-fonte do Dockerfile se
 encontra.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image20.png)
+{% include image.html post=page.path file="image20.png" %}
 
 Para adicionar um trigger à pipeline, clique em “Task Orchestration”
 acima e selecione a opção “Execution Plan”. Selecione o tipo de trigger,
 como code commit ou merge request.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image21.png)
+{% include image.html post=page.path file="image21.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image22.png)
+{% include image.html post=page.path file="image22.png" %}
 
 # Pipeline third-party
 
@@ -177,40 +177,40 @@ primeiramente faça login no console da Huawei Cloud e acesse o serviço
 Identity and Access Management (IAM), clique em “User Groups” e então em
 “Create User Group”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image23.png)
+{% include image.html post=page.path file="image23.png" %}
 
 Dê um nome para o grupo e clique em “OK”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image24.png)
+{% include image.html post=page.path file="image24.png" %}
 
 Clique em “Authorize” ao lado do grupo criado, selecione a policy “SWR
 Admin”, seguido por “OK” e “Finish”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image25.png)
+{% include image.html post=page.path file="image25.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image26.png)
+{% include image.html post=page.path file="image26.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image27.png)
+{% include image.html post=page.path file="image27.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image28.png)
+{% include image.html post=page.path file="image28.png" %}
 
 Agora para criar um novo usuário, clique em “Create User”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image29.png)
+{% include image.html post=page.path file="image29.png" %}
 
 Dê um nome para o usuário, desabilite a caixa “Management console
 access” e habilite a caixa “Access key”. Clique em “Next” para
 avançar, adicione o usuário ao grupo criado acima e então clique em
 “Create”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image30.png)
+{% include image.html post=page.path file="image30.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image31.png)
+{% include image.html post=page.path file="image31.png" %}
 
 Clique em “OK” para baixar a chave AK/SK gerada, que será utilizada para
 a criação das credencias de autenticação com o Docker posteriormente.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image32.png)
+{% include image.html post=page.path file="image32.png" %}
 
 ### **Gerando as credenciais do Docker**
 
@@ -223,7 +223,7 @@ printf "AK" | openssl dgst -binary -sha256 -hmac "SK" | od -An -vtx1 |
 sed 's/\[ \\n\]//g' | sed 'N;s/\\n//'
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image33.png)
+{% include image.html post=page.path file="image33.png" %}
 
 Após a execução do comando, uma chave será gerada. Basta substituir a
 chave gerada no comando abaixo no campo “Login key” e a AK no campo “AK”
@@ -241,7 +241,7 @@ autenticação:
 docker login -u la-south-2@RVHVMX\*\*\*\*\*\* -p cab4ceab4a1545\*\*\*\*\*\*\*\*\*\*\*\*\*\*\* swr.la-south-2.myhuaweicloud.com
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image34.png)
+{% include image.html post=page.path file="image34.png" %}
 
 ## **Fazendo o upload da imagem no SWR**
 
@@ -285,12 +285,12 @@ Exemplo:
 docker push swr.la-south-2.myhuaweicloud.com/adada/serase
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image35.png)
+{% include image.html post=page.path file="image35.png" %}
 
 Na página do serviço do SWR no console da HWC é possível ver que a
 imagem foi publicada com sucesso no repositório:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image36.png)
+{% include image.html post=page.path file="image36.png" %}
 
 ## **Criando a task da pipeline**
 
@@ -311,9 +311,9 @@ executados no Docker que seguirão o seguinte workflow:
 
 7.  Fazer logout do repositório SWR;
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image37.png)
+{% include image.html post=page.path file="image37.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image38.png)
+{% include image.html post=page.path file="image38.png" %}
 
 # FunctionGraph
 
@@ -322,7 +322,7 @@ Pipeline for exatamente a mesma que a imagem associada à função no
 FunctionGraph, as mudanças feitas na imagem serão refletidas na função
 do FunctionGraph.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image39.png)
+{% include image.html post=page.path file="image39.png" %}
 
 # Exemplo
 
@@ -334,28 +334,28 @@ Huawei Cloud e, por consequência, atualizar a função do FunctionGraph.
 
 Realizando o commit no repositório do GitHub:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image40.png)
+{% include image.html post=page.path file="image40.png" %}
 
 Pipeline acionada:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image41.png)
+{% include image.html post=page.path file="image41.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image42.png)
+{% include image.html post=page.path file="image42.png" %}
 
 Build completo, pipeline concluída:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image43.png)
+{% include image.html post=page.path file="image43.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image44.png)
+{% include image.html post=page.path file="image44.png" %}
 
 É possível ver no repositório do SWR que a imagem foi atualizada:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image45.png)
+{% include image.html post=page.path file="image45.png" %}
 
 Como a imagem possui o mesmo URL que a imagem associada à função do
 FunctionGraph, as mudanças serão refletidas na função desejada.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/pipeline-integration/image39.png)
+{% include image.html post=page.path file="image39.png" %}
 
 # Referências
 

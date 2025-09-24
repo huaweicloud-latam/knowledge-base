@@ -40,7 +40,7 @@ não suportado pelo SMS, primeiramente é necessário alterar o arquivo
 que contém o nome que representa a versão do sistema operacional para
 fazer com que o SMS não falhe durante o precheck da migração.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 Para realizar essa modificação, faça login no ambiente de origem e
 digite o seguinte comando, em que “Amazon_2018_3_64BIT” pode ser
@@ -50,7 +50,7 @@ substituído por quaisquer versões compatíveis com o SMS.
 echo "Amazon_2018_3_64BIT" > /root/RainbowOsFile
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
 Após a configuração sido feita, navegue até a seção relativa ao serviço
 do SMS no console da HWC e delete as tarefas de migração com erro.
@@ -76,22 +76,22 @@ Após a criação de uma nova ECS no console da HWC, monte os discos na
 máquina intermediária. Primeiramente, remova os discos danificados da
 ECS original para depois os colocar na ECS intermediária.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
 Após remover os discos da ECS original, monte-os na ECS intermediária
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 ## **IPV6**
 
 Caso o erro durante a inicialização da ECS se assemelhe à imagem abaixo,
 é possível que o erro é relativo a uma configuração de IPV6 na máquina.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 Para resolver esse erro, desmonte o disco de sistema da máquina migrada
 e o conecte à ECS intermediária. Monte o disco de sistema em um novo
@@ -104,7 +104,7 @@ seguintes linhas no arquivo e salve o arquivo com “:wq”.
 Mount Wrong FS Type, Bad Option, Bad Superblock on Linux” apareça
 durante a montagem do disco, pule para a etapa **3.2** deste documento.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 Agora desmonte o disco montado com o comando “umount”, remova o disco de
 sistema da máquina migrada da ECS intermediária e a conecte novamente na
@@ -114,9 +114,9 @@ Para garantir que a funcionalidade de Sync funcione sem quebrar a
 máquina migrada, realize a seguinte configuração no script do agente do
 SMS na VM de origem:
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 Após esse ajuste, a funcionalidade de Sync deve funcionar sem demais
 problemas.
@@ -130,13 +130,13 @@ primeiro espere até que a seguinte mensagem apareça durante o boot.
 Esperar o seguinte erro aparecer antes de seguir para as próximas etapas
 é importante para o processo.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 Faça login na ECS intermediária e digite o comando “fdisk -l” para
 listar os discos montados na ECS. Copie o path do device cujo filesystem
 está danificado, como “/dev/vdc” ou “/dev/vdb1”.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
 Para recuperar o filesystem danificado, digite o comando “fsck
 /dev/vdb”, em que /dev/vdb será substituído pelo disco ou partição que
@@ -144,7 +144,7 @@ precisa ser recuperada. Pressione “a” para recuperar todos os inodes
 corrompidos. Vale notar que o disco não precisa ser montado em um
 diretório para esse processo.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
 Aguarde até que a recuperação de todos os inodes seja concluída, remova
 o disco de sistema da máquina migrada da ECS intermediária e a conecte
@@ -160,20 +160,20 @@ intermediária caso o filesystem da ECS original esteja definido como
 somente para leitura devido a uma má inicialização. Primeiramente, monte
 o disco de sistema em um diretório.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
 Edite o arquivo “/etc/fstab” do disco de sistema da ECS original.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
 Comente todas as passagens de antigos discos montados no fstab.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
 Após isso, desmonte o disco do diretório em que foi montado e remova os
 discos da ECS para inserir na ECS original novamente
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-unsupported-os/image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
 # Referências
 

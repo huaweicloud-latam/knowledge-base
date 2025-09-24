@@ -50,24 +50,24 @@ Access the SWR service panel in the HWC console and click “Create
 Organization”. Fill in the field for the organization name and
 confirm its creation by clicking “OK”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
 Once the Organization has been created, click on the button related to “Generate Login
 Command” and copy the generated command that will be used to perform
 Docker authentication with the SWR repository.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
 # Docker
 
 Access the machine that has the container image locally that will run in FunctionGraph and paste the command copied in item 2.0 of this
 document, related to Docker authentication with the HWC SWR service.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
 After logging into the SWR repository via Docker, copy the following
 command, changing the fields [image name 1:tag 1], [Image repository
@@ -109,11 +109,11 @@ Example:
 docker push swr.sa-brazil-1.myhuaweicloud.com/functiongraph/helloworld:1.0
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 On the SWR service page in the HWC console, You can see that the image has been successfully published to the repository:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 # Agency
 
@@ -121,32 +121,32 @@ To delegate permissions from the SWR service to FunctionGraph, you need to creat
 
 Click “Create Agency” to create an agency.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 Give the agency a name, select the agency type as “Cloud Service”, and select the FunctionGraph service. Click “Next” to proceed.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 Delegate “SWR FullAccess” and “SWR Admin” permissions to the agency and
 click “Next” and then click “OK” to finish.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 # FunctionGraph
 
 Access the FunctionGraph service in the Huawei Cloud console and navigate to
 the Functions \> Function List page. Click “Create Function”.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
 Select the “Container Image”, “HTTP Function” option, give the function a name, select the agency created in item 4.0 of this document, and
 select the SWR image.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
 You can also configure additional container options, such as the
 CMD startup command, execution arguments, User ID, and Group ID.
@@ -154,24 +154,24 @@ CMD startup command, execution arguments, User ID, and Group ID.
 **<span class="underline">Important:</span>** The default User ID used is 1003, and the User ID corresponding to the root user on UNIX systems cannot be used. To execute functions based on container images, it is recommended to create a new user with UID = 1003
 and set this user as the USER when building the image.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
 Once you have created the function, click “Test” to test the created function. Confirm the example of the HTTP request received and click “Create”. Click “Test” again to test the created function.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image20.png)
+{% include image.html post=page.path file="image20.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image21.png)
+{% include image.html post=page.path file="image21.png" %}
 
 **<span class="underline">Important:</span>** If the function execution
 shows the error “runtime process is exited”, check the memory
 allocated to the function in “Configuration” and “Memory(MB)”, allocating more
 memory.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image22.png)
+{% include image.html post=page.path file="image22.png" %}
 
 Finally, just configure a trigger for the function. In this example, the
 trigger that will call the FunctionGraph function will be an API Gateway from
@@ -179,34 +179,34 @@ the HWC APIG service. To create a trigger, just click on “+ Create
 Trigger” and configure the APIG instance, filling in the API Group,
 Environment, Security Authentication, protocol and timeout.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image23.png)
+{% include image.html post=page.path file="image23.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image24.png)
+{% include image.html post=page.path file="image24.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image25.png)
+{% include image.html post=page.path file="image25.png" %}
 
 It is worth noting that in the API configuration related to the function call,
 the function in question must be explicitly specified as the API backend.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image26.png)
+{% include image.html post=page.path file="image26.png)
 
 # Example
 
 In this example, a function written in .NET 8.0 was developed with a
-trigger by HWC's API Gateway (APIG) so that, every time it is
+trigger by HWC's API Gateway (APIG" %} so that, every time it is
 called, the function makes a GET request to a remote HTTP server.
 
 Calling the API via the API Gateway dashboard in the HWC console:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image27.png)
+{% include image.html post=page.path file="image27.png" %}
 
 Remote HTTP Server Listener:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image28.png)
+{% include image.html post=page.path file="image28.png" %}
 
 API Execution Result:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/functiongraph/custom-container-image/image29.png)
+{% include image.html post=page.path file="image29.png" %}
 
 # References
 

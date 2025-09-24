@@ -54,24 +54,24 @@ and a list of the top 5 disks ranked by IOPS.
 
 You can see what the Cloud Eye home page looks like in the images below:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image4.png)
+{% include image.html post=page.path file="image4.png)
 
 ## Server Monitoring
 
-Server Monitoring (ECSs and BMSs) can be viewed in the **Server Monitoring** section. It is worth noting that for server monitoring, installing the agent (Telescope) is recommended, since it provides more specific and accurate metrics, according to appendix 4.1.
+Server Monitoring (ECSs and BMSs) can be viewed in the **Server Monitoring** section. It is worth noting that for server monitoring, installing the agent (Telescope" %} is recommended, since it provides more specific and accurate metrics, according to appendix 4.1.
 
 The agent can be installed in three different ways: manually, automatically, or in batch mode. Regardless of the installation method chosen, you must configure the permissions for the agent in advance: in the server monitoring section, click **Configure** on the warning that the agent permission has not been configured for the current region. 
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image5.png) 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image6.png) 
+{% include image.html post=page.path file="image5.png" %} 
+{% include image.html post=page.path file="image6.png" %} 
 
 ### Automatic:
 
 To install the agent automatically, simply click on the puzzle piece in the **server monitoring** section and in the **agent status** column in the corresponding ECS/BMS and wait for the agent to install. 
  
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
 ### Manual:
 
@@ -79,11 +79,11 @@ To install the agent manually, first go to the section
 related to **ECS** or **BMS**, depending on the type of server on which
 the agent will be installed.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 Select **Remote Login** to log in to the desired server
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 Log in to the server by entering the username and password configured
 when the server was created and then enter the following
@@ -94,14 +94,14 @@ command, if the region where the server is located is
 cd /usr/local && curl -k -O https://uniagent-la-south-2.obs.la-south-2.myhuaweicloud.com/script/agent_install.sh && bash agent_install.sh
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 If the region where the server is located is different from
 **LA-Santiago**, you can find the list of commands by region in
 the following link:
 <https://support.huaweicloud.com/intl/en-us/usermanual-ces/ces_01_0029.html>
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 If the red message above appears at the end of the installation, the
 agent has been successfully installed.
@@ -114,53 +114,53 @@ charts can be created for monitoring selected services and resources, with the c
 To create a dashboard, navigate to the **My Dashboards** section in
 **Dashboards** and click **Create Dashboard**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 Choose a name for the dashboard in **Name** and click **OK**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 To add graphs for monitoring specific metrics,
 graphs can be added to dashboards. To add a graph,
 click on the created dashboard and click **Add Graph**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
 Choose the type of chart to create and click **OK**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image16.png)
+{% include image.html post=page.path file="image16.png)
 
-Certain settings can be made when adding a chart to a dashboard, such as whether the same chart will have multiple metrics or only one metric, the period in which the data was collected, the type of data to be displayed (raw data, maximum, minimum, average or sum) and the metrics to be displayed.
+Certain settings can be made when adding a chart to a dashboard, such as whether the same chart will have multiple metrics or only one metric, the period in which the data was collected, the type of data to be displayed (raw data, maximum, minimum, average or sum" %} and the metrics to be displayed.
 
 Under **Metric Display**, select **One graph for a single metric** to add a single metric to the graph, or select **One graph for multiple metrics** to add multiple metrics to the graph.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
 Click **Select Resource and Metric** to select the resource to be monitored and the metric for that resource.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
 Select the type of service to be monitored on the left side of the **Select Resource and Metric** page, the specific resource to be monitored in the middle area of ​​the page, and the metrics for that resource on the right. In this example, CPU, disk, memory, and network usage will be monitored on “ecs-9152”.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
 Adjust the data collection time in the upper right corner of the page
 **Add Graph**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image20.png)
+{% include image.html post=page.path file="image20.png" %}
 
 A sample of the generated graph will appear on the page. Click **Save**
 to confirm and add the graph to the dashboard.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image21.png)
+{% include image.html post=page.path file="image21.png" %}
 
 On the dashboard, you can create a legend for the graph, edit it,
 make it full screen, reload the data shown in the graph, and
 move the graph.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image22.png)
+{% include image.html post=page.path file="image22.png" %}
 
 In Cloud Eye, you can create numerous dashboards with several graphs in each dashboard, and each graph can show multiple monitoring metrics. In addition, as described in topic 3.1, in the CES **Overview** section, you can have an overview of the monitored resources with the main metrics used, such as CPU, memory and disk usage on servers; network usage and a total of alarms triggered in Cloud Eye.
 
@@ -168,12 +168,12 @@ In Cloud Eye, you can create numerous dashboards with several graphs in each das
 
 In the **Cloud Service Monitoring** section, dashboards for each resource of the ECS, EIP and bandwidth, NAT and VPN services are automatically created during the creation of these resources. The main monitoring metrics of these services are added in the form of a graph in this section for quick and general monitoring of these services.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image23.png)
+{% include image.html post=page.path file="image23.png" %}
 
 In addition to viewing the graphs related to the main monitored metrics, it is also possible to export the collected data by clicking the
 **Export Data** button.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image24.png)
+{% include image.html post=page.path file="image24.png" %}
 
 # Attachments
 

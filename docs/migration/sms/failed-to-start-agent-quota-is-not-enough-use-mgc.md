@@ -29,18 +29,18 @@ Solution：
 You can go to the following directory:C:\\SMS-Agent-Py3\\config   or  
 C:\\SMS-Agent-Py2\\config.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image1.png)
+{% include image.html post=page.path file="image1.png" %}
 
 Then open the file as shown in the picture：g-property.cfg
 
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image2.png)
+{% include image.html post=page.path file="image2.png" %}
 
 Then change 'start\_type = MANUAL' to 'start\_type = MGC' in the file.
 
-before:![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image3.png)
+before:{% include image.html post=page.path file="image3.png" %}
 
-after:![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image4.png)
+after:{% include image.html post=page.path file="image4.png" %}
 
 
 Finally, restart the agent.
@@ -52,7 +52,7 @@ You can open the file :SMS-Agent/agent/config/g-property.cfg
 
 Then change 'start\_type = MANUAL' to 'start\_type = MGC' in the file.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/failed-to-start-agent-quota-is-not-enough-use-mgc/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
  
 

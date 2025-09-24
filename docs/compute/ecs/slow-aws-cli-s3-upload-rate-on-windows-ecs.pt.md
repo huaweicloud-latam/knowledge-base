@@ -22,18 +22,18 @@ V1.0 – Agosto 2024
 A velocidade de upload do S3 AWS CLI ficará travada em 9 MiB/s, independentemente
 de quão grande seja a largura de banda, em ECSs do Windows Server:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ecs/slow-aws-cli-s3-upload-rate-on-windows-ecs/image1.png)
+{% include image.html post=page.path file="image1.png" %}
 
 # Solução
 
 Modifique o arquivo: “C:\\Users\\Administrator\\.aws\\config” e adicione o
 seguinte parâmetro:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ecs/slow-aws-cli-s3-upload-rate-on-windows-ecs/image2.png)
+{% include image.html post=page.path file="image2.png" %}
 
 Após a modificação, a velocidade de upload aumentará de acordo com a largura de banda comprada:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ecs/slow-aws-cli-s3-upload-rate-on-windows-ecs/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 # Referências
 

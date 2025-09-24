@@ -28,14 +28,14 @@ This document aims to list optimizations for VMs migrated from the Azure Cloud p
 
 The error in question for the Remote Login to freeze is related to VNC, software for remote access to other computers.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ecs/remote-login-error/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 Linux VMs created in Azure Cloud have modified kernels, which may cause conflict issues with VNC software. To make the necessary changes, follow the steps below: 
 1. Connect to the instance via SSH and modify the following parameters: 
     1.1 Comment out the line GRUB_TIMEOUT_STYLE=hidden 
     1.2 Modify GRUB_TIMEOUT to 10: GRUB_TIMEOUT=10 
     
-![](/huaweicloud-knowledge-base/assets/images/compute/ecs/remote-login-error/image4.png) 
+{% include image.html post=page.path file="image4.png" %} 
 
 Delete the file 
 

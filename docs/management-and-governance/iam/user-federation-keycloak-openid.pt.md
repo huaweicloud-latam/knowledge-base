@@ -29,60 +29,60 @@ de identidade para usuários virtuais na Huawei Cloud.
 No diagrama abaixo, é possível visualizar o fluxo do processo de
 autenticação na Huawei Cloud utilizando um IdP.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image3.png)
+{% include image.html post=page.path file="image3.png)
 
 # Keycloak
 
 Primeiramente, faz-se necessário realizar a configuração do provedor de
 identidade (IdP). Para isso, acesse a página de configurações do IdP
-(Keycloak) e navegue até a seção “Clients”. Clique em “Create” para
+(Keycloak" %} e navegue até a seção “Clients”. Clique em “Create” para
 criar um novo cliente.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
 Selecione o “Client Protocol” como sendo “openid-connect” e insira
 “hws-oidc” no campo relativo ao “Client ID”. Feito isso, clique em
 “Save” para efetivar a criação do client.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
 Navegue até o cliente da Huawei Cloud criado e clique em “Edit” para
 editar as configurações do cliente.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
 Habilite a opção “Implicit Flow Enabled”, altere o campo “Access Type”
 para “confidential” e insira o seguinte hyperlink no campo de “Valid
 Redirect URIs”: <https://auth.huaweicloud.com/authui/oidc/post>. Feito
 isso, clique em “Save” para salvar as modificações feitas.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 Navegue até a seção de “Mappers”, ainda nas configurações do cliente da
 Huawei Cloud, e clique em “Create” para criar um mapper para o username.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 Selecione o “Mapper Type” como de tipo “User Property” e preencha os
 demais campos conforme a imagem abaixo.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 Navegue mais uma vez até a seção de “Mappers”, ainda nas configurações
 do cliente da Huawei Cloud, e clique em “Create” para criar um mapper
 para o group.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 Selecione o “Mapper Type” como de tipo “Group Membership”, desabilite a
 opção “Full group path” e preencha os demais campos conforme a imagem
 abaixo.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 Para realizar a federação de usuários da Huawei Cloud, faz-se necessária
 a existência de usuários primeiramente. Caso não exista nenhum usuário
@@ -91,20 +91,20 @@ criado no Keycloak, crie um usuário.
 Navegue até a seção de “Realm Settings” e clique em “OpenID Endpoint
 Configuration”, na subseção de “Endpoints”.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image14.png)
+{% include image.html post=page.path file="image14.png)
 
 Tome nota dos seguintes parâmetros, que precisarão ser configurados no
-lado do service provider (Huawei Cloud): “authorization\_endpoint” e
+lado do service provider (Huawei Cloud" %}: “authorization\_endpoint” e
 “jwks\_uri”.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
 No web browser, navegue até o hyperlink relativo ao parâmetro
 “jwks\_uri” copiado acima e tome nota da chave.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
 # IAM
 
@@ -112,21 +112,21 @@ Acesse o serviço IAM no console da Huawei Cloud e navegue até a seção
 “Identity Providers”. Clique em “Create Identity Provider” para criar
 uma configuração de federação de identidade.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
 Selecione o protocolo OpenID-Connect e o “SSO Type” como “Virtual User”.
 Clique no botão “OK” para salvar as configurações da criação da IdP.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
 Feito isso, selecione a opção “Modify” ao lado do provedor de identidade
 criado e preencha os campos conforme mostrado na figura abaixo.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image20.png)
+{% include image.html post=page.path file="image20.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image21.png)
+{% include image.html post=page.path file="image21.png" %}
 
 1.  > **<span class="underline">Identity Provider URL:</span>**
     > Hyperlink relativo ao realm em que o cliente foi configurado no
@@ -192,13 +192,13 @@ políticas de controle de acesso.
 ]
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image22.png)
+{% include image.html post=page.path file="image22.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image23.png)
+{% include image.html post=page.path file="image23.png" %}
 
 Feito isso, clique em “OK” para salvar as modificações feitas no IdP.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image24.png)
+{% include image.html post=page.path file="image24.png" %}
 
 # Exemplo
 
@@ -208,29 +208,29 @@ Cloud por meio da federação de identidade.
 Acessando o console da Huawei Cloud e selecionando a opção de login por
 meio de usuário federado.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image25.png)
+{% include image.html post=page.path file="image25.png" %}
 
 Inserindo o nome da conta e selecionando a IdP configurada no dropdown.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image26.png)
+{% include image.html post=page.path file="image26.png" %}
 
 Realizando o login na provedora de identidade configurada.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image27.png)
+{% include image.html post=page.path file="image27.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image28.png)
+{% include image.html post=page.path file="image28.png" %}
 
 Autenticação realizada com sucesso, redirecionando para o console da
 Huawei Cloud.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image29.png)
+{% include image.html post=page.path file="image29.png" %}
 
 **<span class="underline">Importante:</span>** Também é possível
 realizar o login no console através da federação de identidade por meio
 do hyperlink gerado na configuração de Identity Provider no console da
 Huawei Cloud.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/user-federation-keycloak-openid/image30.png)
+{% include image.html post=page.path file="image30.png" %}
 
 # Referências
 

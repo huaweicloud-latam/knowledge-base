@@ -26,29 +26,29 @@ criação de imagem do OracleOS 9.4 utilizando o serviço de IMS.
 
 Faça o download da imagem ISO do Ubuntu Server (exemplo - <https://yum.oracle.com/oracle-linux-isos.html>) e faça o upload no OBS.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 ## Importe a imagem ISO do OracleOS no serviço IMS.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
 ## Crie uma ECS usando a imagem criada com o importe da imagem ISO.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 ## Acesse a instância e abra o terminal shell
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 ## Vincule um EIP à máquina
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 ## Instalar e configurar o cloud-init
 
@@ -64,7 +64,7 @@ yum install cloud-init -y
 vi /etc/selinux/config
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 ```shell
 systemctl reboot
@@ -103,10 +103,10 @@ dracut --regenerate-all –force
 
 ## Para a instância e criar a imagem:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-9.4-image/image15.png)
+{% include image.html post=page.path file="image15.png" %}

@@ -25,29 +25,29 @@ create an OracleOS 7.9 image using the IMS service.
 
 Download the OracleOS ISO image (example - <https://yum.oracle.com/oracle-linux-isos.html>) and upload it to OBS.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 ## Import the OracleOS ISO image into the IMS service.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
 ## Create an ECS using the image created by importing the ISO image.
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 ## Access the instance and open the shell terminal
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 ## Bind an EIP to the machine
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 ## Install KVM
 
@@ -59,7 +59,7 @@ vi /etc/dracut.conf
 virtio_blk virtio_scsi virtio_net virtio_pci virtio_ring virtio
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 ```shell
 dracut -f /boot/initramfs-2.6.32-573.8.1.el6.x86\_64.img
@@ -74,7 +74,7 @@ To verify that the drivers have been installed, type the following command
 lsinitrd /boot/initramfs-\`uname -r\`.img | grep virtio
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 ## Edit the eth0 network interface
 
@@ -82,7 +82,7 @@ lsinitrd /boot/initramfs-\`uname -r\`.img | grep virtio
 vi /etc/sysconfig/network-scripts/ifcfg-eth0
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 ## Install and configure cloud-init
 
@@ -98,7 +98,7 @@ yum install cloud-init -y
 vi /etc/selinux/config
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
 ```shell
 systemctl reboot
@@ -137,10 +137,10 @@ dracut --regenerate-all –force
 
 ## Stop the instance and create the image:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ims/private-oracle-7.9-image/image18.png)
+{% include image.html post=page.path file="image18.png" %}

@@ -55,11 +55,11 @@ Explorer pode ser acessado através do seguinte link:
 <https://console-intl.huaweicloud.com/apiexplorer/#/openapi/CES/doc?version=v1&api=ListMetrics>,
 ou então através do passo-a-passo abaixo:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
 Para esta API, basta preencher os parâmetros relativos à região em que o
 recurso a ser monitorado está provisionado, ao id do projeto do recurso
@@ -67,22 +67,22 @@ e o *namespace* do recurso, que foi obtido no item 3.0 deste guia. Para
 obter o id do projeto do recurso, basta navegar até a seguinte página do
 console:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
 Após preencher os parâmetros necessários, clique em “Debug” para obter o
 json relativo às métricas de monitoramento existentes para a *namespace*
 do recurso desejado.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 A resposta da requisição será a listagem das métricas de monitoramento
 para o recurso desejado, como é possível ser observado na figura abaixo:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 A documentação desta API pode ser visualizada no seguinte link, para
 maior detalhamento das configurações da API:
@@ -96,7 +96,7 @@ através do seguinte link:
 <https://console-intl.huaweicloud.com/apiexplorer/#/openapi/CES/debug?version=v1&api=BatchListMetricData>
 ; ou então através do seguinte passo-a-passo:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 Para esta API, preencha todos os parâmetros disponíveis na API. Os
 parâmetros *metric\_name*, *name* e *value* foram retornados pela API
@@ -145,12 +145,12 @@ possível ver quais parâmetros colocar nos campos abaixo:
 
 Exemplo de requisição:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 Após o preenchimento de todos os parâmetros, selecione o botão de
 “Debug” para obter a resposta da requisição da API:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 A métrica utilizada como exemplo é relativa à quantidade de conexões
 presentes no gateway de determinada VPN. A documentação desta API pode

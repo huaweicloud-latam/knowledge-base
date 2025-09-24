@@ -30,24 +30,24 @@ To monitor resources provisioned in Huawei Cloud through APIs, it is first neces
 
 To list the monitoring metrics of a given service, simply use the “ListMetrics” API provided by HWC. **Attention: To obtain the monitoring metrics of a given service, at least one resource or instance of that service must be provisioned in the region to which the API is pointing.** For this guide, the Huawei Cloud API Explorer service will be used to facilitate viewing of the API parameters. The API Explorer service can be accessed through the following link: <https://console-intl.huaweicloud.com/apiexplorer/#/openapi/CES/doc?version=v1&api=ListMetrics>, or through the step-by-step instructions below: 
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image3.png) 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image4.png) 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image5.png) 
+{% include image.html post=page.path file="image3.png" %} 
+{% include image.html post=page.path file="image4.png" %} 
+{% include image.html post=page.path file="image5.png" %} 
 
 For this API, simply fill in the parameters related to the region in which the resource to be monitored is provisioned, the resource's project ID, and the resource's *namespace*. resource, which was obtained in item 3.0 of this guide. To obtain the resource's project id, simply navigate to the following console page: 
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image6.png) 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image7.png) 
+{% include image.html post=page.path file="image6.png" %} 
+{% include image.html post=page.path file="image7.png" %} 
 
 After filling in the required parameters, click “Debug” to obtain the json related to the existing monitoring metrics for the desired resource *namespace*. 
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image8.png)
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image9.png)
+{% include image.html post=page.path file="image8.png" %}
+{% include image.html post=page.path file="image9.png" %}
 
 The response to the request will be a list of monitoring metrics
 for the desired resource, as can be seen in the figure below:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 The documentation for this API can be viewed at the following link, for
 further details on the API configurations:
@@ -60,7 +60,7 @@ through the following link:
 <https://console-intl.huaweicloud.com/apiexplorer/#/openapi/CES/debug?version=v1&api=BatchListMetricData>
 ; or through the following step-by-step:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 For this API, fill in all the parameters available in the API. The *metric\_name*, *name* and *value* parameters were returned by the API
 related to item 3.1 of this guide, while the *namespace* parameter
@@ -96,12 +96,12 @@ was obtained in item 3.0 of this document. For the other settings, you can see w
 
 Request example:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 After filling in all the parameters, select the
 “Debug” button to obtain the response from the API request:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/monitoring-data-api/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 The metric used as an example is related to the number of connections
 present on the gateway of a given VPN. The documentation for this API can be

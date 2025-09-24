@@ -21,19 +21,19 @@ V1.0 – August 2024
 The upload speed of S3 AWS CLI will get stuck at 9 MiB/s, regardless of
 how large the bandwidth may be, on Windows Server ECSs:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ecs/slow-aws-cli-s3-upload-rate-on-windows-ecs/image1.png)
+{% include image.html post=page.path file="image1.png" %}
 
 # Solution
 
 Modify the file: “C:\\Users\\Administrator\\.aws\\config” and add the
 following parameter:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ecs/slow-aws-cli-s3-upload-rate-on-windows-ecs/image2.png)
+{% include image.html post=page.path file="image2.png" %}
 
 After the modification, the upload speed will increase according to the
 purchased bandwidth:
 
-![](/huaweicloud-knowledge-base/assets/images/compute/ecs/slow-aws-cli-s3-upload-rate-on-windows-ecs/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 # References
 

@@ -26,7 +26,7 @@ This document aims to describe the methodology for discovering resources in thir
 
 To perform resource discovery in other cloud providers, it is first necessary to generate an **AK/SK** or **ID and Key** with **read-only** and **list** permissions for **all resources** in the respective cloud for the following services: **EC2, RDS, S3, and EFS**. Below is an example of the policies and read-only permissions required for the EC2 service:
 
-![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 # Performing Resource Discovery over the Internet
 
@@ -38,50 +38,50 @@ service section in the Huawei Cloud console. In the lower left corner, choose th
 **Settings** option and then **Migration Projects**. Click **Create
 Project**.
 
-> ![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image4.png)
+> {% include image.html post=page.path file="image4.png" %}
 >
 > Choose a name for the project to be created and choose the project type **Complex**, in which there are several applications running whose dependencies are not well defined. Then click **Confirm**
 > to create a project.
 >
-> ![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image5.png)
+> {% include image.html post=page.path file="image5.png" %}
 
 In the menu on the left, choose the **Application Discovery** option and click **Discover Over Internet** to perform resource discovery
 over the Internet.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
 If a discovery task has already been created previously, the discovery option will be located in the **Discover** option and then **Over Internet**.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
 Fill in a name for the discovery task and the cloud provider in which the
 account whose resources will be analyzed is located. Then, in
 **Credential**, click on the **Create** option.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 Fill in a name for the credential and in **Authentication** select the
 **AK/SK** or **ID and Key** option. Then, enter the key obtained in
 item 2.0 of this material and click **Verify and Save**.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 Select the registered credential. In the regions field, select all
 in **Select All**.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 For **Resource Type**, select **Select all** and click **Confirm**.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 Wait for the discovery task to finish, and then go back to a previous page
 
-![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 On this page, you can view the analyzed resource types and click on them to see in detail all the discovered resources.
 
-![](/huaweicloud-knowledge-base/assets/images/migration/mgc/resources-discovery/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 # References
 

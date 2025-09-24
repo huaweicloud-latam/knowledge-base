@@ -29,7 +29,7 @@ provedor de identidade para usuários IAM na Huawei Cloud.
 No diagrama abaixo, é possível visualizar o fluxo do processo de
 autenticação na Huawei Cloud utilizando um IdP.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 # Keycloak Endpoint
 
@@ -42,9 +42,9 @@ Clique em “SAML 2.0 Identity Provider Metadata”, na subseção de
 “Endpoints”, e salve localmente a página web aberta como um arquivo
 XML.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
 # IIC
 
@@ -54,29 +54,29 @@ Acesse o serviço IIC no console da Huawei Cloud e navegue até a seção
 “Settings”. Clique em “Change to external identity provider” para
 criar uma configuração de federação de identidade.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image7.png)
+{% include image.html post=page.path file="image7.png)
 
 Clique em “Download Metadata File” para baixar o arquivo de
-configurações XML do protocolo a ser utilizado (SAML 2.0) do Service
+configurações XML do protocolo a ser utilizado (SAML 2.0" %} do Service
 Provider.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 Clique em “Select File” na subseção “Identity Provider Details” e
 selecione o arquivo XML baixado no item 2.0 deste documento.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 Feito isso, basta clicar em “Next” seguido por “OK” para finalizar a
 configuração.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image11.png)
+{% include image.html post=page.path file="image11.png)
 
-**Nota:** As próximas três subseções (3.2, 3.3 e 3.4) são relativas a
+**Nota:** As próximas três subseções (3.2, 3.3 e 3.4" %} são relativas a
 configurações de usuários, grupos, permission sets e contas do
 Organizations. Caso essas configurações já estejam feitas, ignore as
 subseções supracitadas.
@@ -88,29 +88,29 @@ faz-se necessário que usuários e grupos de usuários sejam criados no
 Service Provider. Para isso, selecione a seção de “Groups” e clique em
 “Create Group” para criar um grupo de usuários.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 Dê um nome ao grupo e selecione “OK” para finalizar a criação do grupo
 de usuários.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 Para criar os usuários, acesse a seção “Users” e clique em “Create
 User”.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
 Preencha as informações pertinentes ao usuário, como username e e-mail,
 e clique em “Next” para avançar.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
 Selecione um grupo de usuários no qual o usuário pertencerá e clique em
 “Next” seguido por “OK” para finalizar a criação do usuário.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
 ## **Permission Sets**
 
@@ -119,19 +119,19 @@ permission sets para delegar permissões aos usuários criados. Para isso,
 navegue até a subseção “Permission Sets” na seção “Multi-Account
 Permissions”, e clique em “Create Permission Set”.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
 Preencha os campos relativos ao tempo de sessão do usuário e o nome do
 permission set e clique em “Next” para avançar.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
 Selecione as permissões que o permission set irá possuir e selecione
 “Next” seguido por “OK” para finalizar a criação do permission set.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image20.png)
+{% include image.html post=page.path file="image20.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image21.png)
+{% include image.html post=page.path file="image21.png" %}
 
 ## **Accounts**
 
@@ -141,72 +141,72 @@ específicas do Organizations. Para isso, navegue até a subseção
 “Accounts” na seção “Multi-Account Permissions”, e clique em “Assign
 User/Group” na conta desejada.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image22.png)
+{% include image.html post=page.path file="image22.png" %}
 
 Selecione os usuários que terão acesso à conta selecionada e clique em
 “Next” para avançar.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image23.png)
+{% include image.html post=page.path file="image23.png" %}
 
 Selecione os permission sets que os usuários supracitados terão acesso
 na conta selecionada e clique em “Next” seguido por “OK” para finalizar
 a delegação de permissões a usuários.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image24.png)
+{% include image.html post=page.path file="image24.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image25.png)
+{% include image.html post=page.path file="image25.png)
 
 # Keycloak Client
 
 Para realizar a integração da Huawei Cloud com o Keycloack, faz-se
 necessário, primeiramente, criar um Client no IdP. Para isso, acesse a
-página de configurações do IdP (Keycloak) e navegue até a seção
+página de configurações do IdP (Keycloak" %} e navegue até a seção
 “Clients”. Clique em “Create” para criar um novo cliente.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image26.png)
+{% include image.html post=page.path file="image26.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image27.png)
+{% include image.html post=page.path file="image27.png" %}
 
 Clique em “Select file” para importar o arquivo de configurações XML da
 Huawei Cloud, salvo no item 3.1 deste documento, e clique em “Save”.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image28.png)
+{% include image.html post=page.path file="image28.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image29.png)
+{% include image.html post=page.path file="image29.png" %}
 
 Navegue até o cliente da Huawei Cloud criado e clique em “Edit” para
 editar as configurações do cliente.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image30.png)
+{% include image.html post=page.path file="image30.png" %}
 
 Desligue a opção “Client Signature Required”, habilite a opção “Force
 Name ID Format”, selecione o campo “Name ID Format” como sendo
 “username” e clique em “Save” para salvar as modificações feitas.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image31.png)
+{% include image.html post=page.path file="image31.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image32.png)
+{% include image.html post=page.path file="image32.png" %}
 
 Navegue até a seção de “Mappers”, ainda nas configurações do cliente da
 Huawei Cloud, e clique em “Create” para criar um mapper para o username.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image33.png)
+{% include image.html post=page.path file="image33.png" %}
 
 Selecione o “Mapper Type” como de tipo “User Property” e preencha os
 campos conforme a imagem abaixo.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image34.png)
+{% include image.html post=page.path file="image34.png" %}
 
 Navegue mais uma vez até a seção de “Mappers”, ainda nas configurações
 do cliente da Huawei Cloud, e clique em “Create” para criar um mapper
 para o group.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image33.png)
+{% include image.html post=page.path file="image33.png" %}
 
 Selecione o “Mapper Type” como de tipo “Group list” e preencha os campos
 conforme a imagem abaixo.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image35.png)
+{% include image.html post=page.path file="image35.png" %}
 
 **Nota:** Para realizar a federação de usuários da Huawei Cloud, faz-se
 necessária a existência de usuários primeiramente. Caso não exista
@@ -219,23 +219,23 @@ Cloud por meio da federação de identidade.
 
 Acessando o hyperlink do portal do IAM Identity Center.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image36.png)
+{% include image.html post=page.path file="image36.png" %}
 
 Redirecionamento para a página de login do Identity Provider.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image37.png)
+{% include image.html post=page.path file="image37.png" %}
 
 Redirecionamento para a o console da Huawei Cloud após a autenticação
 ser bem-sucedida.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image38.png)
+{% include image.html post=page.path file="image38.png" %}
 
 Clique em “Access Console” ao lado do permission set desejado para
 realizar login na conta desejada.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image39.png)
+{% include image.html post=page.path file="image39.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/iic/user-federation-keycloak-saml/image40.png)
+{% include image.html post=page.path file="image40.png" %}
 
 # Referências
 

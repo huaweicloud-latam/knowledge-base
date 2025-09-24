@@ -54,9 +54,9 @@ and a list of the top 5 disks ranked by IOPS.
 
 You can see what the Cloud Eye home page looks like in the images below:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
 ## Resource groups
 
@@ -64,20 +64,20 @@ Resource groups allow you to group multiple Huawei Cloud resources for joint mon
 
 A resource group can be created in the **Resource Groups** section by clicking **Create Resource Group**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
 On the page that loads, choose a name for the resource group in
 **Name** and select the resources to add to the group by
 service. After adding all the desired resources, click
 **Create**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
 You can create alarms for a specific resource group,
 making it easy to create batch alarms for multiple resources that
 share the same context.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
 ## Alarm management
 
@@ -105,7 +105,7 @@ To create an alarm for a specific resource based on an event or
 metric, navigate to the **Alarm Rules** section in **Alarm Management**
 and click **Create Alarm Rule**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 Configure the basic alarm settings, such as the alarm name in
 **Name** and the type of resource to be monitored in **Resource Type**,
@@ -122,13 +122,13 @@ In **Monitoring Scope**, the specific resource that will trigger the alarm must 
 - <span class="underline">Resource groups</span>: Select this option if the alarm can be triggered by all resources present in a resource group. See section 3.3. 
 - <span class="underline">Specific resources</span>: Select this option to choose a specific instance of the selected service to trigger the alarm. 
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 In this example, the ECS “ecs-4194” will be selected as the instance that
 can trigger the alarm in the **Specific resources** field under **Monitoring
 Scope**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 There are three different ways to configure the metric that will trigger the
 alarm in **Method**:
@@ -145,24 +145,24 @@ In this example, the metric that will be configured to trigger the alarm will be
 
 In **Alarm Policy**, you can select the type of data that will be analyzed, such as raw data, average, maximum, minimum, variance or sum of the ingested data; as well as the percentage that will trigger the alarm and the form of comparison, such as greater than or equal, greater than, less than, less than or equal, increase in relation to or decrease in relation to.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image11.png)
+{% include image.html post=page.path file="image11.png)
 
-In the **Alarm Notification** section, you can configure a notification for alarms triggered by email, SMS, HTTP and HTTPS requests or through a trigger in FunctionGraph. If the notification only needs to be sent to the email of the account owner in the Huawei Cloud console, you can select the **Account contact** option in **Notification Object** directly. In this example, a second email address will be configured to receive notifications of Cloud Eye alarms. To do this, you must first enable the Short Message Notification (SMN) service. ![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image12.png) Click **Topics** to view the notification topics that you have created. ![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image13.png) Click **Create Topic** to create a notification topic. ![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image14.png)
+In the **Alarm Notification** section, you can configure a notification for alarms triggered by email, SMS, HTTP and HTTPS requests or through a trigger in FunctionGraph. If the notification only needs to be sent to the email of the account owner in the Huawei Cloud console, you can select the **Account contact** option in **Notification Object** directly. In this example, a second email address will be configured to receive notifications of Cloud Eye alarms. To do this, you must first enable the Short Message Notification (SMN" %} service. {% include image.html post=page.path file="image12.png" %} Click **Topics** to view the notification topics that you have created. {% include image.html post=page.path file="image13.png" %} Click **Create Topic** to create a notification topic. {% include image.html post=page.path file="image14.png" %}
 
 Enter the name of the notification topic in **Topic Name** and click
 **OK**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
 Next, click **Add Subscription** to add a communication channel through which the notification will be sent.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
 Next, choose the protocol for sending the notification, in this case
 **Email**, and enter the chosen email in **Endpoints**. Click
 **OK**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
 An email will be sent to the selected endpoint. For the SMN service to work correctly, the user must confirm their email through a confirmation that will be sent as soon as the **Subscription** is configured.
 
@@ -172,21 +172,21 @@ In addition, also select the occasions in which the notification will be sent in
 alarm is cleared. After configuring, select **Create** to create the
 alarm.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
 In **Alarm Rules** you can see the created alarms and their statuses,
 as well as the resource that is monitored and the alarm activation policy.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
 After an alarm is triggered, you can view it in the **Alarm
 Records** section in **Alarm Management**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image20.png)
+{% include image.html post=page.path file="image20.png" %}
 
 You can also view the notification generated by the alarm on the endpoint selected for sending the notification in the SMN service. In another context, the following email was generated for monitoring a bucket in the OBS service for object storage in Huawei Cloud:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/creating-and-managing-alarms/image21.png)
+{% include image.html post=page.path file="image21.png" %}
 
 The tables for the metrics and events monitored for Huawei Cloud ECS, VPN, NAT, and CBR services have been included in the appendices section 4.0 of this document. To create event-based alarms or metrics for these services, the procedure is the same as that described above.
 

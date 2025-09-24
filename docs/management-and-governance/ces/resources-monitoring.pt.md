@@ -67,15 +67,15 @@ maior atenção.
 É possível ter uma visão de como a página inicial do Cloud Eye é nas
 imagens abaixo:
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image4.png)
+{% include image.html post=page.path file="image4.png)
 
 ## Monitoramento de servidores
 
 O monitoramento de servidores (ECSs e BMSs) pode ser visualizado na
 seção **Server Monitoring**. Vale ressaltar que para o monitoramento
-de servidores, a instalação do agente (Telescope) é recomendada, uma vez
+de servidores, a instalação do agente (Telescope" %} é recomendada, uma vez
 que providencia métricas mais específicas e precisas, de acordo com o
 anexo 4.1.
 
@@ -86,9 +86,9 @@ previamente: na seção de monitoramento de servidores, clique em
 **Configure** no aviso de que a permissão do agente não foi configurada
 para a região atual.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
 ### Automática:
 
@@ -97,7 +97,7 @@ quebra-cabeça na seção de **monitoramento de servidores** e na coluna de
 **status do agente** na ECS/BMS correspondente e aguardar a instalação
 do agente.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
 ### Manual:
 
@@ -105,11 +105,11 @@ Para instalar o agente de forma manual, primeiramente vá para a seção
 relativa à **ECS** ou **BMS**, a depender do tipo de servidor em que o
 agente será instalado.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 Selecione **Remote Login** para realizar o login no servidor desejado
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 Realize o login no servidor digitando o usuário e a senha configurados
 no momento de criação do servidor e, posteriormente, digite o seguinte
@@ -120,14 +120,14 @@ comando, caso a região em que o servidor se encontre seja
 cd /usr/local && curl -k -O https://uniagent-la-south-2.obs.la-south-2.myhuaweicloud.com/script/agent_install.sh && bash agent_install.sh
 ```
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 Caso a região em que o servidor se encontre seja diferente de
 **LA-Santiago**, é possível encontrar a lista de comandos por região no
 seguinte link:
 <https://support.huaweicloud.com/intl/en-us/usermanual-ces/ces_01_0029.html>
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 Caso a mensagem em vermelho acima apareça ao final da instalação, o
 agente foi instalado com sucesso.
@@ -141,40 +141,40 @@ selecionados, com as métricas escolhidas.
 Para criar um dashboard, navegue até a seção **My Dashboards** em
 **Dashboards** e clique em **Create Dashboard**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 Escolha um nome para o dashboard em **Name** e clique em **OK**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 Para adicionar gráficos para o monitoramento de métricas específicas,
 gráficos podem ser adicionados à dashboards. Para adicionar um gráfico,
 clique no dashboard criado e em **Add Graph**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
 Escolha o tipo de gráfico a ser criado e clique em **OK**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image16.png)
+{% include image.html post=page.path file="image16.png)
 
 Certas configurações podem ser feitas ao adicionar um gráfico a uma
 dashboard, como se o mesmo gráfico irá possuir múltiplas métricas ou
 somente uma métrica, o período em que os dados foram coletados, o tipo
 de dado que será visualizado (dados brutos, máximo, mínimo, média ou
-soma) e as métricas a serem mostradas.
+soma" %} e as métricas a serem mostradas.
 
 Em **Metric Display** selecione **One graph for a single metric** para
 adicionar uma única métrica ao gráfico ou selecione **One graph for
 multiple metrics** para adicionar múltiplas métricas ao gráfico.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
 Clique em **Select Resource and Metric** para selecionar o recurso que
 será monitorado e a métrica para esse recurso.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
 Selecione o tipo de serviço que será monitorado à esquerda da página
 **Select Resource and Metric**, o recurso específico a ser monitorado na
@@ -182,23 +182,23 @@ Selecione o tipo de serviço que será monitorado à esquerda da página
 exemplo, o uso da CPU, disco, memória e rede serão monitorados na
 “ecs-9152”.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
 Ajuste o horário da coleta dos dados no canto superior direito da página
 **Add Graph**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image20.png)
+{% include image.html post=page.path file="image20.png" %}
 
 Uma amostra do gráfico gerado irá aparecer na página. Clique em **Save**
 para confirmar e adicionar o gráfico à dashboard.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image21.png)
+{% include image.html post=page.path file="image21.png" %}
 
 Na dashboard, é possível criar uma legenda para o gráfico, edita-lo,
 colocá-lo em tela cheia, recarregar os dados mostrados no gráfico e
 mover o gráfico de lugar.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image22.png)
+{% include image.html post=page.path file="image22.png" %}
 
 No Cloud Eye é possível criar inúmeras dashboards com diversos gráficos
 em cada dashboard, sendo que cada gráfico pode mostrar múltiplas
@@ -216,13 +216,13 @@ automaticamente durante a criação desses recursos. As principais
 métricas de monitoramento desses serviços são adicionadas em forma de
 gráfico nessa seção para o monitoramento rápido e geral desses serviços.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image23.png)
+{% include image.html post=page.path file="image23.png" %}
 
 Além da visualização dos gráficos relativos às principais métricas
 monitoradas, também é possível exportar os dados coletados clicando no
 botão **Export Data**.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/ces/resources-monitoring/image24.png)
+{% include image.html post=page.path file="image24.png" %}
 
 # Anexos
 

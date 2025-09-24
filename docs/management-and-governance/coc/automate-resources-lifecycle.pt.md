@@ -32,22 +32,22 @@ do console da HWC e permita a delegação de permissões para a agency
 relativa ao serviço do COC. **Obs:** As agencies criadas para o serviço
 do COC serão utilizadas somente para delegar permissões ao serviço COC.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
 Navegue até a seção “Resource O\&M” e acesse a subseção “Automated
 O\&M”.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
 Selecione a rotina de “Scheduled O\&M” para definir uma política
 automatizada de ligamento e desligamento de recursos e clique em “Create
 Task”.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image6.png)
+{% include image.html post=page.path file="image6.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image7.png)
+{% include image.html post=page.path file="image7.png" %}
 
 Insira informações pertinentes à task, como o seu nome e o enterprise
 project a qual a task pertencerá. Ademais, insira, também, um fuzo
@@ -55,23 +55,23 @@ horário para a definição periódica da task. Selecione a opção “Periodic
 execution” para definir uma data e horário para a execução da função
 periódica, assim como a data de expiração da função.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
 Selecione o tipo de task como “Jobs” e “Common Jobs” e selecione o job
 desejado. Neste exemplo, será criada uma tarefa para a inicialização de
 ECSs automaticamente. Selecione a agency “ServiceLinkedAgencyForCOC” em
 “IAM Agency” e a região utilizada.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
 Clique em “+Add” para adicionar instâncias de ECSs que farão parte da
 task periódica e selecione as respectivas instâncias.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 Após isso, basta desabilitar a opção de Batch Policy e Manual Review e
 clicar em “Submit” para salvar a task criada. **Obs:** A opção de batch
@@ -79,11 +79,11 @@ policy serve para delimitar grupos distintos de recursos para a task, ao
 passo em que a opção manual review serve para forçar a autorização da
 execução da task por um aprovador delimitado.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 É possível ver o status da task como “Enabled” no console do COC.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
 # Exemplo
 
@@ -91,15 +91,15 @@ Após a definição da task criada no item 2.0 deste documento, é possível
 ver que, no momento em que o dia e horário especificados na task foram
 atingidos, a ECS delimitada na task foi inicializada.
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image15.png)
+{% include image.html post=page.path file="image15.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
 Também é possível ver o status de execução da task pelo console do COC
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image17.png)
+{% include image.html post=page.path file="image17.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/management-and-governance/coc/automate-resources-lifecycle/image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
 # Referências
 

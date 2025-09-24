@@ -28,25 +28,25 @@ In order to migrate machines with operating system disks larger than 1 TiB using
 
 To expand a server's disk, you need to obtain its disk ID. To do this, navigate to the ECS section in the Huawei Cloud console, click the server where the disk is mounted, and then click the desired system disk:
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
 After obtaining the ID of the disk to be resized, navigate to the API Explorer section of the Huawei Cloud console by hovering over “More”, “Tools”, and “API Explorer”. Select the “Elastic Volume Service EVS” section, and then select the “ResizeVolume” API. Alternatively, click the following link to go directly to the API: <https://console-intl.huaweicloud.com/apiexplorer/#/openapi/EVS/doc?api=ResizeVolume>. 
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image6.png) 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image7.png) 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image8.png) 
+{% include image.html post=page.path file="image6.png" %} 
+{% include image.html post=page.path file="image7.png" %} 
+{% include image.html post=page.path file="image8.png" %} 
 
 In the API window, fill in the fields in red with the ID of the disk you selected earlier and its new size in GiB. After filling in the blanks, simply click “Debug” and the disk will be resized to the new size:
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image10.png)
+{% include image.html post=page.path file="image10.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/migration/sms/migrating-servers-with-huge-disks/image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 After resizing the disk of the target server to a size larger than the source server, SMS can be used smoothly to migrate the server to Huawei Cloud.
 

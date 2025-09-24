@@ -27,11 +27,11 @@ utilizando velero.
 
 Para iniciar acessamos o serviço do CCE e criamos o cluster conforme apresentado nas imagens abaixo (para esses teste o cluster de origem foi criado na região de Santiago e o cluster de destino na região de São Paulo):
 
-![](/huaweicloud-knowledge-base/assets/images/containers/cce/migrating-k8s-using-velero/image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/containers/cce/migrating-k8s-using-velero/image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
-![](/huaweicloud-knowledge-base/assets/images/containers/cce/migrating-k8s-using-velero/image5.png)
+{% include image.html post=page.path file="image5.png)
 
 # Instalar e configurar kubectl (bastion)
 
@@ -40,7 +40,7 @@ cluster com ip público e apenas com acesso ssh para os IPs públicos
 seguros para gestão do cluster.
 
 ```shell
-#install kubectl (Recomendado em bastion na mesma região)
+#install kubectl (Recomendado em bastion na mesma região" %}
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
 echo "$(<kubectl.sha256) kubectl" | sha256sum --check
