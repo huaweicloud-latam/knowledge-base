@@ -173,10 +173,10 @@ objetos.
 Clique em “View Details” ao lado dos objetos que falharam para ser
 convertidos para analisar o motivo dos erros e retificar esses erros.
 
-{% include image.html post=page.path file="image23.png)
+{% include image.html post=page.path file="image23.png" %}
 
 Nesta tela, faça as modificações necessárias na janela da direita
-(Target" %} para que o objeto migrado seja compatível com o banco de dados
+(Target) para que o objeto migrado seja compatível com o banco de dados
 de destino. Após fazer as modificações necessárias, clique em “Save”.
 
 {% include image.html post=page.path file="image24.png" %}
@@ -196,7 +196,7 @@ Faça a verificação dos resultados da migração. Após obter uma taxa de
 sucesso considerável, clique em “Finish” para finalizar a migração dos
 objetos do banco.
 
-{% include image.html post=page.path file="image27.png)
+{% include image.html post=page.path file="image27.png" %}
 
 # DRS
 
@@ -205,7 +205,7 @@ dados de origem foram migrados para o banco de dados, como as tabelas,
 funções e schemas. Para realizar a migração dos dados do banco, faz-se
 necessário criar uma task de sincronização entre os dois bancos através
 da ferramenta de migração de banco de dados Data Replication Service
-(DRS" %}. Navegue até o serviço DRS no console da HWC.
+(DRS). Navegue até o serviço DRS no console da HWC.
 
 {% include image.html post=page.path file="image28.png" %}
 

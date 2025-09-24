@@ -191,7 +191,7 @@ dos dados ingeridos; assim como a porcentagem que irá disparar o alarme
 e a forma de comparação, como maior ou igual, maior, menor, menor ou
 igual, aumento em relação à ou decremento em relação à.
 
-{% include image.html post=page.path file="image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 Na seção **Alarm Notification** é possível configurar uma notificação
 para os alarmes disparados por e-mail, SMS, requests HTTP e HTTPS ou
@@ -201,7 +201,7 @@ Huawei Cloud, é possível selecionar a opção **Account contact** em
 **Notification Object** diretamente. Neste exemplo, um segundo e-mail
 será configurado para receber as notificações dos alarmes do Cloud Eye.
 Para isso, é necessário primeiro ativar o serviço Short Message
-Notification (SMN" %}.
+Notification (SMN).
 
 {% include image.html post=page.path file="image12.png" %}
 

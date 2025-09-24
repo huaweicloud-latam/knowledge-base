@@ -132,13 +132,13 @@ Class”. Esta configuração é importe, tendo em vista que se outra opção
 de classe for selecionada haverá um erro ao criar a imagem a partir da
 ISO posteriormente.
 
-{% include image.html post=page.path file="image21.png)
+{% include image.html post=page.path file="image21.png" %}
 
 Clique em “Create Now” para criar o bucket. Abra o aplicativo OBS
 Browser + e insira as informações para acesso conforme pedidas na seção
 “AK Login”. Nos campos “Access Key ID” e “Secret Access Key”, insira
 os dados gerados na seção 3.1. Em “Service”, selecione “HUAWEI CLOUD OBS
-(default" %}”. Em “Access Path” insira “obs://” seguido do nome do bucket
+(default)”. Em “Access Path” insira “obs://” seguido do nome do bucket
 criado. Neste exemplo, o caminho será “obs://ims-iso-tutorial”. Clique
 em “Log In”.
 
@@ -168,9 +168,9 @@ Vá até a seção de “Private Images” e clique em “Create Now”.
 Configure os parâmetros de acordo com a imagem da instância que será
 criada. Neste caso, o OS do Windows Server 2019 Standard.
 
-{% include image.html post=page.path file="image27.png)
+{% include image.html post=page.path file="image27.png" %}
 
-Para imagens Windows, selecione a opção “Bring your own license (BYOL" %}”.
+Para imagens Windows, selecione a opção “Bring your own license (BYOL)”.
 Clique em “Next” após configurar todos os campos.
 
 {% include image.html post=page.path file="image28.png" %}
@@ -215,9 +215,9 @@ junto ao sistema, caso desejado, e clique em “Next”.
 
 Aceite os termos e clique em “Next”.
 
-{% include image.html post=page.path file="image36.png)
+{% include image.html post=page.path file="image36.png" %}
 
-Selecione a opção “Custom: Install Windows only (advanced" %}”.
+Selecione a opção “Custom: Install Windows only (advanced)”.
 
 {% include image.html post=page.path file="image37.png" %}
 

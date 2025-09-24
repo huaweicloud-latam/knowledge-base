@@ -53,21 +53,21 @@ used in the Huawei Cloud Workspace service.
 
 ### Make the settings indicated in the link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) **up to item 56**.
 
-{% include image.html post=page.path file="image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 ### Ignore the item marked in red in this item.
 
 ### You can ignore items 40 to 49
 
-### Items 50 to 56 are just checks (adjustment is rarely required" %}.
+### Items 50 to 56 are just checks (adjustment is rarely required).
 
 Install the software listed in the link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) from item 57 onwards.
 
-{% include image.html post=page.path file="image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 ### Check in the control panel if the programs have been installed
 
-### Before installing the latest tool (Workspace\_HDP\_WindowsDesktop\_Installer" %} make sure that all operating system updates have been performed, otherwise you may receive the error:
+### Before installing the latest tool (Workspace\_HDP\_WindowsDesktop\_Installer) make sure that all operating system updates have been performed, otherwise you may receive the error:
 
 ![C:\\Users\\w00830850\\AppData\\Roaming\\eSpace\_Desktop\\UserData\\w00830850\\imagefiles\\130E24AA-8D4F-40C5-8D3C-CA991947FBDC.png](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image13.png)
 
@@ -109,7 +109,7 @@ Install the software listed in the link (<https://support.huaweicloud.com/intl/e
 
 {% include image.html post=page.path file="image23.png" %}
 
-{% include image.html post=page.path file="image24.png)
+{% include image.html post=page.path file="image24.png" %}
 
 ## Install the libxcb-xinerama0, gawk packages
 
@@ -120,7 +120,7 @@ apt install libxcb-xinerama0 -y
 apt install gawk -y
 ```
 
-## Install the Linux Kernel (For Ubuntu 20.04 Only" %}
+## Install the Linux Kernel (For Ubuntu 20.04 Only)
 
 ```shell
 apt install linux-image-5.15.0-72-generic -y

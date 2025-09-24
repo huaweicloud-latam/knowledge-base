@@ -30,7 +30,7 @@ To start, we access the CCE service and create the cluster as shown in the image
 
 {% include image.html post=page.path file="image4.png" %}
 
-{% include image.html post=page.path file="image5.png)
+{% include image.html post=page.path file="image5.png" %}
 
 # Install and configure kubectl (bastion)
 
@@ -39,7 +39,7 @@ cluster with public IP and only with ssh access to secure public IPs
 for cluster management.
 
 ```shell
-#install kubectl (Recommended on bastion in the same region" %}
+#install kubectl (Recommended on bastion in the same region)
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
 echo "$(<kubectl.sha256) kubectl" | sha256sum --check

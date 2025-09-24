@@ -53,9 +53,9 @@ created in item 2.0 of this document.
 Once you have created the function, click “Create Trigger” to create a trigger
 for the function to be activated.
 
-{% include image.html post=page.path file="image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
-Select the Trigger Type as “Object Storage Service (OBS" %}”,
+Select the Trigger Type as “Object Storage Service (OBS)”,
 select the desired bucket and the Event as “ObjectCreated”, so that the
 function is activated every time a new object appears in the bucket in question.
 

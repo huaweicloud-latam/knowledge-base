@@ -110,9 +110,9 @@ After the syntax conversion is complete, it will show which objects were dynamic
 
 Click “View Details” next to the objects that failed to be converted to analyze the reason for the errors and rectify those errors.
 
-{% include image.html post=page.path file="image23.png)
+{% include image.html post=page.path file="image23.png" %}
 
-On this screen, make the necessary modifications in the right-hand window (Target" %} so that the migrated object is compatible with the target database. After making the necessary modifications, click “Save”.
+On this screen, make the necessary modifications in the right-hand window (Target) so that the migrated object is compatible with the target database. After making the necessary modifications, click “Save”.
 
 {% include image.html post=page.path file="image24.png" %}
 
@@ -128,11 +128,11 @@ wait for the migration to complete.
 
 Check the migration results. After achieving a considerable success rate, click “Finish” to complete the migration of the database objects.
 
-{% include image.html post=page.path file="image27.png)
+{% include image.html post=page.path file="image27.png" %}
 
 # DRS
 
-It is worth noting that in the previous steps only the objects from the source database were migrated to the database, such as tables, functions and schemas. To perform the migration of the database data, it is necessary to create a synchronization task between the two databases using the Data Replication Service (DRS" %} database migration tool. Navigate to the DRS service in the HWC console.
+It is worth noting that in the previous steps only the objects from the source database were migrated to the database, such as tables, functions and schemas. To perform the migration of the database data, it is necessary to create a synchronization task between the two databases using the Data Replication Service (DRS) database migration tool. Navigate to the DRS service in the HWC console.
 
 {% include image.html post=page.path file="image28.png" %}
 

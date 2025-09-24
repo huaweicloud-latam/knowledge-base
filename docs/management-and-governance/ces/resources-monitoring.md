@@ -56,11 +56,11 @@ You can see what the Cloud Eye home page looks like in the images below:
 
 {% include image.html post=page.path file="image3.png" %}
 
-{% include image.html post=page.path file="image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
 ## Server Monitoring
 
-Server Monitoring (ECSs and BMSs) can be viewed in the **Server Monitoring** section. It is worth noting that for server monitoring, installing the agent (Telescope" %} is recommended, since it provides more specific and accurate metrics, according to appendix 4.1.
+Server Monitoring (ECSs and BMSs) can be viewed in the **Server Monitoring** section. It is worth noting that for server monitoring, installing the agent (Telescope) is recommended, since it provides more specific and accurate metrics, according to appendix 4.1.
 
 The agent can be installed in three different ways: manually, automatically, or in batch mode. Regardless of the installation method chosen, you must configure the permissions for the agent in advance: in the server monitoring section, click **Configure** on the warning that the agent permission has not been configured for the current region. 
 
@@ -130,9 +130,9 @@ click on the created dashboard and click **Add Graph**.
 
 Choose the type of chart to create and click **OK**.
 
-{% include image.html post=page.path file="image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
-Certain settings can be made when adding a chart to a dashboard, such as whether the same chart will have multiple metrics or only one metric, the period in which the data was collected, the type of data to be displayed (raw data, maximum, minimum, average or sum" %} and the metrics to be displayed.
+Certain settings can be made when adding a chart to a dashboard, such as whether the same chart will have multiple metrics or only one metric, the period in which the data was collected, the type of data to be displayed (raw data, maximum, minimum, average or sum) and the metrics to be displayed.
 
 Under **Metric Display**, select **One graph for a single metric** to add a single metric to the graph, or select **One graph for multiple metrics** to add multiple metrics to the graph.
 

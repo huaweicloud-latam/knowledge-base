@@ -59,11 +59,11 @@ seguinte comando:
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
 ```
 
-{% include image.html post=page.path file="image8.png)
+{% include image.html post=page.path file="image8.png" %}
 
 Registre o repositório do Ubuntu do SQL Server:
 
-  - SQL Server 2019 (Ubuntu 20.04" %}
+  - SQL Server 2019 (Ubuntu 20.04)
 
 ```shell
 sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
@@ -119,10 +119,10 @@ comando:
 systemctl status mssql-server --no-pager
 ```
 
-{% include image.html post=page.path file="image13.png)
+{% include image.html post=page.path file="image13.png" %}
 
 O serviço do SQL Server estar rodando é denotado pelo status “active
-(running" %}”.
+(running)”.
 
 ## Conectar no SQL Server
 

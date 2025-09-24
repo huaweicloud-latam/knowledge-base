@@ -62,9 +62,9 @@ criada no item 2.0 deste documento.
 Tendo criada a função, clique em “Create Trigger” para criar um trigger
 para a função ser ativada.
 
-{% include image.html post=page.path file="image9.png)
+{% include image.html post=page.path file="image9.png" %}
 
-Selecione o Trigger Type como sendo “Object Storage Service (OBS" %}”,
+Selecione o Trigger Type como sendo “Object Storage Service (OBS)”,
 selecione o bucket desejado e o Event como “ObjectCreated”, para que a
 função seja ativada toda vez que um novo objeto aparecer no bucket em
 questão. Também é possível configurar um prefixo e um sufixo dos objetos

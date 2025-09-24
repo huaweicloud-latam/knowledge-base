@@ -86,12 +86,12 @@ service sshd start
 nano /etc/ssh/sshd_config
 ```
 
-{% include image.html post=page.path file="image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 ## Instalar e configurar o cloud-init
 
 (apt install cloud-init não está funcionando para versão 20.04, instala
-a versão 23 e ela está com problemas de compatibilidade" %}
+a versão 23 e ela está com problemas de compatibilidade)
 
 ```shell
 apt remove cloud-init

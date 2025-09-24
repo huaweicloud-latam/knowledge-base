@@ -69,13 +69,13 @@ imagens abaixo:
 
 {% include image.html post=page.path file="image3.png" %}
 
-{% include image.html post=page.path file="image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
 ## Monitoramento de servidores
 
 O monitoramento de servidores (ECSs e BMSs) pode ser visualizado na
 seção **Server Monitoring**. Vale ressaltar que para o monitoramento
-de servidores, a instalação do agente (Telescope" %} é recomendada, uma vez
+de servidores, a instalação do agente (Telescope) é recomendada, uma vez
 que providencia métricas mais específicas e precisas, de acordo com o
 anexo 4.1.
 
@@ -157,13 +157,13 @@ clique no dashboard criado e em **Add Graph**.
 
 Escolha o tipo de gráfico a ser criado e clique em **OK**.
 
-{% include image.html post=page.path file="image16.png)
+{% include image.html post=page.path file="image16.png" %}
 
 Certas configurações podem ser feitas ao adicionar um gráfico a uma
 dashboard, como se o mesmo gráfico irá possuir múltiplas métricas ou
 somente uma métrica, o período em que os dados foram coletados, o tipo
 de dado que será visualizado (dados brutos, máximo, mínimo, média ou
-soma" %} e as métricas a serem mostradas.
+soma) e as métricas a serem mostradas.
 
 Em **Metric Display** selecione **One graph for a single metric** para
 adicionar uma única métrica ao gráfico ou selecione **One graph for

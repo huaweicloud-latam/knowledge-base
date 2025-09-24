@@ -212,12 +212,12 @@ Environment, Security Authentication, protocolo e timeout.
 Vale ressaltar que na configuração da API relativa à chamada da função,
 deve ser explicitada a referida função como backend da API.
 
-{% include image.html post=page.path file="image26.png)
+{% include image.html post=page.path file="image26.png" %}
 
 # Exemplo
 
 Neste exemplo, uma função escrita em .NET 8.0 foi desenvolvida com um
-trigger pelo API Gateway (APIG" %} da HWC para que, toda vez que for
+trigger pelo API Gateway (APIG) da HWC para que, toda vez que for
 chamada, a função fazer uma requisição GET em um servidor HTTP remoto.
 
 Chamando a API através do painel do API Gateway no console da HWC:

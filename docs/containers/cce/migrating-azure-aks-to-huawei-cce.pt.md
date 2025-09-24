@@ -37,12 +37,12 @@ oferece um passo-a-passo detalhado para uma transição bem-sucedida,
 permitindo que a sua empresa abrace a era cloud-native com confiança,
 juntamente com o suporte imensurável da ferramenta Velero.
 
-{% include image.html post=page.path file="image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 ## Processo da Operação
 
 Para a migração do serviço Microsoft Azure Kubernetes Service (AKS) para
-a Huawei Cloud Container Engine (CCE" %}, uma operação meticulosa foi
+a Huawei Cloud Container Engine (CCE), uma operação meticulosa foi
 executada. Primeiramente, uma análise detalhada foi conduzida para
 identificar todos os workloads, configurações e dependências dentro do
 cluster AKS. Os recursos necessários foram provisionados dentro da
@@ -249,9 +249,9 @@ CIDR 192.168.0.0/16 será utilizada.
 
 {% include image.html post=page.path file="image30.png" %}
 
-{% include image.html post=page.path file="image31.png)
+{% include image.html post=page.path file="image31.png" %}
 
-### **Instalar o Velero nos Clusters de Origem e de Destino (Mesmo Processo" %}**
+### **Instalar o Velero nos Clusters de Origem e de Destino (Mesmo Processo)**
 
 1.  É necessário fazer o download do kubectl e o seu arquivo de
     configurações, copiar o arquivo para o seu cliente e configure o

@@ -145,9 +145,9 @@ In this example, the metric that will be configured to trigger the alarm will be
 
 In **Alarm Policy**, you can select the type of data that will be analyzed, such as raw data, average, maximum, minimum, variance or sum of the ingested data; as well as the percentage that will trigger the alarm and the form of comparison, such as greater than or equal, greater than, less than, less than or equal, increase in relation to or decrease in relation to.
 
-{% include image.html post=page.path file="image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
-In the **Alarm Notification** section, you can configure a notification for alarms triggered by email, SMS, HTTP and HTTPS requests or through a trigger in FunctionGraph. If the notification only needs to be sent to the email of the account owner in the Huawei Cloud console, you can select the **Account contact** option in **Notification Object** directly. In this example, a second email address will be configured to receive notifications of Cloud Eye alarms. To do this, you must first enable the Short Message Notification (SMN" %} service. {% include image.html post=page.path file="image12.png" %} Click **Topics** to view the notification topics that you have created. {% include image.html post=page.path file="image13.png" %} Click **Create Topic** to create a notification topic. {% include image.html post=page.path file="image14.png" %}
+In the **Alarm Notification** section, you can configure a notification for alarms triggered by email, SMS, HTTP and HTTPS requests or through a trigger in FunctionGraph. If the notification only needs to be sent to the email of the account owner in the Huawei Cloud console, you can select the **Account contact** option in **Notification Object** directly. In this example, a second email address will be configured to receive notifications of Cloud Eye alarms. To do this, you must first enable the Short Message Notification (SMN) service. {% include image.html post=page.path file="image12.png" %} Click **Topics** to view the notification topics that you have created. {% include image.html post=page.path file="image13.png" %} Click **Create Topic** to create a notification topic. {% include image.html post=page.path file="image14.png" %}
 
 Enter the name of the notification topic in **Topic Name** and click
 **OK**.

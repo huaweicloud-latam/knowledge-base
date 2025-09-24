@@ -54,21 +54,21 @@ utilizadas no serviço de Workspace da Huawei Cloud.
 
 ### Efetue os ajuste indicados no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) **até o item 56**.
 
-{% include image.html post=page.path file="image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 ### Ignore o item marcado em vermelho nesse item.
 
 ### Pode ignorar os itens entre 40 e 49
 
-### Itens 50 a 56 apenas verificações (raramente é necessário ajuste" %}.
+### Itens 50 a 56 apenas verificações (raramente é necessário ajuste).
 
 Efetue a instalação dos softwares indicados no link (<https://support.huaweicloud.com/intl/en-us/usermanual-workspace/workspace_06_0510.html>) do item 57 em diante.
 
-{% include image.html post=page.path file="image12.png)
+{% include image.html post=page.path file="image12.png" %}
 
 ### Verifique no painel de controle se os programas foram instalados
 
-### Antes da instalação da última ferramenta (Workspace\_HDP\_WindowsDesktop\_Installer" %} garanta que todas as atualizações do sistema operacional foram realizadas, caso contrário pode receber o erro:
+### Antes da instalação da última ferramenta (Workspace\_HDP\_WindowsDesktop\_Installer) garanta que todas as atualizações do sistema operacional foram realizadas, caso contrário pode receber o erro:
 
 ![C:\\Users\\w00830850\\AppData\\Roaming\\eSpace\_Desktop\\UserData\\w00830850\\imagefiles\\130E24AA-8D4F-40C5-8D3C-CA991947FBDC.png](/huaweicloud-knowledge-base/assets/images/compute/ims/private-windows-and-ubuntu-workspace-image/image13.png)
 
@@ -110,7 +110,7 @@ Efetue a instalação dos softwares indicados no link (<https://support.huaweicl
 
 {% include image.html post=page.path file="image23.png" %}
 
-{% include image.html post=page.path file="image24.png)
+{% include image.html post=page.path file="image24.png" %}
 
 ## Instale os pacotes libxcb-xinerama0, gawk
 
@@ -121,7 +121,7 @@ apt install libxcb-xinerama0 -y
 apt install gawk -y
 ```
 
-##  Install the Linux Kernel (For Ubuntu 20.04 Only" %}
+##  Install the Linux Kernel (For Ubuntu 20.04 Only)
 
 ```shell
 apt install linux-image-5.15.0-72-generic -y
