@@ -22,11 +22,11 @@ This document aims to present the procedures required to implement identity fede
 
 In the diagram below, you can see the authentication process flow in Huawei Cloud using an IdP.
 
-{% include image.html post=page.path file="image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 # Keycloak
 
-First, you need to configure the identity provider (IdP). To do this, access the IdP (Keycloak" %} configuration page and navigate to the “Clients” section. Click “Create” to create a new client.
+First, you need to configure the identity provider (IdP). To do this, access the IdP (Keycloak) configuration page and navigate to the “Clients” section. Click “Create” to create a new client.
 
 {% include image.html post=page.path file="image4.png" %}
 
@@ -65,14 +65,14 @@ Select the “Mapper Type” as “Group Membership”, disable the “Full grou
 To perform Huawei Cloud user federation, users must first exist. If there is no user created in Keycloak, create a user. Navigate to the “Realm Settings” section and click on “OpenID Endpoint Configuration” in the “Endpoints” subsection. 
 
 {% include image.html post=page.path file="image13.png" %} 
-{% include image.html post=page.path file="image14.png) 
+{% include image.html post=page.path file="image14.png" %} 
 
-Note the following parameters, which will need to be configured on the service provider (Huawei Cloud" %} side: “authorization\_endpoint” and “jwks\_uri”. 
+Note the following parameters, which will need to be configured on the service provider (Huawei Cloud) side: “authorization_endpoint” and “jwks_uri”. 
 
 {% include image.html post=page.path file="image15.png" %}
 
 In the web browser, navigate to the hyperlink for the
-“jwks\_uri” parameter copied above and make a note of the key.
+“jwks_uri” parameter copied above and make a note of the key.
 
 {% include image.html post=page.path file="image16.png" %}
 
@@ -109,9 +109,9 @@ configured in the “Client ID” field of Keycloak;
 > Parameter “authorization\_endpoint” present in the Open-ID endpoint
 > configuration file in Keycloak;
 
-4. **<span class="underline">Response Mode:</span>** “form\_post”;
+4. **<span class="underline">Response Mode:</span>** “form_post”;
 
-5. > **<span class="underline">Signing Key:</span>** Contents of the “jwks\_uri” parameter, present in the Open-ID endpoint
+5. > **<span class="underline">Signing Key:</span>** Contents of the “jwks_uri” parameter, present in the Open-ID endpoint
 > configuration file in Keycloak.
 
 **<span class="underline">Important:</span>** The Open-ID protocol necessarily requires an SSL certificate to be configured in the identity provider to enable communication via the HTTPS protocol. The SSL certificate can be a self-signed certificate. Finally, in the “Identity Conversion Rules” section, click “Create Rule” to create a rule for converting users and groups from the IdP to the corresponding users and groups in Huawei Cloud. You can use the following example conversion rule. 

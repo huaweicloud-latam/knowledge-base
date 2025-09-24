@@ -29,13 +29,13 @@ de identidade para usuários virtuais na Huawei Cloud.
 No diagrama abaixo, é possível visualizar o fluxo do processo de
 autenticação na Huawei Cloud utilizando um IdP.
 
-{% include image.html post=page.path file="image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 # Keycloak
 
 Primeiramente, faz-se necessário realizar a configuração do provedor de
 identidade (IdP). Para isso, acesse a página de configurações do IdP
-(Keycloak" %} e navegue até a seção “Clients”. Clique em “Create” para
+(Keycloak) e navegue até a seção “Clients”. Clique em “Create” para
 criar um novo cliente.
 
 {% include image.html post=page.path file="image4.png" %}
@@ -93,16 +93,16 @@ Configuration”, na subseção de “Endpoints”.
 
 {% include image.html post=page.path file="image13.png" %}
 
-{% include image.html post=page.path file="image14.png)
+{% include image.html post=page.path file="image14.png" %}
 
 Tome nota dos seguintes parâmetros, que precisarão ser configurados no
-lado do service provider (Huawei Cloud" %}: “authorization\_endpoint” e
-“jwks\_uri”.
+lado do service provider (Huawei Cloud): “authorization_endpoint” e
+“jwks_uri”.
 
 {% include image.html post=page.path file="image15.png" %}
 
 No web browser, navegue até o hyperlink relativo ao parâmetro
-“jwks\_uri” copiado acima e tome nota da chave.
+“jwks_uri” copiado acima e tome nota da chave.
 
 {% include image.html post=page.path file="image16.png" %}
 
@@ -136,13 +136,13 @@ criado e preencha os campos conforme mostrado na figura abaixo.
     configurado no campo “Client ID” do Keycloak;
 
 3.  > **<span class="underline">Authorization Endpoint:</span>**
-    > Parâmetro “authorization\_endpoint” presente no arquivo de
+    > Parâmetro “authorization_endpoint” presente no arquivo de
     > configurações do endpoint Open-ID no Keycloak;
 
-4.  **<span class="underline">Response Mode:</span>** “form\_post”;
+4.  **<span class="underline">Response Mode:</span>** “form_post”;
 
 5.  > **<span class="underline">Signing Key:</span>** Conteúdo do
-    > parâmetro “jwks\_uri”, presente no arquivo de configurações do
+    > parâmetro “jwks_uri”, presente no arquivo de configurações do
     > endpoint Open-ID no Keycloak.
 
 **<span class="underline">Importante:</span>** O protocolo Open-ID

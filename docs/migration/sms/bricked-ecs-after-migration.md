@@ -101,21 +101,21 @@ Once done, put the frozen ECS system disk back into the original ECS, following 
 
 # Grub shell
 
-{% include image.html post=page.path file="image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
 Run the “ls” command to list the disk partitions seen by
 Grub. To identify which is the correct partition to use,
-run the “ls (hd0,gpt1" %}/” command until you find the partition with
+run the “ls (hd0,gpt1) command until you find the partition with
 the contents of the system disk, replacing “hd0,gpt1” with the
 partitions seen by the “ls”.
 
-{% include image.html post=page.path file="image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
 Once you find the correct partition, perform the following steps to boot the temporary ECS kernel in single-user mode:
 
 1. Replacing (hd0,gpt1) with the partition found above;
 ```shell
-set root=(hd0,gpt1" %}
+set root=(hd0,gpt)
 ```
 
 2. Replacing “vmlinuz-5.4.0-170-generic” with the kernel copied from the
@@ -231,11 +231,11 @@ Use the command “vim /etc/default/grub” to modify the grub configuration fil
 
 Use the “update-grub” command to update the grub configuration file again.
 
-{% include image.html post=page.path file="image35.png)
+{% include image.html post=page.path file="image35.png" %}
 
 Use the “reboot” command to restart ECS on the updated kernel.
 
-# Settings (Optional" %}
+# Settings (Optional)
 
 In addition to the above settings, it is also recommended that the
 Azure agent, which is installed by default on Azure VMs, be

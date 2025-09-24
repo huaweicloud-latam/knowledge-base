@@ -31,12 +31,12 @@ provedor de identidade para usuários virtuais na Huawei Cloud.
 No diagrama abaixo, é possível visualizar o fluxo do processo de
 autenticação na Huawei Cloud utilizando um IdP.
 
-{% include image.html post=page.path file="image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 # Keycloak
 
 Primeiramente, faz-se necessário obter o arquivo de configuração XML do
-service provider (SP" %} da Huawei Cloud para realizar a configuração no
+service provider (SP) da Huawei Cloud para realizar a configuração no
 Keycloak.
 
 Em um navegador web, acesse a seguinte página e salve o seu conteúdo em
@@ -46,9 +46,9 @@ um arquivo XML: <https://auth.huaweicloud.com/authui/saml/metadata.xml>.
 nuvem privada, como o HCSO, o endpoint público para obter o XML do SAML
 2.0 possuirá a seguinte estrutura: .
 
-{% include image.html post=page.path file="image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
-Feito isso, acesse a página de configurações do IdP (Keycloak" %} e navegue
+Feito isso, acesse a página de configurações do IdP (Keycloak) e navegue
 até a seção “Clients”. Clique em “Create” para criar um novo cliente.
 
 {% include image.html post=page.path file="image5.png" %}
@@ -120,11 +120,11 @@ uma configuração de federação de identidade.
 Selecione o protocolo SAML e o “SSO Type” como “Virtual User”. Clique no
 botão “OK” para salvar as configurações da criação da IdP.
 
-{% include image.html post=page.path file="image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
 Feito isso, selecione a opção “Modify” ao lado do provedor de identidade
 criado e clique em “Select File” para realizar o upload do arquivo de
-configurações XML salvo do provedor de identidade (Keycloak" %}. Após ter
+configurações XML salvo do provedor de identidade (Keycloak). Após ter
 selecionado o arquivo, selecione “Upload” para fazer o upload do arquivo
 XML e carregar as configurações do IdP.
 

@@ -24,19 +24,19 @@ This document aims to present the procedures required to implement identity fede
 
 In the diagram below, you can see the authentication process flow in Huawei Cloud using an IdP.
 
-{% include image.html post=page.path file="image3.png)
+{% include image.html post=page.path file="image3.png" %}
 
 # Keycloak
 
-First, you need to obtain the XML configuration file from the Huawei Cloud service provider (SP" %} to perform the configuration in Keycloak.
+First, you need to obtain the XML configuration file from the Huawei Cloud service provider (SP) to perform the configuration in Keycloak.
 
 In a web browser, go to the following page and save its contents in an XML file: <https://auth.huaweicloud.com/authui/saml/metadata.xml>.
 
 **<span class="underline">Note:</span>** For private cloud-based deployments, such as HCSO, the public endpoint to obtain SAML 2.0 XML will have the following structure: .
 
-{% include image.html post=page.path file="image4.png)
+{% include image.html post=page.path file="image4.png" %}
 
-Once done, go to the IdP (Keycloak" %} settings page and navigate to the “Clients” section. Click “Create” to create a new client.
+Once done, go to the IdP (Keycloak) settings page and navigate to the “Clients” section. Click “Create” to create a new client.
 
 {% include image.html post=page.path file="image5.png" %}
 
@@ -94,9 +94,9 @@ an identity federation configuration.
 
 Select the SAML protocol and “SSO Type” as “Virtual User”. Click the “OK” button to save the IdP creation settings.
 
-{% include image.html post=page.path file="image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
-Once done, select the “Modify” option next to the identity provider you created and click “Select File” to upload the saved XML configuration file for the identity provider (Keycloak" %}. After selecting the file, select “Upload” to upload the XML file and load the IdP settings.
+Once done, select the “Modify” option next to the identity provider you created and click “Select File” to upload the saved XML configuration file for the identity provider (Keycloak). After selecting the file, select “Upload” to upload the XML file and load the IdP settings.
 
 {% include image.html post=page.path file="image20.png" %}
 

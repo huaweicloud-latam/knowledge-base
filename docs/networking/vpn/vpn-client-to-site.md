@@ -92,7 +92,7 @@ step below. Otherwise, skip this step.
 Use the command ./easyrsa build-client-full p2cclient.com nopass” to
 generate a client certificate and its private key.
 
-{% include image.html post=page.path file="image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
 - By default, the client certificate will be stored in the
 C:\\EasyRSA-3.1.7\\pki\\issued directory. In this example, the
@@ -105,7 +105,15 @@ example, the “p2cclient.com.key” certificate was generated.
 # CCM
 
 After issuing the certificate(s) in the previous section,
-you need to publish the server certificate to the service Huawei Cloud Certificate Manager (CCM" %}. To do this, navigate to the CCM service in the HWC console. {% include image.html post=page.path file="image12.png" %} Click on the “Hosted Certificates” section and select the “Upload Certificate” option. {% include image.html post=page.path file="image13.png" %} In the “Certificate File” field, you must enter both the server and CA certificates, in that order. Therefore, enter the server certificate first and then, in the same text box, the CA certificate. In the “Private Key” field, simply enter the content of the server’s private key. After entering both fields, simply click “Submit” to save the certificate.
+you need to publish the server certificate to the service Huawei Cloud Certificate Manager (CCM). To do this, navigate to the CCM service in the HWC console. 
+
+{% include image.html post=page.path file="image12.png" %} 
+
+Click on the “Hosted Certificates” section and select the “Upload Certificate” option. 
+
+{% include image.html post=page.path file="image13.png" %} 
+
+In the “Certificate File” field, you must enter both the server and CA certificates, in that order. Therefore, enter the server certificate first and then, in the same text box, the CA certificate. In the “Private Key” field, simply enter the content of the server’s private key. After entering both fields, simply click “Submit” to save the certificate.
 
 {% include image.html post=page.path file="image14.png" %}
 

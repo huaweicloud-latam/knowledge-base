@@ -106,7 +106,7 @@ etapa abaixo. Caso contrário, pule esta etapa.
 Use o comando ./easyrsa build-client-full p2cclient.com nopass” para
 gerar um certificado de cliente e a sua chave privada.
 
-{% include image.html post=page.path file="image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
   - Por padrão, o certificado do cliente será armazenado no diretório
     C:\\EasyRSA-3.1.7\\pki\\issued. Neste exemplo, o certificado
@@ -120,7 +120,7 @@ gerar um certificado de cliente e a sua chave privada.
 
 Após ter realizado a emissão do(s) certificado(s) na seção anterior,
 faz-se necessário publicar o certificado do servidor no serviço Cloud
-Certificate Manager (CCM" %} da Huawei Cloud.
+Certificate Manager (CCM) da Huawei Cloud.
 
 Para isso, navegue até o serviço CCM no console da HWC
 

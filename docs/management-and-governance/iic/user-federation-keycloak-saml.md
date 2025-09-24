@@ -44,9 +44,9 @@ create an identity federation configuration.
 
 {% include image.html post=page.path file="image6.png" %}
 
-{% include image.html post=page.path file="image7.png)
+{% include image.html post=page.path file="image7.png" %} 
 
-Click “Download Metadata File” to download the XML configuration file of the protocol to be used (SAML 2.0" %} of the Service
+Click “Download Metadata File” to download the XML configuration file of the protocol to be used (SAML 2.0) of the Service
 Provider.
 
 {% include image.html post=page.path file="image8.png" %}
@@ -60,9 +60,9 @@ Once done, just click “Next” followed by “OK” to finish the configuratio
 
 {% include image.html post=page.path file="image10.png" %}
 
-{% include image.html post=page.path file="image11.png)
+{% include image.html post=page.path file="image11.png" %}
 
-**Note:** The next three subsections (3.2, 3.3 and 3.4" %} are related to user, group, permission set and Organization account configurations. If these configurations have already been configured, ignore the aforementioned subsections.
+**Note:** The next three subsections (3.2, 3.3 and 3.4) are related to user, group, permission set and Organization account configurations. If these configurations have already been configured, ignore the aforementioned subsections.
 
 ## **Users and Groups**
 
@@ -122,11 +122,11 @@ Select the permission sets that the aforementioned users will have access to in 
 
 {% include image.html post=page.path file="image24.png" %}
 
-{% include image.html post=page.path file="image25.png)
+{% include image.html post=page.path file="image25.png" %}
 
 # Keycloak Client
 
-To integrate Huawei Cloud with Keycloak, you must first create a Client in the IdP. To do this, go to the IdP (Keycloak" %} settings page and navigate to the “Clients” section. Click “Create” to create a new client. 
+To integrate Huawei Cloud with Keycloak, you must first create a Client in the IdP. To do this, go to the IdP (Keycloak) settings page and navigate to the “Clients” section. Click “Create” to create a new client. 
 
 {% include image.html post=page.path file="image26.png" %} 
 {% include image.html post=page.path file="image27.png" %} 

@@ -125,22 +125,22 @@ isso, inicie a máquina e faça “remote login” nela através do console.
 
 # Grub shell
 
-{% include image.html post=page.path file="image18.png)
+{% include image.html post=page.path file="image18.png" %}
 
 Execute o comando “ls” para listar as partições de disco vistas pelo
 Grub. Para identificar qual é a partição correta a ser utilizada,
-execute o comando “ls (hd0,gpt1" %}/” até encontrar a partição com o
+execute o comando “ls (hd0,gpt1) até encontrar a partição com o
 conteúdo do disco de sistema, substituindo “hd0,gpt1” pelas partições
 vistas pelo comando “ls”.
 
-{% include image.html post=page.path file="image19.png)
+{% include image.html post=page.path file="image19.png" %}
 
 Ao encontrar a partição correta, efetue os seguintes passos para dar
 boot em modo single-user no kernel da ECS temporária:
 
 1. Substituindo (hd0,gpt1) pela partição encontrada acima;
 ```shell
-set root=(hd0,gpt1" %}
+set root=(hd0,gpt1)
 ```
 
 2. Substituindo “vmlinuz-5.4.0-170-generic” pelo kernel copiado da
@@ -269,18 +269,18 @@ instalada.
 {% include image.html post=page.path file="image33.png" %}
 
 Utilize o comando “vim /etc/default/grub” para modificar o arquivo de
-configurações do grub. Altere os parâmetros grub\_default={nome do
+configurações do grub. Altere os parâmetros grub_default={nome do
 kernel copiado acima}.
 {% include image.html post=page.path file="image34.png" %}
 
 Utilize o comando “update-grub” para atualizar o arquivo de
 configurações do grub novamente.
 
-{% include image.html post=page.path file="image35.png)
+{% include image.html post=page.path file="image35.png" %}
 
 Utilize o comando “reboot” para reiniciar a ECS no kernel atualizado.
 
-# Configurações (Opcional" %}
+# Configurações (Opcional)
 
 Além das configurações realizadas acima, também é recomendado que o
 agente da Azure, que é instalado por padrão em VMs da Azure, seja
