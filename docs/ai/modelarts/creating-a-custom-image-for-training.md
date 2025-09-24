@@ -41,7 +41,7 @@ store the training code to be executed and the execution logs
 of the task. To do this, navigate to the OBS service in the Huawei Cloud console and create a bucket.
 
 <img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image3.png"
+src="assets/images/ai/modelarts/creating-a-custom-image-for-training/image3.png"
 style="width:6.26806in;height:3.3in" />
 
 Once you've created the bucket, create two folders within bucket: "pytorch" and
