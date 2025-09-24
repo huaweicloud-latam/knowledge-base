@@ -44,9 +44,7 @@ o SSH, habilitá-lo e iniciá-lo.
 comando:
 ssh -V. A imagem 1 mostra que o SSH já está instalado.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image3.png"
-style="width:6.26806in;height:0.54861in" />
+{% include image.html post=page.path file="image3.png" %}
 
 - Se a instalação for necessária, use: sudo apt install ssh -y
 
@@ -57,9 +55,7 @@ style="width:6.26806in;height:0.54861in" />
 - Verifique o status do SSH usando: sudo systemctl status ssh. Observe
 se o status mostrar ativo (em execução). O SSH deve estar ativo, como mostra a imagem 2.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image4.png"
-style="width:6.26806in;height:1.72014in" />
+{% include image.html post=page.path file="image4.png" %}
 
 ## Criando Grupo e Usuário SFTP
 
@@ -77,9 +73,7 @@ less /etc/passwd \| grep rodolfo. O resultado mostra o caminho de
 “Rodolfo” no arquivo “passwd”, portanto, o usuário foi criado (como mostra
 a imagem 3)
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image5.png"
-style="width:6.26806in;height:0.55556in" />
+{% include image.html post=page.path file="image5.png" %}
 
 - Defina uma senha para o usuário: sudo passwd rodolfo
 
@@ -88,9 +82,7 @@ style="width:6.26806in;height:0.55556in" />
 - Para verificar se o usuário foi adicionado com sucesso, use o seguinte
 comando: grep sftp /etc/group (como mostrado na imagem 4)
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image6.png"
-style="width:5.16667in;height:0.5625in" />
+{% include image.html post=page.path file="image6.png" %}
 
 ## Definindo Permissões
 
@@ -128,9 +120,7 @@ o encaminhamento é desabilitado;
 - ForceCommand internal-sftp: a conexão SSH será estabelecida
 somente após o login
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image7.png"
-style="width:3.06944in;height:2.17083in" />
+{% include image.html post=page.path file="image7.png" %}
 
 - Reinicie o serviço SSH: sudo systemctl restart ssh
 
@@ -155,9 +145,7 @@ pode ser obtido neste site: https://ip4.me/
 tipo de conexão e senha do usuário. Se a conexão for bem-sucedida,
 uma mensagem como a da Imagem 6 será exibida;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image8.png"
-style="width:3.18111in;height:2.06452in" />
+{% include image.html post=page.path file="image8.png" %}
 
 - Se a conexão for bem-sucedida, o diretório do usuário estará
 acessível no FileZilla e será possível fazer upload e download de arquivos
@@ -225,9 +213,7 @@ de peering é necessária;
 - O cluster CDM criado aparecerá na página Gerenciamento de Cluster como
 Imagem 7 mostra;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image9.png"
-style="width:6.26806in;height:0.48264in" />
+{% include image.html post=page.path file="image9.png" %}
 
 ## Vinculando ambas as extremidades com o CDM
 
@@ -238,15 +224,11 @@ as configurações dos serviços cujos dados serão migrados.
 
 - No gerenciamento de cluster, localize o CDM desejado e clique em Gerenciamento de Tarefas (Imagem 8);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image10.png"
-style="width:6.26806in;height:0.60833in" />
+{% include image.html post=page.path file="image10.png" %}
 
 - Clique em “Links” e escolha “Criar Link” (Imagem 9);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image11.png"
-style="width:6.26806in;height:1.21181in" />
+{% include image.html post=page.path file="image11.png" %}
 
 - Escolha o tipo de serviço. Neste caso, encontre o tipo “SFTP” e clique em
 “Avançar”;
@@ -263,9 +245,7 @@ serviço é SFTP, portanto, a porta SFTP é 22;
 
 - Teste a conexão e clique em “Salvar”;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image12.png"
-style="width:3.18755in;height:3.27957in" />
+{% include image.html post=page.path file="image12.png" %}
 
 ### Criando o link OBS
 
@@ -288,16 +268,12 @@ aba Informações Básicas, onde é possível encontrar o endpoint
 
 - Teste a conexão e clique em “Salvar”;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image13.png"
-style="width:2.93727in;height:3.59677in" />
+{% include image.html post=page.path file="image13.png" %}
 
 Após a criação, os serviços aparecerão na aba Links, conforme mostrado na
 Imagem 12
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image14.png"
-style="width:6.26806in;height:1.12292in" />
+{% include image.html post=page.path file="image14.png" %}
 
 ## Criando uma Tarefa
 
@@ -307,9 +283,7 @@ da origem para o CDM e do CDM para o destino.
 - Em Gerenciamento de Tarefas, selecione Migração de Tabela/Arquivo, já que apenas alguns
 diretórios dentro do SFTP serão migrados (Imagem 13);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image15.png"
-style="width:4.6041in;height:1.41755in" />
+{% include image.html post=page.path file="image15.png" %}
 
 - Selecione os links CDM de origem e destino. Neste caso,
 a origem é "sftp_link" e o destino é "obs_link_sftp";
@@ -320,9 +294,7 @@ caso, a pasta "Document" dentro do rodolfo;
 - Escolha o bucket desejado e um diretório de destino desejado. Neste
 caso, coloque Document ou sftp;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image16.png"
-style="width:5.36911in;height:2.44811in" />
+{% include image.html post=page.path file="image16.png" %}
 
 - Se não houver nenhuma configuração avançada específica, escolha Avançar;
 
@@ -330,16 +302,12 @@ style="width:5.36911in;height:2.44811in" />
 atualizar no bucket de destino. Neste caso, o ciclo de tempo escolhido
 é de 5 minutos, para ser executado por 24 horas (Imagem 15);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image17.png"
-style="width:6.26806in;height:1.5in" />
+{% include image.html post=page.path file="image17.png" %}
 
 - Se o serviço for criado corretamente, ele aparecerá na aba Migração de Tabela/Arquivo. Selecione Executar e veja se o Status da Migração muda para
 Sucesso (Imagem 12);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image18.png"
-style="width:6.26806in;height:0.65764in" />
+{% include image.html post=page.path file="image18.png" %}
 
 # Referências
 

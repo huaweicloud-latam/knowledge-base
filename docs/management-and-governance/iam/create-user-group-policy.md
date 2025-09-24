@@ -25,115 +25,79 @@ policies in the console, you can skip the "Policy Creation" step and start by cr
 
 Access the IAM service:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image3.png"
-style="width:6.26806in;height:1.31319in" />
+{% include image.html post=page.path file="image3.png" %}
 
 Click on “Permission” and then on “Policeis/Roles”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image4.png"
-style="width:6.26806in;height:2.04583in" />
+{% include image.html post=page.path file="image4.png" %}
 
 Click on “Create Custom Policy”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image5.png"
-style="width:6.26806in;height:3.04236in" />
+{% include image.html post=page.path file="image5.png" %}
 
 Set the name for the policy and start defining the policy content. Note: In the example below, we are defining permissions for a user/group with a DBA profile with exclusive access to the EDS service. **But remember to adjust according to your needs**.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image6.png"
-style="width:6.27574in;height:2.58302in" />
+{% include image.html post=page.path file="image6.png" %}
 
 Select the service
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image7.png"
-style="width:6.29661in;height:2.64184in" />
+{% include image.html post=page.path file="image7.png" %}
 
 Specify which service features you want to allow/deny, or if you want to grant full access to the service, click "Select All."
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image8.png"
-style="width:6.26806in;height:3.51597in" />
+{% include image.html post=page.path file="image8.png" %}
 
 Keep the "All" option unless you have advanced knowledge to specify service features you want to limit.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image9.png"
-style="width:6.26806in;height:2.50069in" />
+{% include image.html post=page.path file="image9.png" %}
 
 There is no need to add a condition except in very specific cases (if necessary, contact a partner for assistance). Fill out a description for the policy and finally click "OK."
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image10.png"
-style="width:6.26806in;height:2.48194in" />
+{% include image.html post=page.path file="image10.png" %}
 
 # Group Creation
 
 Access the IAM service:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image3.png"
-style="width:6.26806in;height:1.31319in" />
+{% include image.html post=page.path file="image3.png" %}
 
 Select “User Groups” and then “Create User Group”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image11.png"
-style="width:6.26806in;height:2.03681in" />
+{% include image.html post=page.path file="image11.png" %}
 
 Set the group name, a description and click ok.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image12.png"
-style="width:6.26806in;height:2.08819in" />
+{% include image.html post=page.path file="image12.png" %}
 
 Click on the group.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image13.png"
-style="width:6.26806in;height:2.02778in" />
+{% include image.html post=page.path file="image13.png" %}
 
 Click “Authorize”.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image14.png"
-style="width:6.26806in;height:2.35069in" />
+{% include image.html post=page.path file="image14.png" %}
 
 Select the policies you want to use in the group and click "Next."
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image15.png"
-style="width:6.26806in;height:3.53333in" />
+{% include image.html post=page.path file="image15.png" %}
 
 Select how the permission will be granted, for example, for a specific region or for resources deployed in a specific project. **The more restrictive the permission granted, the more secure your account will be.**
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image16.png"
-style="width:6.26806in;height:3.50556in" />
+{% include image.html post=page.path file="image16.png" %}
 
 Click "Finish"
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image17.png"
-style="width:6.26806in;height:2.49167in" />
+{% include image.html post=page.path file="image17.png" %}
 
 # User Creation
 
 Access the service IAM:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image3.png"
-style="width:6.26806in;height:1.31319in" />
+{% include image.html post=page.path file="image3.png" %}
 
 Click on "Users" and then on "Create User":
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image18.png"
-style="width:6.26806in;height:2.05625in" />
+{% include image.html post=page.path file="image18.png" %}
 
 Fill in the fields as instructed in the following sub-items:
 
@@ -155,48 +119,32 @@ rio will offer your terminal when the user enters the password.
 
 Click “Next”.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image19.png"
-style="width:6.26806in;height:3.51597in" />
+{% include image.html post=page.path file="image19.png" %}
 
 Select the group with the permission set you want for the user. Note: Users can be assigned to more than one group or no group at all. If they don't belong to any group, permissions/policies must be assigned directly to the user, as shown in sections 3.4.1 to 3.4.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image20.png"
-style="width:6.26806in;height:3.51667in" />
+{% include image.html post=page.path file="image20.png" %}
 
 Click on the user you want to directly assign policies to:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image21.png"
-style="width:5.65117in;height:1.83071in" />
+{% include image.html post=page.path file="image21.png" %}
 
 Click “Permissions”:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image22.png"
-style="width:5.6659in;height:2.38475in" />
+{% include image.html post=page.path file="image22.png" %}
 
 Click “Authorize”:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image23.png"
-style="width:5.6524in;height:2.40662in" />
+{% include image.html post=page.path file="image23.png" %}
 
 Select “Select permissions,” then select all the permissions you want for the user (Note: You can use the search function to make things easier) and then click "Next":
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image24.png"
-style="width:5.75014in;height:3.21207in" />
+{% include image.html post=page.path file="image24.png" %}
 
 If "Enterprise projects" mode is enabled, select which project(s) the user will have permission to access.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image25.png"
-style="width:5.70919in;height:3.20439in" />
+{% include image.html post=page.path file="image25.png" %}
 
 Click "Finish."
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/create-user-group-policy/image26.png"
-style="width:6.26806in;height:1.825in" />
+{% include image.html post=page.path file="image26.png" %}

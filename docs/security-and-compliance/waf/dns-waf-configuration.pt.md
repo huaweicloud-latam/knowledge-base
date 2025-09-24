@@ -24,10 +24,7 @@ Primeiramente, é necessário adquirir um domínio válido de um provedor de dom
 certificado para registrar seu DNS. Neste exemplo, um domínio foi
 adquirido em [registro.br](https://registro.br/):
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image3.png"
-style="width:6.26806in;height:1.84613in"
-alt="C:\Users\l50032583\AppData\Roaming\WeLink_Desktop\appdata\IM\l50032583\ReceiveFiles\originalImgfiles\FF16CD1C-1881-4995-AD30-DD13E034C046.png" />
+{% include image.html post=page.path file="image3.png" %}
 
 # Configuração de DNS
 
@@ -40,18 +37,14 @@ configurar o DNS na Huawei Cloud:
 
 2. Criando uma Zona Pública: Comece estabelecendo uma Zona Pública na Huawei Cloud. Esta etapa é fundamental para as configurações subsequentes de DNS:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image4.png"
-style="width:5.15625in;height:5.61458in" />
+{% include image.html post=page.path file="image4.png" %}
 
 Acesse **Zonas Públicas\> Criar Zona Pública**
 
 Insira o nome do seu domínio exatamente como registrado com o seu provedor e
 siga as instruções fornecidas para concluir o processo de configuração.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image5.png"
-style="width:6.26806in;height:5.11319in" />
+{% include image.html post=page.path file="image5.png" %}
 
 ## Atualizar o gerenciamento de domínio para o Huawei Cloud
 
@@ -59,14 +52,14 @@ Após criar uma Zona Pública com sucesso, o próximo passo é redirecionar
 nosso domínio para o Huawei Cloud DNS. Para isso, precisamos recuperar os
 domínios do Huawei Cloud DNS. Veja como proceder:
 
-<img src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image6.png" style="width:6.26806in;height:4.45208in" />
+{% include image.html post=page.path file="image6.png" %}
 
 No provedor de domínio onde você adquiriu seu domínio, você precisa
 atualizar as configurações de DNS para apontar seu domínio para os dois servidores DNS
 fornecidos pela Huawei Cloud. Esta ação conecta efetivamente seu domínio
 à infraestrutura de DNS da Huawei Cloud.
 
-<img src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image7.png" style="width:6.26806in;height:2.82556in" alt="C:\Users\g50037306\AppData\Roaming\WeLink_Desktop\appdata\IM\g50037306\ReceiveFiles\originalImgfiles\D149D8EA-3141-4B0C-8872-C3C15522077B.png" />
+{% include image.html post=page.path file="image7.png" %}
 
 A atualização do DNS pode levar até 48 horas para se propagar e atualizar completamente
 globalmente.
@@ -79,15 +72,11 @@ Neste exemplo, temos um ECS com um servidor NGINX instalado
 com o IP público **101.44.203.187**. Se quisermos apontar um nome de domínio
 para esse IPv4, criamos um **Conjunto de Registros A – Mapear domínios para Endereços IPv4** e, no valor, colocamos o IP que queremos traduzir:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image8.png"
-style="width:6.26806in;height:6.84236in" />
+{% include image.html post=page.path file="image8.png" %}
 
 Agora, se digitarmos nginx-test.example.com.br, ele redirecionará o aplicativo NGINX
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image9.png"
-style="width:6.26806in;height:2.48542in" />
+{% include image.html post=page.path file="image9.png" %}
 
 # Configuração do WAF (Firewall de Aplicativos Web)
 
@@ -107,35 +96,25 @@ Primeiro, precisamos comprar uma instância do Firewall de Aplicação Web
 no console. Para isso, acesse **Lista de Serviços \> Firewall de Aplicação Web
 \> Comprar WAF \> Modo Nuvem.**
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image10.png"
-style="width:6.26806in;height:3.50139in" />
+{% include image.html post=page.path file="image10.png" %}
 
 Basta marcar a caixa no valor da nota e clicar em **Avançar**.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image11.png"
-style="width:5.17217in;height:3.11843in" />
+{% include image.html post=page.path file="image11.png" %}
 
 ## Adicionando um site ao WAF
 
 Para proteger seu site com o WAF, navegue até o console do WAF e acesse
 a seção "Configurações do site". Em seguida, adicione o site desejado
-seguindo estas etapas: <img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image12.png"
-style="width:6.26806in;height:2.37986in" />
+seguindo estas etapas: {% include image.html post=page.path file="image12.png" %}
 
 Selecione **Nuvem – CNAME \> Adicionar rapidamente nomes de domínio hospedados na nuvem**
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image13.png"
-style="width:6.68235in;height:4.02377in" />
+{% include image.html post=page.path file="image13.png" %}
 
 Selecione seu domínio, neste caso, é **nginx-waf.example.com.br**
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image14.png"
-style="width:6.26806in;height:3.59583in" />
+{% include image.html post=page.path file="image14.png" %}
 
 - **Nome do site:** WAF-guide
 
@@ -160,9 +139,7 @@ IP**
 
 - **Política:** Política gerada pelo sistema
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image15.png"
-style="width:6.26806in;height:5.2375in" />
+{% include image.html post=page.path file="image15.png" %}
 
 Clique em **Avançar.**
 
@@ -176,17 +153,11 @@ e DNS para funcionar com o WAF.
 Primeiro, colocaremos o intervalo de IPs do WAF na lista de permissões para todas as portas do Grupo de
 segurança:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image16.png"
-style="width:6.26806in;height:0.82847in" />
+{% include image.html post=page.path file="image16.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image17.png"
-style="width:6.02009in;height:8.13706in" />
+{% include image.html post=page.path file="image17.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image18.png"
-style="width:6.26806in;height:3.18056in" />
+{% include image.html post=page.path file="image18.png" %}
 
 > Agora, voltamos para a página do console do WAF e clicamos em **Concluído**.
 
@@ -194,7 +165,7 @@ style="width:6.26806in;height:3.18056in" />
 
 Clique em **Testar conectividade** no site:
 
-<img src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image19.png" style="width:6.26806in;height:2.04306in" />
+{% include image.html post=page.path file="image19.png" %}
 
 Siga as etapas do guia exibido no lado direito da sua
 tela:
@@ -202,16 +173,14 @@ tela:
 - Copie o registro CNAME e Execute ping neste CNAME no seu ECS e copie o IP do
 WAF.
 
-<img src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image20.png" style="width:6.26806in;height:0.96104in" />
+{% include image.html post=page.path file="image20.png" %}
 
 Agora precisamos adicionar este IP do WAF e o DNS à lista de hosts confiáveis ​​do
 nosso servidor NGINX. No Ubuntu, usamos o comando:
 
 **sudo vim /etc/hosts**
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image21.png"
-style="width:6.26806in;height:2.47639in" />
+{% include image.html post=page.path file="image21.png" %}
 
 Depois disso, precisamos limpar o DNS, com o comando:
 
@@ -224,11 +193,9 @@ endereço IP exibido deve corresponder ao IP do WAF.
 
 Nesta etapa, é necessário atualizar nossas configurações de DNS para direcionar o tráfego
 para o WAF em vez do nosso aplicativo. O WAF então redirecionará o
-tráfego para o nosso servidor:<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image22.png"
-style="width:6.26806in;height:2.18681in" />
+tráfego para o nosso servidor:{% include image.html post=page.path file="image22.png" %}
 
-<img src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image23.png" style="width:6.06348in;height:8.20175in" />
+{% include image.html post=page.path file="image23.png" %}
 
 **Certifique-se de que a conexão entre o WAF e o seu servidor tenha sido
 estabelecida com sucesso antes de prosseguir.**
@@ -237,34 +204,26 @@ Para configurar o WAF com eficiência, você precisa ajustar as configurações 
 removendo o registro tipo A existente para "**nginx-waf.example.com.br**".
 Em seguida, crie um novo conjunto de registros usando o tipo CNAME. Especifique o
 nome de domínio desejado, como "nginx-waf.example.com.br", e aponte-o para o domínio
-fornecido pelo WAF. service.<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image24.png"
-style="width:6.26806in;height:7.11528in" />
+fornecido pelo WAF. service.{% include image.html post=page.path file="image24.png" %}
 
 ## Testando a Proteção Precisa do WAF
 
 No console do WAF, acesse a política gerada automaticamente e crie uma
-**regra de Proteção Precisa** para bloquear todo o tráfego para um teste:<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image25.png"
-style="width:6.26806in;height:1.77014in" />
+**regra de Proteção Precisa** para bloquear todo o tráfego para um teste:{% include image.html post=page.path file="image25.png" %}
 
 Acesse **Proteção Precisa\> Adicionar Regra:**
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image26.png"
-style="width:6.26806in;height:2.27153in" />
+{% include image.html post=page.path file="image26.png" %}
 
 Basta adicionar uma "/" no valor "Conteúdo" e manter os outros valores
 padrão:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image27.png"
-style="width:6.26806in;height:3.36389in" />
+{% include image.html post=page.path file="image27.png" %}
 
 Clique em **Confirmar** e depois em **OK.**
 
 Agora, se tentarmos acessar nosso Endereço "**nginx-waf.example.com.br**",
 a regra WAF configurada bloqueará todo o tráfego de entrada.
 
-<img src="/huaweicloud-knowledge-base/assets/images/security-and-compliance/waf/dns-waf-configuration/image28.png" style="width:6.26806in;height:2.39444in" />
+{% include image.html post=page.path file="image28.png" %}
 

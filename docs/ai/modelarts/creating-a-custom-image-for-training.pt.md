@@ -42,9 +42,7 @@ armazenar o código de treinamento a ser executado e os logs de execução
 da tarefa. Para isso, navegue até o serviço OBS no console da Huawei
 Cloud e crie um bucket.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image3.png"
-style="width:6.26806in;height:3.3in" />
+{% include image.html post=page.path file="image3.png" %}
 
 Havendo criado o bucket, crie duas pastas dentro do bucekt, “pytorch” e
 “logs”. Dentro da pasta “pytorch”, crie mais uma pasta denominada
@@ -84,9 +82,7 @@ Havendo preparado o código Python para ser executado pela tarefa de
 treinamento, navegue agora até o serviço ECS no console da Huawei Cloud
 e crie uma ECS com o sistema operacional Ubuntu 20.04.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image4.png"
-style="width:6.26806in;height:3.30625in" />
+{% include image.html post=page.path file="image4.png" %}
 
 Havendo criado a ECS, faça login na máquina virtual e instale o Docker
 através do seguinte comando:
@@ -221,30 +217,20 @@ docker build . -t model-arts:1.0
 Havendo realizado o build da imagem, agora navegue até o serviço SWR no
 console da Huawei Cloud e crie uma organização.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image5.png"
-style="width:6.26806in;height:3.28611in" />
+{% include image.html post=page.path file="image5.png" %}
 
 Após a criação da organização, navegue até a seção “My Images”, no
 painel da esquerda, e clique em “Upload Through Client”. Feito isso,
 clique em “Generate Login Command”, copie o comando de login gerado e
 cole na ECS.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image6.png"
-style="width:6.26806in;height:2.3299in" />
+{% include image.html post=page.path file="image6.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image7.png"
-style="width:4.81284in;height:4.58356in" />
+{% include image.html post=page.path file="image7.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image8.png"
-style="width:4.79004in;height:3.05944in" />
+{% include image.html post=page.path file="image8.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image9.png"
-style="width:6.26806in;height:0.87361in" />
+{% include image.html post=page.path file="image9.png" %}
 
 Digite o seguinte comando para atribuir uma tag à imagem, substituindo
 as informações de região, domínio e organização pelos valores reais:
@@ -264,9 +250,7 @@ sudo docker push swr.{region-id}.{domain}/{organization-name}/model-arts:1.0
 Verifique no console do SWR que a imagem foi transferida com sucesso
 para o repositório do SWR:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image10.png"
-style="width:6.26806in;height:2.42917in" />
+{% include image.html post=page.path file="image10.png" %}
 
 # ModelArts
 
@@ -274,21 +258,15 @@ Para criar uma tarefa de treinamento de modelos no serviço ModelArts,
 primeiramente navegue até a página do produto no console da Huawei Cloud
 e clique em “Create Training Job”.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image11.png"
-style="width:6.26806in;height:3.48611in" />
+{% include image.html post=page.path file="image11.png" %}
 
 Preencha os campos “Algorithm Type”, “Boot Mode”, “Image”, “Boot
 Command” e “Job Log Path” como especificado abaixo. Para as demais
 configurações, retenha o padrão.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image12.png"
-style="width:6.26806in;height:3.50278in" />
+{% include image.html post=page.path file="image12.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image13.png"
-style="width:6.26806in;height:3.52222in" />
+{% include image.html post=page.path file="image13.png" %}
 
 ```bash
 /home/ma-user/miniconda3/bin/python3.13 ${MA_JOB_DIR}/code/teste.py
@@ -301,13 +279,9 @@ finalização.
 
 Verifique os logs de execução da tarefa de treinamento:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image14.png"
-style="width:6.26806in;height:3.49931in" />
+{% include image.html post=page.path file="image14.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/ai/modelarts/creating-a-custom-image-for-training/image15.png"
-style="width:6.26806in;height:3.50625in" />
+{% include image.html post=page.path file="image15.png" %}
 
 # Referências
 

@@ -40,9 +40,7 @@ must be present on all subsequent requests. Such token is only valid for
 a certain period of time, so the client application must obtain a new
 token periodically to continue consuming the API.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image3.png"
-style="width:4.43265in;height:4.89133in" />
+{% include image.html post=page.path file="image3.png" %}
 
 The usage of mutual authentication (mTLS) in HUAWEI CLOUD API Gateway
 ensures more security and optimizes this authentication process,
@@ -50,9 +48,7 @@ removing the need of tokens for API client authentication.
 
 # Example Architecture
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image4.png"
-style="width:6.26667in;height:2.45in" />
+{% include image.html post=page.path file="image4.png" %}
 
 The proposed example architecture for the API Gateway usage scenario in
 HUAWEI CLOUD is a highly scalable and secure solution for API
@@ -75,9 +71,7 @@ In the Overview option, click Buy Dedicated Gateway.
 
 *\*For this example, we will use the service in the Santiago region.*
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image5.png"
-style="width:6.26806in;height:2.39722in" />
+{% include image.html post=page.path file="image5.png" %}
 
 Select the specifications according to the Backend API. The Basic
 edition, which will be used in this example, supports up to 2,000
@@ -91,22 +85,16 @@ from the old gateway, and import into the new one.).
 Enable “Public Inbound Access”, select the same VPC, subnet, and
 Security Group configured for the application server.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image6.png"
-style="width:6.03645in;height:5.68533in" />
+{% include image.html post=page.path file="image6.png" %}
 
 After confirming the parameters defined for the Dedicated Gateway, wait
 a few minutes until the creation is finished.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image7.png"
-style="width:6.26806in;height:2.30069in" />
+{% include image.html post=page.path file="image7.png" %}
 
 ## Creating an API
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image8.png"
-style="width:6.26806in;height:2.48403in" />
+{% include image.html post=page.path file="image8.png" %}
 
 Under API Management (1), click APIs (2) and then create an API by
 clicking Create API (3).
@@ -122,13 +110,9 @@ The method used for this API will be ANY since the backend API will be
 responsible for routing (handling HTTP methods and endpoints/routes).
 Enter "/" in Path and "Prefix match" in Matching.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image9.png"
-style="width:5.8625in;height:3.15in" />
+{% include image.html post=page.path file="image9.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image10.png"
-style="width:6.02876in;height:3.18773in" />
+{% include image.html post=page.path file="image10.png" %}
 
 ## Setting the API Backend
 
@@ -141,9 +125,7 @@ In this example, we will choose the option:
 - The Backend Address will be the private IP address of the Elastic Load
   Balance associated with the API server.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image11.png"
-style="width:5.31458in;height:3.6875in" />
+{% include image.html post=page.path file="image11.png" %}
 
 In Parameter Orchestration, in the Constant Parameters section it is
 necessary to define a virtual domain name (nonexistent) that will access
@@ -157,9 +139,7 @@ used to define which application will respond to the request.
 - **Parameter Value:** api-mtls.virtual.example (virtual/nonexistent
   domain)
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image12.png"
-style="width:6.26389in;height:1.87639in" />
+{% include image.html post=page.path file="image12.png" %}
 
 ## Adding a Domain Name
 
@@ -167,13 +147,9 @@ Once the API is created, click “Group Information” and add the domain
 name that will be accessed by the Client in “Bind Independent Domain
 Name”.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image13.png"
-style="width:6.25694in;height:2.39167in" />
+{% include image.html post=page.path file="image13.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image14.png"
-style="width:3.39861in;height:1.55833in" />
+{% include image.html post=page.path file="image14.png" %}
 
 # Mutual Authentication (mTLS)
 
@@ -198,9 +174,7 @@ responsible for the backend API will be the certificate authority (CA).
 - The client and server exchange information over a secure, encrypted
   TLS/SSL connection.
 
-  <img
-  src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image15.png"
-  style="width:5.34464in;height:4.67056in" />
+  {% include image.html post=page.path file="image15.png" %}
 
 # Creating, signing, and validating certificates
 
@@ -212,9 +186,7 @@ This is the list of files that will be generated using the OpenSSL tool:
 
 - **Client:** client.conf, client.key, client.csr, and client.crt
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image16.png"
-style="width:6.26806in;height:4.06042in" />
+{% include image.html post=page.path file="image16.png" %}
 
 ## Creating the CA Certificate
 
@@ -361,15 +333,11 @@ openssl verify -CAfile ca.crt client.crt
 
 ## Access the API created on the API Gateway.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image17.png"
-style="width:6.26806in;height:2.09931in" />
+{% include image.html post=page.path file="image17.png" %}
 
 > In Group Information add the certificates in Select SSL Certificate:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image18.png"
-style="width:6.26806in;height:3.00417in" />
+{% include image.html post=page.path file="image18.png" %}
 
 - **Content:** contents of the "server.crt" file (server certificate)
 
@@ -377,16 +345,12 @@ style="width:6.26806in;height:3.00417in" />
 
 - **CA:** contents of the "ca.crt" file (CA certificate)
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image19.png"
-style="width:5.25189in;height:4.68516in" />
+{% include image.html post=page.path file="image19.png" %}
 
 Return to the APIs tab and publish the API by clicking Publish Latest
 Version.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image20.png"
-style="width:5.89614in;height:2.30201in" />
+{% include image.html post=page.path file="image20.png" %}
 
 # Testing mTLS
 
@@ -427,25 +391,19 @@ Since the certificate authority is private (generated by OpenSSL,
 specifically for the API Gateway), the certificate will not be
 recognized as valid by any web client.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image21.png"
-style="width:6.26806in;height:1.24167in" />
+{% include image.html post=page.path file="image21.png" %}
 
 You must provide the CA certificate (--cacert ca.crt) and disable CRL
 checking (--ssl-no-revoke) to make a request to the API Gateway.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image22.png"
-style="width:6.26806in;height:0.57222in" />
+{% include image.html post=page.path file="image22.png" %}
 
 The error "APIG.0205" indicates that client authentication was not
 successful because the client's certificate and private key were not
 specified. To send this information, the --cert client.crt and --key
 client.key options are used.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image23.png"
-style="width:6.32197in;height:1.42815in" />
+{% include image.html post=page.path file="image23.png" %}
 
 Once authentication was successful, the request was forwarded to the
 backend server, and the response obtained was returned by the Flask
@@ -454,9 +412,7 @@ application.
 If an invalid certificate or private key is supplied, API Gateway
 returns the error code "APIG.0205".
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image24.png"
-style="width:6.26806in;height:0.90556in" />
+{% include image.html post=page.path file="image24.png" %}
 
 ## Using Postman
 
@@ -466,60 +422,40 @@ design, construction, and testing of APIs.
 Like curl, it is not possible to make any requests to API Gateway
 without first configuring the CA certificate.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image25.png"
-style="width:6.26806in;height:2.32292in" />
+{% include image.html post=page.path file="image25.png" %}
 
 The CA certificate can be configuring in Settings \> Certificates by
 enabling the "CA Certificates" option and clicking "Select File".
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image26.png"
-style="width:6.26806in;height:2.63681in" />
+{% include image.html post=page.path file="image26.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image27.png"
-style="width:6.26806in;height:3.07014in" />
+{% include image.html post=page.path file="image27.png" %}
 
 Without providing the client's certificate and private key, API Gateway
 returns the error "APIG.0205".
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image28.png"
-style="width:6.26806in;height:1.71319in" />
+{% include image.html post=page.path file="image28.png" %}
 
 This information is added in Settings \> Certificates \> Client
 Certificates, clicking on "Add Certificate", informing the domain name,
 the CRT and KEY files.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image29.png"
-style="width:4.80636in;height:2.37176in" />
+{% include image.html post=page.path file="image29.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image30.png"
-style="width:4.83828in;height:2.91337in" />
+{% include image.html post=page.path file="image30.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image31.png"
-style="width:4.84169in;height:2.66921in" />
+{% include image.html post=page.path file="image31.png" %}
 
 If the PFX file is used, leave the fields "CRT file" and "Key file"
 blank, inform the PFX file and its password. When using the PFX file, it
 is also not necessary to configure the CA certificate, since it is
 already included in the same file.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image32.png"
-style="width:4.47667in;height:2.44962in" />
+{% include image.html post=page.path file="image32.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image33.png"
-style="width:4.51736in;height:2.50392in" />
+{% include image.html post=page.path file="image33.png" %}
 
 Once the client files are configured, the request is forwarded to the
 backend server.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/middleware/apig/mutual-authentication-mtls/image34.png"
-style="width:6.26806in;height:1.6875in" />
+{% include image.html post=page.path file="image34.png" %}

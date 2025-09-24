@@ -49,9 +49,7 @@ the CCE environment.
 
 In the CCE instance page, click on **Overview**\>**EIP\>Bind**
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/containers/cce/connecting-a-smb-server-in-cce/image3.png"
-style="width:5.63542in;height:4.15625in" />
+{% include image.html post=page.path file="image3.png" %}
 
 Now, click on **kubectl \> Configure**, copy the contents of the YAML
 file, and paste them into the. kube/config file.
@@ -207,6 +205,4 @@ kubectl get pods
 kubectl exec -it <container-name> -- df -h
 ```
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/containers/cce/connecting-a-smb-server-in-cce/image4.png"
-style="width:6.26806in;height:2.15764in" />
+{% include image.html post=page.path file="image4.png" %}

@@ -18,52 +18,34 @@ V1.0 – January 2023
 
 Send an invite through the Partner Center.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/creating-subaccount-partner/image1.png"
-style="width:5.76806in;height:2.61736in" />
+{% include image.html post=page.path file="image1.png" %}
 
 Register a new customer
 
 Or send a link:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/creating-subaccount-partner/image2.png"
-style="width:5.76806in;height:4.62292in" />
+{% include image.html post=page.path file="image2.png" %}
 
 Register a new account. If possible, open it in an incognito tab.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/creating-subaccount-partner/image3.png"
-style="width:5.76806in;height:4.63958in" />
+{% include image.html post=page.path file="image3.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/creating-subaccount-partner/image4.png"
-style="width:5.76806in;height:1.425in" />
+{% include image.html post=page.path file="image4.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/creating-subaccount-partner/image5.png"
-style="width:5.76806in;height:3.19653in" />
+{% include image.html post=page.path file="image5.png" %}
 
 Association confirmation message.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/creating-subaccount-partner/image6.png"
-style="width:5.76806in;height:3.17361in" />
+{% include image.html post=page.path file="image6.png" %}
 
 The subaccount will appear in Customer Management in Partner Center.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/creating-subaccount-partner/image7.png"
-style="width:5.76806in;height:2.39444in" />
+{% include image.html post=page.path file="image7.png" %}
 
 By clicking More, you can unfreeze the account and set a budget.
 
 Note: Once the subaccount is linked to the partner's account, it will be automatically frozen.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/creating-subaccount-partner/image8.png"
-style="width:5.76806in;height:1.67361in" />
+{% include image.html post=page.path file="image8.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/creating-subaccount-partner/image9.png"
-style="width:5.76806in;height:2.85486in" />
+{% include image.html post=page.path file="image9.png" %}

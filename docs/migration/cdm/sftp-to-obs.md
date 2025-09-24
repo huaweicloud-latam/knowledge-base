@@ -43,9 +43,7 @@ SSH, enable and start it.
   command:  
   ssh -V. Image 1 shows that SSH is already installed.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image3.png"
-style="width:6.26806in;height:0.54861in" />
+{% include image.html post=page.path file="image3.png" %}
 
 - If the installation is necessary use: sudo apt install ssh -y
 
@@ -57,9 +55,7 @@ style="width:6.26806in;height:0.54861in" />
   if the status shows active (running). SSH should be active, as image 2
   shows.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image4.png"
-style="width:6.26806in;height:1.72014in" />
+{% include image.html post=page.path file="image4.png" %}
 
 ## Creating SFTP Group and User
 
@@ -77,9 +73,7 @@ limitations, improving the security and organization.
   “Rodolfo” in the “passwd” file, therefore, the user was created (as
   image 3 shows)
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image5.png"
-style="width:6.26806in;height:0.55556in" />  
+{% include image.html post=page.path file="image5.png" %}  
 
 - Set a password to the user: sudo passwd rodolfo
 
@@ -88,9 +82,7 @@ style="width:6.26806in;height:0.55556in" />
 - To verify if the user was added successfully, use the following
   command: grep sftp /etc/group (as shown in image 4)
 
-  <img
-  src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image6.png"
-  style="width:5.16667in;height:0.5625in" />
+  {% include image.html post=page.path file="image6.png" %}
 
 ## Setting Permissions
 
@@ -129,9 +121,7 @@ associated to the user.
   - ForceCommand internal-sftp: the SSH connection will be established
     only after login
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image7.png"
-style="width:3.06944in;height:2.17083in" />
+{% include image.html post=page.path file="image7.png" %}
 
 - Restart the ssh service: sudo systemctl restart ssh
 
@@ -157,9 +147,7 @@ files can be transferred. To do this, FileZilla client will be used.
   connection type and user’s password. If the connection is successful,
   a message like Image 6 will appear;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image8.png"
-style="width:3.18111in;height:2.06452in" />
+{% include image.html post=page.path file="image8.png" %}
 
 - If the connection is successful, the user’s directory will be
   accessible in FileZilla and it’s possible to upload and download files
@@ -228,9 +216,7 @@ a data source to another.
 - The created CDM cluster will appear in Cluster Management page as
   Image 7 shows;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image9.png"
-style="width:6.26806in;height:0.48264in" />
+{% include image.html post=page.path file="image9.png" %}
 
 ## Linking both ends with CDM
 
@@ -242,15 +228,11 @@ the settings of the services whose data will be migrated.
 - In cluster management, find the desired CDM and click in Job
   Management (Image 8);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image10.png"
-style="width:6.26806in;height:0.60833in" />
+{% include image.html post=page.path file="image10.png" %}
 
 - Click in “Links” and choose “Create Link” (Image 9);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image11.png"
-style="width:6.26806in;height:1.21181in" />
+{% include image.html post=page.path file="image11.png" %}
 
 - Choose the data type service. In this case, find “SFTP” type and click
   “Next”;
@@ -267,9 +249,7 @@ style="width:6.26806in;height:1.21181in" />
 
 - Test the connection and then click “Save”;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image12.png"
-style="width:3.18755in;height:3.27957in" />
+{% include image.html post=page.path file="image12.png" %}
 
 ### Creating OBS link
 
@@ -292,17 +272,13 @@ style="width:3.18755in;height:3.27957in" />
 
 - Test the connection and then click “Save”;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image13.png"
-style="width:2.93727in;height:3.59677in" />
+{% include image.html post=page.path file="image13.png" %}
 
 
 When created, the services will appear in the Links tab as shown in
 Image 12
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image14.png"
-style="width:6.26806in;height:1.12292in" />
+{% include image.html post=page.path file="image14.png" %}
 
 ## Creating a Job
 
@@ -312,9 +288,7 @@ behave from the source to CDM and from CDM to the destination.
 - In Job Management, select Table/File Migration, since only some
   directories inside SFTP will be migrated (Image 13);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image15.png"
-style="width:4.6041in;height:1.41755in" />
+{% include image.html post=page.path file="image15.png" %}
 
 - Select the source and the destination CDM links. In this case, the
   source is “sftp_link” and the destination is “obs_link_sftp”;
@@ -325,9 +299,7 @@ style="width:4.6041in;height:1.41755in" />
 - Choose the desired bucket and a desired destination directory. In this
   case, put Document or sftp;
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image16.png"
-style="width:5.36911in;height:2.44811in" />
+{% include image.html post=page.path file="image16.png" %}
 
 - If there’s no specific advanced setting, choose Next;
 
@@ -335,17 +307,13 @@ style="width:5.36911in;height:2.44811in" />
   update in the destination bucket. In this case, the chosen time cycle
   is 5 minutes, to be executed for 24 hours (Image 15);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image17.png"
-style="width:6.26806in;height:1.5in" />
+{% include image.html post=page.path file="image17.png" %}
 
 - If the service is created correctly, it will appear in the Table/File
   Migration tab. Choose Run and see if the Migration Status changes to
   Succeeded (Image 12);
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/migration/cdm/sftp-to-obs/image18.png"
-style="width:6.26806in;height:0.65764in" />
+{% include image.html post=page.path file="image18.png" %}
 
 # References
 

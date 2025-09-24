@@ -30,35 +30,23 @@ snap install –classic certbot
 sudo certbot certonly --manual -d \*.tamcloud.com.br -d tamcloud.com.br --agree-tos --preferred-challenges dns
 ```
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image3.png"
-style="width:5.34583in;height:2.48619in" />
+{% include image.html post=page.path file="image3.png" %}
 
 ## Acesse o serviço de DNS para configurar para configurar o registro TXT no DNS:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image4.png"
-style="width:5.76806in;height:1.925in" />
+{% include image.html post=page.path file="image4.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image5.png"
-style="width:5.76806in;height:2.07292in" />
+{% include image.html post=page.path file="image5.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image6.png"
-style="width:4.89209in;height:6.61133in" />
+{% include image.html post=page.path file="image6.png" %}
 
 ## Verifique se o registro foi propagado (no exemplo utilizado o isptools para a verificação <http://www.isptools.com.br>):
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image7.png"
-style="width:6.24776in;height:3.30592in" />
+{% include image.html post=page.path file="image7.png" %}
 
 ## Após verificar da propagação do registro DNS pressione “Enter” no servidor para que ele verifique o domínio e gere o certificado:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image8.png"
-style="width:6.23077in;height:3.42222in" />
+{% include image.html post=page.path file="image8.png" %}
 
 ## Utilize os comandos abaixo para copiar os dados do certificado:
 
@@ -66,17 +54,13 @@ style="width:6.23077in;height:3.42222in" />
 cat /etc/letsencrypt/live/tamcloud.com.br/fullchain.pem
 ```
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image9.png"
-style="width:5.01935in;height:4.06274in" />
+{% include image.html post=page.path file="image9.png" %}
 
 ```shell
 cat /etc/letsencrypt/live/tamcloud.com.br/privkey.pem
 ```
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image10.png"
-style="width:4.96134in;height:3.70936in" />
+{% include image.html post=page.path file="image10.png" %}
 
 Obs.: O arquivo do certificado apresentado na tela possui toda a cadeia
 de certificados associado, para adicionar no balanceador de carga da
@@ -123,23 +107,15 @@ certbot renew --cert-name tamcloud.com.br
 
 ## Acesse o serviço de ELB e depois clique no Listener que deseja adicionar o certificado:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image11.png"
-style="width:6.26806in;height:2.27778in" />
+{% include image.html post=page.path file="image11.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image12.png"
-style="width:6.26806in;height:2.45556in" />
+{% include image.html post=page.path file="image12.png" %}
 
 ## Acesse o serviço de ELB e depois clique no Listener que deseja adicionar o certificado:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image13.png"
-style="width:6.05886in;height:3.55235in" />
+{% include image.html post=page.path file="image13.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/networking/elb/generating-ssl-certificate-for-elb/image14.png"
-style="width:3.70319in;height:4.80309in" />
+{% include image.html post=page.path file="image14.png" %}
 
 Os demais passos para configuração do ELB seguem o mesmo procedimento já
 conhecido, qualquer dúvida consultem o tutoria de ELB.

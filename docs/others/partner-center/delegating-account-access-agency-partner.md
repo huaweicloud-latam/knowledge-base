@@ -34,9 +34,7 @@ your account and members of the administrators group can manage resources
 for the delegating party. To authorize IAM users to manage
 these resources, assign permissions to users.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image3.png"
-style="width:6.26528in;height:3.37847in" />
+{% include image.html post=page.path file="image3.png" %}
 
 # PROCEDURE
 
@@ -52,29 +50,21 @@ the Agency name, and the Agency ID.
 2. In the HUAWEI CLOUD Console, open the services menu on the
 left, search for "iam," and select "Identity and Access Management."
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image4.png"
-style="width:6.26806in;height:2.07361in" />
+{% include image.html post=page.path file="image4.png" %}
 
 To access the HUAWEI CLOUD Console from the Partner Center, hover
 over the account name, select "Security Settings,"
 and then click the services menu on the left.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image5.png"
-style="width:6.26806in;height:1.99236in" />
+{% include image.html post=page.path file="image5.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image6.png"
-style="width:6.26806in;height:2.43264in" />
+{% include image.html post=page.path file="image6.png" %}
 
 3. In the menu on the left, click on “Permissions”, then on 
 “Policies/Roles”, and then “Create Custom Policy” in the corner 
 upper right
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image7.png"
-style="width:6.26806in;height:2.10625in" />
+{% include image.html post=page.path file="image7.png" %}
 
 4. Set a name for the Policy (“Manage Customer XX”, for example);
 select “JSON” in Policy View; in Policy Content, enter the
@@ -100,9 +90,7 @@ Agency ID provided by the client; Finally, click “OK”:
 }
 ```
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image8.png"
-style="width:5.74306in;height:4.3057in" />
+{% include image.html post=page.path file="image8.png" %}
 
 ## AUTHORIZATION
 
@@ -115,54 +103,38 @@ from the "root" account.
 "User Groups" from the left-hand menu and click "Create User
 Group" in the upper-right corner:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image9.png"
-style="width:6.26806in;height:1.74028in" />
+{% include image.html post=page.path file="image9.png" %}
 
 6. Configure a name for the User Group and a description, if desired;
 then click "OK."
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image10.png"
-style="width:4.17183in;height:2.18899in" />
+{% include image.html post=page.path file="image10.png" %}
 
 7. In the User Groups list, click on the name of the created group
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image11.png"
-style="width:5.22769in;height:2.26634in" />
+{% include image.html post=page.path file="image11.png" %}
 
 8. In the "Permissions" tab, click "Authorize"
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image12.png"
-style="width:4.18134in;height:2.73598in" />
+{% include image.html post=page.path file="image12.png" %}
 
 9. Search for the name of the Policy you created previously, select the corresponding checkbox, and then click “Next”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image13.png"
-style="width:6.26806in;height:2.3875in" />
+{% include image.html post=page.path file="image13.png" %}
 
 10. On the next screen, click “OK,” then “OK” again to
 confirm, and then “Finish.”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image14.png"
-style="width:6.26806in;height:2.72014in" />
+{% include image.html post=page.path file="image14.png" %}
 
 11. On the User Group details screen, click the “Users” tab and
 then “Add”:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image15.png"
-style="width:4.7372in;height:2.41531in" />
+{% include image.html post=page.path file="image15.png" %}
 
 12. Select user “user_A” and click “OK.”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image16.png"
-style="width:6.06386in;height:3.14077in" />
+{% include image.html post=page.path file="image16.png" %}
 
 From this point on, user “user_A” can use the “Switch Role” function to log into the customer account.
 
@@ -172,73 +144,51 @@ From this point on, user “user_A” can use the “Switch Role” function to 
 over the account name and select the “Switch Role” option from the menu
 that appears:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image17.png"
-style="width:6.26806in;height:2.41736in" />
+{% include image.html post=page.path file="image17.png" %}
 
 From the Partner Center, hover your mouse over the username,
 select the “Security Settings” option. Then, hover your mouse
 over the username again and select the “Switch Role” option. Role.”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image5.png"
-style="width:6.26806in;height:1.99236in" />
+{% include image.html post=page.path file="image5.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image18.png"
-style="width:6.26806in;height:2.07778in" />
+{% include image.html post=page.path file="image18.png" %}
 
 14. Under “Account,” enter the client's account name; then click
 in the “Agency Name” field and select the Agency created by the client (e.g.,
 “Partner Management”); finally, click "OK".
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image19.png"
-style="width:3.28333in;height:1.70314in" /><img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image20.png"
-style="width:3.31667in;height:1.74322in" />
+{% include image.html post=page.path file="image19.png" %}{% include image.html post=page.path file="image20.png" %}
 
 ## SWITCHING THE ROLE
 
 1. In the console, hover over the account name, then click "Switch Role," and finally select the account name. Customer.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image21.png"
-style="width:6.26806in;height:1.82917in" />
+{% include image.html post=page.path file="image21.png" %}
 
 From the Partner Center, hover over the username,
 select "Security Settings." Then, hover over the username again,
 then "Switch Role," and finally
 select the customer's name.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image5.png"
-style="width:6.26806in;height:1.99236in" />
+{% include image.html post=page.path file="image5.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image22.png"
-style="width:6.26806in;height:2.11736in" />
+{% include image.html post=page.path file="image22.png" %}
 
 15. If it doesn't appear in the "Switch Role" submenu, click "Switch Role"
 or "Others." Then, look for the customer account in the "Role Switch History" section and select the corresponding option.
 
 Once done, it should appear in the menu from the previous step.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image23.png"
-style="width:3.98591in;height:3.26787in" />
+{% include image.html post=page.path file="image23.png" %}
 
 16. From now on, you can operate the customer account.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image24.png"
-style="width:6.26806in;height:1.80833in" />
+{% include image.html post=page.path file="image24.png" %}
 
 17. To log out of the customer account, simply hover over the account name, open the "Switch Role" menu, and click on the IAM user name.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image25.png"
-style="width:6.26806in;height:1.7in" />
+{% include image.html post=page.path file="image25.png" %}
 
 # REFERENCES
 

@@ -36,15 +36,11 @@ seus recursos.
     esquerdo, procure por “iam” e selecione a opção “Identity and Access
     Management”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/delegating-account-access-agency/image3.png"
-style="width:6.26806in;height:2.07361in" />
+{% include image.html post=page.path file="image3.png" %}
 
 2.  No menu no lado esquerdo, clique em “Agencies”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/delegating-account-access-agency/image4.png"
-style="width:6.26806in;height:2.99306in" />
+{% include image.html post=page.path file="image4.png" %}
 
 3.  No canto superior direito, clique em “Create Agency”
 
@@ -63,30 +59,22 @@ style="width:6.26806in;height:2.99306in" />
 5.  Na tela seguinte, procure por “tenant administrator”, marque a caixa
     de seleção, e em seguida clique em “Next”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/delegating-account-access-agency/image7.png"
-style="width:6.26806in;height:2.92778in" />
+{% include image.html post=page.path file="image7.png" %}
 
 6.  Na tela seguinte, clique em “OK”, e depois em “OK” novamente para
     confirmar.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/delegating-account-access-agency/image8.png"
-style="width:6.26806in;height:2.91806in" />
+{% include image.html post=page.path file="image8.png" %}
 
 7.  Clique em “Finish”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/delegating-account-access-agency/image9.png"
-style="width:4.70912in;height:1.92361in" />
+{% include image.html post=page.path file="image9.png" %}
 
 8.  Volte para lista de Agencies (passo 2), passe o mouse em cima do
     nome da Agency criada, e clique no ícone indicado para copiar o ID
     da Agency.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/delegating-account-access-agency/image10.png"
-style="width:6.26806in;height:2.05417in" />
+{% include image.html post=page.path file="image10.png" %}
 
 Forneça o nome da sua conta (Account Name), o nome da Agency e a ID da
 Agency (copiada no passo 8) à parte delegada (parceiro). A parte

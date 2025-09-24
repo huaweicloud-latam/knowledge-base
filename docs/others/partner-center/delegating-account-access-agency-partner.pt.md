@@ -36,9 +36,7 @@ sua conta e os membros do grupo de administradores podem gerir recursos
 para a parte delegante. Para autorizar os usuários do IAM a gerenciar
 esses recursos, atribua permissões aos usuários.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image3.png"
-style="width:6.26528in;height:3.37847in" />
+{% include image.html post=page.path file="image3.png" %}
 
 # PROCEDIMENTO
 
@@ -56,29 +54,21 @@ realizem a operação “Switch Role” para uma determinada conta de cliente.
     esquerdo, procure por “iam” e selecione a opção “Identity and Access
     Management”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image4.png"
-style="width:6.26806in;height:2.07361in" />
+{% include image.html post=page.path file="image4.png" %}
 
 Para chegar no console da HUAWEI CLOUD a partir do Partner Center, passe
 o mouse em cima do nome da conta, selecione a opção “Security Settings”
 e em seguida clique no menu de serviços do lado esquerdo.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image5.png"
-style="width:6.26806in;height:1.99236in" />
+{% include image.html post=page.path file="image5.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image6.png"
-style="width:6.26806in;height:2.43264in" />
+{% include image.html post=page.path file="image6.png" %}
 
 3.  No menu do lado esquerdo, clique em “Permissions”, em seguida em
     “Policies/Roles”, e depois em “Create Custom Policy” no canto
     superior direito
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image7.png"
-style="width:6.26806in;height:2.10625in" />
+{% include image.html post=page.path file="image7.png" %}
 
 4.  Configure um nome para a Policy (“Manage Customer XX”, por exemplo);
     selecione “JSON” em Policy View; em Policy Content, coloque o
@@ -104,9 +94,7 @@ style="width:6.26806in;height:2.10625in" />
 }
 ```
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image8.png"
-style="width:5.74306in;height:4.3057in" />
+{% include image.html post=page.path file="image8.png" %}
 
 ## AUTORIZAÇÃO
 
@@ -120,55 +108,39 @@ realizado a partir da conta “root”.
     “User Groups” no menu do lado esquerdo e clique em “Create User
     Group” no canto superior direito:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image9.png"
-style="width:6.26806in;height:1.74028in" />
+{% include image.html post=page.path file="image9.png" %}
 
 6.  Configure um nome para o User Group e uma descrição, se preferir; em
     seguida, clique em “OK”.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image10.png"
-style="width:4.17183in;height:2.18899in" />
+{% include image.html post=page.path file="image10.png" %}
 
 7.  Na lista de User Groups, clique no nome do grupo criado
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image11.png"
-style="width:5.22769in;height:2.26634in" />
+{% include image.html post=page.path file="image11.png" %}
 
 8.  Na aba “Permissions”, clique em “Authorize”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image12.png"
-style="width:4.18134in;height:2.73598in" />
+{% include image.html post=page.path file="image12.png" %}
 
 9.  Procure pelo nome da Policy criada anteriormente, marque a caixa de
     seleção correspondente, e em seguida clique em “Next”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image13.png"
-style="width:6.26806in;height:2.3875in" />
+{% include image.html post=page.path file="image13.png" %}
 
 10. Na tela seguinte, clique em “OK”, depois em “OK” novamente para
     confirmar, e em seguida em “Finish”.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image14.png"
-style="width:6.26806in;height:2.72014in" />
+{% include image.html post=page.path file="image14.png" %}
 
 11. Na tela de detalhes do User Group, clique na aba “Users” e em
     seguida em “Add”:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image15.png"
-style="width:4.7372in;height:2.41531in" />
+{% include image.html post=page.path file="image15.png" %}
 
 12. Selecione o usuário “user_A” e clique em “OK”
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image16.png"
-style="width:6.06386in;height:3.14077in" />
+{% include image.html post=page.path file="image16.png" %}
 
 A partir deste momento, o usuário “user_A” pode utilizar a função
 “Switch Role” para entrar na conta do cliente.
@@ -179,76 +151,54 @@ A partir deste momento, o usuário “user_A” pode utilizar a função
     em cima do nome da conta e selecione a opção “Switch Role” no menu
     que aparece:
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image17.png"
-style="width:6.26806in;height:2.41736in" />
+{% include image.html post=page.path file="image17.png" %}
 
 Partindo do Partner Center, passe o mouse em cima do nome de usuário,
 selecione a opção “Security Settings”. Em seguida, passe novamente o
 mouse em cima do nome de usuário e selecione a opção “Switch Role”.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image5.png"
-style="width:6.26806in;height:1.99236in" />
+{% include image.html post=page.path file="image5.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image18.png"
-style="width:6.26806in;height:2.07778in" />
+{% include image.html post=page.path file="image18.png" %}
 
 14. Em “Account”, informe o nome da conta do cliente; em seguida, clique
     no campo “Agency Name” e selecione a Agency criada pelo cliente (ex.
     “Partner Management”); por fim, clique em “OK”.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image19.png"
-style="width:3.28333in;height:1.70314in" /><img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image20.png"
-style="width:3.31667in;height:1.74322in" />
+{% include image.html post=page.path file="image19.png" %}{% include image.html post=page.path file="image20.png" %}
 
 ## REALIZANDO O “SWITCH ROLE”
 
 1.  No console, passe o mouse em cima do nome da conta, em seguida em
     “Switch Role” e por fim selecione o nome da conta do cliente.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image21.png"
-style="width:6.26806in;height:1.82917in" />
+{% include image.html post=page.path file="image21.png" %}
 
 Partindo do Partner Center, passe o mouse em cima do nome de usuário,
 selecione a opção “Security Settings”. Em seguida, passe novamente o
 mouse em cima do nome de usuário, em seguida em “Switch Role” e por fim
 selecione o nome do cliente.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image5.png"
-style="width:6.26806in;height:1.99236in" />
+{% include image.html post=page.path file="image5.png" %}
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image22.png"
-style="width:6.26806in;height:2.11736in" />
+{% include image.html post=page.path file="image22.png" %}
 
 15. Caso não apareça no submenu “Switch Role”, clique em “Switch Role”
     ou em “Others”. Em seguida, procure pela conta do cliente na seção
     “Role Switch History” e selecione a opção correspondente. Feito
     isso, ela deve aparecer no menu do passo anterior.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image23.png"
-style="width:3.98591in;height:3.26787in" />
+{% include image.html post=page.path file="image23.png" %}
 
 16. A partir de agora, pode-se operar a conta do cliente.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image24.png"
-style="width:6.26806in;height:1.80833in" />
+{% include image.html post=page.path file="image24.png" %}
 
 17. Para sair da conta do cliente, basta passar o mouse em cima do nome
     da conta, abrir o menu “Switch Role” e clicar no nome do usuário
     IAM.
 
-<img
-src="/huaweicloud-knowledge-base/assets/images/others/partner-center/delegating-account-access-agency-partner/image25.png"
-style="width:6.26806in;height:1.7in" />
+{% include image.html post=page.path file="image25.png" %}
 
 # REFERÊNCIAS
 
