@@ -44,17 +44,13 @@ seus recursos.
 
 3.  No canto superior direito, clique em “Create Agency”
 
-> <img
-> src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/delegating-account-access-agency/image5.png"
-> style="width:6.26806in;height:1.88819in" />
+{% include image.html post=page.path file="image5.png" %}
 
 4.  Escolha um nome para a Agency (“Partner Management”, por exemplo);
     em “Delegated Account” informe o nome da conta (ID da conta) do
     parceiro; em seguida clique em “Next”
 
-> <img
-> src="/huaweicloud-knowledge-base/assets/images/management-and-governance/iam/delegating-account-access-agency/image6.png"
-> style="width:4.55746in;height:3.3209in" />
+{% include image.html post=page.path file="image6.png" %}
 
 5.  Na tela seguinte, procure por “tenant administrator”, marque a caixa
     de seleção, e em seguida clique em “Next”
