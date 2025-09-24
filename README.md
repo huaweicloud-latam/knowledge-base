@@ -1,10 +1,10 @@
 # huaweicloud-knowledge-base
 
-This repository is home to a collaborative, public knowledge base website for Huawei Cloud services. In this knowledge base, you can find technical guides for specific scenarios. You can access the website in the following hyperlink: <a href="https://hatz-d.github.io/huaweicloud-knowledge-base/">website</a>, available in English and Portuguese. Use the search bar or the navigation menu to browse the knowledge base.
+This repository is home to a collaborative, public knowledge base website for Huawei Cloud services. In this knowledge base, you can find technical guides for specific scenarios. You can access the website in the following hyperlink: <a href="https://huaweicloud-latam.github.io/knowledge-base-preview/">website</a>, available in English and Portuguese. Use the search bar or the navigation menu to browse the knowledge base.
 
 ## How you can contribute
 
-In order to contribute to the knowledge base, you may <b><a href="https://github.com/Hatz-D/huaweicloud-knowledge-base/fork">fork this repository</a></b> and submit a pull request containing the desired documentation in the markdown file format and its assets. After having forked the repository, go to the <code>Pages</code> section and enable GitHub pages. After that, go to the <code>Actions</code> section, enable the workflows and manually run the workflow <code>Deploy Jekyll site to Pages</code> in order to build and deploy the knowledge center website. After the workflow has been successfully completed, you may access the website.
+In order to contribute to the knowledge base, you may <b><a href="https://github.com/huaweicloud-latam/knowledge-base-preview/fork">fork this repository</a></b> and submit a pull request containing the desired documentation in the markdown file format and its assets. After having forked the repository, go to the <code>Pages</code> section and enable GitHub pages. After that, go to the <code>Actions</code> section, enable the workflows and manually run the workflow <code>Deploy Jekyll site to Pages</code> in order to build and deploy the knowledge center website. After the workflow has been successfully completed, you may access the website.
 
 ## Repository structure
 
