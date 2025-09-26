@@ -1,1 +1,5 @@
-{{site.active_lang}}
+{% if site.active_lang == "pt" %}
+Busque em {{site.title}}
+{% else %}
+Search {{site.title}}
+{% endif %}
