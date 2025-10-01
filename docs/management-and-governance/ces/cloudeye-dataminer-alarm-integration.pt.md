@@ -16,8 +16,7 @@ V1.0 – Janeiro de 2024
 | V1.0 – 2023-12-20 | Gustavo Marques Scovini g50037306     | Versão Inicial       |
 | V1.0 – 2023-12-21 | Lincoln Yoshio Ito 00487338           | Revisão do Documento |
 
-# Cenários propostos para o envio dos alarmes do Simple Message
-Notification(SMN)
+# Cenários propostos para o envio dos alarmes do Simple Message Notification(SMN)
 
 ## Cenário 1
 
