@@ -16,12 +16,10 @@ V1.0 – Janeiro de 2024
 | V1.0 – 2023-12-20 | Gustavo Marques Scovini g50037306     | Versão Inicial       |
 | V1.0 – 2023-12-21 | Lincoln Yoshio Ito 00487338           | Revisão do Documento |
 
-# Introdução
-
-Cenários propostos para o envio dos alarmes do Simple Message
+# Cenários propostos para o envio dos alarmes do Simple Message
 Notification(SMN)
 
-# Cenário 1
+## Cenário 1
 
 Cloud Eye -> SMN -> ECS -> Dataminer
 
@@ -42,7 +40,7 @@ disponibilização de um EndPoint, garantindo que, no momento em que o
 evento (alarme) ocorrer, este seja encaminhado para o ambiente da Oi por
 meio da VPN já estabelecida.
 
-# Cenário 2
+## Cenário 2
 
 Cloud Eye -> SMN -> ECS -> Dataminer
 

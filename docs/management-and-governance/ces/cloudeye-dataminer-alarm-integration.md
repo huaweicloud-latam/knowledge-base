@@ -3,7 +3,7 @@ title: CloudEye Integration with Dataminer for Alarm Sending
 layout: default
 parent: Cloud Eye Service (CES)
 grand_parent: Management & Governance
-permalink: /docs/management-and-governance/ces/creating-and-managing-alarms
+permalink: /docs/management-and-governance/ces/cloudeye-dataminer-alarm-integration
 ---
 
 # Cloudeye Integration with Dataminer for Alarm Sending
@@ -15,11 +15,9 @@ V1.0 – January 2024
 | V1.0 – 2023-12-20 | Gustavo Marques Scovini g50037306 | Initial Version |
 | V1.0 – 2023-12-21 | Lincoln Yoshio Ito 00487338       | Document Review |
 
-# Introduction
+# Proposed Scenarios for Sending Simple Message Notification (SMN) Alarms
 
-Proposed Scenarios for Sending Simple Message Notification (SMN) Alarms
-
-# Scenario 1
+## Scenario 1
 
 Cloud Eye -> SMN -> ECS -> Dataminer
 
@@ -40,7 +38,7 @@ provide an EndPoint, ensuring that, when the
 event (alarm) occurs, it is forwarded to the Oi environment
 through the already established VPN.
 
-# Scenario 2
+## Scenario 2
 
 Cloud Eye -> SMN -> ECS -> Dataminer
 
