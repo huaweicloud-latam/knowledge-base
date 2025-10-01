@@ -173,7 +173,7 @@ Crie uma usuário programático aplicando a política criada anteriormente e fa�
 
 Abra o arquivo bacula-sd.conf (/opt/bacula/etc/bacula-sd.conf) e acrescente as seguintes linhas(lembre-de de adaptar aos nomes e configurações que realizou):
 
-```json
+```ini
 Device {
   Name = "huawei-dev1"
   MediaType = "obs"
@@ -199,7 +199,7 @@ Cloud {
 
 Abra o arquivo bacula-dir.conf (/opt/bacula/etc/bacula-dir.conf) e acrescente as seguintes linhas(lembre-de de adaptar aos nomes e configurações que realizou):
 
-```json
+```ini
 # Scratch pool definition
 Pool {
   Name = Scratch

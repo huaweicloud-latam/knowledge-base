@@ -172,7 +172,7 @@ Previously, download the AK/SK to use in the Bacula server configuration (if you
 
 Open the bacula-sd.conf file (/opt/bacula/etc/bacula-sd.conf) and add the following lines (remember to adapt them to the names and settings you made):
 
-```json
+```ini
 Device {
   Name = "huawei-dev1"
   MediaType = "obs"
@@ -198,7 +198,7 @@ Cloud {
 
 Open the bacula-dir.conf file (/opt/bacula/etc/bacula-dir.conf) and add the following lines (remember to adapt them to the names and settings you made):
 
-```json
+```ini
 # Scratch pool definition
 Pool {
   Name = Scratch
