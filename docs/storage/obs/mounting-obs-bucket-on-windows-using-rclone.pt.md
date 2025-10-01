@@ -9,6 +9,8 @@ permalink: /docs/storage/obs/mount-obs-bucket-on-windows-using-rclone
 
 # Montando um Bucket OBS no Windows usando Rclone
 
+V1.0 – Julho 2025
+
 | **Versão**        | **Autor**                           | **Descrição**             |
 | ----------------- | ----------------------------------- | --------------------------|
 | V1.0 – 2025-08-15 | Fernando Gabriel Chacon  50037923   | Versão Inicial            |
