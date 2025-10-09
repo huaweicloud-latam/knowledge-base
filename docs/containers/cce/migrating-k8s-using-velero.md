@@ -84,7 +84,40 @@ Example:
 kubectl annotate pod/wordpress-758fbf6fc7-s7fsr backup.velero.io/backup-volumes=wp-storage
 ```
 
-# Install Velero
+# Install Velero (Kopia)
+
+For this procedure to be performed, the workernode needs to have an EIP, or
+a NAT Gateway configured or the Velero images on the SWR.
+
+```shell
+wget https://github.com/vmware-tanzu/velero/releases/download/v1.17.0/velero-v1.17.0-linux-amd64.tar.gz
+
+tar -xvf velero-v1.17.0-linux-amd64.tar.gz
+cp ./velero-v1.17.0-linux-amd64/velero /usr/local/bin
+
+nano credentials-velero
+#place in the file
+[default]
+aws_access_key_id = {AK}
+aws_secret_access_key = {SK}
+
+#execute the command (for it to work, the machine must have internet access to download the image (NAT or EIP)). Note: The –use-node-agent flag is related to creating a snapshot of the cluster disks.
+velero install \
+  --provider aws \
+  --plugins velero/velero-plugin-for-aws:v1.8.2 \
+  --bucket migration-velero-cce \
+  --secret-file ./credentials-velero \
+  --use-node-agent \
+  --use-volume-snapshots=false \
+  --backup-location-config region=la-south-2,s3ForcePathStyle="true",s3Url=http://obs.la-south-2.myhuaweicloud.com
+
+#check if the pod is running
+kubectl get pod -n velero
+#check if the connection to the bucket is ok
+velero backup-location get
+```
+
+# Install Velero (Restic) (Deprecated)
 
 For this procedure to be performed, the workernode needs to have an EIP, or
 a NAT Gateway configured or the Velero images on the SWR.

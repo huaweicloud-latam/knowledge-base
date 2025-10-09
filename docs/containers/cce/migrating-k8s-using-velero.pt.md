@@ -86,7 +86,7 @@ Exemplo:
 kubectl annotate pod/wordpress-758fbf6fc7-s7fsr backup.velero.io/backup-volumes=wp-storage
 ```
 
-# Instalar o Velero
+# Instalar o Velero (Kopia)
 
 Para esse procedimento ser realizado o workernode precisa ter um EIP, ou
 um NAT Gateway configurado ou as imagens do Velero no SWR.
@@ -98,12 +98,13 @@ tar -xvf velero-v1.12.1-linux-amd64.tar.gz
 cp ./velero-v1.12.1-linux-amd64/velero /usr/local/bin
 
 nano credentials-velero
+
 #colocar no arquivo
 [default]
 aws_access_key_id = {AK}
 aws_secret_access_key = {SK}
 
-#execute o comando (para funcionar é necessário que a máquina tenha acesso a internet para baixar imagem (NAT ou EIP)). Obs: As configurações –uploader-type e –use-node-agent são relativos à criação de uma snapshot dos discos do cluster.
+#execute o comando (para funcionar é necessário que a máquina tenha acesso a internet para baixar imagem (NAT ou EIP)). Obs: A configuração –use-node-agent é relativa a criação de uma snapshot dos discos do cluster.
 velero install \
   --provider aws \
   --plugins velero/velero-plugin-for-aws:v1.7.1 \
@@ -113,8 +114,45 @@ velero install \
   --use-node-agent \
   --use-volume-snapshots=false \
   --backup-location-config region=la-south-2,s3ForcePathStyle="true",s3Url=http://obs.la-south-2.myhuaweicloud.com
+
 #verifique se o pod está rodando
 kubectl get pod -n velero
+
+#verifique se a conexão com o bucket está ok
+velero backup-location get
+```
+
+# Instalar o Velero (Restic) (Obsoleto)
+
+Para esse procedimento ser realizado o workernode precisa ter um EIP, ou
+um NAT Gateway configurado ou as imagens do Velero no SWR.
+
+```shell
+wget https://github.com/vmware-tanzu/velero/releases/download/v1.17.0/velero-v1.17.0-linux-amd64.tar.gz
+
+tar -xvf velero-v1.17.0-linux-amd64.tar.gz
+cp ./velero-v1.17.0-linux-amd64/velero /usr/local/bin
+
+nano credentials-velero
+
+#colocar no arquivo
+[default]
+aws_access_key_id = {AK}
+aws_secret_access_key = {SK}
+
+#execute o comando (para funcionar é necessário que a máquina tenha acesso a internet para baixar imagem (NAT ou EIP)). Obs: As configurações –uploader-type e –use-node-agent são relativos à criação de uma snapshot dos discos do cluster.
+velero install \
+  --provider aws \
+  --plugins velero/velero-plugin-for-aws:v1.8.2 \
+  --bucket migration-velero-cce \
+  --secret-file ./credentials-velero \
+  --use-node-agent \
+  --use-volume-snapshots=false \
+  --backup-location-config region=la-south-2,s3ForcePathStyle="true",s3Url=http://obs.la-south-2.myhuaweicloud.com
+
+#verifique se o pod está rodando
+kubectl get pod -n velero
+
 #verifique se a conexão com o bucket está ok
 velero backup-location get
 ```
