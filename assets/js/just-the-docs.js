@@ -104,6 +104,11 @@ function initSearch() {
     if (request.status >= 200 && request.status < 400) {
       var docs = JSON.parse(request.responseText);
 
+      for (var i in docs) {
+        docs[i].relUrl = (langPrefix === 'pt' ? '/pt' : '') + docs[i].relUrl;
+        docs[i].url = (langPrefix === 'pt' ? '/pt' : '') + docs[i].url
+      }
+
       lunr.tokenizer.separator = {{ site.search.tokenizer_separator | default: site.search_tokenizer_separator | default: "/[\s\-/]+/" }}
 
       var index = lunr(function(){
@@ -112,7 +117,6 @@ function initSearch() {
         this.field('content', { boost: 2 });
         {%- if site.search.rel_url != false %}
         this.field('relUrl');
-        this.field('url');
         {%- endif %}
         this.metadataWhitelist = ['position']
 
@@ -125,7 +129,6 @@ function initSearch() {
             {%- if site.search.rel_url != false %}
             relUrl: docs[i].relUrl
             {%- endif %}
-            url: "teste"
           });
         }
       });
