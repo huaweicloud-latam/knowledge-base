@@ -122,7 +122,7 @@ function initSearch() {
             title: docs[i].title,
             content: docs[i].content,
             {%- if site.search.rel_url != false %}
-            reUrl: (langPrefix === 'pt' ? '/pt' : '') + docs[i].relUrl
+            relUrl: (langPrefix === 'pt' ? '/pt' : '') + docs[i].relUrl
             {%- endif %}
           });
         }
