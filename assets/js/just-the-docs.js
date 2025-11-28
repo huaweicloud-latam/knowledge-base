@@ -112,6 +112,7 @@ function initSearch() {
         this.field('content', { boost: 2 });
         {%- if site.search.rel_url != false %}
         this.field('relUrl');
+        this.field('url');
         {%- endif %}
         this.metadataWhitelist = ['position']
 
