@@ -122,8 +122,9 @@ function initSearch() {
             title: docs[i].title,
             content: docs[i].content,
             {%- if site.search.rel_url != false %}
-            relUrl: (langPrefix === 'pt' ? '/pt' : '') + docs[i].relUrl
+            relUrl: docs[i].relUrl
             {%- endif %}
+            url: "teste"
           });
         }
       });
