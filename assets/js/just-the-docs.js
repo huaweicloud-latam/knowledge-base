@@ -105,8 +105,10 @@ function initSearch() {
       var docs = JSON.parse(request.responseText);
 
       for (var i in docs) {
-        docs[i].relUrl = (langPrefix === 'pt' ? '/pt' : '') + docs[i].relUrl;
+        // docs[i].relUrl = (langPrefix === 'pt' ? '/pt' : '') + docs[i].relUrl;
+        console.log(docs[i].url)
         docs[i].url = (langPrefix === 'pt' ? '/pt' : '') + docs[i].url
+        console.log(docs[i].url)
       }
 
       lunr.tokenizer.separator = {{ site.search.tokenizer_separator | default: site.search_tokenizer_separator | default: "/[\s\-/]+/" }}
