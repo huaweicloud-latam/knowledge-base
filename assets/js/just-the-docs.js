@@ -104,11 +104,14 @@ function initSearch() {
     if (request.status >= 200 && request.status < 400) {
       var docs = JSON.parse(request.responseText);
 
-      for (var i in docs) {
-        // docs[i].relUrl = (langPrefix === 'pt' ? '/pt' : '') + docs[i].relUrl;
-        console.log(docs[i].url)
-        docs[i].url = (langPrefix === 'pt' ? '/pt' : '') + docs[i].url
-        console.log(docs[i].url)
+      // Fixing multilang search url
+      if(langPrefix === 'pt') {
+        for (var i in docs) {
+          var originalUrl = docs[i].url;
+          var parts = originalUrl.split('/');
+          parts.splice(2, 0, 'pt');
+          docs[i].url = parts.join('/');
+        }
       }
 
       lunr.tokenizer.separator = {{ site.search.tokenizer_separator | default: site.search_tokenizer_separator | default: "/[\s\-/]+/" }}
