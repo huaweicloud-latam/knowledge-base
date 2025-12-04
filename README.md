@@ -58,9 +58,15 @@ lang: pt
 permalink: /docs/containers/cce/migrating-k8s-cluster-using-velero
 ```
 
-### Tutorial Video
+## Tutorial Video
 
 TODO
+
+## Adding a Custom Domain
+
+It is also possible to add a custom domain name for the GitHub Pages deployment of this knowledge base. In order to do so:
+1. Add the following Repository Variable to the repository desired, on the Settings page of the repository: <code>CUSTOM_PAGES_DOMAIN</code>, in which the variable value is the domain to be used;
+2. Add a custom domain name to the GitHub Pages on the Settings page of the repository. For reference on this topic, you can consult the following page: <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site">documentation</a>.
 
 ## Licensing and Attribution
 

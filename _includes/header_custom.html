@@ -1,8 +1,10 @@
+<!-- Language switcher in the top navbar -->
 <nav aria-label="Auxiliary" class="aux-nav">
   <ul class="aux-nav-list">
     {% for lang in site.languages %}
-    {% capture lang_href %}{{ site.url }}{% if lang != site.default_lang %}/{{ lang }}{% endif %}{{ page.permalink }}{%
-    endcapture %}
+    {% capture lang_href %}
+      {{ site.url }}{% if lang != site.default_lang %}/{{ lang }}{% endif %}{{ page.permalink }}
+    {% endcapture %}
     <li class="aux-nav-list-item">
       <a href="{{ lang_href }}" class="site-button">{{ lang }}</a>
     </li>

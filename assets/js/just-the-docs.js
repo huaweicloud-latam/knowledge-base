@@ -94,8 +94,20 @@ function disableHeadStyleSheets() {
 
 function initSearch() {
   var path = window.location.pathname
-  var langPrefix = path.split('/')[2];
-  var endpoint = langPrefix === 'pt' ? '/REPO-NAME-PLACEHOLDER/pt/assets/js/search-data.json' : '/REPO-NAME-PLACEHOLDER/assets/js/search-data.json';
+  var endpoint = 'REPO-NAME-PLACEHOLDER';
+
+  // If CNAME is used, the URL is one '/' shorter
+  var urlIndex = endpoint === '' ? 1 : 2;
+
+  var langPrefix = path.split('/')[urlIndex];
+  endpoint = langPrefix === 'pt' ? 'REPO-NAME-PLACEHOLDER/pt/assets/js/search-data.json' : 'REPO-NAME-PLACEHOLDER/assets/js/search-data.json';
+
+  if (!endpoint.startsWith('/')) {
+    // happens when this is not an empty string: "REPO-NAME-PLACEHOLDER"
+    // (the line above is the result of GitHub Actions pipeline,
+    // check the pages.yml file to see what happens during the build process)
+    endpoint = '/' + endpoint;
+  }
 
   var request = new XMLHttpRequest();
   request.open('GET', endpoint, true);
@@ -109,7 +121,7 @@ function initSearch() {
         for (var i in docs) {
           var originalUrl = docs[i].url;
           var parts = originalUrl.split('/');
-          parts.splice(2, 0, 'pt');
+          parts.splice(urlIndex, 0, 'pt');
           docs[i].url = parts.join('/');
         }
       }
